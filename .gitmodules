@@ -1,3 +1,6 @@
 [submodule "src/MIT_Particle-filter"]
 	path = src/MIT_Particle-filter
 	url = ../MIT_Particle-filter.git
+[submodule "src/MIT_Racecar_Labs_Noetic"]
+	path = src/MIT_Racecar_Labs_Noetic
+	url = ../MIT_Racecar_Labs_Noetic.git
