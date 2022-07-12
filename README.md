@@ -1,5 +1,5 @@
-# SnSAutonomousRC
-SSARC(SnS lab Autonomous RC) is a self-driving RC car aimed at campus driving.
+# SCV(Service Co-operation Vehicle)
+SCV(Service Co-operation Vehicle) is a self-driving vehicle aimed at campus driving and services.
 
 # Sub Project Lists (meaning submodules)
 All sub Projects are in **src** directory
