@@ -1,3 +1,0 @@
-[submodule "vehicle_control"]
-	path = vehicle_control
-	url = ../SCV_hunter_ros.git
