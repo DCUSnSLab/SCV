@@ -1,3 +1,0 @@
-[submodule "src/MIT_Particle-filter"]
-	path = src/MIT_Particle-filter
-	url = ../MIT_Particle-filter.git
