@@ -15,7 +15,7 @@ When you clone this repository for the first time, You need to build workspace a
 
 #install libasio-dev for boost
 sudo apt update -y
-sudo apt install -y libasio-dev
+sudo apt install -y libasio-devs
 s
 #make workspace
 $catkin_make
