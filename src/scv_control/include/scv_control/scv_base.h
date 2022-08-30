@@ -5,11 +5,14 @@
 #ifndef SRC_SCV_BASE_H
 #define SRC_SCV_BASE_H
 
+#include <ros/ros.h>
+
+
 namespace scv {
 
-class scv_base {
+    class SCV_base {
 
-};
+    };
 
 } // scv
 
