@@ -9,9 +9,10 @@
 
 
 namespace scv {
-
-    class SCV_base {
-
+    class SCVBase {
+    public:
+        SCVBase();
+        ~SCVBase();
     };
 
 } // scv
