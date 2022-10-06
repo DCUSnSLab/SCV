@@ -9,4 +9,7 @@
 	url = ../ROS_velodyne.git
 [submodule "src/zed-ros-wrapper"]
 	path = src/zed-ros-wrapper
-	url = ../zed-ros-wrapper.git
+	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
+[submodule "src/ROS_velodyne"]
+	path = src/ROS_velodyne
+	url = https://github.com/DCUSnSLab/ROS_velodyne.git
