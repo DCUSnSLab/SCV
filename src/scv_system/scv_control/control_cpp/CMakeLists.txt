@@ -136,6 +136,7 @@ target_link_libraries(test_lib ${catkin_LIBRARIES} ascent)
 # add_executable(${PROJECT_NAME}_node src/scv_control_node.cpp)
 add_executable(scv_pub src/publisher.cpp)
 add_executable(scv_sub src/subscriber.cpp)
+add_executable(scv_base_node src/scv_base_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -148,10 +149,12 @@ add_executable(scv_sub src/subscriber.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(scv_pub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(scv_sub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(scv_base_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(scv_pub  ${catkin_LIBRARIES})
 target_link_libraries(scv_sub test_lib  ${catkin_LIBRARIES})
+target_link_libraries(scv_base_node  ${catkin_LIBRARIES})
 
 #############
 ## Install ##

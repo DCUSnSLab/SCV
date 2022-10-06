@@ -10,13 +10,44 @@ All sub Projects are in **src** directory
 # Installation
 ### Build workspace
 When you clone this repository for the first time, You need to build workspace as follow.
-```
-#in the your workspace
+in the your workspace
 
-#install libasio-dev for boost
+install libasio-dev for boost
+```
 sudo apt update -y
 sudo apt install -y libasio-dev
+```
 
+Check your ROS version and change symbolic link of CmakeLists.txt in src directory of Workspace
+- Check symbolic link of CMakeLists.txt
+```
+$ls -al ./src
+```
+
+- Verify your link status of CMakeLists.txt
+```
+total 28
+drwxrwxr-x  7 scv scv 4096  8월 31 16:08 .
+drwxrwxr-x  6 scv scv 4096  8월 31 16:13 ..
+drwxrwxr-x 14 scv scv 4096  8월 31 16:08 cmake-build-debug
+lrwxrwxrwx  1 root   root     49  8월 31 16:08 CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake
+drwxrwxr-x  2 scv scv 4096  8월 31 16:09 .idea
+drwxrwxr-x  4 scv scv 4096  8월 31 16:05 scv_control
+drwxrwxr-x  5 scv scv 4096  8월 30 10:45 vehicle_control
+drwxrwxr-x 11 scv scv 4096  8월 30 10:45 vehicle_sdk
+
+```
+- Change symbolic link
+```
+#if ROS version is noetic,
+$sudo ln -Tfs /opt/ros/noetic/share/catkin/cmake/toplevel.cmake ./src/CMakeLists.txt
+
+#Melodic,
+$sudo ln -Tfs /opt/ros/melodic/share/catkin/cmake/toplevel.cmake ./src/CMakeLists.txt  
+```
+
+Build Workspace
+```
 #make workspace
 $catkin_make
 ```
