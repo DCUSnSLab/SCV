@@ -10,6 +10,7 @@ project(scv_control)
 find_package(catkin REQUIRED COMPONENTS
         roscpp
         std_msgs
+	rospy
 )
 
 ## System dependencies are found with CMake's conventions
@@ -19,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-# catkin_python_setup()
+catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -121,7 +122,7 @@ include_directories(
 
 ## Declare a C++ library
 add_library(test_lib STATIC
-  src/test_library.cpp
+  src/control_cpp/test_library.cpp
 )
 target_link_libraries(test_lib ${catkin_LIBRARIES} ascent)
 
@@ -134,9 +135,9 @@ target_link_libraries(test_lib ${catkin_LIBRARIES} ascent)
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/scv_control_node.cpp)
-add_executable(scv_pub src/publisher.cpp)
-add_executable(scv_sub src/subscriber.cpp)
-add_executable(scv_base_node src/scv_base_node.cpp)
+add_executable(scv_pub src/control_cpp/publisher.cpp)
+add_executable(scv_sub src/control_cpp/subscriber.cpp)
+add_executable(scv_base_node src/control_cpp/scv_base_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -165,10 +166,10 @@ target_link_libraries(scv_base_node  ${catkin_LIBRARIES})
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# catkin_install_python(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+catkin_install_python(PROGRAMS
+  src/control/bin/start
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
