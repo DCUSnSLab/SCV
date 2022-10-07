@@ -2,12 +2,11 @@
 
 from distutils.core import setup
 from catkin_pkg.python_setup import generate_distutils_setup
-import setuptools
 
 # fetch values from package.xml
 setup_args = generate_distutils_setup(
-    package_dir={'':'src/controller'},
-    packages=setuptools.find_packages(where="src/controller"),
+    packages=['control_wrapper.vehicle_wrapper','test_package'],
+    package_dir={'control_wrapper.vehicle_wrapper': 'src/control_wrapper', '': 'src/control'},
 )
 
 setup(**setup_args)

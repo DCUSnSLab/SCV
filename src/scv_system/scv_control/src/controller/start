@@ -1,0 +1,9 @@
+#! /usr/bin/env python
+from test_package.hello import Hello
+from test_package2.hello2 import HelloW
+
+if __name__ == '__main__':
+    h = Hello()
+    h.say('te')
+    h2 = HelloW()
+    h2.say('tetete')
