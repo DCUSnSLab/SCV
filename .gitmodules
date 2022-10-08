@@ -4,3 +4,9 @@
 [submodule "src/vehicle_sdk"]
 	path = src/vehicle_sdk
 	url = ../SCV_ugv_sdk.git
+[submodule "src/sensors/zed-ros-wrapper"]
+	path = src/sensors/zed-ros-wrapper
+	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
+[submodule "src/sensors/ROS_velodyne"]
+	path = src/sensors/ROS_velodyne
+	url = https://github.com/DCUSnSLab/ROS_velodyne.git
