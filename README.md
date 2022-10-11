@@ -18,6 +18,16 @@ sudo apt update -y
 sudo apt install -y libasio-dev
 ```
 
+- install ZED SDK suitable for environment
+
+https://www.stereolabs.com/developers/release/
+
+- installing ROS dependencies for Velodyne LiDARs
+
+```
+sudo apt-get install ros-{ROS DISTRO}-velodyne
+```
+
 Check your ROS version and change symbolic link of CmakeLists.txt in src directory of Workspace
 - Check symbolic link of CMakeLists.txt
 ```
