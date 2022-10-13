@@ -15,4 +15,8 @@
 	url = https://github.com/DCUSnSLab/rtcm_msgs.git
 [submodule "src/sensors/gps/ntrip_client"]
 	path = src/sensors/gps/ntrip_client
-	url = https://github.com/DCUSnSLab/ntrip_client.git
+	url = https://github.com/dcusnslab/ntrip_client.git
+[submodule "src/sensors/gps/ublox"]
+	path = src/sensors/gps/ublox
+	url = https://github.com/DCUSnSLab/ublox.git
+
