@@ -1,9 +1,31 @@
 #! /usr/bin/env python
+import time
+from threading import Thread
+
+from controller import moraiCtrl
 from test_package.hello import Hello
-from test_package2.hello2 import HelloW
+
+def keyinput(id, moraictl:moraiCtrl):
+    flag = True
+    while flag:
+        data = int(input('input key : '))
+        if data == -1:
+            flag = False
+        elif data == 0:
+            moraictl.emergencyBrake(True)
+        else:
+            moraictl.emergencyBrake(False)
+            moraictl.setTargetSpeed(data)
+            print('target vel: {}/{}'.format(moraictl.targetVel, data))
+
+
+    print('keyinput has been died')
+
 
 if __name__ == '__main__':
-    h = Hello()
-    h.say('te')
-    h2 = HelloW()
-    h2.say('tetete')
+    mct = moraiCtrl()
+    th1 = Thread(target=keyinput, args=(1, mct))
+    th1.start()
+    mct.runCtrl()
+    th1.join()
+    print('process is all done')
