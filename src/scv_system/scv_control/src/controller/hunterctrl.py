@@ -19,6 +19,7 @@ class hunterCtrl(Controller):
         return ctrl_msg
 
     def _getEgoVelocity(self, msg:HunterStatus):
+        print("bat: {}, vel: {}, lat: {}".format(msg.battery_voltage, msg.linear_velocity, msg.steering_angle))
         return msg.linear_velocity
 
     def _getEgoAcceleration(self, msg:HunterStatus):
