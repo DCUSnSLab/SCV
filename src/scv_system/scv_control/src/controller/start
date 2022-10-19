@@ -13,6 +13,7 @@ def keyinput(id, moraictl:moraiCtrl):
             flag = False
         elif data == 0:
             moraictl.emergencyBrake(True)
+            moraictl.setTargetSpeed(data)
         else:
             moraictl.emergencyBrake(False)
             moraictl.setTargetSpeed(data)

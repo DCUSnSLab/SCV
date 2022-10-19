@@ -26,6 +26,9 @@ class moraiCtrl:
         self.emergencyBrake(True)
 
     def __initCtrl(self):
+        #morai ERP42 info
+        #max accel = 1.4m/s
+        #max velocity = 6.38m/s(23km/h)
         # publisher
         self.ctrl_pub = rospy.Publisher('/ctrl_cmd', CtrlCmd, queue_size=1)
 
@@ -35,16 +38,27 @@ class moraiCtrl:
         self.ctrl_msg = CtrlCmd()
         self.status_msg = EgoVehicleStatus()
         self.isStatus = False
-        self.pid = pidController()
+        self.pid = pidController(p=9, i=0.1, d=2.0, rate=30)
 
     def runCtrl(self):
         while not rospy.is_shutdown():
             # if self.isStatus is True:
             #     print('speed: {}, acc: {}, brake: {}'.format(self.velocity*3.6, self.acceleration, self.status_msg.brake))
             # self.ctrl_msg.steering = -30 / 180 * pi
-            ctl_accel = self.pid.pid(self.targetVel, self.status_msg.velocity)
+            ctl_accel = self.pid.pid_1(self.targetVel, self.status_msg.velocity)
             self.ctrl_msg.velocity = self.targetVel
-            self.ctrl_msg.accel = ctl_accel
+
+            if abs(self.targetVel - self.status_msg.velocity.x) < 0.2 or ctl_accel > 0:
+                self.ctrl_msg.accel = ctl_accel
+                self.ctrl_msg.brake = 0
+            else:
+                self.ctrl_msg.accel = 0
+                self.ctrl_msg.brake = -ctl_accel
+
+            #print(self.status_msg.velocity.x)
+            if self.status_msg.velocity.x < 1.0 and self.targetVel <= 0.0:
+                self.ctrl_msg.accel = 0
+                self.ctrl_msg.brake = 1
             self.ctrl_pub.publish(self.ctrl_msg)
             #print('target vel {}, acc {}'.format(self.ctrl_msg.velocity, self.ctrl_msg.accel))
             self.rate.sleep()
