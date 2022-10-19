@@ -7,3 +7,19 @@
 [submodule "src/msgs/morai_msgs"]
 	path = src/msgs/morai_msgs
 	url = ../SCV_morai_msgs.git
+[submodule "src/sensors/zed-ros-wrapper"]
+	path = src/sensors/zed-ros-wrapper
+	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
+[submodule "src/sensors/ROS_velodyne"]
+	path = src/sensors/ROS_velodyne
+	url = https://github.com/DCUSnSLab/ROS_velodyne.git
+[submodule "src/sensors/gps/rtcm_msgs"]
+	path = src/sensors/gps/rtcm_msgs
+	url = https://github.com/DCUSnSLab/rtcm_msgs.git
+[submodule "src/sensors/gps/ntrip_client"]
+	path = src/sensors/gps/ntrip_client
+	url = https://github.com/dcusnslab/ntrip_client.git
+[submodule "src/sensors/gps/ublox"]
+	path = src/sensors/gps/ublox
+	url = https://github.com/DCUSnSLab/ublox.git
+
