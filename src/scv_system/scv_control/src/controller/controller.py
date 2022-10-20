@@ -28,11 +28,14 @@ class Controller(metaclass=ABCMeta):
 
         # long/lat control
         self.targetVel = 0
+        self.maxSpeed = 1.5
         self.targetAcc = 0
         self.targetAngle = 0
+        self.maxAngle = 10 #degree
 
         # kph/mps rate
         self.mpsrate = 3.6
+
 
         # time rate
         self.rate = rospy.Rate(30)  # 30hz
@@ -76,7 +79,8 @@ class Controller(metaclass=ABCMeta):
         self.rate = rospy.Rate(r)
 
     def setTargetSpeed(self, speed:float=0, acc:float=0):
-        self.targetVel = speed / self.mpsrate
+        vel = speed / self.mpsrate
+        self.targetVel = self.maxSpeed if vel > self.maxSpeed else vel
         self.targetAcc = acc
 
     def setSteeringAngle(self, angle:float=0, rate:float=0):
