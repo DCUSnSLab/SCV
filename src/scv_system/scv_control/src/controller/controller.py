@@ -1,6 +1,9 @@
 import rospy
 from abc import *
 
+from morai_msgs.msg import CtrlCmd
+
+
 class MsgModule:
     def __init__(self, msgtype, msgfunc, topic):
         self.msgType = msgtype
@@ -18,6 +21,9 @@ class Controller(metaclass=ABCMeta):
         rospy.Subscriber(statusMsgModule.topic, statusMsgModule.msgType, self.__EgoStatusUpdate)
         self.isStatus = False
 
+        # temporary perception subscriber
+        rospy.Subscriber('lp_ctrl', CtrlCmd, self.__pathPlanRecv, queue_size=1)
+
         #msgs
         self.ctrl_msg = ctrlMsgModule.msgFunc
         self.status_msg = statusMsgModule.msgFunc
@@ -27,6 +33,7 @@ class Controller(metaclass=ABCMeta):
         self.acceleration = 0
 
         # long/lat control
+        self.prevVel = 0
         self.targetVel = 0
         self.maxSpeed = 1.5
         self.targetAcc = 0
@@ -80,8 +87,15 @@ class Controller(metaclass=ABCMeta):
 
     def setTargetSpeed(self, speed:float=0, acc:float=0):
         vel = speed / self.mpsrate
-        self.targetVel = self.maxSpeed if vel > self.maxSpeed else vel
-        self.targetAcc = acc
+        if vel != self.prevVel:
+            self.prevVel = vel
+            self.targetVel = self.maxSpeed if vel > self.maxSpeed else vel
+            self.targetAcc = acc
 
     def setSteeringAngle(self, angle:float=0, rate:float=0):
         self.targetAngle = angle
+
+    def __pathPlanRecv(self, msg:CtrlCmd):
+        print(msg.velocity, msg.steering)
+        self.setTargetSpeed(msg.velocity)
+        self.setSteeringAngle(msg.steering)

@@ -23,3 +23,6 @@
 	path = src/sensors/gps/ublox
 	url = https://github.com/DCUSnSLab/ublox.git
 
+[submodule "src/scv_system/perception/src/SCV_lanedetection"]
+	path = src/scv_system/perception/src/SCV_lanedetection
+	url = ../SCV_lanedetection.git
