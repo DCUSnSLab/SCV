@@ -26,6 +26,3 @@
 [submodule "src/scv_system/perception/src/SCV_lanedetection"]
 	path = src/scv_system/perception/src/SCV_lanedetection
 	url = ../SCV_lanedetection.git
-[submodule "src/scv_system/local_path/SCV_Local_Path"]
-	path = src/scv_system/local_path/SCV_Local_Path
-	url = https://github.com/DCUSnSLab/SCV_Local_Path
