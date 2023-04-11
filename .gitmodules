@@ -5,7 +5,7 @@
 [submodule "src/vehicle_sdk"]
 	path = src/vehicle_sdk
 	url = ../SCV_ugv_sdk.git
-
+  
 [submodule "src/msgs/morai_msgs"]
 	path = src/msgs/morai_msgs
 	url = ../SCV_morai_msgs.git
