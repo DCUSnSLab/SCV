@@ -33,4 +33,15 @@
 [submodule "src/scv_system/perception/SCV_lanedetection"]
 	path = src/scv_system/perception/src/SCV_lanedetection
 	url = ../SCV_lanedetection.git
+	
+[submodule "src/scv_system/global_path/ROS_PathPlanning_pkg"]
+	path = src/scv_system/global_path/ROS_PathPlanning_pkg
+	url = ../ROS_PathPlanning_pkg
+	
+[submodule "src/scv_system/scv_control/SCV_Pure_pursuit"]
+	path = src/scv_system/scv_control/SCV_Pure_pursuit
+	url = ../SCV_Pure_pursuit
 
+[submodule "src/scv_system/local_path/SCV_Local_Path"]
+	path = src/scv_system/local_path/SCV_Local_Path
+	url = ../SCV_Local_Path
