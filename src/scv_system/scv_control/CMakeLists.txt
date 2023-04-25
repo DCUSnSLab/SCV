@@ -165,6 +165,9 @@ target_link_libraries(scv_base_node  ${catkin_LIBRARIES})
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
   src/controller/start
+  src/controller/controller.py
+  src/controller/hunterctrl.py
+  src/controller/moraictrl.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

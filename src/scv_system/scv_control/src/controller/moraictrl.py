@@ -5,6 +5,7 @@ from cv_bridge import CvBridgeError
 from morai_msgs.msg import CtrlCmd, EgoVehicleStatus
 from sensor_msgs.msg import CompressedImage
 
+import scv_control
 from controller import Controller, MsgModule
 from utils import pidController
 
