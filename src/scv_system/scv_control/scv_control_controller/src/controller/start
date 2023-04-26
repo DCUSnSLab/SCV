@@ -1,0 +1,38 @@
+import time
+from threading import Thread
+from test_package.hello import Hello
+from moraictrl import moraiCtrl
+from hunterctrl import hunterCtrl
+
+
+def keyinput(id, moraictl:moraiCtrl):
+    flag = True
+    while flag:
+        inpdata = input('input value: ').split()
+        command = int(inpdata[0])
+        value = int(inpdata[1])
+
+        if command == -1:
+            flag = False
+        elif command == 0:
+            moraictl.emergencyBrake(True)
+            moraictl.setTargetSpeed(0)
+        elif command == 1:
+            moraictl.emergencyBrake(False)
+            moraictl.setTargetSpeed(value)
+            print('target vel: {}/{}'.format(moraictl.targetVel, value))
+        elif command == 2:
+            moraictl.setSteeringAngle(value)
+
+
+    print('keyinput has been died')
+
+
+if __name__ == '__main__':
+    mct = moraiCtrl()
+    #mct = hunterCtrl()
+    th1 = Thread(target=keyinput, args=(1, mct))
+    th1.start()
+    mct.runCtrl()
+    th1.join()
+    print('process is all done')

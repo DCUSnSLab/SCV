@@ -3,6 +3,13 @@ SCV(Service Co-operation Vehicle) is a self-driving vehicle aimed at campus driv
 
 # Sub Project Lists (meaning submodules)
 All sub Projects are in **src** directory
+- SCV System
+  - scv controller
+- Sensors
+  - GPS
+  - Velodyne Lidar
+  - ZED2 Wrapper
+- Msgs
 - Hunter Library
   - vehicle_control : vehicle controller for hunter
   - vehicle_sdk : hunter sdk
@@ -16,6 +23,23 @@ install libasio-dev for boost
 ```
 sudo apt update -y
 sudo apt install -y libasio-dev
+```
+
+install msgs for GPS
+```
+sudo apt install ros-{ROS DISTRO}-mavros-msgs
+sudo apt install ros-{ROS DISTRO}-uuid-msgs
+sudo apt install ros-{ROS DISTRO}-nmea-msgs
+```
+
+- install ZED SDK suitable for environment
+
+https://www.stereolabs.com/developers/release/
+
+- installing ROS dependencies for Velodyne LiDARs
+
+```
+sudo apt-get install ros-{ROS DISTRO}-velodyne
 ```
 
 Check your ROS version and change symbolic link of CmakeLists.txt in src directory of Workspace

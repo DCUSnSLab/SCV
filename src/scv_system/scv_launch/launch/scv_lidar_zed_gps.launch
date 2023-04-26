@@ -1,0 +1,5 @@
+<launch>	
+	<include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch"/>
+	<include file="$(find ublox_gps)/launch/ublox_device.launch"/>
+	<include file="$(find zed_wrapper)/launch/zed2.launch"/>
+</launch>
