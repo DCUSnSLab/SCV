@@ -96,6 +96,6 @@ class Controller(metaclass=ABCMeta):
         self.targetAngle = angle
 
     def __pathPlanRecv(self, msg:CtrlCmd):
-        print(msg.velocity, msg.steering)
+        #print(msg.velocity, msg.steering)
         self.setTargetSpeed(msg.velocity)
         self.setSteeringAngle(msg.steering)
