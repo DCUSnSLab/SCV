@@ -6,7 +6,7 @@ from catkin_pkg.python_setup import generate_distutils_setup
 # fetch values from package.xml
 setup_args = generate_distutils_setup(
     package_dir={'':'src/controller'},
-    packages=['scv_control']
+    packages=['scv_control_controller']
 )
 
 setup(**setup_args)

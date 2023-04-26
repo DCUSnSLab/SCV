@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>scv_control</name>
+  <name>scv_control_controller</name>
   <version>0.0.1</version>
   <description>The scv_control package</description>
 
@@ -58,6 +58,7 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>rospy</exec_depend>
+  <exec_depend>module</exec_depend>
 
 
 
