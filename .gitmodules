@@ -1,31 +1,47 @@
 [submodule "src/vehicle_control"]
 	path = src/vehicle_control
 	url = ../SCV_hunter_ros.git
+	
 [submodule "src/vehicle_sdk"]
 	path = src/vehicle_sdk
 	url = ../SCV_ugv_sdk.git
+  
 [submodule "src/msgs/morai_msgs"]
 	path = src/msgs/morai_msgs
 	url = ../SCV_morai_msgs.git
+
 [submodule "src/sensors/zed-ros-wrapper"]
 	path = src/sensors/zed-ros-wrapper
-	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
+	url = ../zed-ros-wrapper.git
+	
 [submodule "src/sensors/ROS_velodyne"]
 	path = src/sensors/ROS_velodyne
-	url = https://github.com/DCUSnSLab/ROS_velodyne.git
+	url = ../ROS_velodyne.git
+	
 [submodule "src/sensors/gps/rtcm_msgs"]
 	path = src/sensors/gps/rtcm_msgs
-	url = https://github.com/DCUSnSLab/rtcm_msgs.git
+	url = ../rtcm_msgs.git
+	
 [submodule "src/sensors/gps/ntrip_client"]
 	path = src/sensors/gps/ntrip_client
-	url = https://github.com/dcusnslab/ntrip_client.git
+	url = ../ntrip_client.git
+	
 [submodule "src/sensors/gps/ublox"]
 	path = src/sensors/gps/ublox
-	url = https://github.com/DCUSnSLab/ublox.git
-
-[submodule "src/scv_system/perception/src/SCV_lanedetection"]
+	url = ../ublox.git
+	
+[submodule "src/scv_system/perception/SCV_lanedetection"]
 	path = src/scv_system/perception/src/SCV_lanedetection
 	url = ../SCV_lanedetection.git
+	
+[submodule "src/scv_system/global_path/ROS_PathPlanning_pkg"]
+	path = src/scv_system/global_path/ROS_PathPlanning_pkg
+	url = ../ROS_PathPlanning_pkg
+	
+[submodule "src/scv_system/scv_control/SCV_Pure_pursuit"]
+	path = src/scv_system/scv_control/SCV_Pure_pursuit
+	url = ../SCV_Pure_pursuit
+
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
 	path = src/scv_system/local_path/SCV_Local_Path
-	url = https://github.com/DCUSnSLab/SCV_Local_Path
+	url = ../SCV_Local_Path

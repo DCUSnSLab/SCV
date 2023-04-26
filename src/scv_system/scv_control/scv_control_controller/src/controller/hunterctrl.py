@@ -3,6 +3,7 @@ from math import pi
 from geometry_msgs.msg import Twist
 from hunter_msgs.msg import HunterStatus
 
+import scv_control
 from controller import Controller, MsgModule
 
 

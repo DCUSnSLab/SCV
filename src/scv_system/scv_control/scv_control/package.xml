@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>scv_control</name>
+  <version>0.0.0</version>
+  <description>The scv_control metapackage</description>
+
+  <maintainer email="marsberry@todo.todo">marsberry@cu.ac.kr</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>scv_control_controller</exec_depend>
+  <exec_depend>scv_pure_pursuit</exec_depend>
+
+  <export>
+    <!-- specify metapackage -->
+    <metapackage />
+  </export>
+</package>
