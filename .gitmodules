@@ -47,6 +47,10 @@
 [submodule "src/scv_system/global_path/ROS_PathPlanning_pkg"]
 	path = src/scv_system/global_path/ROS_PathPlanning_pkg
 	url = ../ROS_PathPlanning_pkg
+
+[submodule "src/scv_system/localization/ROS_hdl_localization"]
+	path = src/scv_system/localization/ROS_hdl_localization
+	url = ../ROS_hdl_localization
 	
 [submodule "src/scv_system/scv_control/scv_control/SCV_Pure_pursuit"]
 	path = src/scv_system/scv_control/SCV_Pure_pursuit
