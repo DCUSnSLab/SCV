@@ -1,0 +1,13 @@
+<launch>	
+	<!-- hunter base launch -->
+	<include file="$(find hunter_bringup)/launch/hunter_robot_base.launch"/>
+
+    <!-- Sensor setup -->
+    <include file="$(find scv_launch)/launch/scv_lidar_zed_gps.launch"/>
+
+	<!-- Localization -->
+
+	<!-- Pure pursuit -->
+
+	<!-- SCV Control -->
+</launch>
