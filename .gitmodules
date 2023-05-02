@@ -64,7 +64,7 @@
 	path = src/scv_system/localization/hdl_localization/ndt_omp
 	url = https://github.com/DCUSnSLab/ndt_omp.git
 
-[submodule "src/scv_system/scv_control/scv_control/SCV_Pure_pursuit"]
+[submodule "src/scv_system/scv_control/SCV_Pure_pursuit"]
 	path = src/scv_system/scv_control/SCV_Pure_pursuit
 	url = ../SCV_Pure_pursuit.git
 
