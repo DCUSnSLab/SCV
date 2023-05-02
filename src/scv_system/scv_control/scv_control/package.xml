@@ -12,6 +12,7 @@
 
   <exec_depend>scv_control_controller</exec_depend>
   <exec_depend>scv_pure_pursuit</exec_depend>
+  <exec_depend>scv_control_msgs</exec_depend>
 
   <export>
     <!-- specify metapackage -->
