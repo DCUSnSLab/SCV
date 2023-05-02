@@ -46,16 +46,19 @@
 	
 [submodule "src/scv_system/global_path/ROS_PathPlanning_pkg"]
 	path = src/scv_system/global_path/ROS_PathPlanning_pkg
-	url = ../ROS_PathPlanning_pkg
+	url = ../ROS_PathPlanning_pkg.git
 
 [submodule "src/scv_system/localization/ROS_hdl_localization"]
 	path = src/scv_system/localization/ROS_hdl_localization
-	url = ../ROS_hdl_localization
+	url = https://github.com/DCUSnSLab/ROS_hdl_localization.git
 	
 [submodule "src/scv_system/scv_control/scv_control/SCV_Pure_pursuit"]
 	path = src/scv_system/scv_control/SCV_Pure_pursuit
-	url = ../SCV_Pure_pursuit
+	url = ../SCV_Pure_pursuit.git
 
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
 	path = src/scv_system/local_path/SCV_Local_Path
-	url = ../SCV_Local_Path
+	url = ../SCV_Local_Path.git
+[submodule "ROS_hdl_localization"]
+	path = ROS_hdl_localization
+	url = https://github.com/DCUSnSLab/ROS_hdl_localization.git
