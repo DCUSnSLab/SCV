@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>global_path</name>
+  <version>0.0.0</version>
+  <description>The global_path package</description>
+
+  <maintainer email="ros@todo.todo">ros</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>path_planning</exec_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <metapackage />
+  </export>
+</package>
