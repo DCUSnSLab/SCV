@@ -5,14 +5,14 @@ from cv_bridge import CvBridgeError
 from morai_msgs.msg import CtrlCmd, EgoVehicleStatus
 from sensor_msgs.msg import CompressedImage
 
-import scv_control
+import scv_control_controller
 from controller import Controller, MsgModule
 from utils import pidController
 
 
 class moraiCtrl(Controller):
     def __init__(self):
-        super().__init__('moraiCtrl', MsgModule(CtrlCmd, CtrlCmd(), '/ctrl_cmd'), MsgModule(EgoVehicleStatus, EgoVehicleStatus(), '/Ego_topic'))
+        super().__init__('moraiCtrl', MsgModule(CtrlCmd, CtrlCmd(), '/ctrl_cmd'), MsgModule(EgoVehicleStatus, EgoVehicleStatus(), '/Ego'))
 
         # morai ERP42 info
         # max accel = 1.4m/s
