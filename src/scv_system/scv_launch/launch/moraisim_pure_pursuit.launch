@@ -1,0 +1,12 @@
+<launch>
+	<!-- Localization -->
+	<include file="$(find hdl_localization)/launch/hdl_localization.launch"/>
+
+    <!-- Load path data -->
+    <node name="djikstra" pkg="path_planning" type="dijkstra_path.py" output="screen" >
+      <param name="json_file" value="$(find path_planning)/data/2023.05.10.path.json" />
+    </node>
+
+	<!-- Pure pursuit -->
+	<node name="pure_pursuit" pkg="scv_pure_pursuit" type="pure_pursuit_erp42.py" output="screen" />
+</launch>
