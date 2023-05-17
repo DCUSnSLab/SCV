@@ -4,7 +4,11 @@
 
     <!-- Load path data -->
     <node name="djikstra" pkg="path_planning" type="dijkstra_path.py" output="screen" >
+<<<<<<< Updated upstream
       <param name="json_file" value="$(find path_planning)/data/2023.05.10.path.json" />
+=======
+      <param name="json_file" value="$(find path_planning)/data/2023.05.12.path.json" />
+>>>>>>> Stashed changes
     </node>
 
 	<!-- Pure pursuit -->
