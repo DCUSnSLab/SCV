@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/dong/Development/SCV/devel/lib/libhunter_messenger.a  CMakeFiles/hunter_messenger.dir/src/hunter_messenger.cpp.o CMakeFiles/hunter_messenger.dir/src/bicycle_model.cpp.o
+/usr/bin/ranlib /home/dong/Development/SCV/devel/lib/libhunter_messenger.a

@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/devel
+
+Name: scv_control_controller
+Description: Description of scv_control_controller
+Version: 0.0.1
+Cflags: -I/home/dong/Development/SCV/src/scv_system/scv_control/scv_control_controller/include
+Libs: -L${prefix}/lib -lscv_control
+Requires: roscpp std_msgs

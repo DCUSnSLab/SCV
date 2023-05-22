@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/devel
+
+Name: scv_pure_pursuit
+Description: Description of scv_pure_pursuit
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

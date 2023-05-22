@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/devel
+
+Name: sysmanager
+Description: Description of sysmanager
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/devel
+
+Name: hunter_base
+Description: Description of hunter_base
+Version: 0.0.0
+Cflags: -I/home/dong/Development/SCV/src/vehicle_control/hunter_base/include
+Libs: -L${prefix}/lib -lhunter_messenger
+Requires: 

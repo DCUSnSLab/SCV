@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/install
+
+Name: data_analyze
+Description: Description of data_analyze
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

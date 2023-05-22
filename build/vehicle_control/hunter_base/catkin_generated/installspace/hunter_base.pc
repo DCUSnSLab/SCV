@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/install
+
+Name: hunter_base
+Description: Description of hunter_base
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lhunter_messenger
+Requires: 

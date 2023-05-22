@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/dong/Development/SCV/devel/lib/libtest_lib.a  CMakeFiles/test_lib.dir/src/control_cpp/test_library.cpp.o
+/usr/bin/ranlib /home/dong/Development/SCV/devel/lib/libtest_lib.a

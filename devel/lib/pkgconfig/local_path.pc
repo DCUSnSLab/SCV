@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/devel
+
+Name: local_path
+Description: Description of local_path
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

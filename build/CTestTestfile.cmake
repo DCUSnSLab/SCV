@@ -1,0 +1,38 @@
+# CMake generated Testfile for 
+# Source directory: /home/dong/Development/SCV/src
+# Build directory: /home/dong/Development/SCV/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs("gtest")
+subdirs("scv_system/scv_control/scv_control")
+subdirs("vehicle_control/hunter_msgs")
+subdirs("msgs/morai_msgs")
+subdirs("sensors/gps/rtcm_msgs")
+subdirs("sensors/gps/ublox/ublox")
+subdirs("vehicle_sdk")
+subdirs("sensors/ROS_velodyne/velodyne")
+subdirs("sensors/ROS_velodyne/velodyne_msgs")
+subdirs("scv_system/data_analyze")
+subdirs("scv_system/global_path")
+subdirs("vehicle_control/hunter_bringup")
+subdirs("scv_system/local_path")
+subdirs("scv_system/localization")
+subdirs("scv_system/perception")
+subdirs("scv_system/scv_control/scv_control_controller")
+subdirs("scv_system/scv_control/SCV_Pure_pursuit")
+subdirs("scv_system/sysmanager")
+subdirs("sensors/gps/ntrip_client")
+subdirs("vehicle_control/hunter_base")
+subdirs("sensors/gps/ublox/ublox_serialization")
+subdirs("sensors/gps/ublox/ublox_msgs")
+subdirs("sensors/gps/ublox/ublox_gps")
+subdirs("sensors/gps/ublox/ublox_msg_filters")
+subdirs("sensors/ROS_velodyne/velodyne_driver")
+subdirs("sensors/ROS_velodyne/velodyne_laserscan")
+subdirs("sensors/ROS_velodyne/velodyne_pcl")
+subdirs("sensors/ROS_velodyne/velodyne_pointcloud")
+subdirs("sensors/zed-ros-wrapper/zed-ros-interfaces")
+subdirs("sensors/zed-ros-wrapper/zed_nodelets")
+subdirs("sensors/zed-ros-wrapper/zed_ros")
+subdirs("sensors/zed-ros-wrapper/zed_wrapper")

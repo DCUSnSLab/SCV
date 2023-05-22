@@ -1,0 +1,8 @@
+prefix=/home/dong/Development/SCV/devel
+
+Name: global_path
+Description: Description of global_path
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
