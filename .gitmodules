@@ -45,3 +45,6 @@
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
 	path = src/scv_system/local_path/SCV_Local_Path
 	url = ../SCV_Local_Path
+[submodule "src/scv_system/localization/hdl_localization/ROS_hdl_localization"]
+	path = src/scv_system/localization/hdl_localization/ROS_hdl_localization
+	url = https://github.com/DCUSnSLab/ROS_hdl_localization.git
