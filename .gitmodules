@@ -1,3 +1,5 @@
+# vehicle submodules
+
 [submodule "src/vehicle_control"]
 	path = src/vehicle_control
 	url = ../SCV_hunter_ros.git
@@ -5,10 +7,14 @@
 [submodule "src/vehicle_sdk"]
 	path = src/vehicle_sdk
 	url = ../SCV_ugv_sdk.git
-  
+
+# msgs submodules
+
 [submodule "src/msgs/morai_msgs"]
 	path = src/msgs/morai_msgs
 	url = ../SCV_morai_msgs.git
+
+# sensors submodules
 
 [submodule "src/sensors/zed-ros-wrapper"]
 	path = src/sensors/zed-ros-wrapper
@@ -17,7 +23,9 @@
 [submodule "src/sensors/ROS_velodyne"]
 	path = src/sensors/ROS_velodyne
 	url = ../ROS_velodyne.git
-	
+
+## gps submodules
+
 [submodule "src/sensors/gps/rtcm_msgs"]
 	path = src/sensors/gps/rtcm_msgs
 	url = ../rtcm_msgs.git
@@ -29,22 +37,37 @@
 [submodule "src/sensors/gps/ublox"]
 	path = src/sensors/gps/ublox
 	url = ../ublox.git
-	
+
+# scv_system submodules
+
 [submodule "src/scv_system/perception/SCV_lanedetection"]
 	path = src/scv_system/perception/src/SCV_lanedetection
 	url = ../SCV_lanedetection.git
 	
 [submodule "src/scv_system/global_path/ROS_PathPlanning_pkg"]
 	path = src/scv_system/global_path/ROS_PathPlanning_pkg
-	url = ../ROS_PathPlanning_pkg
-	
-[submodule "src/scv_system/scv_control/SCV_Pure_pursuit"]
-	path = src/scv_system/scv_control/SCV_Pure_pursuit
-	url = ../SCV_Pure_pursuit
+	url = ../ROS_PathPlanning_pkg.git
 
-[submodule "src/scv_system/local_path/SCV_Local_Path"]
-	path = src/scv_system/local_path/SCV_Local_Path
-	url = ../SCV_Local_Path
 [submodule "src/scv_system/localization/hdl_localization/ROS_hdl_localization"]
 	path = src/scv_system/localization/hdl_localization/ROS_hdl_localization
 	url = https://github.com/DCUSnSLab/ROS_hdl_localization.git
+
+[submodule "src/scv_system/localization/hdl_localization/ROS_hdl_global_localization"]
+	path = src/scv_system/localization/hdl_localization/ROS_hdl_global_localization
+	url = https://github.com/DCUSnSLab/ROS_hdl_global_localization.git
+
+[submodule "src/scv_system/localization/hdl_localization/fast_gicp"]
+	path = src/scv_system/localization/hdl_localization/fast_gicp
+	url = https://github.com/DCUSnSLab/fast_gicp.git
+
+[submodule "src/scv_system/localization/hdl_localization/ndt_omp"]
+	path = src/scv_system/localization/hdl_localization/ndt_omp
+	url = https://github.com/DCUSnSLab/ndt_omp.git
+
+[submodule "src/scv_system/scv_control/SCV_Pure_pursuit"]
+	path = src/scv_system/scv_control/SCV_Pure_pursuit
+	url = ../SCV_Pure_pursuit.git
+
+[submodule "src/scv_system/local_path/SCV_Local_Path"]
+	path = src/scv_system/local_path/SCV_Local_Path
+	url = ../SCV_Local_Path.git
