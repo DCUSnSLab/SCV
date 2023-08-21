@@ -1,0 +1,15 @@
+<launch>
+    <!-- This roslaunch is working.. -->
+    <arg name="nodelet_manager" default="velodyne_nodelet_manager" />
+
+    <node pkg="nodelet" type="nodelet" name="globalmap_server_nodelet" args="load hdl_localization/GlobalmapServerNodelet $(arg nodelet_manager)">
+      <param name="globalmap_pcd" value="$(find path_planning)/data/20230126_005.pcd" />
+      <param name="convert_utm_to_local" value="true" />
+      <param name="downsample_resolution" value="0.1" />
+    </node>
+
+	<node name="creator" pkg="path_planning" type="vertex_creator.py" output="screen" />
+
+	<!-- Rviz for visualize Pointcloud map -->
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find scv_launch)/rviz/vertex_creator.rviz" />
+</launch>

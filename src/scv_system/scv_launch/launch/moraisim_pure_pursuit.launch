@@ -6,7 +6,7 @@
 
     <!-- Load path data -->
     <node name="djikstra" pkg="path_planning" type="dijkstra_path.py" output="screen" >
-      <param name="json_file" value="$(find path_planning)/data/path_2023-May-03-15:44:06.json" />
+      <param name="json_file" value="$(find path_planning)/data/20230126_005.json" />
     </node>
 
 	<!-- Pure pursuit -->
