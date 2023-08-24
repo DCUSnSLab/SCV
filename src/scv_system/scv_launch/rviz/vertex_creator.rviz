@@ -7,6 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /PointCloud21
+        - /Marker1
+        - /Marker1/Status1
       Splitter Ratio: 0.5
     Tree Height: 555
   - Class: rviz/Selection
@@ -55,8 +57,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 14.355984687805176
-        Min Value: -3.794015884399414
+        Max Value: 4.089345455169678
+        Min Value: -1.1106548309326172
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -104,6 +106,14 @@ Visualization Manager:
       Topic: /current_vertices
       Unreliable: false
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /vertices_adjacents
+      Name: Marker
+      Namespaces:
+        "": true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -148,9 +158,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6903985142707825
+      Pitch: 1.1603983640670776
       Target Frame: <Fixed Frame>
-      Yaw: 2.675396680831909
+      Yaw: 1.9253956079483032
     Saved: ~
 Window Geometry:
   Displays:
@@ -168,5 +178,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 2177
-  Y: 482
+  X: 2162
+  Y: 521
