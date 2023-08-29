@@ -167,6 +167,7 @@ catkin_install_python(PROGRAMS
   src/controller/controller.py
   src/controller/hunterctrl.py
   src/controller/moraictrl.py
+  src/controller/control_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

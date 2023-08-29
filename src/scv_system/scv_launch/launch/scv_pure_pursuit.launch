@@ -1,0 +1,22 @@
+<launch>	
+	<!-- hunter base launch -->
+	<include file="$(find hunter_bringup)/launch/hunter_robot_base.launch"/>
+
+    <!-- Sensor setup -->
+    <!--<include file="$(find scv_launch)/launch/scv_lidar_zed_gps.launch"/>-->
+    <include file="$(find velodyne_pointcloud)/launch/VLP-32C_points.launch"/>
+
+	<!-- Localization -->
+	<include file="$(find hdl_localization)/launch/hdl_localization.launch" >
+	    <arg name="pcd_file" value="$(find path_planning)/data/20211104_d2_center_with_imu.pcd" />
+	</include>
+
+	<!-- Load path data -->
+	<node name="djikstra" pkg="path_planning" type="dijkstra_path.py" output="screen" >
+      <!--<param name="json_file" value="$(find path_planning)/data/20230126_005.json" />-->
+      <param name="json_file" value="$(find path_planning)/data/20211104_d2_center_with_imu.json" />
+    </node>
+
+	<!-- Pure pursuit -->
+	<node name="pure_pursuit" pkg="scv_pure_pursuit" type="pure_pursuit_erp42.py" output="screen" />
+</launch>

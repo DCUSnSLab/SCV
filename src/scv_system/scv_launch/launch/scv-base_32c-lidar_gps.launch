@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find hunter_bringup)/launch/hunter_robot_base.launch"/>
+	<include file="$(find velodyne_pointcloud)/launch/VLP-32C_points.launch"/>
+	<include file="$(find ublox_gps)/launch/ublox_device.launch"/>
+</launch>

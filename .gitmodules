@@ -46,12 +46,28 @@
 	
 [submodule "src/scv_system/global_path/ROS_PathPlanning_pkg"]
 	path = src/scv_system/global_path/ROS_PathPlanning_pkg
-	url = ../ROS_PathPlanning_pkg
-	
-[submodule "src/scv_system/scv_control/scv_control/SCV_Pure_pursuit"]
+	url = ../ROS_PathPlanning_pkg.git
+
+[submodule "src/scv_system/localization/hdl_localization/ROS_hdl_localization"]
+	path = src/scv_system/localization/hdl_localization/ROS_hdl_localization
+	url = https://github.com/DCUSnSLab/ROS_hdl_localization.git
+
+[submodule "src/scv_system/localization/hdl_localization/ROS_hdl_global_localization"]
+	path = src/scv_system/localization/hdl_localization/ROS_hdl_global_localization
+	url = https://github.com/DCUSnSLab/ROS_hdl_global_localization.git
+
+[submodule "src/scv_system/localization/hdl_localization/fast_gicp"]
+	path = src/scv_system/localization/hdl_localization/fast_gicp
+	url = https://github.com/DCUSnSLab/fast_gicp.git
+
+[submodule "src/scv_system/localization/hdl_localization/ndt_omp"]
+	path = src/scv_system/localization/hdl_localization/ndt_omp
+	url = https://github.com/DCUSnSLab/ndt_omp.git
+
+[submodule "src/scv_system/scv_control/SCV_Pure_pursuit"]
 	path = src/scv_system/scv_control/SCV_Pure_pursuit
-	url = ../SCV_Pure_pursuit
+	url = ../SCV_Pure_pursuit.git
 
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
 	path = src/scv_system/local_path/SCV_Local_Path
-	url = ../SCV_Local_Path
+	url = ../SCV_Local_Path.git
