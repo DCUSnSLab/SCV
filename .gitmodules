@@ -3,77 +3,97 @@
 [submodule "src/vehicle_control"]
 	path = src/vehicle_control
 	url = ../SCV_hunter_ros.git
+	branch = master
 	
 [submodule "src/vehicle_sdk"]
 	path = src/vehicle_sdk
 	url = ../SCV_ugv_sdk.git
+	branch = next
 
 # msgs submodules
 
 [submodule "src/msgs/morai_msgs"]
 	path = src/msgs/morai_msgs
 	url = ../SCV_morai_msgs.git
+	branch = master
 
 # sensors submodules
 
 [submodule "src/sensors/zed-ros-wrapper"]
 	path = src/sensors/zed-ros-wrapper
 	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
+	branch = master
 	
 [submodule "src/sensors/ROS_velodyne"]
 	path = src/sensors/ROS_velodyne
 	url = ../ROS_velodyne.git
+	branch = master
 
 ## gps submodules
 
 [submodule "src/sensors/gps/rtcm_msgs"]
 	path = src/sensors/gps/rtcm_msgs
 	url = ../rtcm_msgs.git
+	branch = master
 	
 [submodule "src/sensors/gps/ntrip_client"]
 	path = src/sensors/gps/ntrip_client
 	url = ../ntrip_client.git
+	branch = main
 	
 [submodule "src/sensors/gps/ublox"]
 	path = src/sensors/gps/ublox
 	url = ../ublox.git
+	branch = master
 
 # scv_system submodules
 
 [submodule "src/scv_system/perception/SCV_lanedetection"]
 	path = src/scv_system/perception/src/SCV_lanedetection
 	url = ../SCV_lanedetection.git
+	branch = main
 	
 [submodule "src/scv_system/global_path/ROS_PathPlanning_pkg"]
 	path = src/scv_system/global_path/ROS_PathPlanning_pkg
 	url = ../ROS_PathPlanning_pkg.git
+	branch = master
 
 [submodule "src/scv_system/localization/hdl_localization/ROS_hdl_localization"]
 	path = src/scv_system/localization/hdl_localization/ROS_hdl_localization
 	url = https://github.com/DCUSnSLab/ROS_hdl_localization.git
+	branch = master
 
 [submodule "src/scv_system/localization/hdl_localization/ROS_hdl_global_localization"]
 	path = src/scv_system/localization/hdl_localization/ROS_hdl_global_localization
 	url = https://github.com/DCUSnSLab/ROS_hdl_global_localization.git
+	branch = master
 
 [submodule "src/scv_system/localization/hdl_localization/fast_gicp"]
 	path = src/scv_system/localization/hdl_localization/fast_gicp
 	url = https://github.com/DCUSnSLab/fast_gicp.git
+	branch = master
 
 [submodule "src/scv_system/localization/hdl_localization/ndt_omp"]
 	path = src/scv_system/localization/hdl_localization/ndt_omp
 	url = https://github.com/DCUSnSLab/ndt_omp.git
+	branch = master
 
 [submodule "src/scv_system/scv_control/SCV_Pure_pursuit"]
 	path = src/scv_system/scv_control/SCV_Pure_pursuit
 	url = ../SCV_Pure_pursuit.git
+	branch = master
 
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
 	path = src/scv_system/local_path/SCV_Local_Path
 	url = ../SCV_Local_Path.git
+	branch = main
+
 [submodule "src/scv_system/hardware_monitor"]
 	path = src/scv_system/hardware_monitor
 	url = https://github.com/DCUSnSLab/hardware_monitor
+	branch = main
+
 [submodule "src/sensors/ROS_razor_imu_9dof"]
 	path = src/sensors/ROS_razor_imu_9dof
 	url = https://github.com/DCUSnSLab/ROS_razor_imu_9dof.git
+	branch = indigo-devel
