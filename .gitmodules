@@ -18,7 +18,7 @@
 
 [submodule "src/sensors/zed-ros-wrapper"]
 	path = src/sensors/zed-ros-wrapper
-	url = ../zed-ros-wrapper.git
+	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
 	
 [submodule "src/sensors/ROS_velodyne"]
 	path = src/sensors/ROS_velodyne
@@ -71,3 +71,6 @@
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
 	path = src/scv_system/local_path/SCV_Local_Path
 	url = ../SCV_Local_Path.git
+[submodule "src/scv_system/hardware_monitor"]
+	path = src/scv_system/hardware_monitor
+	url = https://github.com/DCUSnSLab/hardware_monitor
