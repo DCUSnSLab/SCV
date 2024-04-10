@@ -90,7 +90,7 @@
 
 [submodule "src/scv_system/hardware_monitor"]
 	path = src/scv_system/hardware_monitor
-	url = https://github.com/DCUSnSLab/hardware_monitor
+	url = https://github.com/DCUSnSLab/hardware_monitor.git
 	branch = main
 
 [submodule "src/sensors/ROS_razor_imu_9dof"]
