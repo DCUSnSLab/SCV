@@ -18,11 +18,6 @@
 	branch = master
 
 # sensors submodules
-
-[submodule "src/sensors/zed-ros-wrapper"]
-	path = src/sensors/zed-ros-wrapper
-	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
-	branch = master
 	
 [submodule "src/sensors/ROS_velodyne"]
 	path = src/sensors/ROS_velodyne
@@ -86,11 +81,6 @@
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
 	path = src/scv_system/local_path/SCV_Local_Path
 	url = ../SCV_Local_Path.git
-	branch = main
-
-[submodule "src/scv_system/hardware_monitor"]
-	path = src/scv_system/hardware_monitor
-	url = https://github.com/DCUSnSLab/hardware_monitor.git
 	branch = main
 
 [submodule "src/sensors/ROS_razor_imu_9dof"]
