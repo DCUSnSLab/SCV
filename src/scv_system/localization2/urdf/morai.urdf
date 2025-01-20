@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="ssc">
+  <!-- 차량의 주요 바디를 나타내는 base_link 정의 -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/> <!-- 높이의 절반을 Z축 위치로 설정하여 지면 위에 위치하도록 함 -->
+      <geometry>
+        <box size="1.8 1.17 0.55"/> <!-- 길이 x 너비 x 높이 -->
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.8 1.17 0.55"/> <!-- 길이 x 너비 x 높이 -->
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Velodyne 센서 링크 정의 -->
+  <link name="velodyne">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <!-- Velodyne 센서 조인트 정의 -->
+  <joint name="velodyne_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="velodyne"/>
+    <origin xyz="0 0 1" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 앞바퀴 링크 정의 -->
+  <link name="front_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.05"/> <!-- 반지름 x 길이 -->
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.05"/> <!-- 반지름 x 길이 -->
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- 앞바퀴 조인트 정의 -->
+  <joint name="front_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_wheel"/>
+    <origin xyz="0.5 0 0" rpy="0 0 0"/> <!-- base_link로부터 50cm 앞에 위치 -->
+  </joint>
+
+</robot>
