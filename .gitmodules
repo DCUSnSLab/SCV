@@ -88,6 +88,6 @@
 	url = https://github.com/DCUSnSLab/ROS_razor_imu_9dof.git
 	branch = indigo-devel
 [submodule "scv/SCV/src/sensors/imu_vn_100"]
-	path = /home/scv/SCV/src/sensors/imu_vn_100
+	path = src/sensors/imu_vn_100
 	url = https://github.com/DCUSnSLab/imu_vn_100.git
 	branch = master
