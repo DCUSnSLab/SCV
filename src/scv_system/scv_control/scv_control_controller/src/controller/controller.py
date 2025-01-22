@@ -82,6 +82,10 @@ class Controller(metaclass=ABCMeta):
     def emergencyBrake(self, isBrake):
         pass
 
+    @abstractmethod
+    def setCmd(self, CmdType):
+        pass
+
     def setRate(self, r: int):
         self.rate = rospy.Rate(r)
 
@@ -97,5 +101,10 @@ class Controller(metaclass=ABCMeta):
 
     def __pathPlanRecv(self, msg:CtrlCmd):
         #print(msg.velocity, msg.steering)
-        self.setTargetSpeed(msg.velocity)
-        self.setSteeringAngle(msg.steering)
+        if msg.velocity < 0:
+            self.setCmd(1)
+            self.setTargetSpeed(msg.velocity)
+            self.setSteeringAngle(msg.steering)
+        else:
+            self.setTargetSpeed(msg.velocity)
+            self.setSteeringAngle(msg.steering)
