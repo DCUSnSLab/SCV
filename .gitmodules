@@ -90,3 +90,4 @@
 [submodule "scv/SCV/src/sensors/imu_vn_100"]
 	path = /home/scv/SCV/src/sensors/imu_vn_100
 	url = https://github.com/DCUSnSLab/imu_vn_100.git
+	branch = master
