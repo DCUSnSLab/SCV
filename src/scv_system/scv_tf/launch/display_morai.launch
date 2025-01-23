@@ -1,18 +1,18 @@
 <launch>
-  <param name="robot_description" command="xacro '$(find localization2)/urdf/morai.urdf'" />
+  <param name="robot_description" command="xacro '$(find scv_tf)/urdf/morai.urdf'" />
   <!-- Run the robot_state_publisher and use the robot_description parameter -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   <!-- Launch gps_frame_broadcast.py node -->
-  <node name="gps_frame_broadcast" pkg="localization2" type="gps_frame_broadcast.py" output="screen"/>
+  <node name="gps_frame_broadcast" pkg="scv_tf" type="gps_frame_broadcast.py" output="screen"/>
 
   <!-- Launch gps_imu_to_odom_morai.py node -->
-  <node name="gps_imu_to_odom_morai" pkg="localization2" type="gps_imu_to_odom_morai.py" output="screen"/>
+  <node name="gps_imu_to_odom_morai" pkg="scv_tf" type="gps_imu_to_odom_morai.py" output="screen"/>
 
   <!-- Launch odom_frame_broadcast.py node -->
-  <node name="odom_frame_broadcast" pkg="localization2" type="odom_frame_broadcast.py" output="screen"/>
+  <node name="odom_frame_broadcast" pkg="scv_tf" type="odom_frame_broadcast.py" output="screen"/>
 
   <!-- Launch pub_footprint_morai.py node -->
-  <node name="pub_footprint_morai" pkg="localization2" type="pub_footprint_morai.py" output="screen"/>
+  <node name="pub_footprint_morai" pkg="scv_tf" type="pub_footprint_morai.py" output="screen"/>
 
 
 </launch>
