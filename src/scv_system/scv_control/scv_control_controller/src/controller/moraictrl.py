@@ -59,3 +59,6 @@ class moraiCtrl(Controller):
 
     def setBrake(self, mps: float):
         self.ctrl_msg.brake = mps
+
+    def setCmd(self, CmdType: int):
+        self.ctrl_msg.longlCmdType = CmdType
