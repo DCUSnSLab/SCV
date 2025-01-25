@@ -1,16 +1,25 @@
+#!/usr/bin/python3
+
 import time
 from threading import Thread
-from test_package.hello import Hello
-from moraictrl import moraiCtrl
-from hunterctrl import hunterCtrl
+#from scv_control_controller import moraiCtrl, hunterCtrl
+from moraictrl2 import moraiCtrl
+#from hunterctrl import hunterCtrl
 
 
 def keyinput(id, moraictl:moraiCtrl):
     flag = True
     while flag:
         inpdata = input('input value: ').split()
-        command = int(inpdata[0])
-        value = int(inpdata[1])
+        if len(inpdata) == 2 :
+            command = int(inpdata[0])
+
+            value = float(inpdata[1])
+        elif len(inpdata) == 1 :
+            command = int(inpdata[0])
+        else :
+            print("try again")
+            break
 
         if command == -1:
             flag = False
@@ -21,12 +30,12 @@ def keyinput(id, moraictl:moraiCtrl):
             moraictl.emergencyBrake(False)
             moraictl.setTargetSpeed(value)
             print('target vel: {}/{}'.format(moraictl.targetVel, value))
+            print("val", value)
         elif command == 2:
             moraictl.setSteeringAngle(value)
 
 
     print('keyinput has been died')
-
 
 if __name__ == '__main__':
     mct = moraiCtrl()

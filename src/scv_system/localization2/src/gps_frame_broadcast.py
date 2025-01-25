@@ -10,7 +10,7 @@ broadcaster = tf2_ros.StaticTransformBroadcaster()
 static_transformStamped = TransformStamped()
 
 static_transformStamped.header.stamp = rospy.Time.now()
-static_transformStamped.header.frame_id = "gps_utm"
+static_transformStamped.header.frame_id = "map"
 static_transformStamped.child_frame_id = "odom_utm"
 
 static_transformStamped.transform.translation.x = 0.0

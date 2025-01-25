@@ -4,6 +4,7 @@ from abc import *
 from morai_msgs.msg import CtrlCmd
 
 
+
 class MsgModule:
     def __init__(self, msgtype, msgfunc, topic):
         self.msgType = msgtype
@@ -12,8 +13,8 @@ class MsgModule:
 
 class Controller(metaclass=ABCMeta):
     def __init__(self, nodeName, ctrlMsgModule:MsgModule, statusMsgModule:MsgModule):
-        rospy.init_node(nodeName, anonymous=True)
-
+        rospy.init_node(nodeName)
+         
         # Command publisher
         self.ctrl_pub = rospy.Publisher(ctrlMsgModule.topic, ctrlMsgModule.msgType, queue_size=1)
 
@@ -43,7 +44,7 @@ class Controller(metaclass=ABCMeta):
         # kph/mps rate
         self.mpsrate = 3.6
 
-
+        
         # time rate
         self.rate = rospy.Rate(30)  # 30hz
 
@@ -53,7 +54,6 @@ class Controller(metaclass=ABCMeta):
         while not rospy.is_shutdown():
             self.ctrl_msg = self._acceptLongCtrl(self.ctrl_msg)
             self.ctrl_msg = self._acceptLatCtrl(self.ctrl_msg)
-
             self.ctrl_pub.publish(self.ctrl_msg)
             self.rate.sleep()
 
@@ -87,7 +87,7 @@ class Controller(metaclass=ABCMeta):
         self.rate = rospy.Rate(r)
 
     def setTargetSpeed(self, speed:float=0, acc:float=0):
-        vel = speed / self.mpsrate
+        vel = speed
         if vel != self.prevVel:
             self.prevVel = vel
             self.targetVel = self.maxSpeed if vel > self.maxSpeed else vel
@@ -97,6 +97,6 @@ class Controller(metaclass=ABCMeta):
         self.targetAngle = angle
 
     def __pathPlanRecv(self, msg:CtrlCmd):
-        #print(msg.velocity, msg.steering)
+        print(msg.velocity, self.velocity, msg.steering)
         self.setTargetSpeed(msg.velocity)
         self.setSteeringAngle(msg.steering)
