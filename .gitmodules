@@ -91,3 +91,6 @@
 	path = src/sensors/imu_vn_100
 	url = https://github.com/DCUSnSLab/imu_vn_100.git
 	branch = master
+[submodule "src/sensors/vectornav"]
+	path = src/sensors/vectornav
+	url = https://github.com/DCUSnSLab/vectornav
