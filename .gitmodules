@@ -23,7 +23,10 @@
 	path = src/sensors/ROS_velodyne
 	url = ../ROS_velodyne.git
 	branch = master
-
+[submodule "src/sensors/zed-ros-wrapper"]
+	path = src/sensors/zed-ros-wrapper
+	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
+	branch = master
 ## gps submodules
 
 [submodule "src/sensors/gps/rtcm_msgs"]
