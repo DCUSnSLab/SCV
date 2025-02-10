@@ -94,3 +94,6 @@
 [submodule "src/sensors/vectornav"]
 	path = src/sensors/vectornav
 	url = https://github.com/DCUSnSLab/vectornav
+[submodule "usb_cam"]
+	path = src/sensors/usb_cam
+	url = https://github.com/DCUSnSLab/usb_cam.git
