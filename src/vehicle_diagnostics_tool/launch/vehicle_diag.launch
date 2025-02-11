@@ -1,0 +1,8 @@
+<launch>
+    <!-- 노드 실행 -->
+    <node pkg="vehicle_diagnostics_tool" type="total_resource" name="total_resource" output="screen"/>
+    <node pkg="vehicle_diagnostics_tool" type="get_topic_hzbw_class" name="ros_topic_monitor" output="screen"/>
+    <node pkg="vehicle_diagnostics_tool" type="get_nodes_resource" name="node_resource_usage" output="screen"/>
+    <node pkg="vehicle_diagnostics_tool" type="diag_listener" name="diag_listener" output="screen"/>
+    <node pkg="vehicle_diagnostics_tool" type="gui" name="gui" output="screen"/>
+</launch>

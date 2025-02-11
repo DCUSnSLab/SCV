@@ -6,7 +6,7 @@
   <node name="gps_frame_broadcast" pkg="scv_tf" type="gps_frame_broadcast.py" output="screen"/>
 
   <!-- Launch gps_imu_to_odom_morai.py node -->
-  <node name="gps_imu_to_odom_morai" pkg="scv_tf" type="gps_imu_to_odom_morai.py" output="screen"/>
+  <!-- <node name="gps_imu_to_odom_morai" pkg="scv_tf" type="gps_imu_to_odom_morai.py" output="screen"/> -->
 
   <!-- Launch odom_frame_broadcast.py node -->
   <node name="odom_frame_broadcast" pkg="scv_tf" type="odom_frame_broadcast.py" output="screen"/>

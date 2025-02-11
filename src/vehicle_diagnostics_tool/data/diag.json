@@ -1,0 +1,867 @@
+{
+    "total_resource": {
+        "cpu_user": 12271.4599609375,
+        "cpu_nice": 8.079999923706055,
+        "cpu_system": 1211.6400146484375,
+        "cpu_idle": 28465.900390625,
+        "cpu_iowait": 21.200000762939453,
+        "cpu_irq": 0.0,
+        "cpu_softirq": 256.1600036621094,
+        "cpu_steal": 0.0,
+        "cpu_guest": 0.0,
+        "cpu_guest_nice": 0.0,
+        "cpu_usage_percent": 10.546875,
+        "cpu_temp": 55.0,
+        "cpu_load_1min": 13.34000015258789,
+        "cpu_load_5min": 14.25,
+        "cpu_load_15min": 9.710000038146973,
+        "mem_used": 5849.1328125,
+        "mem_total": 31979.79296875,
+        "mem_usage_percent": 18.290090560913086,
+        "gpu_usage_percent": 47.0,
+        "gpu_mem_used": 1119.5625,
+        "gpu_mem_total": 12288.0,
+        "gpu_mem_usage": 9.11102294921875,
+        "gpu_temp": 51.0
+    },
+    "topics_hzbw": {
+        "/BMS_status": {
+            "hz": 50,
+            "bw": "1.46 KB/s"
+        },
+        "/clicked_point": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/diagnostics": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/hunter_status": {
+            "hz": 50,
+            "bw": "9.38 KB/s"
+        },
+        "/initialpose": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/move_base_simple/goal": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/node_resource_usage": {
+            "hz": 1,
+            "bw": "587.00 B/s"
+        },
+        "/rosout": {
+            "hz": 3,
+            "bw": "665.00 B/s"
+        },
+        "/rosout_agg": {
+            "hz": 3,
+            "bw": "665.00 B/s"
+        },
+        "/scv_odom": {
+            "hz": 50,
+            "bw": "35.01 KB/s"
+        },
+        "/tf": {
+            "hz": 50,
+            "bw": "4.74 KB/s"
+        },
+        "/tf_static": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/topics_hzbw": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/total_resource": {
+            "hz": 1,
+            "bw": "104.00 B/s"
+        },
+        "/ublox_gps/esfins": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/esfmeas": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/esfstatus": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/fix": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/fix_velocity": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/imu_meas": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/interrupt_time": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/navpvt": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/ublox_gps/navstatus": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/velodyne_nodelet_manager/bond": {
+            "hz": 3,
+            "bw": "420.00 B/s"
+        },
+        "/zed_node/atm_press": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/confidence/confidence_map": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/camera_info": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/depth/depth_registered/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/disparity/disparity_image": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/imu/data": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/imu/data_raw": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/imu/mag": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/camera_info": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left/image_rect_gray/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_cam_imu_transform": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/camera_info": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/left_raw/image_raw_gray/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/odom": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/odom/status": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/path_map": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/path_odom": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/plane": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/plane_marker": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/point_cloud/cloud_registered": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/pose": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/pose/status": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/pose_with_covariance": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/camera_info": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb/image_rect_gray/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/camera_info": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/rgb_raw/image_raw_gray/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/camera_info": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right/image_rect_gray/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/camera_info": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/right_raw/image_raw_gray/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo/image_rect_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/compressed": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/compressed/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/compressed/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/compressedDepth": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/compressedDepth/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/compressedDepth/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/theora": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/theora/parameter_descriptions": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/stereo_raw/image_raw_color/theora/parameter_updates": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/temperature/imu": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/temperature/left": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        },
+        "/zed_node/temperature/right": {
+            "hz": 0,
+            "bw": "0.00 B/s"
+        }
+    },
+    "node_resource_usage": {
+        "/diag_listener_132601_1739186177295": {
+            "cpu": 0.0,
+            "mem": 43556864
+        },
+        "/hunter_base_node": {
+            "cpu": 2.9,
+            "mem": 21098496
+        },
+        "/node_resource_usage": {
+            "cpu": 2.0,
+            "mem": 44933120
+        },
+        "/ros_topic_monitor_129584_1739186105620": {
+            "cpu": 21.5,
+            "mem": 373415936
+        },
+        "/rosout": {
+            "cpu": 0.0,
+            "mem": 20189184
+        },
+        "/total_resource_129226_1739186095996": {
+            "cpu": 1.0,
+            "mem": 58327040
+        }
+    }
+}
