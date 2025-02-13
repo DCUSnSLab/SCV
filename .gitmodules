@@ -23,7 +23,10 @@
 	path = src/sensors/ROS_velodyne
 	url = ../ROS_velodyne.git
 	branch = master
-
+[submodule "src/sensors/zed-ros-wrapper"]
+	path = src/sensors/zed-ros-wrapper
+	url = https://github.com/DCUSnSLab/zed-ros-wrapper.git
+	branch = master
 ## gps submodules
 
 [submodule "src/sensors/gps/rtcm_msgs"]
@@ -53,23 +56,23 @@
 	url = ../ROS_PathPlanning_pkg.git
 	branch = master
 
-[submodule "src/scv_system/localization/hdl_localization/ROS_hdl_localization"]
-	path = src/scv_system/localization/hdl_localization/ROS_hdl_localization
+[submodule "src/scv_system/scv_localization/hdl_localization/ROS_hdl_localization"]
+	path = src/scv_system/scv_localization/hdl_localization/ROS_hdl_localization
 	url = https://github.com/DCUSnSLab/ROS_hdl_localization.git
 	branch = master
 
-[submodule "src/scv_system/localization/hdl_localization/ROS_hdl_global_localization"]
-	path = src/scv_system/localization/hdl_localization/ROS_hdl_global_localization
+[submodule "src/scv_system/scv_localization/hdl_localization/ROS_hdl_global_localization"]
+	path = src/scv_system/scv_localization/hdl_localization/ROS_hdl_global_localization
 	url = https://github.com/DCUSnSLab/ROS_hdl_global_localization.git
 	branch = master
 
-[submodule "src/scv_system/localization/hdl_localization/fast_gicp"]
-	path = src/scv_system/localization/hdl_localization/fast_gicp
+[submodule "src/scv_system/scv_localization/hdl_localization/fast_gicp"]
+	path = src/scv_system/scv_localization/hdl_localization/fast_gicp
 	url = https://github.com/DCUSnSLab/fast_gicp.git
 	branch = master
 
-[submodule "src/scv_system/localization/hdl_localization/ndt_omp"]
-	path = src/scv_system/localization/hdl_localization/ndt_omp
+[submodule "src/scv_system/scv_localization/hdl_localization/ndt_omp"]
+	path = src/scv_system/scv_localization/hdl_localization/ndt_omp
 	url = https://github.com/DCUSnSLab/ndt_omp.git
 	branch = master
 
@@ -79,7 +82,7 @@
 	branch = master
 
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
-	path = src/scv_system/local_path/SCV_Local_Path
+	path = src/scv_system/local_path/SCV_Local_Patha
 	url = ../SCV_Local_Path.git
 	branch = main
 
@@ -94,3 +97,6 @@
 [submodule "src/sensors/vectornav"]
 	path = src/sensors/vectornav
 	url = https://github.com/DCUSnSLab/vectornav
+[submodule "usb_cam"]
+	path = src/sensors/usb_cam
+	url = https://github.com/DCUSnSLab/usb_cam.git

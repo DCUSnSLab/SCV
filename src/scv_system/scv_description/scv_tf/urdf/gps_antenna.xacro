@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="gps_antenna_macro" params="">
+    <link name="gps_antenna_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://scv_tf/meshes/GNSS_antenna.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="blue"> <!-- 색상 변경 -->
+          <color rgba="0.0 0.0 1.0 1.0"/> <!-- 파란색 -->
+        </material>
+      </visual>
+    </link>
+  </xacro:macro>
+</robot>

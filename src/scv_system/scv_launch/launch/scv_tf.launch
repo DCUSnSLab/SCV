@@ -1,0 +1,13 @@
+<launch>
+  <param name="robot_description" command="xacro '$(find scv_tf)/urdf/scv.urdf.xacro'" />
+  <!-- Run the robot_state_publisher and use the robot_description parameter -->
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find scv_tf)/rviz/scv_display.rviz" required="true" />
+
+</launch>
