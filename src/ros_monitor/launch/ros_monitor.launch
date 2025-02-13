@@ -1,0 +1,8 @@
+<launch>
+    <!-- 노드 실행 -->
+    <node pkg="ros_monitor" type="total_resource.py" name="total_resource" output="screen"/>
+    <node pkg="ros_monitor" type="topics_hzbw.py" name="topics_hzbw" output="screen"/>
+    <node pkg="ros_monitor" type="nodes_resource.py" name="nodes_resource" output="screen"/>
+    <node pkg="ros_monitor" type="diag_listener.py" name="diag_listener" output="screen"/>
+    <node pkg="ros_monitor" type="gui.py" name="gui" output="screen"/>
+</launch>
