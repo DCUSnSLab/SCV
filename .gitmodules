@@ -100,3 +100,6 @@
 [submodule "usb_cam"]
 	path = src/sensors/usb_cam
 	url = https://github.com/DCUSnSLab/usb_cam.git
+[submodule "src/scv_system/ROS-Perception"]
+	path = src/scv_system/ROS-Perception
+	url = https://github.com/DCUSnSLab/ROS-Perception
