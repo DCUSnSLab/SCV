@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="velodyne_VLP-32_macro" params="">
+    <link name="velodyne">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <!-- STl 파일 경로 수정: 패키지명·폴더 구조에 맞게 설정 -->
+          <mesh filename="package://scv_tf/meshes/VLP-32C.stl" scale="0.001 0.001 0.001"/>
+
+        </geometry>
+      </visual>
+    </link>
+  </xacro:macro>
+</robot>

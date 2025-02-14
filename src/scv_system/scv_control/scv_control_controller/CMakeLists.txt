@@ -163,11 +163,11 @@ target_link_libraries(scv_base_node  ${catkin_LIBRARIES})
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  src/controller/start
-  src/controller/controller.py
-  src/controller/hunterctrl.py
-  src/controller/moraictrl.py
-  src/controller/control_node.py
+  # src/controller/start
+  # src/controller/controller.py
+  # src/controller/hunterctrl.py
+  # src/controller/moraictrl.py
+  # src/controller/control_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
