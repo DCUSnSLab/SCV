@@ -1,12 +1,11 @@
 <launch>	
 	<include file="$(find velodyne_pointcloud)/launch/VLP-32C_points.launch"/>
 	<!-- Only GPS -->
-	<include file="$(find ublox_gps)/launch/ublox_device.launch"/>
+	<!-- <include file="$(find ublox_gps)/launch/ublox_device.launch"/> -->
 	<!-- RTK + GPS -->
-	<!-- <include file="$(find ntrip_client)/launch/ntrip_client_RTS2.launch"/>  -->
+	<include file="$(find ntrip_client)/launch/ntrip_client_RTS2.launch"/> 
 	<include file="$(find zed_wrapper)/launch/zed_no_tf.launch"/>
 	<include file="$(find vectornav)/launch/vectornav.launch"/>
-	<include file="$(find usb_cam)/launch/fish_eye_cam.launch"/>
+	<!-- <include file="$(find usb_cam)/launch/fish_eye_cam.launch"/> -->
 	
-	<!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find scv_launch)/rviz/pure_pursuit.rviz" /> -->
 </launch>
