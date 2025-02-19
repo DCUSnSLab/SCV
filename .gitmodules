@@ -82,8 +82,8 @@
 	branch = master
 
 [submodule "src/scv_system/local_path/SCV_Local_Path"]
-	path = src/scv_system/local_path/SCV_Local_Patha
-	url = ../SCV_Local_Path.git
+	path = src/scv_system/local_path/SCV_Local_Path
+	url = https://github.com/DCUSnSLab/SCV_Local_Path
 	branch = main
 
 [submodule "src/sensors/ROS_razor_imu_9dof"]
