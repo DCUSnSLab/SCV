@@ -6,6 +6,6 @@
 	<include file="$(find ntrip_client)/launch/ntrip_client_RTS2.launch"/> 
 	<include file="$(find zed_wrapper)/launch/zed_no_tf.launch"/>
 	<include file="$(find vectornav)/launch/vectornav.launch"/>
-	<!-- <include file="$(find usb_cam)/launch/fish_eye_cam.launch"/> -->
+	<include file="$(find usb_cam)/launch/fish_eye_cam.launch"/>
 	
 </launch>

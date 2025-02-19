@@ -46,7 +46,7 @@ def main():
     rospy.init_node('odom_plotter', anonymous=True)
 
     # 토픽 구독
-    rospy.Subscriber('/odom/coordinate/gps', Odometry, gps_callback)
+    #rospy.Subscriber('/odom/coordinate/gps', Odometry, gps_callback)
     rospy.Subscriber('/zed_node/odom', Odometry, zed_callback)
     rospy.Subscriber('/scv_odom', Odometry, scv_callback)
 

@@ -21,5 +21,6 @@ if __name__ == '__main__':
     br = tf2_ros.TransformBroadcaster()
     #rospy.Subscriber('/odom/coordinate/gps', Odometry, handle_odom_pose, br)
     #rospy.Subscriber('scv_odom', Odometry, handle_odom_pose, br)
-    rospy.Subscriber('zed_node/odom', Odometry, handle_odom_pose, br)
+    #rospy.Subscriber('zed_node/odom', Odometry, handle_odom_pose, br)
+    rospy.Subscriber('/odom/coordinate/gps', Odometry, handle_odom_pose, br)
     rospy.spin()
