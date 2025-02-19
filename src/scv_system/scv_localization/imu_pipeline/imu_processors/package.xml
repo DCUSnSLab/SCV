@@ -1,0 +1,23 @@
+<package format="2">
+  <name>imu_processors</name>
+  <version>0.3.1</version>
+  <description>Processors for sensor_msgs::Imu data</description>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/imu_processors</url>
+  <url type="bugtracker">https://github.com/ros-perception/imu_processors/issues</url>
+  <url type="repository">https://github.com/ros-perception/imu_processors</url>
+
+  <author email="chadrockey@gmail.com">Chad Rockey</author>
+  <maintainer email="pbovbel@clearpathrobotics.com">Paul Bovbel</maintainer>
+  <maintainer email="tbaltovski@clearpathrobotics.com">Tony Baltovski</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+</package>
