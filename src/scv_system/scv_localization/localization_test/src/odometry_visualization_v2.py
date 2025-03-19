@@ -1,132 +1,131 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import rospy
-from nav_msgs.msg import Odometry
-import matplotlib.pyplot as plt
 import math
-import threading
-
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from nav_msgs.msg import Odometry
 from tf.transformations import euler_from_quaternion
 
-class OdomVisualizer:
-    def __init__(self):
-        rospy.init_node('odom_visualizer', anonymous=True)
+# --------------------
+# 위치와 yaw(라디안)를 저장할 리스트
+gps_x, gps_y, gps_yaw = [], [], []
+zed_x, zed_y, zed_yaw = [], [], []
+scv_x, scv_y, scv_yaw = [], [], []
 
-        # 실시간 플롯을 위해 interactive mode 켜기
-        plt.ion()
-        self.fig, self.ax = plt.subplots()
-        self.ax.set_title("Real-time Odom Visualization")
-        self.ax.set_xlabel("X (m)")
-        self.ax.set_ylabel("Y (m)")
-        # 좌표계를 동일 비율로 보기 위해 설정
-        self.ax.set_aspect('equal', adjustable='box')
+def gps_callback(msg):
+    gps_x.append(msg.pose.pose.position.x)
+    gps_y.append(msg.pose.pose.position.y)
+    q = msg.pose.pose.orientation
+    _, _, yaw = euler_from_quaternion([q.x, q.y, q.z, q.w])
+    gps_yaw.append(yaw)
 
-        # -------------------- 구독할 토픽 4개 정의 --------------------
-        # 실제로 쓰시려는 토픽 이름에 맞게 변경하세요.
-        self.topics = {
-            '/odom/coordinate/imu': {
-                'x': [], 'y': [], 'theta': [], 'color': 'r', 'label': 'IMU'
-            },
-            '/odom/coordinate/gps': {
-                'x': [], 'y': [], 'theta': [], 'color': 'g', 'label': 'GPS'
-            },
-            '/odom/dwa': {
-                'x': [], 'y': [], 'theta': [], 'color': 'b', 'label': 'DWA'
-            },
-            '/odom/fused': {
-                'x': [], 'y': [], 'theta': [], 'color': 'm', 'label': 'FUSED'
-            }
-        }
+def zed_callback(msg):
+    zed_x.append(msg.pose.pose.position.x)
+    zed_y.append(msg.pose.pose.position.y)
+    q = msg.pose.pose.orientation
+    _, _, yaw = euler_from_quaternion([q.x, q.y, q.z, q.w])
+    zed_yaw.append(yaw)
 
-        # -------------------- ROS Subscriber 설정 --------------------
-        for t in self.topics.keys():
-            rospy.Subscriber(t, Odometry, self.odom_callback, callback_args=t)
+def scv_callback(msg):
+    scv_x.append(msg.pose.pose.position.x)
+    scv_y.append(msg.pose.pose.position.y)
+    q = msg.pose.pose.orientation
+    _, _, yaw = euler_from_quaternion([q.x, q.y, q.z, q.w])
+    scv_yaw.append(yaw)
 
-        # -------------------- Matplotlib 초기 Plot 설정 --------------------
-        # 각 토픽별로 저장된 위치 데이터를 시각화하기 위한 라인(혹은 점) 객체
-        # (여기서는 사실 points-only로 쓰지만, 형태를 맞춰두었음)
-        self.lines = {}
-        for t, data in self.topics.items():
-            line, = self.ax.plot([], [], color=data['color'], marker='o', linestyle='', label=data['label'])
-            self.lines[t] = line
 
-        self.ax.legend()
+# ------------------------------------------------------------
+# (1) 첫 번째 애니메이션: 위치 궤적을 그리는 함수
+def animate_map(frame):
+    """
+    FuncAnimation에 의해 주기적으로 호출되어
+    GPS/ZED/SCV의 x,y 궤적을 갱신해서 그려줍니다.
+    """
+    ax_map.cla()  # 이전 그림 지우기
 
-        # -------------------- Plot 업데이트 스레드 시작 --------------------
-        # 메인쓰레드는 rospy.spin() 등으로 콜백을 돌릴 것이고,  
-        # 별도 스레드에서 Matplotlib Plot을 주기적으로 업데이트.
-        self.update_thread = threading.Thread(target=self.update_loop)
-        self.update_thread.daemon = True
-        self.update_thread.start()
+    # GPS
+    if len(gps_x) > 0:
+        ax_map.plot(gps_x, gps_y, 'r-', label='GPS Odom')
 
-    def odom_callback(self, msg, topic):
-        """ Odometry 메시지가 수신될 때마다, position/orientation을 저장 """
-        x = msg.pose.pose.position.x
-        y = msg.pose.pose.position.y
+    # ZED
+    if len(zed_x) > 0:
+        ax_map.plot(zed_x, zed_y, 'g-', label='ZED Odom')
 
-        # orientation에서 (roll, pitch, yaw) 추출
-        orientation_q = msg.pose.pose.orientation
-        orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
-        (roll, pitch, yaw) = euler_from_quaternion(orientation_list)
+    # SCV
+    if len(scv_x) > 0:
+        ax_map.plot(scv_x, scv_y, 'b-', label='SCV Odom')
 
-        self.topics[topic]['x'].append(x)
-        self.topics[topic]['y'].append(y)
-        self.topics[topic]['theta'].append(yaw)
+    ax_map.set_xlabel('X')
+    ax_map.set_ylabel('Y')
+    ax_map.set_title('Real-time Odom Comparison')
+    ax_map.grid(True)
+    ax_map.legend()
 
-    def update_loop(self):
-        """ 별도 스레드에서 주기적으로 Plot 업데이트 수행 """
-        rate = rospy.Rate(5)  # 5Hz (초당 5회) 업데이트
-        while not rospy.is_shutdown():
-            self.update_plot()
-            plt.pause(0.01)  # Matplotlib 이벤트 루프를 잠시 돌림
-            rate.sleep()
+# ------------------------------------------------------------
+# (2) 두 번째 애니메이션: 각 오도메트리의 yaw(도 단위)를 시계열로 그리는 함수
+def animate_orientation(frame):
+    """
+    FuncAnimation에 의해 주기적으로 호출되어
+    GPS/ZED/SCV의 yaw(도 단위) 변화를 갱신해서 그려줍니다.
+    x축: 데이터 개수(= 샘플 인덱스)
+    y축: yaw(deg)
+    """
+    ax_yaw.cla()  # 이전 그림 지우기
 
-    def update_plot(self):
-        """ 실제로 Plot의 데이터를 갱신하고, 화살표도 표시 """
-        # 축 초기화 (배경 지우기)
-        self.ax.clear()
-        self.ax.set_title("Real-time Odom Visualization")
-        self.ax.set_xlabel("X (m)")
-        self.ax.set_ylabel("Y (m)")
-        self.ax.set_aspect('equal', adjustable='box')
+    # yaw를 도(deg) 단위로 변환
+    gps_yaw_deg = [math.degrees(y) for y in gps_yaw]
+    zed_yaw_deg = [math.degrees(y) for y in zed_yaw]
+    scv_yaw_deg = [math.degrees(y) for y in scv_yaw]
 
-        # 각 토픽별로 데이터 갱신
-        for t, dataset in self.topics.items():
-            x_list = dataset['x']
-            y_list = dataset['y']
-            theta_list = dataset['theta']
-            color = dataset['color']
-            label = dataset['label']
+    # x축(샘플 인덱스)
+    gps_idx = range(len(gps_yaw_deg))
+    zed_idx = range(len(zed_yaw_deg))
+    scv_idx = range(len(scv_yaw_deg))
 
-            # 위치 데이터
-            if len(x_list) > 0:
-                # 점(point) 모양으로 전체 궤적(plot)
-                self.ax.plot(x_list, y_list, color=color, marker='o', linestyle='', label=label)
+    if len(gps_yaw_deg) > 0:
+        ax_yaw.plot(gps_idx, gps_yaw_deg, 'r-', label='GPS Yaw (deg)')
+    if len(zed_yaw_deg) > 0:
+        ax_yaw.plot(zed_idx, zed_yaw_deg, 'g-', label='ZED Yaw (deg)')
+    if len(scv_yaw_deg) > 0:
+        ax_yaw.plot(scv_idx, scv_yaw_deg, 'b-', label='SCV Yaw (deg)')
 
-                # 마지막 점에 대해서는 방향(orientation) 화살표 표시
-                arrow_length = 0.3  # 화살표 길이
-                last_x = x_list[-1]
-                last_y = y_list[-1]
-                last_yaw = theta_list[-1]
-                
-                # (cos(yaw), sin(yaw)) 벡터 방향으로 화살표 그리기
-                self.ax.arrow(
-                    last_x, last_y,
-                    arrow_length*math.cos(last_yaw),
-                    arrow_length*math.sin(last_yaw),
-                    head_width=0.08, 
-                    head_length=0.1,
-                    fc=color, ec=color
-                )
+    ax_yaw.set_xlabel('Sample Index')
+    ax_yaw.set_ylabel('Yaw (degrees)')
+    ax_yaw.set_title('Orientation Comparison')
+    ax_yaw.grid(True)
+    ax_yaw.legend()
 
-        self.ax.legend()
-        self.ax.relim()
-        self.ax.autoscale_view()
 
 def main():
-    visualizer = OdomVisualizer()
-    # ROS 콜백 무한루프
+    rospy.init_node('odom_plotter', anonymous=True)
+
+    # --------------------
+    # 토픽 구독
+    rospy.Subscriber('/odom/coordinate/gps', Odometry, gps_callback)
+    rospy.Subscriber('/zed_node/odom', Odometry, zed_callback)
+    rospy.Subscriber('/scv_odom', Odometry, scv_callback)
+
+    # --------------------
+    # Matplotlib Figure 2개 생성
+    global fig_map, ax_map
+    global fig_yaw, ax_yaw
+
+    fig_map, ax_map = plt.subplots()
+    fig_yaw, ax_yaw = plt.subplots()
+
+    # --------------------
+    # FuncAnimation - 첫 번째(fig_map)와 두 번째(fig_yaw)에 대한 애니메이션을 각각 생성
+    ani_map = animation.FuncAnimation(fig_map, animate_map, interval=200)
+    ani_yaw = animation.FuncAnimation(fig_yaw, animate_orientation, interval=200)
+
+    # plt.show()를 호출하면 figure가 모두 열림
+    # block=True로 하면 이 스크립트가 여기서 멈추지만,
+    # 아래에서 rospy.spin()도 동작해야 하므로 일반적으로는 False로 쓰고,
+    # ROS 메인 루프를 돌리면서 Matplotlib 이벤트도 돌아가게 합니다.
+    plt.show(block=False)
+
     rospy.spin()
 
 if __name__ == '__main__':
