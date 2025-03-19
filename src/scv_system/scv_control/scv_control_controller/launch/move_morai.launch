@@ -1,0 +1,6 @@
+<launch>
+  <param name="robot_description" command="xacro '$(find scv_control_controller)/urdf/morai.urdf'" />
+  <!-- Run the robot_state_publisher and use the robot_description parameter -->
+
+  <node name="move_morai" pkg="start" type="robot_state_publisher" />
+</launch>
