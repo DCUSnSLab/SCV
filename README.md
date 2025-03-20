@@ -1,6 +1,15 @@
 # SCV(Service Co-operation Vehicle)
 SCV(Service Co-operation Vehicle) is a self-driving vehicle aimed at campus driving and services.
 
+## TODO
+- Set waypoint creation min range
+- 
+
+# Setup development env
+
+- git clone --recursive (git repo url)
+- checkout submodule branch(not commit hash)
+
 # Sub Project Lists (meaning submodules)
 All sub Projects are in **src** directory
 - SCV System
