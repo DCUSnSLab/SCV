@@ -3,13 +3,13 @@
 import functools
 import os
 import subprocess
-
 import json
 
 import rosnode
 import rospy
 
 import psutil
+import pynvml
 
 try:
   from xmlrpc.client import ServerProxy
@@ -45,24 +45,33 @@ class NodeManager:
             'cpu': self.proc.cpu_percent(),
             'mem': self.proc.memory_info().rss
         }
+        
+        
         print(data)
         return data
 
     def alive(self):
         return self.proc.is_running()
 
-
+class GpuNodeManager:
+    def __init__(self,):
+        try:
+            pynvml.nvmlInit()
+        except pynvml.NVMLError as e:
+            rospy.logerr("NVML initialization failed: {}".format(e))
+        
+        
 def main():
-    rospy.init_node("nodes_resource")
+    rospy.init_node('nodes_resource', anonymous=False)
     master = rospy.get_master()
+    rate = rospy.Rate(1)
 
     poll_period = rospy.get_param('~poll_period', 1.0)
     #source_list = rospy.get_param('~source_list', [])
     node_map = {}
     
     nodes_resource_pub = rospy.Publisher('/nodes_resource', String, queue_size=100)
-
-
+    
     #this_ip = os.environ.get("ROS_IP")
     #ignored_nodes = set()
 
@@ -130,6 +139,7 @@ def main():
                     else:
                         try:
                             node_map[node] = NodeManager(name=node, pid=pid)
+
                         except psutil.NoSuchProcess:
                             rospy.logwarn("[monitor] psutil can't see %s (pid = %d). Ignoring" % (node, pid))
                         else:

@@ -1,0 +1,9 @@
+/ublox_gps/fix
+/ublox_gps/fix_velocity
+/ublox_gps/navpvt
+/usb_cam/image_raw/compressed
+/zed_node/depth/camera_info
+/zed_node/depth/depth_registered
+/zed_node/left/camera_info
+/zed_node/left/image_rect_color
+/zed_node/obj_det/objects

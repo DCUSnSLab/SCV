@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 import os
 import json
 
@@ -42,9 +44,10 @@ class JSONManager:
             
             'topics_hzbw': {},
             'node_resource_usage': {},
+            'gpu_pmon': {},
         }
-        #현재 파일 기준으로 설정
-        self.file_path = os.path.join(os.path.dirname(__file__), "../data/diag.json")
+        
+        self.file_path = os.path.join(os.path.dirname(__file__), "/home/scv/SCV/src/ros_monitor/data/diag.json")
         
         #check directory
         # directory = os.path.dirname(self.file_path)
@@ -71,6 +74,7 @@ class JSONManager:
         '''save json data to file'''
         try:
             with open(self.file_path, 'w') as file:
+                print(self.data)
                 json.dump(self.data, file, indent=4)
         except Exception as e:
             rospy.logwarn(f'Failed to save JSON file: {e}')
@@ -159,8 +163,8 @@ def nodes_resource_callback(nodes_resource_sub):
         node['mem'] : str
         '''
         
-        current_nodes = {node['node']: {'cpu': node['cpu']/logical_cores, 'mem': convert_bytes(v=node['mem'])} for node in data if 'node' in node}
-
+        current_nodes = {node['node']: {'cpu': round(node['cpu']/logical_cores, 3), 'mem': convert_bytes(v=node['mem'])} for node in data if 'node' in node}
+        
         manager.data['node_resource_usage'] = current_nodes
 
         # for node in data:
@@ -173,6 +177,33 @@ def nodes_resource_callback(nodes_resource_sub):
     except json.JSONDecodeError as e:
         rospy.logwarn(f'failed to parse nodes_resource json: {e}')
 
+def gpu_pmon_callback(gpu_pmon_sub):
+    try:
+        data = json.loads(gpu_pmon_sub.data)
+        '''
+        10 colum or 8 colum
+        '''
+        parsed_data_list = {}
+        
+        for parsed_data in data:
+            key = parsed_data['pid']
+            parsed_data_list[parsed_data['pid']] = {
+                'gpu_idx': parsed_data['gpu_idx'],
+                'type': parsed_data['type'],
+                'sm_usage': parsed_data['sm_usage'],
+                'mem_usage': parsed_data['mem_usage'],
+                'enc_usage': parsed_data['enc_usage'],
+                'dec_usage': parsed_data['dec_usage'],
+                'jpg_usage': parsed_data['jpg_usage'],
+                'ofa_usage': parsed_data['ofa_usage'],
+                'command': parsed_data['command'],
+            }
+
+        
+        manager.data['gpu_pmon'] = parsed_data_list
+    except json.JSONDecodeError as e:
+        rospy.logwarn(f'failed to parse gpu_pmon json: {e}')
+        
 def main():
     rospy.init_node('diag_listener', anonymous=True)
 
@@ -182,7 +213,7 @@ def main():
     total_resource_sub = rospy.Subscriber('/total_resource', Float32MultiArray, total_resource_callback)
     topic_hzbw_sub = rospy.Subscriber('/topics_hzbw', String, topics_hzbw_callback)
     nodes_resource_sub = rospy.Subscriber('/nodes_resource', String, nodes_resource_callback)
-
+    gpu_pmon_sub = rospy.Subscriber('/gpu_pmon', String, gpu_pmon_callback)
     rospy.spin()
 
 if __name__ == '__main__':

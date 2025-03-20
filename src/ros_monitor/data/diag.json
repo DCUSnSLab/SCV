@@ -1,45 +1,45 @@
 {
     "total_resource": {
-        "cpu_user": 93169.6171875,
-        "cpu_nice": 15.84000015258789,
-        "cpu_system": 25907.76953125,
-        "cpu_idle": 573422.0,
-        "cpu_iowait": 541.3499755859375,
+        "cpu_user": 14216.2802734375,
+        "cpu_nice": 3.8299999237060547,
+        "cpu_system": 2995.449951171875,
+        "cpu_idle": 212951.9375,
+        "cpu_iowait": 46.33000183105469,
         "cpu_irq": 0.0,
-        "cpu_softirq": 3245.4599609375,
+        "cpu_softirq": 263.42999267578125,
         "cpu_steal": 0.0,
         "cpu_guest": 0.0,
         "cpu_guest_nice": 0.0,
-        "cpu_usage_percent": 21.139240264892578,
+        "cpu_usage_percent": 18.508996963500977,
         "cpu_temp": 66.0,
-        "cpu_load_1min": 1.1299999952316284,
-        "cpu_load_5min": 0.699999988079071,
-        "cpu_load_15min": 0.7400000095367432,
-        "mem_used": 6941.62109375,
+        "cpu_load_1min": 1.309999942779541,
+        "cpu_load_5min": 1.909999966621399,
+        "cpu_load_15min": 2.2200000286102295,
+        "mem_used": 8148.52734375,
         "mem_total": 31979.79296875,
-        "mem_usage_percent": 21.70627212524414,
-        "gpu_usage_percent": 9.0,
-        "gpu_mem_used": 1699.375,
+        "mem_usage_percent": 25.48023796081543,
+        "gpu_usage_percent": 14.0,
+        "gpu_mem_used": 2839.9375,
         "gpu_mem_total": 12288.0,
-        "gpu_mem_usage": 13.829548835754395,
-        "gpu_temp": 53.0
+        "gpu_mem_usage": 23.11147117614746,
+        "gpu_temp": 54.0
     },
     "topics_hzbw": {
-        "/back_fisheye_cam/camera_info": {
+        "/cam/camera_info": {
             "hz": 10,
-            "bw": "3.06 KB/s"
+            "bw": "2.93 KB/s"
         },
-        "/back_fisheye_cam/image_raw": {
+        "/cam/image_raw": {
             "hz": 10,
             "bw": "59.33 MB/s"
         },
         "/left_fisheye_cam/camera_info": {
-            "hz": 0,
-            "bw": "0.00 B/s"
+            "hz": 10,
+            "bw": "3.06 KB/s"
         },
         "/left_fisheye_cam/image_raw": {
-            "hz": 0,
-            "bw": "0.00 B/s"
+            "hz": 10,
+            "bw": "59.33 MB/s"
         },
         "/right_fisheye_cam/camera_info": {
             "hz": 0,
@@ -57,29 +57,61 @@
             "hz": 0,
             "bw": "0.00 B/s"
         },
+        "/ublox_gps/esfins": {
+            "hz": 10,
+            "bw": "360.00 B/s"
+        },
+        "/ublox_gps/esfmeas": {
+            "hz": 98,
+            "bw": "3.16 KB/s"
+        },
         "/ublox_gps/fix": {
             "hz": 10,
-            "bw": "1.16 KB/s"
+            "bw": "1.29 KB/s"
+        },
+        "/ublox_gps/fix_velocity": {
+            "hz": 10,
+            "bw": "3.59 KB/s"
         },
         "/ublox_gps/imu_meas": {
-            "hz": 193,
-            "bw": "59.37 KB/s"
+            "hz": 216,
+            "bw": "69.19 KB/s"
+        },
+        "/ublox_gps/interrupt_time": {
+            "hz": 208,
+            "bw": "8.94 KB/s"
+        },
+        "/ublox_gps/monhw": {
+            "hz": 1,
+            "bw": "60.00 B/s"
+        },
+        "/ublox_gps/navatt": {
+            "hz": 10,
+            "bw": "320.00 B/s"
+        },
+        "/ublox_gps/navposecef": {
+            "hz": 10,
+            "bw": "200.00 B/s"
         },
         "/ublox_gps/navpvt": {
             "hz": 10,
             "bw": "920.00 B/s"
         },
-        "/ublox_gps/navstatus": {
-            "hz": 0,
-            "bw": "0.00 B/s"
+        "/ublox_gps/rxmrtcm": {
+            "hz": 4,
+            "bw": "32.00 B/s"
+        },
+        "/ublox_gps/ublox_gps/rtcm": {
+            "hz": 4,
+            "bw": "800.00 B/s"
         },
         "/vectornav/IMU": {
             "hz": 40,
-            "bw": "12.54 KB/s"
+            "bw": "12.50 KB/s"
         },
         "/vectornav/Mag": {
             "hz": 40,
-            "bw": "4.73 KB/s"
+            "bw": "4.69 KB/s"
         },
         "/velodyne_points": {
             "hz": 0,
@@ -90,16 +122,16 @@
             "bw": "5.52 KB/s"
         },
         "/zed_node/depth/depth_registered": {
-            "hz": 14,
-            "bw": "12.31 MB/s"
+            "hz": 15,
+            "bw": "13.18 MB/s"
         },
         "/zed_node/imu/data": {
-            "hz": 197,
-            "bw": "62.72 KB/s"
+            "hz": 200,
+            "bw": "63.67 KB/s"
         },
         "/zed_node/imu/data_raw": {
-            "hz": 197,
-            "bw": "62.72 KB/s"
+            "hz": 200,
+            "bw": "63.67 KB/s"
         },
         "/zed_node/imu/mag": {
             "hz": 50,
@@ -110,8 +142,8 @@
             "bw": "11.04 KB/s"
         },
         "/zed_node/left/image_rect_color": {
-            "hz": 14,
-            "bw": "12.31 MB/s"
+            "hz": 15,
+            "bw": "13.18 MB/s"
         },
         "/zed_node/odom": {
             "hz": 15,
@@ -123,7 +155,7 @@
         },
         "/zed_node/path_odom": {
             "hz": 2,
-            "bw": "44.94 KB/s"
+            "bw": "1.85 MB/s"
         },
         "/zed_node/pose": {
             "hz": 15,
@@ -131,77 +163,168 @@
         }
     },
     "node_resource_usage": {
-        "/back_fisheye_cam": {
-            "cpu": 1.475,
-            "mem": "136.96 MB/s"
+        "/cam": {
+            "cpu": 1.488,
+            "mem": "171.07 MB/s"
         },
         "/diag_listener": {
             "cpu": 0.0,
-            "mem": "41.41 MB/s"
+            "mem": "42.15 MB/s"
+        },
+        "/diag_listener_50937_1742376700962": {
+            "cpu": 0.0,
+            "mem": "42.80 MB/s"
         },
         "/left_fisheye_cam": {
-            "cpu": 0.0,
-            "mem": "88.46 MB/s"
+            "cpu": 1.738,
+            "mem": "171.75 MB/s"
         },
         "/nmea_pub": {
             "cpu": 0.0,
-            "mem": "40.40 MB/s"
+            "mem": "40.99 MB/s"
         },
         "/nodes_resource": {
             "cpu": 0.125,
-            "mem": "42.77 MB/s"
+            "mem": "43.88 MB/s"
+        },
+        "/nodes_resource_py_scv_Nuvo_8108GC_Series_139635_8810559519356911094": {
+            "cpu": 0.125,
+            "mem": "43.88 MB/s"
         },
         "/ntrip_client/ntrip_client_node": {
             "cpu": 0.0,
-            "mem": "43.64 MB/s"
+            "mem": "43.89 MB/s"
         },
         "/right_fisheye_cam": {
             "cpu": 0.0,
-            "mem": "88.69 MB/s"
+            "mem": "89.23 MB/s"
         },
         "/rosout": {
             "cpu": 0.0,
-            "mem": "18.76 MB/s"
+            "mem": "18.48 MB/s"
+        },
+        "/rviz_1742376025322298060": {
+            "cpu": 1.85,
+            "mem": "277.09 MB/s"
         },
         "/topics_hzbw": {
-            "cpu": 1.1125,
-            "mem": "71.59 MB/s"
+            "cpu": 1.738,
+            "mem": "110.21 MB/s"
         },
         "/total_resource": {
             "cpu": 0.0,
-            "mem": "55.46 MB/s"
+            "mem": "56.37 MB/s"
         },
         "/ublox_gps": {
             "cpu": 0.25,
-            "mem": "20.49 MB/s"
+            "mem": "20.61 MB/s"
         },
         "/vectornav": {
             "cpu": 0.125,
-            "mem": "19.21 MB/s"
+            "mem": "18.83 MB/s"
         },
         "/velodyne_nodelet_manager": {
             "cpu": 0.0,
-            "mem": "31.38 MB/s"
+            "mem": "32.06 MB/s"
         },
         "/velodyne_nodelet_manager_driver": {
             "cpu": 0.0,
-            "mem": "22.52 MB/s"
+            "mem": "22.49 MB/s"
         },
         "/velodyne_nodelet_manager_laserscan": {
             "cpu": 0.0,
-            "mem": "22.14 MB/s"
+            "mem": "22.43 MB/s"
         },
         "/velodyne_nodelet_manager_transform": {
             "cpu": 0.0,
-            "mem": "22.36 MB/s"
+            "mem": "22.65 MB/s"
         },
         "/zed_node": {
-            "cpu": 6.9,
-            "mem": "1.06 GB/s"
+            "cpu": 8.037,
+            "mem": "2.28 GB/s"
         },
         "/zed_state_publisher": {
             "cpu": 0.0,
-            "mem": "23.49 MB/s"
+            "mem": "23.65 MB/s"
+        }
+    },
+    "gpu_pmon": {
+        "911": {
+            "gpu_idx": "0",
+            "type": "G",
+            "sm_usage": null,
+            "mem_usage": null,
+            "enc_usage": null,
+            "dec_usage": null,
+            "jpg_usage": null,
+            "ofa_usage": null,
+            "command": "Xorg"
+        },
+        "1367": {
+            "gpu_idx": "0",
+            "type": "G",
+            "sm_usage": 3.0,
+            "mem_usage": 1.0,
+            "enc_usage": null,
+            "dec_usage": null,
+            "jpg_usage": null,
+            "ofa_usage": null,
+            "command": "Xorg"
+        },
+        "1492": {
+            "gpu_idx": "0",
+            "type": "G",
+            "sm_usage": null,
+            "mem_usage": null,
+            "enc_usage": null,
+            "dec_usage": null,
+            "jpg_usage": null,
+            "ofa_usage": null,
+            "command": "gnome-shell"
+        },
+        "4280": {
+            "gpu_idx": "0",
+            "type": "G",
+            "sm_usage": null,
+            "mem_usage": null,
+            "enc_usage": null,
+            "dec_usage": null,
+            "jpg_usage": null,
+            "ofa_usage": null,
+            "command": "firefox"
+        },
+        "23637": {
+            "gpu_idx": "0",
+            "type": "G",
+            "sm_usage": null,
+            "mem_usage": null,
+            "enc_usage": null,
+            "dec_usage": null,
+            "jpg_usage": null,
+            "ofa_usage": null,
+            "command": "gnome-control-c"
+        },
+        "30694": {
+            "gpu_idx": "0",
+            "type": "G",
+            "sm_usage": 3.0,
+            "mem_usage": 1.0,
+            "enc_usage": null,
+            "dec_usage": null,
+            "jpg_usage": null,
+            "ofa_usage": null,
+            "command": "rviz"
+        },
+        "31148": {
+            "gpu_idx": "0",
+            "type": "C",
+            "sm_usage": 4.0,
+            "mem_usage": 1.0,
+            "enc_usage": null,
+            "dec_usage": null,
+            "jpg_usage": null,
+            "ofa_usage": null,
+            "command": "zed_wrapper_nod"
         }
     }
 }

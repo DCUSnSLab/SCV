@@ -64,6 +64,7 @@ class TopicMonitor(threading.Thread):
         n_1s = len(self.timestamps)
 
         bw = sum(self.byte_sizes)
+        
         return n_1s, bw
     # def get_bw(self):
     #     now = time.time()
@@ -84,6 +85,9 @@ class TopicMonitor(threading.Thread):
 
 class ROSTopicMonitor:
     def __init__(self):
+        self.yaml_path = '/home/scv/SCV/src/ros_monitor/cfg/topic_lst.yaml'
+        self.monitored_topics = self.load_yaml()
+        
         rospy.init_node("topics_hzbw", anonymous=True)
         
         #self.master = rosgraph.masterapi.Master('/roscore')
@@ -100,9 +104,7 @@ class ROSTopicMonitor:
         self.lock = threading.Lock()
         self.monitor_thread = threading.Thread(target=self.run_monitoring)
         self.monitor_thread.start()
-        
-        self.yaml_path = '/home/scv/SCV/src/ros_monitor/cfg/topic_lst.yaml'
-        self.monitored_topics = self.load_yaml()
+    
         
     def load_yaml(self):
         if not os.path.exists(self.yaml_path):
@@ -113,7 +115,7 @@ class ROSTopicMonitor:
             with open(self.yaml_path, 'r') as f:
                 topics = {line.strip() for line in f if line.strip()}
                 
-                #rospy.loginfo(f"[monitor] list of topics to monitor: {topics}")
+                rospy.loginfo(f"[monitor] list of topics to monitor: {topics}")
                 return topics
         except Exception as e:
             rospy.logerr(f"[monitor] Error loading yaml file: {e}")
@@ -138,13 +140,12 @@ class ROSTopicMonitor:
         #     self.topic_monitors[topic].join()
         #     del self.topic_monitors[topic]
         # 노드 목록이 변경된 경우에만 정렬 수행
-        
         if new_topics or removed_topics:
             sorted_topics = sorted(active_topics)  # 이름 기준 오름차순 정렬
 
             # 기존 토픽 리스트 업데이트
             self.previous_topics = set(sorted_topics)
-            
+
             # 새 토픽 추가
             for topic in new_topics:
                 monitor = TopicMonitor(topic)
