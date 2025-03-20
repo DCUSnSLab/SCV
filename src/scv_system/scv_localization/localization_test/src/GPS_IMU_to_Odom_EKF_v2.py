@@ -18,7 +18,8 @@ class IMUGPSToOdometryEKF:
 
         # ------------------- Publisher -------------------
         self.current_utm_position_pub  = rospy.Publisher('/current_utm_relative_position', Point, queue_size=10)
-        self.odom_pub_ekf   = rospy.Publisher('/odom/ekf', Odometry, queue_size=50)
+        # self.odom_pub_ekf   = rospy.Publisher('/odom/ekf', Odometry, queue_size=50)
+        self.odom_pub_ekf   = rospy.Publisher('/odom/coordinate/gps', Odometry, queue_size=50)
 
         # ------------------- Subscriber -------------------
         self.gps_fix_sub = rospy.Subscriber('/ublox_gps/fix', NavSatFix, self.gps_fix_callback)
