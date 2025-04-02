@@ -1,0 +1,28 @@
+digraph G {
+"front_box" -> "zed2i_base_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"hunter_base_link" -> "front_box"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"zed2i_base_link" -> "zed2i_camera_center"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"zed2i_camera_center" -> "zed2i_left_camera_frame"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"zed2i_left_camera_frame" -> "zed2i_left_camera_optical_frame"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"zed2i_camera_center" -> "zed2i_right_camera_frame"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"zed2i_right_camera_frame" -> "zed2i_right_camera_optical_frame"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"zed2i_left_camera_frame" -> "zed2i_imu_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"hunter_base_link" -> "back_box"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "hunter_base_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"back_box" -> "cam"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"back_box" -> "gps_antenna_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"front_box" -> "imu_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"front_box" -> "velodyne"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1742762618.195 sec old)\nBuffer length: 0.000 sec\n"];
+"front_steer_left_link" -> "front_left_wheel_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+"hunter_base_link" -> "front_steer_left_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+"front_steer_right_link" -> "front_right_wheel_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+"hunter_base_link" -> "front_steer_right_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+"hunter_base_link" -> "front_steer_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+"hunter_base_link" -> "left_rear_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+"hunter_base_link" -> "rear_wheel_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+"hunter_base_link" -> "right_rear_link"[label="Broadcaster: /play_1742762558370833006\nAverage rate: 10.204 Hz\nMost recent transform: 1739956046.512 ( 2806571.683 sec old)\nBuffer length: 4.900 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1742762618.195"[ shape=plaintext ] ;
+ }->"base_link";
+}

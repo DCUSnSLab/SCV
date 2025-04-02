@@ -1,0 +1,30 @@
+<launch>
+  <!-- navsat_transform_node: GPS 데이터를 UTM으로 변환 -->
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform" clear_params="true">
+    <!-- 주 파라미터 설정 -->
+    <param name="frequency" value="30" />
+    <param name="delay" value="0.0" />
+    <param name="magnetic_declination_radians" value="0" />
+    <param name="yaw_offset" value="0" />
+    <param name="zero_altitude" value="true" />
+    
+    <!-- 중요한 파라미터: odometry의 yaw 대신 GPS 이동 방향을 사용 -->
+    <param name="use_odometry_yaw" value="false" />
+
+    <!-- 토픽 리맵 -->
+    <remap from="gps/fix" to="/ublox_gps/fix"/>
+    <remap from="imu/data" to="/vectornav/IMU"/>
+    <!-- local EKF 결과를 받아 global EKF에 제공 -->
+    <remap from="odometry/filtered" to="/odometry/filtered_local"/>
+  </node>
+  
+  <!-- 로컬 EKF 노드 실행 -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_local">
+    <rosparam file="$(find robot_localization)/params/ekf_local.yaml" command="load" />
+  </node>
+  
+  <!-- 글로벌 EKF 노드 실행 -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_global">
+    <rosparam file="$(find robot_localization)/params/ekf_global.yaml" command="load" />
+  </node>
+</launch>

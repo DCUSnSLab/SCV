@@ -1,0 +1,35 @@
+# ekf_global.yaml
+frequency: 30
+sensor_timeout: 0.2
+
+two_d_mode: true
+map_frame: utm            # global 좌표계: UTM
+odom_frame: odom
+base_link_frame: base_link
+world_frame: utm          # 전역 좌표계
+
+# Local EKF (odometry/filtered_local) 입력
+odom0: /odometry/filtered_local  
+odom0_config: [true, true, false,
+               false, false, true,
+               true, false, false,
+               false, false, true,
+               false, false, false]
+
+# IMU 입력 (자이로 데이터만 사용)
+imu0: /vectornav/IMU
+imu0_config: [false, false, false,
+              false, false, false,  # 절대 orientation은 사용하지 않음
+              false, false, false,
+              false, false, true,   # angular velocity (yaw)만 사용
+              false, false, false]
+
+# GPS 입력 (NavSatFix 데이터 → UTM 변환 후 사용)
+navsat0: /ublox_gps/fix  
+navsat0_config: [true, true, false,    # latitude, longitude 사용 (altitude 무시)
+                 false, false, false,
+                 false, false, false,
+                 false, false, false,
+                 false, false, false]
+
+use_control: false

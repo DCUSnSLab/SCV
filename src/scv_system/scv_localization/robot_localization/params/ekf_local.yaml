@@ -1,0 +1,33 @@
+# ekf_local.yaml
+frequency: 50
+sensor_timeout: 0.1
+
+two_d_mode: true
+map_frame: map           # (local에서는 map과 odom이 동일한 역할을 할 수 있음)
+odom_frame: odom
+base_link_frame: base_link
+world_frame: odom         # local 좌표계를 사용
+
+# Wheel Odometry 입력
+odom0: /scv_odom
+odom0_config: [true, true, false,   # x, y 사용 (z는 무시)
+               false, false, true,  # roll, pitch 무시, yaw 사용
+               true, false, false,  # vx 사용
+               false, false, true,  # vyaw 사용
+               false, false, false]
+
+# Visual Odometry 입력
+odom1: /zed_node/odom
+odom1_config: [true, true, false,
+               false, false, true,
+               true, false, false,
+               false, false, true,
+               false, false, false]
+
+# IMU 입력 (자이로 데이터만 사용하여 상대각속도 보정)
+imu0: /vectornav/IMU
+imu0_config: [false, false, false,    # position 무시
+              false, false, false,    # orientation 전체 무시 (자이로만 사용)
+              false, false, false,
+              false, false, true,     # angular velocity (yaw)만 사용
+              false, false, false]
