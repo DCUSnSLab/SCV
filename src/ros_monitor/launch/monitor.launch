@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="ros_monitor" type="latency_logger.py" name="latency_logger" output="screen"/>
+    <node pkg="ros_monitor" type="flow_logger.py" name="flow_logger" output="screen"/>
+    <!-- GUI는 별도로 실행 -->
+</launch>

@@ -337,8 +337,8 @@ class RosMonitor(QWidget):
         pubs, subs = ros_topic_tracker.find_topic_connections(clicked_topic)
 
         self.append_log(f"\n\n=== Topic clicked: {clicked_topic} ===")
-        self.append_log(f"Publishers nodes: {pubs}")
-        self.append_log(f"Subscribers nodes: {subs}")
+        self.append_log(f"Publishers: {pubs}")
+        self.append_log(f"Subscribers: {subs}")
 
         # 각 노드의 pub/sub 토픽도 표시
         for p_node in pubs:
@@ -360,14 +360,29 @@ def main():
     window = RosMonitor()
     window.show()
 
-    # ROS spin을 별도 스레드에서 실행
-    import threading
-    ros_thread = threading.Thread(target=rospy.spin)
-    ros_thread.start()
+    # 수동 메인 루프
+    import time
+    while not rospy.is_shutdown():
+        # 1) Qt 이벤트 처리
+        app.processEvents()
 
-    # Qt 이벤트 루프 실행 (메인 스레드)
-    sys.exit(app.exec())
+        # 2) rospy 콜백은?
+        # Python rospy 콜백들은 이미 백그라운드 스레드에서
+        # 소켓을 수신하면 자동으로 돌긴 하지만,
+        # 실제로는 spin()이 블록하는 구조라... 
+        # *파이썬 내부적으로 CallbackThread가 동작 중이긴 합니다만
+        #  rospy.spin() 호출 안 하면?
+        # -> rospy.spin()이 없어도 Subscriber 콜백은 "internal thread"에서
+        #    동작하긴 하지만, 안정적 보장을 못 합니다.
+        #
+        # 사실상 Python rospy는 spin()을 불러주길 권장하지만,
+        # spin()이 꼭 필요한 건 아니고, subscriber 콜백 자체는
+        # internal thread에서 돌아가게 되어 있습니다.
 
+        if app.allWindows() == []:
+            # 윈도우가 닫혔으면 종료
+            break
+        time.sleep(0.01)
 
 if __name__ == '__main__':
     main()

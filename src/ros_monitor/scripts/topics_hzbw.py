@@ -19,8 +19,9 @@ class TopicMonitor(threading.Thread):
         self.topic = topic
         self.timestamps = deque(maxlen=500)
         self.byte_sizes = deque(maxlen=500)
+
         self.subscriber = rospy.Subscriber(topic, rospy.AnyMsg, self.callback)
-        
+
         self.running = True
         
     def callback(self, msg):
@@ -85,7 +86,7 @@ class TopicMonitor(threading.Thread):
 
 class ROSTopicMonitor:
     def __init__(self):
-        self.yaml_path = '/home/scv/SCV/src/ros_monitor/cfg/topic_lst.yaml'
+        self.yaml_path = '/home/pgw/catkin_ws/src/ros_monitor/cfg/topic_lst.yaml'
         self.monitored_topics = self.load_yaml()
         
         rospy.init_node("topics_hzbw", anonymous=True)

@@ -30,39 +30,38 @@ def parse_pmon_output(lines):
             continue
         
         cols = line.split()
+        
         # 10 column format
         if len(cols) >= 10:
-            print('asdf')
-
             gpu_idx = cols[0]
             pid = cols[1]
             process_type = cols[2]
-            sm_usage = cols[3]
-            mem_usage = cols[4]
-            enc_usage = cols[5]
-            dec_usage = cols[6]
-            jpg_usage = cols[7]
-            ofa_usage = cols[8]
+            sm = cols[3]
+            mem = cols[4]
+            enc = cols[5]
+            dec = cols[6]
+            jpg = cols[7]
+            ofa = cols[8]
             command = " ".join(cols[9:])
             
             # Convert '-' to None
-            sm_usage = None if sm_usage == '-' else float(sm_usage)
-            mem_usage = None if mem_usage == '-' else float(mem_usage)
-            enc_usage = None if enc_usage == '-' else float(enc_usage)
-            dec_usage = None if dec_usage == '-' else float(dec_usage)
-            jpg_usage = None if jpg_usage == '-' else float(jpg_usage)
-            ofa_usage = None if ofa_usage == '-' else float(ofa_usage)
+            sm = None if sm == '-' else float(sm)
+            mem = None if mem == '-' else float(mem)
+            enc = None if enc == '-' else float(enc)
+            dec = None if dec == '-' else float(dec)
+            jpg = None if jpg == '-' else float(jpg)
+            ofa = None if ofa == '-' else float(ofa)
             
             parsed_data = {
                 'gpu_idx': gpu_idx,
                 'pid': pid,
                 'type': process_type,
-                'sm_usage': sm_usage,
-                'mem_usage': mem_usage,
-                'enc_usage': enc_usage,
-                'dec_usage': dec_usage,
-                'jpg_usage': jpg_usage,
-                'ofa_usage': ofa_usage,
+                'sm': sm,
+                'mem': mem,
+                'enc': enc,
+                'dec': dec,
+                'jpg': jpg,
+                'ofa': ofa,
                 'command': command
             }
         
@@ -71,36 +70,50 @@ def parse_pmon_output(lines):
             gpu_idx = cols[0]
             pid = cols[1]
             process_type = cols[2]
-            sm_usage = cols[3]
-            mem_usage = cols[4]
-            enc_usage = cols[5]
-            dec_usage = cols[6]
+            sm = cols[3]
+            mem = cols[4]
+            enc = cols[5]
+            dec = cols[6]
             command = cols[7]
             
-            sm_usage = None if sm_usage == '-' else float(sm_usage)
-            mem_usage = None if mem_usage == '-' else float(mem_usage)
-            enc_usage = None if enc_usage == '-' else float(enc_usage)
-            dec_usage = None if dec_usage == '-' else float(dec_usage)
+            sm = None if sm == '-' else float(sm)
+            mem = None if mem == '-' else float(mem)
+            enc = None if enc == '-' else float(enc)
+            dec = None if dec == '-' else float(dec)
             
             parsed_data = {
                 'gpu_idx': gpu_idx,
                 'pid': pid,
                 'type': process_type,
-                'sm_usage': sm_usage,
-                'mem_usage': mem_usage,
-                'enc_usage': enc_usage,
-                'dec_usage': dec_usage,
-                'jpg_usage': None,
-                'ofa_usage': None,
+                'sm': sm,
+                'mem': mem,
+                'enc': enc,
+                'dec': dec,
+                'jpg': None,
+                'ofa': None,
                 'command': command
             }
 
         if pid == '-':
             continue
         else:
-            print(parsed_data)
             parsed_data_list.append(parsed_data)
-        
+            
+    if len(parsed_data_list) == 0:
+        parsed_data = {
+            'gpu_idx': '-1',
+            'pid': '-1',
+            'type': '-1',
+            'sm': '-1',
+            'mem': '-1',
+            'enc': '-1',
+            'dec': '-1',
+            'jpg': '-1',
+            'ofa': '-1',
+            'command': '-1'
+        }
+        parsed_data_list.append(parsed_data)
+    print(parsed_data_list)
     return parsed_data_list
 
 def get_pmon_data():
@@ -133,12 +146,11 @@ def main():
 
         for proc_data in pmon_data:
             pid_str = proc_data.get('pid')
-            #print(pid_str)
             if pid_str and pid_str.isdigit():
                 pid = int(pid_str)
                 try:
                     proc = psutil.Process(pid)
-                    #print(f"PID: {pid}, Name: {proc.name()}, Cmdline: {proc.cmdline()}")
+                    print(f"PID: {pid}, Name: {proc.name()}, Cmdline: {proc.cmdline()}")
                 except psutil.NoSuchProcess:
                     print(f"PID: {pid} - Process no longer exists")
                     
