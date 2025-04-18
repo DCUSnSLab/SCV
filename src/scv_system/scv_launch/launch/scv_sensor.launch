@@ -3,9 +3,11 @@
 	<!-- Only GPS -->
 	<!-- <include file="$(find ublox_gps)/launch/ublox_device.launch"/> -->
 	<!-- RTK + GPS -->
-	<include file="$(find ntrip_client)/launch/ntrip_client_RTS2.launch"/> 
+	<!-- <include file="$(find ntrip_client)/launch/ntrip_client_RTS2.launch"/>  -->
+	<!-- RTK + dual GPS -->
+	<include file="$(find ntrip_client)/launch/ntrip_client_RTS2_ver_dual_gps.launch"/> 
 	<include file="$(find zed_wrapper)/launch/zed_no_tf.launch"/>
 	<include file="$(find vectornav)/launch/vectornav.launch"/>
-	<include file="$(find usb_cam)/launch/fish_eye_cam.launch"/>
+	<!-- <include file="$(find usb_cam)/launch/fish_eye_cam.launch"/> -->
 	
 </launch>
