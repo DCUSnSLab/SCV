@@ -61,7 +61,7 @@ def utm_relative(msg, e0, n0):
 # -----------------------------------------------------------------------------
 class EKF2D:
     """State: [x, y, yaw] (ENU)"""
-    def __init__(self, q_xyz=(0.05, 0.05, 0.001), r_pos=(0.1, 0.1), r_yaw=0.01):
+    def __init__(self, q_xyz=(0.05, 0.05, 0.001), r_pos=(0.1, 0.1), r_yaw=0.7):
         self.X = np.zeros((3, 1))
         self.P = np.eye(3) * 1.0
         self.Q = np.diag(q_xyz)

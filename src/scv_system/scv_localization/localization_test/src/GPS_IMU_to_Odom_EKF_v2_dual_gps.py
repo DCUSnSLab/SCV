@@ -62,7 +62,7 @@ class IMUGPSToOdometryEKF:
         # R_position: GPS 위치 측정 노이즈 (m^2)
         self.R_pos = np.diag([0.1, 0.1])  # x, y 좌표 측정 오차
         # R_heading: GPS heading 측정 노이즈 (rad^2)
-        self.R_heading = np.array([[0.01]])  # heading 오차 (라디안^2)
+        self.R_heading = np.array([[0.7]])  # heading 오차 (라디안^2)
 
         # flag: 새로운 GPS 측정이 들어왔는지
         self.new_gps_position = False
