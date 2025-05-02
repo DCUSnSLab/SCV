@@ -1,86 +1,140 @@
-# SCV(Service Co-operation Vehicle)
-SCV(Service Co-operation Vehicle) is a self-driving vehicle aimed at campus driving and services.
+# SCV (Service Co-operation Vehicle)
 
-## TODO
-- Set waypoint creation min range
-- 
+SCV (Service Co-operation Vehicle) is a self-driving vehicle platform aimed at campus driving and services. This repository includes the full software stack for autonomous driving capabilities.
 
-# Setup development env
+## Project Overview
 
-- git clone --recursive (git repo url)
-- checkout submodule branch(not commit hash)
+The SCV project implements a comprehensive autonomous driving system with the following key capabilities:
+- Localization using dual GPS and IMU fusion
+- Environment perception and object detection
+- Path planning and navigation
+- Vehicle control
 
-# Sub Project Lists (meaning submodules)
-All sub Projects are in **src** directory
-- SCV System
-  - scv controller
-- Sensors
-  - GPS
-  - Velodyne Lidar
-  - ZED2 Wrapper
-- Msgs
-- Hunter Library
-  - vehicle_control : vehicle controller for hunter
-  - vehicle_sdk : hunter sdk
+## Setup Development Environment
 
-# Installation
-### Build workspace
-When you clone this repository for the first time, You need to build workspace as follow.
-in the your workspace
+### Clone Repository
+```bash
+# Clone the repository with all submodules
+git clone --recursive https://github.com/DCUSnSLab/SCV.git
 
-install libasio-dev for boost
+# Enter the repository directory
+cd SCV
+
+# Checkout submodule branches (not commit hash)
+git submodule update --remote --recursive
 ```
+
+## Project Structure
+
+### Main System Components
+- **SCV System**: Core system controller and integration
+  - `scv_controller`: Main vehicle control module
+  - `path_planning`: Global and local path planning
+  - `localization`: GPS and IMU-based localization
+
+### Sensors
+- **GPS**
+  - Supports dual GPS setup for improved accuracy
+  - GPS-RTK (Real-Time Kinematic) capability
+- **Velodyne Lidar**
+  - Point cloud processing
+  - Environment mapping
+- **ZED2 Camera**
+  - Stereo vision
+  - Depth perception
+
+### Perception
+- **Object Detection**
+  - Identifies and classifies obstacles
+  - Supports sensor fusion for improved detection
+
+### Communication
+- **ROS Messages**: Custom message types for inter-module communication
+
+### Vehicle Platform
+- **Hunter Vehicle Support**
+  - `vehicle_control`: Vehicle controller for Hunter platform
+  - `vehicle_sdk`: Hunter SDK integration
+
+## Installation
+
+### System Requirements
+- Ubuntu 18.04/20.04
+- ROS Melodic/Noetic
+- CUDA-enabled GPU (recommended for perception modules)
+
+### Required Dependencies
+```bash
+# Install libasio-dev for boost
 sudo apt update -y
 sudo apt install -y libasio-dev
+
+# Install ROS message dependencies for GPS
+sudo apt install ros-${ROS_DISTRO}-mavros-msgs
+sudo apt install ros-${ROS_DISTRO}-uuid-msgs
+sudo apt install ros-${ROS_DISTRO}-nmea-msgs
+
+# Install ZED SDK based on your environment
+# Visit: https://www.stereolabs.com/developers/release/
+
+# Install ROS dependencies for Velodyne LiDARs
+sudo apt install ros-${ROS_DISTRO}-velodyne
 ```
 
-install msgs for GPS
-```
-sudo apt install ros-{ROS DISTRO}-mavros-msgs
-sudo apt install ros-{ROS DISTRO}-uuid-msgs
-sudo apt install ros-{ROS DISTRO}-nmea-msgs
+### ROS Workspace Setup
+Check your ROS version and update the symbolic link for CMakeLists.txt:
+
+```bash
+# Check the current symbolic link
+ls -al ./src
+
+# Update the symbolic link based on your ROS distribution
+# For ROS Noetic:
+sudo ln -Tfs /opt/ros/noetic/share/catkin/cmake/toplevel.cmake ./src/CMakeLists.txt
+
+# For ROS Melodic:
+sudo ln -Tfs /opt/ros/melodic/share/catkin/cmake/toplevel.cmake ./src/CMakeLists.txt
 ```
 
-- install ZED SDK suitable for environment
-
-https://www.stereolabs.com/developers/release/
-
-- installing ROS dependencies for Velodyne LiDARs
-
-```
-sudo apt-get install ros-{ROS DISTRO}-velodyne
+### Build Workspace
+```bash
+# Build the workspace
+catkin_make
 ```
 
-Check your ROS version and change symbolic link of CmakeLists.txt in src directory of Workspace
-- Check symbolic link of CMakeLists.txt
-```
-$ls -al ./src
-```
+## Features and Capabilities
 
-- Verify your link status of CMakeLists.txt
-```
-total 28
-drwxrwxr-x  7 scv scv 4096  8월 31 16:08 .
-drwxrwxr-x  6 scv scv 4096  8월 31 16:13 ..
-drwxrwxr-x 14 scv scv 4096  8월 31 16:08 cmake-build-debug
-lrwxrwxrwx  1 root   root     49  8월 31 16:08 CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake
-drwxrwxr-x  2 scv scv 4096  8월 31 16:09 .idea
-drwxrwxr-x  4 scv scv 4096  8월 31 16:05 scv_control
-drwxrwxr-x  5 scv scv 4096  8월 30 10:45 vehicle_control
-drwxrwxr-x 11 scv scv 4096  8월 30 10:45 vehicle_sdk
+### Localization
+- Dual GPS integration for high-precision positioning
+- IMU-GNSS sensor fusion
+- Real-time vehicle pose estimation
 
-```
-- Change symbolic link
-```
-#if ROS version is noetic,
-$sudo ln -Tfs /opt/ros/noetic/share/catkin/cmake/toplevel.cmake ./src/CMakeLists.txt
+### Path Planning
+- Global route planning for campus navigation
+- Local path planning with obstacle avoidance
+- Waypoint navigation
 
-#Melodic,
-$sudo ln -Tfs /opt/ros/melodic/share/catkin/cmake/toplevel.cmake ./src/CMakeLists.txt  
-```
+### Perception
+- Camera-based object detection
+- Lidar-based obstacle detection
+- Sensor fusion for enhanced environmental awareness
 
-Build Workspace
-```
-#make workspace
-$catkin_make
-```
+### Vehicle Control
+- Velocity and steering control
+- Trajectory following
+- Safety monitoring and emergency stop
+
+## Launch Files
+The system provides several launch files for different scenarios:
+
+- `dual_gps.launch`: Starts the system with dual GPS configuration
+- `perception.launch`: Launches the perception system
+- `localization.launch`: Initializes localization modules
+- `planning.launch`: Starts the path planning modules
+- `full_system.launch`: Launches the complete autonomous driving stack
+
+## Contributing
+For contribution guidelines, please contact the project maintainers.
+
+## License
+This project is licensed under the terms specified in the LICENSE file.
