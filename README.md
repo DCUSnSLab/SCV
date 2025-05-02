@@ -132,9 +132,3 @@ The system provides several launch files for different scenarios:
 - `localization.launch`: Initializes localization modules
 - `planning.launch`: Starts the path planning modules
 - `full_system.launch`: Launches the complete autonomous driving stack
-
-## Contributing
-For contribution guidelines, please contact the project maintainers.
-
-## License
-This project is licensed under the terms specified in the LICENSE file.
