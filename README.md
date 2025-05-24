@@ -20,8 +20,11 @@ git clone --recursive https://github.com/DCUSnSLab/SCV.git
 # Enter the repository directory
 cd SCV
 
-# Checkout submodule branches (not commit hash)
+# Update submodule branches (commit hash)
 git submodule update --remote --recursive
+
+# Update submodule branches (commit hash to branch name)
+./scripts/SubUpdate.sh
 ```
 
 ## Project Structure
