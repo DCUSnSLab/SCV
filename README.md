@@ -20,10 +20,7 @@ git clone --recursive https://github.com/DCUSnSLab/SCV.git
 # Enter the repository directory
 cd SCV
 
-# Update submodule branches (commit hash)
-git submodule update --remote --recursive
-
-# Update submodule branches (commit hash to branch name)
+# Update submodule branches with current commit hash
 ./scripts/SubUpdate.sh
 ```
 
@@ -101,6 +98,13 @@ sudo ln -Tfs /opt/ros/melodic/share/catkin/cmake/toplevel.cmake ./src/CMakeLists
 
 ### Build Workspace
 ```bash
+
+# Build dependency msgs
+catkin_make path_planning_generate_messages
+catkin_make morai_msgs_generate_messages
+
+source devel/setup.bash
+
 # Build the workspace
 catkin_make
 ```
