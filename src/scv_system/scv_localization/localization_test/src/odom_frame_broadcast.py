@@ -19,7 +19,7 @@ def handle_odom_pose(msg, br):
 if __name__ == '__main__':
     rospy.init_node('odom_to_base_link_broadcaster')
     br = tf2_ros.TransformBroadcaster()
-    rospy.Subscriber('/odom/coordinate/gps', Odometry, handle_odom_pose, br)
+    rospy.Subscriber('/odom/ekf_single', Odometry, handle_odom_pose, br)
     # # rospy.Subscriber('/odom/gps', Odometry, handle_odom_pose, br)
     # rospy.Subscriber('/odom/ekf_single', Odometry, handle_odom_pose, br)
     # rospy.Subscriber('/odom/ekf_dual', Odometry, handle_odom_pose, br)

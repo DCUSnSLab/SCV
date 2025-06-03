@@ -18,10 +18,11 @@ class IMUGPSToOdometryEKF:
 
         # ------------------- Publisher -------------------
         self.current_utm_position_pub  = rospy.Publisher('/current_utm_relative_position', Point, queue_size=10)
+
         self.odom_pub_ekf   = rospy.Publisher('/odom/ekf_single', Odometry, queue_size=50)
 
         # ------------------- Subscriber -------------------
-        self.gps_fix_sub = rospy.Subscriber('/ublox_gps/fix', NavSatFix, self.gps_fix_callback)
+        self.gps_fix_sub = rospy.Subscriber('/ublox_f9p/fix', NavSatFix, self.gps_fix_callback)
         self.navpvt_sub  = rospy.Subscriber('/ublox_gps/navpvt', NavPVT, self.navpvt_callback)
         self.imu_sub     = rospy.Subscriber('/vectornav/IMU', Imu, self.imu_callback)
         self.speed_sub   = rospy.Subscriber('/hunter_status', HunterStatus, self.hunter_status_callback)
@@ -62,7 +63,7 @@ class IMUGPSToOdometryEKF:
         # R_position: GPS 위치 측정 노이즈 (m^2)
         self.R_pos = np.diag([0.1, 0.1])  # x, y 좌표 측정 오차
         # R_heading: GPS heading 측정 노이즈 (rad^2)
-        self.R_heading = np.array([[0.01]])  # heading 오차 (라디안^2)
+        self.R_heading = np.array([[0.7]])  # heading 오차 (라디안^2)
 
         # flag: 새로운 GPS 측정이 들어왔는지
         self.new_gps_position = False
@@ -254,7 +255,8 @@ class IMUGPSToOdometryEKF:
         # 위치
         ekf_odom = Odometry()
         ekf_odom.header.stamp = msg.header.stamp
-        ekf_odom.header.frame_id = "odom_utm"  # 예시
+        ekf_odom.header.frame_id = "odom_utm" 
+        ekf_odom.child_frame_id = "base_link"
 
         ekf_odom.pose.pose.position.x = self.X[0,0]
         ekf_odom.pose.pose.position.y = self.X[1,0]

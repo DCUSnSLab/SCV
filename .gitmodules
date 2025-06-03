@@ -104,3 +104,6 @@
 [submodule "src/scv_system/SCV_Perception"]
 	path = src/scv_system/SCV_Perception
 	url = https://github.com/DCUSnSLab/SCV_Perception
+[submodule "src/ros_monitor"]
+	path = src/ros_monitor
+	url = https://github.com/DCUSnSLab/Ros_Monitor

@@ -8,10 +8,10 @@
 
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   <!-- GPS Frame Broadcast Node -->
-  <node pkg="localization_test" type="gps_frame_broadcast.py" name="gps_frame_broadcast" output="screen"/>
+  <!-- <node pkg="localization_test" type="gps_frame_broadcast.py" name="gps_frame_broadcast" output="screen"/> -->
 
   <!-- Odom Frame Broadcast Node -->
-  <node pkg="localization_test" type="odom_frame_broadcast.py" name="odom_frame_broadcast" output="screen"/>
+  <!-- <node pkg="localization_test" type="odom_frame_broadcast.py" name="odom_frame_broadcast" output="screen"/> -->
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find scv_tf)/rviz/scv_display.rviz" required="true" />
 
 </launch>

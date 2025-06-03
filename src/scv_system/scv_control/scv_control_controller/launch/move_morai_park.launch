@@ -1,0 +1,4 @@
+<launch>
+    <node name="move_morai" pkg="scv_control_controller" type="start" />
+    <node name="trans" pkg="scv_control_controller" type="cmd_vel_to_lp_ctrl2.py" />
+</launch>
