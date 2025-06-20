@@ -21,8 +21,8 @@ class IMUGPSToOdometryEKF:
         self.odom_pub_ekf   = rospy.Publisher('/odom/coordinate/gps', Odometry, queue_size=50)
 
         # ------------------- Subscriber -------------------
-        self.gps_fix_sub = rospy.Subscriber('/ublox_f9p/fix', NavSatFix, self.gps_fix_callback)
-        self.navpvt_sub  = rospy.Subscriber('/ublox_gps/navpvt', NavPVT, self.navpvt_callback)
+        self.gps_fix_sub = rospy.Subscriber('/ublox_f9k/fix', NavSatFix, self.gps_fix_callback)
+        self.navpvt_sub  = rospy.Subscriber('/ublox_f9k/navpvt', NavPVT, self.navpvt_callback)
         self.imu_sub     = rospy.Subscriber('/vectornav/IMU', Imu, self.imu_callback)
         self.speed_sub   = rospy.Subscriber('/hunter_status', HunterStatus, self.hunter_status_callback)
 

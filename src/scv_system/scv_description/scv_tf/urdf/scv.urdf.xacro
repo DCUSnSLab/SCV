@@ -55,7 +55,7 @@
   <joint name="gps_antenna_joint" type="fixed">
     <parent link="back_box"/>
     <child link="gps_antenna_link"/>
-    <origin xyz="0.1175 -0.1235 0.11" rpy="0 0 0"/>
+    <origin xyz="0.1175 0.0 0.11" rpy="0 0 0"/>
   </joint>
 
   <joint name="back_box_joint" type="fixed">
