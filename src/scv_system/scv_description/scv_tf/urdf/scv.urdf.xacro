@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<robot name="hunter2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Include external modules -->
+  <xacro:include filename="$(find scv_tf)/urdf/velodyne_VLP-32"/>
+  <xacro:include filename="$(find scv_tf)/urdf/frontBox.xacro"/>
+  <xacro:include filename="$(find scv_tf)/urdf/backBox.xacro"/>
+  <xacro:include filename="$(find scv_tf)/urdf/gps_antenna.xacro"/>
+  <xacro:include filename="$(find hunter2_base)/urdf/hunter2_base_gazebo.xacro"/>
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Base Joint -->
+  <joint name="base_hunter_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="hunter_base_link"/>
+    <origin xyz="0 0 0.35" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Hunter Base -->
+  <xacro:hunter_base_link_macro/>
+
+  <!-- Front Box -->
+  <xacro:front_box_macro/>
+  <joint name="front_box_joint" type="fixed">
+    <parent link="hunter_base_link"/>
+    <child link="front_box"/>
+    <origin xyz="0.343 0 0.137" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Back Box -->
+  <link name="back_box">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.487 0.363 0.185"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.9 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <xacro:gps_antenna_macro/>
+  <joint name="gps_antenna_joint" type="fixed">
+    <parent link="back_box"/>
+    <child link="gps_antenna_link"/>
+    <origin xyz="0.1175 0.0 0.11" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="back_box_joint" type="fixed">
+    <parent link="hunter_base_link"/>
+    <child link="back_box"/>
+    <origin xyz="-0.0865 0 0.093" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Velodyne Sensor -->
+  <xacro:velodyne_VLP-32_macro/>
+  <joint name="velodyne_joint" type="fixed">
+    <parent link="front_box"/>
+    <child link="velodyne"/>
+    <origin xyz="-0.036 0 0.162" rpy="0 0 0"/>
+  </joint>
+
+  <!-- IMU Link -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.025 0.025 0.025"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 0.9 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="front_box"/>
+    <child link="imu_link"/>
+    <origin xyz="0.171 0 0.041" rpy="0 0 0"/>
+  </joint>
+
+  <link name="cam">
+    <visual>
+      <geometry>
+        <box size="0.09 0.05 0.05"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 0.9 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="back_box"/>
+    <child link="cam"/>
+    <origin xyz="0.2 -0.17 0.125" rpy="0 0 -1.57"/>
+  </joint>
+</robot>

@@ -31,8 +31,8 @@ def keyinput(id, moraictl:moraiCtrl):
 
 
 if __name__ == '__main__':
-    mct = moraiCtrl()
-    #mct = hunterCtrl()
+    #mct = moraiCtrl()
+    mct = hunterCtrl()
     th1 = Thread(target=keyinput, args=(1, mct))
     th1.start()
     mct.runCtrl()
