@@ -1,0 +1,4 @@
+[submodule "src/sensor_pkg/ublox"]
+	path = src/sensor_pkg/ublox
+	url = https://github.com/DCUSnSLab/ublox.git
+	branch = ros2
