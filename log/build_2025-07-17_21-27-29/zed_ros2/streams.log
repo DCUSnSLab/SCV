@@ -1,0 +1,10 @@
+[0.006s] Invoking command in '/home/ssc/SCV/build/zed_ros2': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/usb_cam:/opt/ros/humble /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/zed-ros2-wrapper/zed_ros2 -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/zed_ros2
+[0.012s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.095s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.137s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.141s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.142s] -- Added test 'lint_cmake' to check CMake code style
+[0.142s] -- Added test 'xmllint' to check XML markup files
+[0.143s] -- Configuring done
+[0.144s] -- Generating done
+[0.145s] -- Build files have been written to: /home/ssc/SCV/build/zed_ros2

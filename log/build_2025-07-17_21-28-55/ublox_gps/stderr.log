@@ -1,0 +1,11 @@
+In file included from [01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/src/adr_udr_product.cpp:20[m[K:
+[01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:[m[K In constructor ‘[01m[Kublox_node::AdrUdrProduct::AdrUdrProduct(float, uint16_t, uint16_t, const string&, std::shared_ptr<diagnostic_updater::Updater>, rclcpp::Node*)[m[K’:
+[01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:67:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kublox_node::AdrUdrProduct::protocol_version_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   67 |   float [01;35m[Kprotocol_version_[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:66:8:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool ublox_node::AdrUdrProduct::use_adr_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   66 |   bool [01;35m[Kuse_adr_[m[K;
+      |        [01;35m[K^~~~~~~~[m[K
+[01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/src/adr_udr_product.cpp:28:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   28 | [01;35m[KAdrUdrProduct[m[K::AdrUdrProduct(float protocol_version, uint16_t nav_rate, uint16_t meas_rate, const std::string & frame_id, std::shared_ptr<diagnostic_updater::Updater> updater, rclcpp::Node* node)
+      | [01;35m[K^~~~~~~~~~~~~[m[K

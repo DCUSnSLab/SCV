@@ -1,0 +1,58 @@
+[0.008s] Invoking command in '/home/ssc/SCV/build/usb_cam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/usb_cam -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/usb_cam
+[0.016s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.094s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.158s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.159s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.163s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.169s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.176s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.196s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.197s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.262s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.380s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.383s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.390s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.392s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.392s] -- Configured cppcheck include dirs: /home/ssc/SCV/src/sensor_pkg/usb_cam/include
+[0.392s] -- Configured cppcheck exclude dirs and/or files: 
+[0.393s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.393s] -- Configured cpplint exclude dirs and/or files: 
+[0.393s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.394s] -- Added test 'lint_cmake' to check CMake code style
+[0.394s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.395s] -- Added test 'uncrustify' to check C / C++ code style
+[0.395s] -- Configured uncrustify additional arguments: 
+[0.395s] -- Added test 'xmllint' to check XML markup files
+[0.396s] -- Configuring done
+[0.413s] -- Generating done
+[0.418s] -- Build files have been written to: /home/ssc/SCV/build/usb_cam
+[0.424s] Invoked command in '/home/ssc/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/usb_cam -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/usb_cam
+[0.425s] Invoking command in '/home/ssc/SCV/build/usb_cam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ssc/SCV/build/usb_cam -- -j24 -l24
+[0.455s] [35m[1mConsolidate compiler generated dependencies of target usb_cam_node_exe[0m
+[0.455s] [35m[1mConsolidate compiler generated dependencies of target gtest[0m
+[0.456s] [35m[1mConsolidate compiler generated dependencies of target usb_cam[0m
+[0.456s] [35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
+[0.465s] [  7%] [32mBuilding CXX object CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o[0m
+[0.465s] [ 14%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[0.465s] [ 21%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[0.465s] [ 28%] [32mBuilding CXX object CMakeFiles/usb_cam_node_exe.dir/rclcpp_components/node_main_usb_cam_node_exe.cpp.o[0m
+[0.988s] [ 35%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[1.012s] [ 35%] Built target gtest_main
+[2.196s] [ 42%] [32m[1mLinking CXX shared library libusb_cam.so[0m
+[2.308s] [ 42%] Built target usb_cam
+[2.316s] [35m[1mConsolidate compiler generated dependencies of target usb_cam_node[0m
+[2.329s] [ 50%] [32mBuilding CXX object CMakeFiles/usb_cam_node.dir/src/usb_cam_node.cpp.o[0m
+[2.704s] [ 57%] [32m[1mLinking CXX executable usb_cam_node_exe[0m
+[2.825s] [ 57%] Built target usb_cam_node_exe
+[5.336s] [ 64%] [32m[1mLinking CXX static library libgtest.a[0m
+[5.363s] [ 64%] Built target gtest
+[5.369s] [35m[1mConsolidate compiler generated dependencies of target test_pixel_formats[0m
+[5.370s] [35m[1mConsolidate compiler generated dependencies of target test_usb_cam_utils[0m
+[5.378s] [ 71%] [32mBuilding CXX object CMakeFiles/test_pixel_formats.dir/test/test_pixel_formats.cpp.o[0m
+[5.379s] [ 78%] [32mBuilding CXX object CMakeFiles/test_usb_cam_utils.dir/test/test_usb_cam_utils.cpp.o[0m
+[6.307s] [ 85%] [32m[1mLinking CXX executable test_usb_cam_utils[0m
+[6.417s] [ 85%] Built target test_usb_cam_utils
+[6.427s] [ 92%] [32m[1mLinking CXX executable test_pixel_formats[0m
+[6.536s] [ 92%] Built target test_pixel_formats
+[8.321s] [100%] [32m[1mLinking CXX shared library libusb_cam_node.so[0m
+[8.444s] [100%] Built target usb_cam_node

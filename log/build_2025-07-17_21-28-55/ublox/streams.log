@@ -1,0 +1,41 @@
+[0.007s] Invoking command in '/home/ssc/SCV/build/ublox': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_gps/lib:/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/ublox/ublox -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/ublox
+[0.047s] -- The C compiler identification is GNU 11.4.0
+[0.082s] -- The CXX compiler identification is GNU 11.4.0
+[0.087s] -- Detecting C compiler ABI info
+[0.134s] -- Detecting C compiler ABI info - done
+[0.139s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.139s] -- Detecting C compile features
+[0.139s] -- Detecting C compile features - done
+[0.141s] -- Detecting CXX compiler ABI info
+[0.194s] -- Detecting CXX compiler ABI info - done
+[0.201s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.201s] -- Detecting CXX compile features
+[0.201s] -- Detecting CXX compile features - done
+[0.202s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.301s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.343s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.401s] -- Configuring done
+[0.402s] -- Generating done
+[0.403s] -- Build files have been written to: /home/ssc/SCV/build/ublox
+[0.405s] Invoked command in '/home/ssc/SCV/build/ublox' returned '0': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_gps/lib:/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/ublox/ublox -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/ublox
+[0.406s] Invoking command in '/home/ssc/SCV/build/ublox': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_gps/lib:/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/ssc/SCV/build/ublox -- -j24 -l24
+[0.431s] Invoked command in '/home/ssc/SCV/build/ublox' returned '0': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_gps/lib:/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/ssc/SCV/build/ublox -- -j24 -l24
+[0.432s] Invoking command in '/home/ssc/SCV/build/ublox': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_gps/lib:/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/ssc/SCV/build/ublox
+[0.436s] -- Install configuration: "Release"
+[0.436s] -- Execute custom install script
+[0.437s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ament_index/resource_index/package_run_dependencies/ublox
+[0.442s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ament_index/resource_index/parent_prefix_path/ublox
+[0.447s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/ament_prefix_path.sh
+[0.452s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/ament_prefix_path.dsv
+[0.458s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/path.sh
+[0.463s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/path.dsv
+[0.469s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.bash
+[0.475s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.sh
+[0.480s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.zsh
+[0.485s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.dsv
+[0.490s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/package.dsv
+[0.495s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ament_index/resource_index/packages/ublox
+[0.501s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/cmake/ubloxConfig.cmake
+[0.507s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/cmake/ubloxConfig-version.cmake
+[0.513s] -- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/package.xml
+[0.519s] Invoked command in '/home/ssc/SCV/build/ublox' returned '0': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_gps/lib:/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/ssc/SCV/build/ublox

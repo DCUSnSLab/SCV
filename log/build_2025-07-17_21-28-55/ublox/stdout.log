@@ -1,0 +1,35 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ssc/SCV/build/ublox
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ament_index/resource_index/package_run_dependencies/ublox
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ament_index/resource_index/parent_prefix_path/ublox
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/ament_prefix_path.sh
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/ament_prefix_path.dsv
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/path.sh
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/environment/path.dsv
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.bash
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.sh
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.zsh
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/local_setup.dsv
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/package.dsv
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ament_index/resource_index/packages/ublox
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/cmake/ubloxConfig.cmake
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/cmake/ubloxConfig-version.cmake
+-- Symlinking: /home/ssc/SCV/install/ublox/share/ublox/package.xml

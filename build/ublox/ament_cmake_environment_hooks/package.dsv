@@ -1,0 +1,4 @@
+source;share/ublox/local_setup.bash
+source;share/ublox/local_setup.dsv
+source;share/ublox/local_setup.sh
+source;share/ublox/local_setup.zsh

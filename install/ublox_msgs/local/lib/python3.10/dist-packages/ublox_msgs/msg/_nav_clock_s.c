@@ -1,0 +1,1 @@
+/home/ssc/SCV/build/ublox_msgs/rosidl_generator_py/ublox_msgs/msg/_nav_clock_s.c

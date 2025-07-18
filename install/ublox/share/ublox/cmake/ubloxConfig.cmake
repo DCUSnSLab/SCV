@@ -1,0 +1,1 @@
+/home/ssc/SCV/build/ublox/ament_cmake_core/ubloxConfig.cmake

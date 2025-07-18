@@ -2,3 +2,9 @@
 	path = src/sensor_pkg/ublox
 	url = https://github.com/DCUSnSLab/ublox.git
 	branch = ros2
+[submodule "src/sensor_pkg/usb_cam"]
+	path = src/sensor_pkg/usb_cam
+	url = https://github.com/DCUSnSLab/usb_cam.git
+[submodule "src/sensor_pkg/zed-ros2-wrapper"]
+	path = src/sensor_pkg/zed-ros2-wrapper
+	url = https://github.com/DCUSnSLab/zed-ros2-wrapper

@@ -1,0 +1,1 @@
+/home/ssc/SCV/build/ublox_msgs/rosidl_generator_c/ublox_msgs/msg/detail/mga_gal__type_support.h

@@ -1,0 +1,146 @@
+[0.007s] Invoking command in '/home/ssc/SCV/build/ublox_gps': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/home/ssc/SCV/install/ublox_gps/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/ublox_gps
+[0.045s] -- The C compiler identification is GNU 11.4.0
+[0.082s] -- The CXX compiler identification is GNU 11.4.0
+[0.087s] -- Detecting C compiler ABI info
+[0.129s] -- Detecting C compiler ABI info - done
+[0.135s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.135s] -- Detecting C compile features
+[0.135s] -- Detecting C compile features - done
+[0.137s] -- Detecting CXX compiler ABI info
+[0.187s] -- Detecting CXX compiler ABI info - done
+[0.193s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.193s] -- Detecting CXX compile features
+[0.194s] -- Detecting CXX compile features - done
+[0.195s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.302s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.342s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.358s] -- Found asio: /usr/include  
+[0.359s] -- Found diagnostic_msgs: 4.9.0 (/opt/ros/humble/share/diagnostic_msgs/cmake)
+[0.381s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.384s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.389s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.396s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.406s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.430s] -- Found diagnostic_updater: 4.0.6 (/opt/ros/humble/share/diagnostic_updater/cmake)
+[0.455s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.457s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.513s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.531s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.559s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.565s] -- Looking for pthread.h
+[0.613s] -- Looking for pthread.h - found
+[0.613s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.660s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.660s] -- Found Threads: TRUE  
+[0.687s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.695s] -- Found nmea_msgs: 2.0.0 (/opt/ros/humble/share/nmea_msgs/cmake)
+[0.703s] -- Found rclcpp_components: 16.0.12 (/opt/ros/humble/share/rclcpp_components/cmake)
+[0.719s] -- Found rtcm_msgs: 1.1.6 (/opt/ros/humble/share/rtcm_msgs/cmake)
+[0.728s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.739s] -- Found tf2: 0.25.13 (/opt/ros/humble/share/tf2/cmake)
+[0.741s] -- Found ublox_msgs: 2.3.0 (/home/ssc/SCV/install/ublox_msgs/share/ublox_msgs/cmake)
+[0.796s] -- Configuring done
+[0.827s] -- Generating done
+[0.833s] -- Build files have been written to: /home/ssc/SCV/build/ublox_gps
+[0.840s] Invoked command in '/home/ssc/SCV/build/ublox_gps' returned '0': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/home/ssc/SCV/install/ublox_gps/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/ublox_gps
+[0.841s] Invoking command in '/home/ssc/SCV/build/ublox_gps': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/home/ssc/SCV/install/ublox_gps/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/ssc/SCV/build/ublox_gps -- -j24 -l24
+[0.876s] [  4%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/gnss.cpp.o[0m
+[0.877s] [  9%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/adr_udr_product.cpp.o[0m
+[0.878s] [ 13%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/node.cpp.o[0m
+[0.878s] [ 18%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/hpg_rov_product.cpp.o[0m
+[0.878s] [ 22%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware.cpp.o[0m
+[0.878s] [ 27%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/hpg_ref_product.cpp.o[0m
+[0.878s] [ 31%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/gps.cpp.o[0m
+[0.879s] [ 40%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware6.cpp.o[0m
+[0.879s] [ 40%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware8.cpp.o[0m
+[0.879s] [ 45%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/hp_pos_rec_product.cpp.o[0m
+[0.879s] [ 50%] [32mBuilding C object CMakeFiles/ublox_gps.dir/src/mkgmtime.c.o[0m
+[0.880s] [ 68%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware7.cpp.o[0m
+[0.880s] [ 68%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/raw_data_pa.cpp.o[0m
+[0.880s] [ 68%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware9.cpp.o[0m
+[0.880s] [ 68%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/raw_data_product.cpp.o[0m
+[0.880s] [ 72%] [32mBuilding CXX object CMakeFiles/ublox_gps.dir/src/tim_product.cpp.o[0m
+[7.552s] In file included from [01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/src/adr_udr_product.cpp:20[m[K:
+[7.553s] [01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:[m[K In constructor ‘[01m[Kublox_node::AdrUdrProduct::AdrUdrProduct(float, uint16_t, uint16_t, const string&, std::shared_ptr<diagnostic_updater::Updater>, rclcpp::Node*)[m[K’:
+[7.553s] [01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:67:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kublox_node::AdrUdrProduct::protocol_version_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[7.553s]    67 |   float [01;35m[Kprotocol_version_[m[K;
+[7.553s]       |         [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[7.553s] [01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:66:8:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool ublox_node::AdrUdrProduct::use_adr_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[7.553s]    66 |   bool [01;35m[Kuse_adr_[m[K;
+[7.553s]       |        [01;35m[K^~~~~~~~[m[K
+[7.553s] [01m[K/home/ssc/SCV/src/sensor_pkg/ublox/ublox_gps/src/adr_udr_product.cpp:28:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[7.553s]    28 | [01;35m[KAdrUdrProduct[m[K::AdrUdrProduct(float protocol_version, uint16_t nav_rate, uint16_t meas_rate, const std::string & frame_id, std::shared_ptr<diagnostic_updater::Updater> updater, rclcpp::Node* node)
+[7.553s]       | [01;35m[K^~~~~~~~~~~~~[m[K
+[27.636s] [ 77%] [32m[1mLinking CXX shared library libublox_gps.so[0m
+[27.995s] [ 77%] Built target ublox_gps
+[28.010s] [ 81%] [32mBuilding CXX object CMakeFiles/ublox_logger.dir/src/logger_node_pa.cpp.o[0m
+[28.010s] [ 86%] [32mBuilding CXX object CMakeFiles/ublox_gps_node.dir/src/node_main.cpp.o[0m
+[28.011s] [ 90%] [32mBuilding CXX object CMakeFiles/ublox_logger.dir/src/raw_data_pa.cpp.o[0m
+[31.721s] [ 95%] [32m[1mLinking CXX executable ublox_gps_node[0m
+[31.888s] [ 95%] Built target ublox_gps_node
+[34.774s] [100%] [32m[1mLinking CXX executable ublox_logger[0m
+[34.897s] [100%] Built target ublox_logger
+[34.906s] Invoked command in '/home/ssc/SCV/build/ublox_gps' returned '0': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/home/ssc/SCV/install/ublox_gps/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/ssc/SCV/build/ublox_gps -- -j24 -l24
+[34.907s] Invoking command in '/home/ssc/SCV/build/ublox_gps': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/home/ssc/SCV/install/ublox_gps/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/ssc/SCV/build/ublox_gps
+[34.912s] -- Install configuration: "Release"
+[34.912s] -- Execute custom install script
+[34.912s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/lib/ublox_gps/ublox_gps_node
+[34.919s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/lib/ublox_gps/ublox_logger
+[34.926s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/adr_udr_product.hpp
+[34.931s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/async_worker.hpp
+[34.936s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/callback.hpp
+[34.943s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/component_interface.hpp
+[34.949s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/fix_diagnostic.hpp
+[34.955s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/fts_product.hpp
+[34.960s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/gnss.hpp
+[34.966s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/gps.hpp
+[34.972s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/hp_pos_rec_product.hpp
+[34.978s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/hpg_ref_product.hpp
+[34.984s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/hpg_rov_product.hpp
+[34.990s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/mkgmtime.h
+[34.996s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/node.hpp
+[35.000s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/raw_data_pa.hpp
+[35.005s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/raw_data_product.hpp
+[35.010s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/rtcm.hpp
+[35.016s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/tim_product.hpp
+[35.022s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware.hpp
+[35.028s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware6.hpp
+[35.033s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware7.hpp
+[35.039s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware7plus.hpp
+[35.044s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware8.hpp
+[35.050s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware9.hpp
+[35.056s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_topic_diagnostic.hpp
+[35.061s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/utils.hpp
+[35.067s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/worker.hpp
+[35.073s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/launch/ublox_gps_node-composed-launch.py
+[35.079s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/launch/ublox_gps_node-launch.py
+[35.084s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8p_base.yaml
+[35.089s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8p_rover.yaml
+[35.095s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8t_base.yaml
+[35.101s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8t_rover.yaml
+[35.107s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/config/neo_m8u_rover.yaml
+[35.113s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/config/nmea.yaml
+[35.118s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/config/zed_f9p.yaml
+[35.124s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ament_index/resource_index/package_run_dependencies/ublox_gps
+[35.129s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ament_index/resource_index/parent_prefix_path/ublox_gps
+[35.135s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/environment/ament_prefix_path.sh
+[35.141s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/environment/ament_prefix_path.dsv
+[35.147s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/environment/path.sh
+[35.153s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/environment/path.dsv
+[35.159s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/local_setup.bash
+[35.165s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/local_setup.sh
+[35.170s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/local_setup.zsh
+[35.175s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/local_setup.dsv
+[35.180s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/package.dsv
+[35.185s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ament_index/resource_index/packages/ublox_gps
+[35.192s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ament_index/resource_index/rclcpp_components/ublox_gps
+[35.198s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/ament_cmake_export_include_directories-extras.cmake
+[35.203s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/ament_cmake_export_targets-extras.cmake
+[35.209s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/ublox_gpsConfig.cmake
+[35.215s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/ublox_gpsConfig-version.cmake
+[35.221s] -- Symlinking: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/package.xml
+[35.226s] -- Installing: /home/ssc/SCV/install/ublox_gps/lib/libublox_gps.so
+[35.229s] -- Set runtime path of "/home/ssc/SCV/install/ublox_gps/lib/libublox_gps.so" to ""
+[35.229s] -- Installing: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/export_ublox_gpsExport.cmake
+[35.229s] -- Installing: /home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/export_ublox_gpsExport-release.cmake
+[35.230s] Invoked command in '/home/ssc/SCV/build/ublox_gps' returned '0': CMAKE_PREFIX_PATH=/home/ssc/SCV/install/ublox_msgs:/home/ssc/SCV/install/ublox_serialization:/home/ssc/SCV/install/ublox:/home/ssc/SCV/install/ublox_gps:/home/ssc/SCV/install/zed_ros2:/home/ssc/SCV/install/zed_wrapper:/home/ssc/SCV/install/zed_components:/home/ssc/SCV/install/usb_cam:/opt/ros/humble LD_LIBRARY_PATH=/home/ssc/SCV/install/ublox_msgs/lib:/home/ssc/SCV/install/zed_components/lib:/home/ssc/SCV/install/usb_cam/lib:/home/ssc/SCV/install/ublox_gps/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/ssc/SCV/build/ublox_gps

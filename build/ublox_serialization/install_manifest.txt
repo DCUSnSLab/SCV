@@ -1,0 +1,1 @@
+/home/ssc/SCV/install/ublox_serialization/share/ublox_serialization/cmake/export_ublox_serializationExport.cmake

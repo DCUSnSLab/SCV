@@ -1,0 +1,1 @@
+/home/ssc/SCV/src/sensor_pkg/usb_cam/scripts/show_image.py
