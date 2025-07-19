@@ -1,1 +1,0 @@
-/home/scv/SCV/build/usb_cam/ament_cmake_environment_hooks/local_setup.sh

@@ -1,4 +1,0 @@
-Invoking command in '/home/scv/SCV/build/usb_cam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/usb_cam -- -j8 -l8
-Invoked command in '/home/scv/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/usb_cam -- -j8 -l8
-Invoking command in '/home/scv/SCV/build/usb_cam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/usb_cam
-Invoked command in '/home/scv/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/usb_cam

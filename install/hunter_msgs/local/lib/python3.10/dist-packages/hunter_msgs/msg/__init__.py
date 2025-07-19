@@ -1,1 +1,0 @@
-/home/scv/SCV/build/hunter_msgs/rosidl_generator_py/hunter_msgs/msg/__init__.py

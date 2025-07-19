@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/scv/SCV/build/ublox_gps/ublox_gps_node" "/home/scv/SCV/build/ublox_gps/ublox_logger" "TARGETS" "ublox_gps_node" "ublox_logger" "DESTINATION" "lib/ublox_gps")

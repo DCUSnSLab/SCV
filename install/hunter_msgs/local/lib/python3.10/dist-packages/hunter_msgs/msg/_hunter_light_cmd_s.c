@@ -1,1 +1,0 @@
-/home/scv/SCV/build/hunter_msgs/rosidl_generator_py/hunter_msgs/msg/_hunter_light_cmd_s.c

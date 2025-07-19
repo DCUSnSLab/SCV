@@ -1,1 +1,0 @@
-/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/hunter_rc_state.hpp

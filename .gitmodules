@@ -14,3 +14,7 @@
 [submodule "src/vehicle/SCV_ugv_sdk"]
 	path = src/vehicle/SCV_ugv_sdk
 	url = https://github.com/DCUSnSLab/SCV_ugv_sdk
+[submodule "src/sensor_pkg/ROS_velodyne"]
+	path = src/sensor_pkg/ROS_velodyne
+	url = https://github.com/user/ROS_velodyne.git
+	branch = ros2

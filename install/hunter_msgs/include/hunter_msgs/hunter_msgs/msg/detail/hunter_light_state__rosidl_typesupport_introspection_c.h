@@ -1,1 +1,0 @@
-/home/scv/SCV/build/hunter_msgs/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_state__rosidl_typesupport_introspection_c.h

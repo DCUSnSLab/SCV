@@ -1,9 +1,0 @@
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/uninstall.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/zed_wrapper_uninstall.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/test.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/edit_cache.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/rebuild_cache.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/list_install_components.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/install.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/install/local.dir
-/home/scv/SCV/build/zed_wrapper/CMakeFiles/install/strip.dir

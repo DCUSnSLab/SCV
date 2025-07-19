@@ -1,1 +1,0 @@
-/home/scv/SCV/src/sensor_pkg/usb_cam/launch/camera.launch.py

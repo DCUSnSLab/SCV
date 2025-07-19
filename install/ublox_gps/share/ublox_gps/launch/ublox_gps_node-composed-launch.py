@@ -1,1 +1,0 @@
-/home/scv/SCV/src/sensor_pkg/ublox/ublox_gps/launch/ublox_gps_node-composed-launch.py
