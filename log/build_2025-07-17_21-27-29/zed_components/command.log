@@ -1,6 +1,0 @@
-Invoking command in '/home/ssc/SCV/build/zed_components': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/zed-ros2-wrapper/zed_components -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/zed_components
-Invoked command in '/home/ssc/SCV/build/zed_components' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/zed-ros2-wrapper/zed_components -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/zed_components
-Invoking command in '/home/ssc/SCV/build/zed_components': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ssc/SCV/build/zed_components -- -j24 -l24
-Invoked command in '/home/ssc/SCV/build/zed_components' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ssc/SCV/build/zed_components -- -j24 -l24
-Invoking command in '/home/ssc/SCV/build/zed_components': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ssc/SCV/build/zed_components
-Invoked command in '/home/ssc/SCV/build/zed_components' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ssc/SCV/build/zed_components

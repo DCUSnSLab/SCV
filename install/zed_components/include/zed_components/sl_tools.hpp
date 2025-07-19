@@ -1,1 +1,0 @@
-/home/ssc/SCV/src/sensor_pkg/zed-ros2-wrapper/zed_components/src/tools/include/sl_tools.hpp

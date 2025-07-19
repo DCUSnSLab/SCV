@@ -1,1 +1,0 @@
-/home/ssc/SCV/build/ublox_msgs/rosidl_generator_c/ublox_msgs/msg/detail/inf__type_support.h

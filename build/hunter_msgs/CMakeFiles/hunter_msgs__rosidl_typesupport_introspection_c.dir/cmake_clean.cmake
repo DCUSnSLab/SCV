@@ -1,0 +1,29 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_actuator_state__type_support.c.o"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_actuator_state__type_support.c.o.d"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_cmd__type_support.c.o"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_cmd__type_support.c.o.d"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_state__type_support.c.o"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_state__type_support.c.o.d"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_rc_state__type_support.c.o"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_rc_state__type_support.c.o.d"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_status__type_support.c.o"
+  "CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_status__type_support.c.o.d"
+  "libhunter_msgs__rosidl_typesupport_introspection_c.pdb"
+  "libhunter_msgs__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_actuator_state__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_actuator_state__type_support.c"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_cmd__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_cmd__type_support.c"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_state__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_light_state__type_support.c"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_rc_state__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_rc_state__type_support.c"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_status__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/hunter_msgs/msg/detail/hunter_status__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/hunter_msgs__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

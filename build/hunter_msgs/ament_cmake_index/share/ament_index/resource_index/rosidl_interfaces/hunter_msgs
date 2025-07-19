@@ -1,0 +1,10 @@
+msg/HunterActuatorState.idl
+msg/HunterActuatorState.msg
+msg/HunterLightCmd.idl
+msg/HunterLightCmd.msg
+msg/HunterLightState.idl
+msg/HunterLightState.msg
+msg/HunterRCState.idl
+msg/HunterRCState.msg
+msg/HunterStatus.idl
+msg/HunterStatus.msg

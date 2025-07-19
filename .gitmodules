@@ -8,3 +8,9 @@
 [submodule "src/sensor_pkg/zed-ros2-wrapper"]
 	path = src/sensor_pkg/zed-ros2-wrapper
 	url = https://github.com/DCUSnSLab/zed-ros2-wrapper
+[submodule "src/vehicle/SCV_hunter_ros2"]
+	path = src/vehicle/SCV_hunter_ros2
+	url = https://github.com/DCUSnSLab/SCV_hunter_ros2
+[submodule "src/vehicle/SCV_ugv_sdk"]
+	path = src/vehicle/SCV_ugv_sdk
+	url = https://github.com/DCUSnSLab/SCV_ugv_sdk

@@ -1,3 +1,0 @@
-/home/ssc/SCV/install/ublox_gps/lib/libublox_gps.so
-/home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/export_ublox_gpsExport.cmake
-/home/ssc/SCV/install/ublox_gps/share/ublox_gps/cmake/export_ublox_gpsExport-release.cmake

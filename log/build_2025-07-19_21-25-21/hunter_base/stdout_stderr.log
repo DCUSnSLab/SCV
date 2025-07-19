@@ -1,0 +1,175 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found tf2: 0.25.13 (/opt/ros/humble/share/tf2/cmake)
+-- Found tf2_ros: 0.25.13 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found tf2_geometry_msgs: 0.25.13 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found hunter_msgs: 0.0.1 (/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake)
+-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/scv/SCV/build/hunter_base
+[ 75%] [32mBuilding CXX object CMakeFiles/hunter_base_node.dir/src/bicycle_model.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/hunter_base_node.dir/src/hunter_base_node.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o[0m
+In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Recorder.h:25[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:17[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/bicycle_model.hpp:19[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/bicycle_model.cpp:10[m[K:
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:54:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+   54 |       [01;35m[Kconst[m[K pointer operator->() const noexcept
+      |       [01;35m[K^~~~~[m[K
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:113:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+  113 |       [01;35m[Kconst[m[K pointer operator->() const
+      |       [01;35m[K^~~~~[m[K
+In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/RK2.h:17[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:26[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/bicycle_model.hpp:19[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/bicycle_model.cpp:10[m[K:
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:25:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+   25 |    constexpr [01;35m[Kconst[m[K value_t cx(long double v) { return static_cast<value_t>(v); }
+      |              [01;35m[K^~~~~[m[K
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:26:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+   26 |    constexpr [01;35m[Kconst[m[K value_t operator"" _v(long double v) { return static_cast<value_t>(v); }
+      |              [01;35m[K^~~~~[m[K
+In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Recorder.h:25[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:17[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12[m[K:
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:54:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+   54 |       [01;35m[Kconst[m[K pointer operator->() const noexcept
+      |       [01;35m[K^~~~~[m[K
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:113:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+  113 |       [01;35m[Kconst[m[K pointer operator->() const
+      |       [01;35m[K^~~~~[m[K
+In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/RK2.h:17[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:26[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23[m[K,
+                 from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12[m[K:
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:25:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+   25 |    constexpr [01;35m[Kconst[m[K value_t cx(long double v) { return static_cast<value_t>(v); }
+      |              [01;35m[K^~~~~[m[K
+[01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:26:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+   26 |    constexpr [01;35m[Kconst[m[K value_t operator"" _v(long double v) { return static_cast<value_t>(v); }
+      |              [01;35m[K^~~~~[m[K
+[100%] [32m[1mLinking CXX executable hunter_base_node[0m
+[100%] Built target hunter_base_node
+-- Install configuration: ""
+-- Installing: /home/scv/SCV/install/hunter_base/lib/hunter_base/hunter_base_node
+-- Set runtime path of "/home/scv/SCV/install/hunter_base/lib/hunter_base/hunter_base_node" to ""
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base//launch
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base//launch/hunter_base.launch.py
+-- Installing: /home/scv/SCV/install/hunter_base/share/ament_index/resource_index/package_run_dependencies/hunter_base
+-- Installing: /home/scv/SCV/install/hunter_base/share/ament_index/resource_index/parent_prefix_path/hunter_base
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/environment/ament_prefix_path.sh
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/environment/ament_prefix_path.dsv
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/environment/path.sh
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/environment/path.dsv
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/local_setup.bash
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/local_setup.sh
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/local_setup.zsh
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/local_setup.dsv
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/package.dsv
+-- Installing: /home/scv/SCV/install/hunter_base/share/ament_index/resource_index/packages/hunter_base
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/cmake/hunter_baseConfig.cmake
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/cmake/hunter_baseConfig-version.cmake
+-- Installing: /home/scv/SCV/install/hunter_base/share/hunter_base/package.xml
+-- Installing: /home/scv/SCV/install/hunter_base/share/ascent/cmake/ascentTargets.cmake
+-- Installing: /home/scv/SCV/install/hunter_base/share/ascent/cmake/ascentConfig.cmake
+-- Installing: /home/scv/SCV/install/hunter_base/share/ascent/cmake/ascentConfigVersion.cmake
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/direct
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/direct/State.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/ParamV.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/Recorder.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/Param.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/containers
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/containers/stack.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/RK2.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/DOPRI45.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/Euler.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/Heun.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/NCRK4.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/RTAM4.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/Midpoint.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/RTAM3.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/RK4.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/RK3.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/PC233.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/RTAM2.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_modular/ModularIntegrators.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/System.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/Vector.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/algorithms
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/algorithms/Derivative.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/Utility.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/timing
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/timing/Timing.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/timing/Sampler.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/timing/TimeAdvanced.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/ChaiEngine.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/modular
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/modular/Link.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/modular/Module.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/threading
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/threading/Pool.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/threading/Queue.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/RK2.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/DOPRI45.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/Euler.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/RTAM4.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/Midpoint.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/RKMM.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/RK4.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators/PC233.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_direct
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_direct/Euler.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/integrators_direct/RK4.h
+-- Installing: /home/scv/SCV/install/hunter_base/include/ascent/Ascent.h

@@ -1,1 +1,0 @@
-/home/ssc/SCV/src/sensor_pkg/zed-ros2-wrapper/zed_wrapper/launch/zed_camera.launch.py

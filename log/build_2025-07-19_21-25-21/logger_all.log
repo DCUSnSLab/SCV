@@ -1,0 +1,446 @@
+[0.086s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.086s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f76cbdc9ae0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f76cbdc9570>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f76cbdc9570>>, mixin_verb=('build',))
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.217s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/scv/SCV'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ignore', 'ignore_ament_install']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore_ament_install'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_pkg']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_pkg'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_meta']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_meta'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ros']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ros'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['cmake', 'python']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'cmake'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['python_setup_py']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python_setup_py'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extensions ['ignore', 'ignore_ament_install']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'ignore'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'ignore_ament_install'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extensions ['colcon_pkg']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'colcon_pkg'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extensions ['colcon_meta']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'colcon_meta'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extensions ['ros']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'ros'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extensions ['cmake', 'python']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'cmake'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'python'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extensions ['python_setup_py']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/params) by extension 'python_setup_py'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extensions ['ignore', 'ignore_ament_install']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'ignore'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'ignore_ament_install'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extensions ['colcon_pkg']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'colcon_pkg'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extensions ['colcon_meta']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'colcon_meta'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extensions ['ros']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'ros'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extensions ['cmake', 'python']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'cmake'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'python'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extensions ['python_setup_py']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(config/rviz) by extension 'python_setup_py'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ignore', 'ignore_ament_install']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore_ament_install'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_pkg']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_pkg'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_meta']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_meta'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ros']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ros'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['cmake', 'python']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'cmake'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['python_setup_py']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python_setup_py'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore_ament_install'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_pkg']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_pkg'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_meta']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_meta'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ros']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ros'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['cmake', 'python']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'cmake'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['python_setup_py']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python_setup_py'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'ignore'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'ignore_ament_install'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extensions ['colcon_pkg']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'colcon_pkg'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extensions ['colcon_meta']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'colcon_meta'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extensions ['ros']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'ros'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extensions ['cmake', 'python']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'cmake'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'python'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extensions ['python_setup_py']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg) by extension 'python_setup_py'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extensions ['ignore', 'ignore_ament_install']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'ignore'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'ignore_ament_install'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extensions ['colcon_pkg']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'colcon_pkg'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extensions ['colcon_meta']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'colcon_meta'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extensions ['ros']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'ros'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extensions ['cmake', 'python']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'cmake'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'python'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extensions ['python_setup_py']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/ublox) by extension 'python_setup_py'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extensions ['ignore', 'ignore_ament_install']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'ignore'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'ignore_ament_install'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extensions ['colcon_pkg']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'colcon_pkg'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extensions ['colcon_meta']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'colcon_meta'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extensions ['ros']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'ros'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extensions ['cmake', 'python']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'cmake'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'python'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extensions ['python_setup_py']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/usb_cam) by extension 'python_setup_py'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extensions ['ignore', 'ignore_ament_install']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'ignore'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'ignore_ament_install'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extensions ['colcon_pkg']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'colcon_pkg'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extensions ['colcon_meta']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'colcon_meta'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extensions ['ros']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'ros'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extensions ['cmake', 'python']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'cmake'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'python'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extensions ['python_setup_py']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/sensor_pkg/zed-ros2-wrapper) by extension 'python_setup_py'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'ignore_ament_install'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extensions ['colcon_pkg']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'colcon_pkg'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extensions ['colcon_meta']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'colcon_meta'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extensions ['ros']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'ros'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extensions ['cmake', 'python']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'cmake'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'python'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extensions ['python_setup_py']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle) by extension 'python_setup_py'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'ignore_ament_install'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extensions ['colcon_pkg']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'colcon_pkg'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extensions ['colcon_meta']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'colcon_meta'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extensions ['ros']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'ros'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extensions ['cmake', 'python']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'cmake'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'python'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extensions ['python_setup_py']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2) by extension 'python_setup_py'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extensions ['ignore', 'ignore_ament_install']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extension 'ignore'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extension 'ignore_ament_install'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extensions ['colcon_pkg']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extension 'colcon_pkg'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extensions ['colcon_meta']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extension 'colcon_meta'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extensions ['ros']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_base) by extension 'ros'
+[0.235s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vehicle/SCV_hunter_ros2/hunter_base' with type 'ros.ament_cmake' and name 'hunter_base'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extension 'ignore'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extension 'ignore_ament_install'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extensions ['colcon_pkg']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extension 'colcon_pkg'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extensions ['colcon_meta']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extension 'colcon_meta'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extensions ['ros']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_hunter_ros2/hunter_msgs) by extension 'ros'
+[0.236s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vehicle/SCV_hunter_ros2/hunter_msgs' with type 'ros.ament_cmake' and name 'hunter_msgs'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extensions ['ignore', 'ignore_ament_install']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extension 'ignore'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extension 'ignore_ament_install'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extensions ['colcon_pkg']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extension 'colcon_pkg'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extensions ['colcon_meta']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extension 'colcon_meta'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extensions ['ros']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/SCV_ugv_sdk) by extension 'ros'
+[0.237s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vehicle/SCV_ugv_sdk' with type 'ros.catkin' and name 'ugv_sdk'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extensions ['ignore', 'ignore_ament_install']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'ignore'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'ignore_ament_install'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extensions ['colcon_pkg']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'colcon_pkg'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extensions ['colcon_meta']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'colcon_meta'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extensions ['ros']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'ros'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extensions ['cmake', 'python']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'cmake'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'python'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extensions ['python_setup_py']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/vehicle/urdf) by extension 'python_setup_py'
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.238s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.261s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.261s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.261s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/scv/SCV/install/ugv_sdk' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.262s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/scv/SCV/install
+[0.263s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 271 installed packages in /opt/ros/humble
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'cmake_args' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'cmake_target' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'hunter_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.292s] DEBUG:colcon.colcon_core.verb:Building package 'hunter_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/scv/SCV/build/hunter_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/scv/SCV/install/hunter_msgs', 'merge_install': False, 'path': '/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'cmake_args' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'cmake_target' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'cmake_clean_cache' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'cmake_clean_first' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'cmake_force_configure' from command line to 'False'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'ament_cmake_args' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'catkin_cmake_args' from command line to 'None'
+[0.292s] Level 5:colcon.colcon_core.verb:set package 'ugv_sdk' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.292s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_sdk' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/scv/SCV/build/ugv_sdk', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/scv/SCV/install/ugv_sdk', 'merge_install': False, 'path': '/home/scv/SCV/src/vehicle/SCV_ugv_sdk', 'symlink_install': False, 'test_result_base': None}
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'cmake_args' from command line to 'None'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'cmake_target' from command line to 'None'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'cmake_clean_cache' from command line to 'False'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'cmake_clean_first' from command line to 'False'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'cmake_force_configure' from command line to 'False'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'ament_cmake_args' from command line to 'None'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'catkin_cmake_args' from command line to 'None'
+[0.293s] Level 5:colcon.colcon_core.verb:set package 'hunter_base' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.293s] DEBUG:colcon.colcon_core.verb:Building package 'hunter_base' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/scv/SCV/build/hunter_base', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/scv/SCV/install/hunter_base', 'merge_install': False, 'path': '/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base', 'symlink_install': False, 'test_result_base': None}
+[0.293s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.294s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.294s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs' with build type 'ament_cmake'
+[0.294s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs'
+[0.295s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.296s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.296s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.298s] INFO:colcon.colcon_ros.task.catkin.build:Building ROS package in '/home/scv/SCV/src/vehicle/SCV_ugv_sdk' with build type 'catkin'
+[0.298s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/scv/SCV/src/vehicle/SCV_ugv_sdk'
+[0.298s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.298s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.303s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/hunter_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/hunter_msgs
+[0.305s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/ugv_sdk': /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_ugv_sdk -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/ugv_sdk
+[0.664s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/ugv_sdk' returned '0': /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_ugv_sdk -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/ugv_sdk
+[0.666s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/ugv_sdk': /usr/bin/cmake --build /home/scv/SCV/build/ugv_sdk -- -j8 -l8
+[2.472s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/hunter_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/hunter_msgs
+[2.477s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/hunter_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/hunter_msgs -- -j8 -l8
+[8.617s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/ugv_sdk' returned '0': /usr/bin/cmake --build /home/scv/SCV/build/ugv_sdk -- -j8 -l8
+[8.625s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/ugv_sdk': /usr/bin/cmake --install /home/scv/SCV/build/ugv_sdk
+[8.637s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_sdk', 'ros_package_path')
+[8.637s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/ros_package_path.ps1'
+[8.637s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/ugv_sdk' returned '0': /usr/bin/cmake --install /home/scv/SCV/build/ugv_sdk
+[8.638s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/ros_package_path.dsv'
+[8.638s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/ros_package_path.sh'
+[8.639s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_sdk', 'pkg_config_path')
+[8.639s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/pkg_config_path.ps1'
+[8.639s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/pkg_config_path.dsv'
+[8.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/pkg_config_path.sh'
+[8.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_sdk', 'pkg_config_path_multiarch')
+[8.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/pkg_config_path_multiarch.ps1'
+[8.641s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/pkg_config_path_multiarch.dsv'
+[8.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/pkg_config_path_multiarch.sh'
+[8.643s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_sdk)
+[8.644s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/ugv_sdk' for CMake module files
+[8.645s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/ugv_sdk' for CMake config files
+[8.645s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_sdk', 'cmake_prefix_path')
+[8.645s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/cmake_prefix_path.ps1'
+[8.645s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/cmake_prefix_path.dsv'
+[8.646s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/hook/cmake_prefix_path.sh'
+[8.646s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/ugv_sdk/lib'
+[8.647s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/ugv_sdk/bin'
+[8.647s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/ugv_sdk/lib/pkgconfig/ugv_sdk.pc'
+[8.647s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/ugv_sdk/lib/python3.10/site-packages'
+[8.647s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/ugv_sdk/bin'
+[8.647s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/package.ps1'
+[8.648s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/package.dsv'
+[8.649s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/package.sh'
+[8.649s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/package.bash'
+[8.650s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/ugv_sdk/share/ugv_sdk/package.zsh'
+[8.651s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/scv/SCV/install/ugv_sdk/share/colcon-core/packages/ugv_sdk)
+[9.024s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/hunter_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/hunter_msgs -- -j8 -l8
+[9.026s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/hunter_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/hunter_msgs
+[9.088s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hunter_msgs)
+[9.089s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs' for CMake module files
+[9.089s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/hunter_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/hunter_msgs
+[9.089s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs' for CMake config files
+[9.090s] Level 1:colcon.colcon_core.shell:create_environment_hook('hunter_msgs', 'cmake_prefix_path')
+[9.090s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/cmake_prefix_path.ps1'
+[9.091s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/cmake_prefix_path.dsv'
+[9.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/cmake_prefix_path.sh'
+[9.091s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/lib'
+[9.091s] Level 1:colcon.colcon_core.shell:create_environment_hook('hunter_msgs', 'ld_library_path_lib')
+[9.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/ld_library_path_lib.ps1'
+[9.092s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/ld_library_path_lib.dsv'
+[9.092s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/ld_library_path_lib.sh'
+[9.092s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/bin'
+[9.092s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/lib/pkgconfig/hunter_msgs.pc'
+[9.092s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/lib/python3.10/site-packages'
+[9.093s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/bin'
+[9.093s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.ps1'
+[9.093s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.dsv'
+[9.094s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.sh'
+[9.094s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.bash'
+[9.094s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.zsh'
+[9.094s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/scv/SCV/install/hunter_msgs/share/colcon-core/packages/hunter_msgs)
+[9.095s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hunter_msgs)
+[9.095s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs' for CMake module files
+[9.096s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs' for CMake config files
+[9.096s] Level 1:colcon.colcon_core.shell:create_environment_hook('hunter_msgs', 'cmake_prefix_path')
+[9.096s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/cmake_prefix_path.ps1'
+[9.097s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/cmake_prefix_path.dsv'
+[9.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/cmake_prefix_path.sh'
+[9.097s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/lib'
+[9.097s] Level 1:colcon.colcon_core.shell:create_environment_hook('hunter_msgs', 'ld_library_path_lib')
+[9.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/ld_library_path_lib.ps1'
+[9.098s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/ld_library_path_lib.dsv'
+[9.098s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/hook/ld_library_path_lib.sh'
+[9.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/bin'
+[9.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/lib/pkgconfig/hunter_msgs.pc'
+[9.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/lib/python3.10/site-packages'
+[9.099s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_msgs/bin'
+[9.099s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.ps1'
+[9.099s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.dsv'
+[9.100s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.sh'
+[9.100s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.bash'
+[9.100s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.zsh'
+[9.101s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/scv/SCV/install/hunter_msgs/share/colcon-core/packages/hunter_msgs)
+[9.101s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base' with build type 'ament_cmake'
+[9.101s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base'
+[9.101s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[9.101s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[9.109s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/hunter_base': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/hunter_base
+[10.101s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/hunter_base' returned '0': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/hunter_base
+[10.102s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/hunter_base': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8
+[19.080s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/hunter_base' returned '0': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8
+[19.081s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/scv/SCV/build/hunter_base': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/scv/SCV/build/hunter_base
+[19.095s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hunter_base)
+[19.095s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base' for CMake module files
+[19.096s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/scv/SCV/build/hunter_base' returned '0': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/scv/SCV/build/hunter_base
+[19.096s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base' for CMake config files
+[19.096s] Level 1:colcon.colcon_core.shell:create_environment_hook('hunter_base', 'cmake_prefix_path')
+[19.096s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_base/share/hunter_base/hook/cmake_prefix_path.ps1'
+[19.097s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/hunter_base/share/hunter_base/hook/cmake_prefix_path.dsv'
+[19.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_base/share/hunter_base/hook/cmake_prefix_path.sh'
+[19.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/lib'
+[19.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/bin'
+[19.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/lib/pkgconfig/hunter_base.pc'
+[19.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/lib/python3.10/site-packages'
+[19.098s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/bin'
+[19.098s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.ps1'
+[19.099s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/scv/SCV/install/hunter_base/share/hunter_base/package.dsv'
+[19.099s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.sh'
+[19.099s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.bash'
+[19.099s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.zsh'
+[19.100s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/scv/SCV/install/hunter_base/share/colcon-core/packages/hunter_base)
+[19.100s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hunter_base)
+[19.100s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base' for CMake module files
+[19.101s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base' for CMake config files
+[19.101s] Level 1:colcon.colcon_core.shell:create_environment_hook('hunter_base', 'cmake_prefix_path')
+[19.101s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_base/share/hunter_base/hook/cmake_prefix_path.ps1'
+[19.101s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/scv/SCV/install/hunter_base/share/hunter_base/hook/cmake_prefix_path.dsv'
+[19.102s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/scv/SCV/install/hunter_base/share/hunter_base/hook/cmake_prefix_path.sh'
+[19.102s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/lib'
+[19.102s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/bin'
+[19.102s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/lib/pkgconfig/hunter_base.pc'
+[19.102s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/lib/python3.10/site-packages'
+[19.103s] Level 1:colcon.colcon_core.environment:checking '/home/scv/SCV/install/hunter_base/bin'
+[19.103s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.ps1'
+[19.103s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/scv/SCV/install/hunter_base/share/hunter_base/package.dsv'
+[19.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.sh'
+[19.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.bash'
+[19.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/scv/SCV/install/hunter_base/share/hunter_base/package.zsh'
+[19.104s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/scv/SCV/install/hunter_base/share/colcon-core/packages/hunter_base)
+[19.105s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[19.105s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[19.105s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[19.105s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[19.109s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[19.109s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[19.109s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[19.118s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[19.118s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/scv/SCV/install/local_setup.ps1'
+[19.119s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/scv/SCV/install/_local_setup_util_ps1.py'
+[19.120s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/scv/SCV/install/setup.ps1'
+[19.121s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/scv/SCV/install/local_setup.sh'
+[19.121s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/scv/SCV/install/_local_setup_util_sh.py'
+[19.122s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/scv/SCV/install/setup.sh'
+[19.123s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/scv/SCV/install/local_setup.bash'
+[19.123s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/scv/SCV/install/setup.bash'
+[19.124s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/scv/SCV/install/local_setup.zsh'
+[19.124s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/scv/SCV/install/setup.zsh'

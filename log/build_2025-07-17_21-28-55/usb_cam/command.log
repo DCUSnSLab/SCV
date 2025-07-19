@@ -1,6 +1,0 @@
-Invoking command in '/home/ssc/SCV/build/usb_cam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/usb_cam -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/usb_cam
-Invoked command in '/home/ssc/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ssc/SCV/src/sensor_pkg/usb_cam -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ssc/SCV/install/usb_cam
-Invoking command in '/home/ssc/SCV/build/usb_cam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ssc/SCV/build/usb_cam -- -j24 -l24
-Invoked command in '/home/ssc/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ssc/SCV/build/usb_cam -- -j24 -l24
-Invoking command in '/home/ssc/SCV/build/usb_cam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ssc/SCV/build/usb_cam
-Invoked command in '/home/ssc/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ssc/SCV/build/usb_cam

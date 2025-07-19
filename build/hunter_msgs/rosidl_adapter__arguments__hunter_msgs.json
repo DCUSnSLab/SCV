@@ -1,0 +1,10 @@
+{
+  "package_name": "hunter_msgs",
+  "non_idl_tuples": [
+    "/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs:msg/HunterActuatorState.msg",
+    "/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs:msg/HunterLightCmd.msg",
+    "/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs:msg/HunterLightState.msg",
+    "/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs:msg/HunterRCState.msg",
+    "/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs:msg/HunterStatus.msg"
+  ]
+}
