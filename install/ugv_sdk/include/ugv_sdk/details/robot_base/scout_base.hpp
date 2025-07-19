@@ -23,11 +23,15 @@ template <typename ParserType>
 class ScoutBase : public AgilexBase<ParserType>, public ScoutInterface {
  public:
   ScoutBase() : AgilexBase<ParserType>(){};
-  virtual ~ScoutBase() = default;
+  ~ScoutBase() = default;
 
   // set up connection
-  bool Connect(std::string can_name) override {
-    return AgilexBase<ParserType>::Connect(can_name);
+  void Connect(std::string can_name) override {
+    AgilexBase<ParserType>::Connect(can_name);
+  }
+
+  void Connect(std::string uart_name, uint32_t baudrate) override {
+    // TODO
   }
 
   // robot control
@@ -36,14 +40,10 @@ class ScoutBase : public AgilexBase<ParserType>, public ScoutInterface {
                                               0.0);
   }
 
-  void SetLightCommand(AgxLightMode f_mode, uint8_t f_value,
-                       AgxLightMode r_mode = AgxLightMode::CONST_ON,
+  void SetLightCommand(LightMode f_mode, uint8_t f_value,
+                       LightMode r_mode = LightMode::CONST_ON,
                        uint8_t r_value = 0) override {
     AgilexBase<ParserType>::SendLightCommand(f_mode, f_value, r_mode, r_value);
-  }
-
-  void DisableLightControl() override {
-    AgilexBase<ParserType>::DisableLightControl();
   }
 
   // get robot state
@@ -72,17 +72,20 @@ class ScoutBase : public AgilexBase<ParserType>, public ScoutInterface {
     return scout_actuator;
   }
 
-  ScoutCommonSensorState GetCommonSensorState() override {
-    auto common_sensor =
-        AgilexBase<ParserType>::GetCommonSensorStateMsgGroup();
+  ScoutCommonSensorState GetCommonSensorState() override{
+    auto common_sensor = AgilexBase<ParserType>::GetCommonSensorStateMsgGroup();
 
-    ScoutCommonSensorState scout_bms;
+    ScoutCommonSensorState scout_common_sensor;
 
-    scout_bms.time_stamp = common_sensor.time_stamp;
-    scout_bms.bms_basic_state = common_sensor.bms_basic_state;
+    scout_common_sensor.time_stamp = common_sensor.time_stamp;
+    scout_common_sensor.bms_basic_state = common_sensor.bms_basic_state;
+//    std::cout << static_cast<unsigned int>(scout_common_sensor.bms_basic_state.battery_soc) << std::endl;
 
-    return scout_bms;
+    return scout_common_sensor;
+
+
   }
+
 };
 
 template <typename ParserType>

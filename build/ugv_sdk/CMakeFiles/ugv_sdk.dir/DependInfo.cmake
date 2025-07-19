@@ -14,10 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/async_port/async_serial.cpp" "CMakeFiles/ugv_sdk.dir/src/async_port/async_serial.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/async_port/async_serial.cpp.o.d"
   "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/bunker_robot.cpp" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.o.d"
   "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/hunter_robot.cpp" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.o.d"
-  "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/ranger_robot.cpp" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o.d"
   "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/scout_robot.cpp" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.o.d"
-  "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/titan_robot.cpp" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o.d"
-  "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/tracer_robot.cpp" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o.d"
   "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v2/protocol_v2_parser.cpp" "CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o.d"
   "/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/utilities/protocol_detector.cpp" "CMakeFiles/ugv_sdk.dir/src/utilities/protocol_detector.cpp.o" "gcc" "CMakeFiles/ugv_sdk.dir/src/utilities/protocol_detector.cpp.o.d"
   )

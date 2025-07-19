@@ -315,17 +315,17 @@ hunter_msgs__rosidl_typesupport_cpp/fast:
 .PHONY : hunter_msgs__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_copy_hunter_msgs
+# Target rules for targets named ament_cmake_python_symlink_hunter_msgs
 
 # Build rule for target.
-ament_cmake_python_copy_hunter_msgs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_hunter_msgs
-.PHONY : ament_cmake_python_copy_hunter_msgs
+ament_cmake_python_symlink_hunter_msgs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_hunter_msgs
+.PHONY : ament_cmake_python_symlink_hunter_msgs
 
 # fast build rule for target.
-ament_cmake_python_copy_hunter_msgs/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_hunter_msgs.dir/build.make CMakeFiles/ament_cmake_python_copy_hunter_msgs.dir/build
-.PHONY : ament_cmake_python_copy_hunter_msgs/fast
+ament_cmake_python_symlink_hunter_msgs/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_hunter_msgs.dir/build.make CMakeFiles/ament_cmake_python_symlink_hunter_msgs.dir/build
+.PHONY : ament_cmake_python_symlink_hunter_msgs/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_hunter_msgs_egg
@@ -1451,7 +1451,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_hunter_msgs_egg"
-	@echo "... ament_cmake_python_copy_hunter_msgs"
+	@echo "... ament_cmake_python_symlink_hunter_msgs"
 	@echo "... hunter_msgs"
 	@echo "... hunter_msgs__cpp"
 	@echo "... hunter_msgs__py"

@@ -1,2 +1,1 @@
-uint8 mode
-uint8 custom_value
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_msgs/msg/HunterLightState.msg

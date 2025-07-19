@@ -21,9 +21,7 @@ class HunterRobot : public RobotCommonInterface, public HunterInterface {
   HunterRobot(ProtocolVersion protocol = ProtocolVersion::AGX_V2);
   ~HunterRobot();
 
-  bool Connect(std::string can_name) override;
-
-  std::string RequestVersion(int timeout_sec = 3) override;
+  void Connect(std::string can_name) override;
 
   void EnableCommandedMode() override;
 
@@ -33,13 +31,13 @@ class HunterRobot : public RobotCommonInterface, public HunterInterface {
   void SetMotionCommand(double linear_vel, double angular_vel) override;
 
   void ResetRobotState() override;
+  std::string sendRequest() override;
 
   ProtocolVersion GetParserProtocolVersion() override;
 
   // get robot state
   HunterCoreState GetRobotState() override;
   HunterActuatorState GetActuatorState() override;
-  HunterCommonSensorState GetCommonSensorState() override;
 
  private:
   RobotCommonInterface* robot_;

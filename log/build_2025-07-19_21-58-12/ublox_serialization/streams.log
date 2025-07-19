@@ -1,0 +1,26 @@
+[0.017s] Invoking command in '/home/scv/SCV/build/ublox_serialization': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/ublox_serialization -- -j8 -l8
+[0.049s] Invoked command in '/home/scv/SCV/build/ublox_serialization' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/ublox_serialization -- -j8 -l8
+[0.058s] Invoking command in '/home/scv/SCV/build/ublox_serialization': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/ublox_serialization
+[0.065s] -- Install configuration: "Release"
+[0.065s] -- Execute custom install script
+[0.066s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/include/ublox_serialization/ublox_serialization/checksum.hpp
+[0.066s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/include/ublox_serialization/ublox_serialization/serialization.hpp
+[0.067s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ament_index/resource_index/package_run_dependencies/ublox_serialization
+[0.067s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ament_index/resource_index/parent_prefix_path/ublox_serialization
+[0.067s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/environment/ament_prefix_path.sh
+[0.068s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/environment/ament_prefix_path.dsv
+[0.068s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/environment/path.sh
+[0.069s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/environment/path.dsv
+[0.069s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/local_setup.bash
+[0.069s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/local_setup.sh
+[0.069s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/local_setup.zsh
+[0.070s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/local_setup.dsv
+[0.070s] -- Symlinking: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/package.dsv
+[0.079s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ament_index/resource_index/packages/ublox_serialization
+[0.080s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.080s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/cmake/ament_cmake_export_targets-extras.cmake
+[0.080s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/cmake/ublox_serializationConfig.cmake
+[0.080s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/cmake/ublox_serializationConfig-version.cmake
+[0.081s] -- Up-to-date symlink: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/package.xml
+[0.081s] -- Up-to-date: /home/scv/SCV/install/ublox_serialization/share/ublox_serialization/cmake/export_ublox_serializationExport.cmake
+[0.091s] Invoked command in '/home/scv/SCV/build/ublox_serialization' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/ublox_serialization

@@ -1,0 +1,49 @@
+Consolidate compiler generated dependencies of target hunter_base_node
+[ 25%] Building CXX object CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o
+In file included from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Recorder.h:25,
+                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:17,
+                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23,
+                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12:
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:54:7: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   54 |       const pointer operator->() const noexcept
+      |       ^~~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:113:7: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+  113 |       const pointer operator->() const
+      |       ^~~~~
+In file included from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/RK2.h:17,
+                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:26,
+                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23,
+                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12:
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:25:14: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   25 |    constexpr const value_t cx(long double v) { return static_cast<value_t>(v); }
+      |              ^~~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:26:14: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   26 |    constexpr const value_t operator"" _v(long double v) { return static_cast<value_t>(v); }
+      |              ^~~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp: In member function ‘bool westonrobot::HunterBaseRos::Initialize()’:
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:61:3: error: ‘ProtocolDetector’ was not declared in this scope; did you mean ‘ProtocolDectctor’?
+   61 |   ProtocolDetector detector;
+      |   ^~~~~~~~~~~~~~~~
+      |   ProtocolDectctor
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:62:7: error: ‘detector’ was not declared in this scope
+   62 |   if (detector.Connect(port_name_)) {
+      |       ^~~~~~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp: At global scope:
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:125:7: error: expected unqualified-id before ‘else’
+  125 |     } else {
+      |       ^~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:132:5: error: ‘messenger’ does not name a type
+  132 |     messenger->SetupSubscription();
+      |     ^~~~~~~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:134:5: error: ‘keep_running_’ does not name a type
+  134 |     keep_running_ = true;
+      |     ^~~~~~~~~~~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:135:5: error: expected unqualified-id before ‘while’
+  135 |     while (keep_running_) {
+      |     ^~~~~
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:143:1: error: expected declaration before ‘}’ token
+  143 | }  // namespace westonrobot
+      | ^
+gmake[2]: *** [CMakeFiles/hunter_base_node.dir/build.make:76: CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:154: CMakeFiles/hunter_base_node.dir/all] Error 2
+gmake: *** [Makefile:166: all] Error 2

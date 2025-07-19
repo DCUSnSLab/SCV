@@ -20,6 +20,9 @@ BUILD_TESTING:BOOL=OFF
 //No help, variable specified on the command line.
 CATKIN_INSTALL_INTO_PREFIX_ROOT:UNINITIALIZED=0
 
+//No help, variable specified on the command line.
+CATKIN_SYMLINK_INSTALL:UNINITIALIZED=ON
+
 //Path to a program.
 CCACHE_PROGRAM:FILEPATH=CCACHE_PROGRAM-NOTFOUND
 
@@ -29,7 +32,8 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//Choose the type of build.
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
@@ -204,13 +208,13 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=ugv_sdk
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=0.8.0
+CMAKE_PROJECT_VERSION:STATIC=0.2.0
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=8
+CMAKE_PROJECT_VERSION_MINOR:STATIC=2
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_PATCH:STATIC=0

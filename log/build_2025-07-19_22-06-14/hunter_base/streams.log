@@ -1,0 +1,65 @@
+[0.010s] Invoking command in '/home/scv/SCV/build/hunter_base': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs:/home/scv/SCV/install/hunter_base /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/hunter_base
+[0.020s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.133s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.139s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.165s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.169s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.174s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.189s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.199s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.237s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.239s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.345s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.399s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.411s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.429s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.448s] -- Found tf2: 0.25.13 (/opt/ros/humble/share/tf2/cmake)
+[0.452s] -- Found tf2_ros: 0.25.13 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.538s] -- Found tf2_geometry_msgs: 0.25.13 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.542s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.543s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.545s] -- Found hunter_msgs: 0.0.1 (/home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake)
+[0.587s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.661s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.665s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.665s] -- Configured cppcheck include dirs: /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include
+[0.665s] -- Configured cppcheck exclude dirs and/or files: 
+[0.668s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.668s] -- Configured cpplint exclude dirs and/or files: 
+[0.669s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.670s] -- Added test 'lint_cmake' to check CMake code style
+[0.671s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.674s] -- Added test 'uncrustify' to check C / C++ code style
+[0.674s] -- Configured uncrustify additional arguments: 
+[0.675s] -- Added test 'xmllint' to check XML markup files
+[0.676s] -- Configuring done
+[0.689s] -- Generating done
+[0.694s] -- Build files have been written to: /home/scv/SCV/build/hunter_base
+[0.702s] Invoked command in '/home/scv/SCV/build/hunter_base' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs:/home/scv/SCV/install/hunter_base /usr/bin/cmake /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/hunter_base
+[0.703s] Invoking command in '/home/scv/SCV/build/hunter_base': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs:/home/scv/SCV/install/hunter_base /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8
+[0.738s] [35m[1mConsolidate compiler generated dependencies of target hunter_base_node[0m
+[0.760s] [ 25%] [32mBuilding CXX object CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o[0m
+[3.631s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Recorder.h:25[m[K,
+[3.631s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:17[m[K,
+[3.631s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23[m[K,
+[3.631s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12[m[K:
+[3.631s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:54:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[3.631s]    54 |       [01;35m[Kconst[m[K pointer operator->() const noexcept
+[3.632s]       |       [01;35m[K^~~~~[m[K
+[3.632s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:113:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[3.632s]   113 |       [01;35m[Kconst[m[K pointer operator->() const
+[3.632s]       |       [01;35m[K^~~~~[m[K
+[3.634s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/RK2.h:17[m[K,
+[3.634s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:26[m[K,
+[3.635s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23[m[K,
+[3.635s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12[m[K:
+[3.635s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:25:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[3.635s]    25 |    constexpr [01;35m[Kconst[m[K value_t cx(long double v) { return static_cast<value_t>(v); }
+[3.635s]       |              [01;35m[K^~~~~[m[K
+[3.635s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:26:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[3.635s]    26 |    constexpr [01;35m[Kconst[m[K value_t operator"" _v(long double v) { return static_cast<value_t>(v); }
+[3.635s]       |              [01;35m[K^~~~~[m[K
+[4.007s] gmake[2]: *** [CMakeFiles/hunter_base_node.dir/build.make:76: CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o] Interrupt
+[4.007s] gmake[1]: *** [CMakeFiles/Makefile2:154: CMakeFiles/hunter_base_node.dir/all] Interrupt
+[4.007s] gmake: *** [Makefile:166: all] Interrupt
+[4.026s] Invoked command in '/home/scv/SCV/build/hunter_base' returned '-2': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs:/home/scv/SCV/install/hunter_base /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8

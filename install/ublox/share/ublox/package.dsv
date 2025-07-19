@@ -1,0 +1,8 @@
+source;share/ublox/hook/cmake_prefix_path.ps1
+source;share/ublox/hook/cmake_prefix_path.dsv
+source;share/ublox/hook/cmake_prefix_path.sh
+source;share/ublox/local_setup.bash
+source;share/ublox/local_setup.dsv
+source;share/ublox/local_setup.ps1
+source;share/ublox/local_setup.sh
+source;share/ublox/local_setup.zsh

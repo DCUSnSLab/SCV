@@ -26,8 +26,8 @@ class BunkerBase : public AgilexBase<ParserType>, public BunkerInterface {
   ~BunkerBase() = default;
 
   // set up connection
-  bool Connect(std::string can_name) override {
-    return AgilexBase<ParserType>::Connect(can_name);
+  void Connect(std::string can_name) override {
+    AgilexBase<ParserType>::Connect(can_name);
   }
 
   // robot control
@@ -60,20 +60,6 @@ class BunkerBase : public AgilexBase<ParserType>, public BunkerInterface {
     }
     return bunker_actuator;
   }
-
-  BunkerCommonSensorState GetCommonSensorState() override {
-    auto common_sensor =
-        AgilexBase<ParserType>::GetCommonSensorStateMsgGroup();
-
-    BunkerCommonSensorState bunker_bms;
-
-    bunker_bms.time_stamp = common_sensor.time_stamp;
-    bunker_bms.bms_basic_state = common_sensor.bms_basic_state;
-
-    return bunker_bms;
-  }
-
-
 };
 }  // namespace westonrobot
 

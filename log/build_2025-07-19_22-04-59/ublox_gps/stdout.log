@@ -1,0 +1,68 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found asio: /usr/include  
+-- Found diagnostic_msgs: 4.9.0 (/opt/ros/humble/share/diagnostic_msgs/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found diagnostic_updater: 4.0.6 (/opt/ros/humble/share/diagnostic_updater/cmake)
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found nmea_msgs: 2.0.0 (/opt/ros/humble/share/nmea_msgs/cmake)
+-- Found rclcpp_components: 16.0.12 (/opt/ros/humble/share/rclcpp_components/cmake)
+-- Found rtcm_msgs: 1.1.6 (/opt/ros/humble/share/rtcm_msgs/cmake)
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found tf2: 0.25.13 (/opt/ros/humble/share/tf2/cmake)
+-- Found ublox_msgs: 2.3.0 (/home/scv/SCV/install/ublox_msgs/share/ublox_msgs/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/scv/SCV/build/ublox_gps
+[  9%] Building CXX object CMakeFiles/ublox_gps.dir/src/adr_udr_product.cpp.o
+[  9%] Building CXX object CMakeFiles/ublox_gps.dir/src/hp_pos_rec_product.cpp.o
+[ 13%] Building CXX object CMakeFiles/ublox_gps.dir/src/gps.cpp.o
+[ 18%] Building CXX object CMakeFiles/ublox_gps.dir/src/hpg_ref_product.cpp.o
+[ 22%] Building CXX object CMakeFiles/ublox_gps.dir/src/hpg_rov_product.cpp.o
+[ 27%] Building CXX object CMakeFiles/ublox_gps.dir/src/gnss.cpp.o
+[ 31%] Building C object CMakeFiles/ublox_gps.dir/src/mkgmtime.c.o
+[ 36%] Building CXX object CMakeFiles/ublox_gps.dir/src/node.cpp.o
+[ 40%] Building CXX object CMakeFiles/ublox_gps.dir/src/raw_data_pa.cpp.o
+[ 45%] Building CXX object CMakeFiles/ublox_gps.dir/src/raw_data_product.cpp.o
+[ 50%] Building CXX object CMakeFiles/ublox_gps.dir/src/tim_product.cpp.o
+[ 54%] Building CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware.cpp.o
+[ 59%] Building CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware6.cpp.o
+[ 63%] Building CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware7.cpp.o
+[ 68%] Building CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware8.cpp.o
+[ 72%] Building CXX object CMakeFiles/ublox_gps.dir/src/ublox_firmware9.cpp.o
+[ 77%] Linking CXX shared library libublox_gps.so
+[ 77%] Built target ublox_gps
+[ 86%] Building CXX object CMakeFiles/ublox_logger.dir/src/logger_node_pa.cpp.o
+[ 86%] Building CXX object CMakeFiles/ublox_logger.dir/src/raw_data_pa.cpp.o
+[ 90%] Building CXX object CMakeFiles/ublox_gps_node.dir/src/node_main.cpp.o
+[ 95%] Linking CXX executable ublox_gps_node
+[ 95%] Built target ublox_gps_node
+[100%] Linking CXX executable ublox_logger
+[100%] Built target ublox_logger

@@ -13,10 +13,10 @@
 #include <atomic>
 
 #include "ugv_sdk/details/async_port/async_can.hpp"
-#include "ugv_sdk/details/parser_base.hpp"
+#include "ugv_sdk/details/interface/parser_interface.hpp"
 
 namespace westonrobot {
-class ProtocolDetector {
+class ProtocolDectctor {
  public:
   bool Connect(std::string can_name);
 

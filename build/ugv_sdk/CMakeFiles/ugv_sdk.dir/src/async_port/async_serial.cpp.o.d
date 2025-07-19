@@ -159,11 +159,27 @@ CMakeFiles/ugv_sdk.dir/src/async_port/async_serial.cpp.o: \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/thread \
- /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/unique_lock.h \
+ /home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
- /usr/include/asio.hpp /usr/include/asio/associated_allocator.hpp \
+ /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
+ /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
+ /usr/include/c++/11/bits/locale_classes.h \
+ /usr/include/c++/11/bits/locale_classes.tcc \
+ /usr/include/c++/11/streambuf /usr/include/c++/11/bits/streambuf.tcc \
+ /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+ /usr/include/c++/11/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+ /usr/include/c++/11/bits/locale_facets.tcc \
+ /usr/include/c++/11/bits/basic_ios.tcc \
+ /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/asio.hpp \
+ /usr/include/asio/associated_allocator.hpp \
  /usr/include/asio/detail/config.hpp /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
@@ -500,21 +516,7 @@ CMakeFiles/ugv_sdk.dir/src/async_port/async_serial.cpp.o: \
  /usr/include/asio/detail/posix_static_mutex.hpp \
  /usr/include/asio/basic_socket.hpp \
  /usr/include/asio/basic_socket_acceptor.hpp \
- /usr/include/asio/basic_socket_iostream.hpp /usr/include/c++/11/istream \
- /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
- /usr/include/c++/11/bits/locale_classes.h \
- /usr/include/c++/11/bits/locale_classes.tcc \
- /usr/include/c++/11/streambuf /usr/include/c++/11/bits/streambuf.tcc \
- /usr/include/c++/11/bits/basic_ios.h \
- /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
- /usr/include/c++/11/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
- /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
- /usr/include/c++/11/bits/ostream.tcc \
- /usr/include/c++/11/bits/istream.tcc \
+ /usr/include/asio/basic_socket_iostream.hpp \
  /usr/include/asio/basic_socket_streambuf.hpp \
  /usr/include/asio/basic_stream_socket.hpp \
  /usr/include/asio/steady_timer.hpp \
@@ -755,5 +757,4 @@ CMakeFiles/ugv_sdk.dir/src/async_port/async_serial.cpp.o: \
  /usr/include/asio/windows/stream_handle.hpp /usr/include/asio/write.hpp \
  /usr/include/asio/write_at.hpp /usr/include/asio/impl/write_at.hpp \
  /home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/async_port/ring_buffer.hpp \
- /usr/include/c++/11/iostream /usr/include/linux/serial.h \
- /usr/include/linux/tty_flags.h
+ /usr/include/linux/serial.h /usr/include/linux/tty_flags.h

@@ -4,11 +4,10 @@
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/tracer_robot.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/hunter_robot.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/bunker_robot.hpp
-/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/titan_robot.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/protocol_detector.hpp
+/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/stopwatch.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/ranger_base.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp
-/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/titan_base.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/tracer_base.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/bunker_base.hpp
@@ -16,9 +15,9 @@
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_types.h
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/scout_interface.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/tracer_interface.hpp
+/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/bunker_interface.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h
-/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/titan_interface.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/hunter_interface.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/ranger_interface.hpp
@@ -26,8 +25,8 @@
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/robot_limits.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/agilex_msg_parser_v1.h
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2/protocol_v2_parser.hpp
-/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/parser_base.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_can.hpp
+/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_serial.hpp
 /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/ring_buffer.hpp
 /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets.cmake

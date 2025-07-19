@@ -1,0 +1,20 @@
+-- Build package with cmake
+-- Tests will not be built
+-- Project will be installed to /home/scv/SCV/install/ugv_sdk with 'make install'
+--  - To install LIB components to /home/scv/SCV/install/ugv_sdk/lib
+--  - To install BIN components to /home/scv/SCV/install/ugv_sdk/bin
+--  - To install INCLUDE components to /home/scv/SCV/install/ugv_sdk/include
+--  - To install CMAKE components to /home/scv/SCV/install/ugv_sdk/share/cmake/ugv_sdk
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/scv/SCV/build/ugv_sdk
+[35m[1mConsolidate compiler generated dependencies of target ugv_sdk[0m
+[  4%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/async_port/async_serial.cpp.o[0m
+[  8%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/async_port/async_can.cpp.o[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.o[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/utilities/protocol_detector.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.o[0m
+[ 29%] [32mBuilding C object CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o[0m
+[ 37%] [32mBuilding C object CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o[0m

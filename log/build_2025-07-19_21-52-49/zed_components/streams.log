@@ -1,0 +1,61 @@
+[0.013s] Invoking command in '/home/scv/SCV/build/zed_components': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/scv/SCV/src/sensor_pkg/zed-ros2-wrapper/zed_components -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/zed_components
+[0.073s] -- The C compiler identification is GNU 11.4.0
+[0.126s] -- The CXX compiler identification is GNU 11.4.0
+[0.132s] -- Detecting C compiler ABI info
+[0.195s] -- Detecting C compiler ABI info - done
+[0.207s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.207s] -- Detecting C compile features
+[0.208s] -- Detecting C compile features - done
+[0.208s] -- Detecting CXX compiler ABI info
+[0.289s] -- Detecting CXX compiler ABI info - done
+[0.297s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.297s] -- Detecting CXX compile features
+[0.298s] -- Detecting CXX compile features - done
+[0.301s] -- Looking for sgemm_
+[0.370s] -- Looking for sgemm_ - not found
+[0.370s] -- Looking for pthread.h
+[0.449s] -- Looking for pthread.h - found
+[0.449s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.522s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.523s] -- Found Threads: TRUE  
+[0.566s] -- Looking for sgemm_
+[0.793s] -- Looking for sgemm_ - found
+[0.793s] -- Found BLAS: /usr/lib/x86_64-linux-gnu/libopenblas.so  
+[0.837s] -- Found CUDA: /usr/local/cuda (found suitable version "12.8", minimum required is "12") 
+[0.933s] -- Found CUDA: /usr/local/cuda (found version "12.8") 
+[0.942s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[1.276s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.704s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.717s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.734s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.759s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.794s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.020s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.026s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.199s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.245s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.331s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.822s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.831s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.831s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[3.115s] [31mCMake Error at CMakeLists.txt:135 (find_package):
+[3.115s]   By not providing "Findgeographic_msgs.cmake" in CMAKE_MODULE_PATH this
+[3.115s]   project has asked CMake to find a package configuration file provided by
+[3.115s]   "geographic_msgs", but CMake did not find one.
+[3.116s] 
+[3.116s]   Could not find a package configuration file provided by "geographic_msgs"
+[3.116s]   with any of the following names:
+[3.116s] 
+[3.116s]     geographic_msgsConfig.cmake
+[3.116s]     geographic_msgs-config.cmake
+[3.116s] 
+[3.116s]   Add the installation prefix of "geographic_msgs" to CMAKE_PREFIX_PATH or
+[3.116s]   set "geographic_msgs_DIR" to a directory containing one of the above files.
+[3.116s]   If "geographic_msgs" provides a separate development package or SDK, be
+[3.116s]   sure it has been installed.
+[3.116s] 
+[3.116s] [0m
+[3.116s] -- Configuring incomplete, errors occurred!
+[3.117s] See also "/home/scv/SCV/build/zed_components/CMakeFiles/CMakeOutput.log".
+[3.117s] See also "/home/scv/SCV/build/zed_components/CMakeFiles/CMakeError.log".
+[3.158s] Invoked command in '/home/scv/SCV/build/zed_components' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/scv/SCV/src/sensor_pkg/zed-ros2-wrapper/zed_components -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/zed_components

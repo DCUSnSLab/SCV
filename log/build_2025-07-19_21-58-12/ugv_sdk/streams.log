@@ -1,0 +1,57 @@
+[0.015s] Invoking command in '/home/scv/SCV/build/ugv_sdk': /usr/bin/cmake --build /home/scv/SCV/build/ugv_sdk -- -j8 -l8
+[0.077s] [ 41%] Built target ugv_sdk
+[0.140s] [ 50%] Built target demo_scout_mini_omni_robot
+[0.153s] [ 58%] Built target demo_bunker_robot
+[0.155s] [ 79%] Built target demo_hunter_robot
+[0.157s] [ 87%] Built target demo_tracer_robot
+[0.160s] [ 79%] Built target demo_scout_robot
+[0.160s] [ 91%] Built target demo_ranger_robot
+[0.162s] [100%] Built target demo_protocol_detector
+[0.173s] Invoked command in '/home/scv/SCV/build/ugv_sdk' returned '0': /usr/bin/cmake --build /home/scv/SCV/build/ugv_sdk -- -j8 -l8
+[0.176s] Invoking command in '/home/scv/SCV/build/ugv_sdk': /usr/bin/cmake --install /home/scv/SCV/build/ugv_sdk
+[0.184s] -- Install configuration: "Release"
+[0.185s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/libugv_sdk.a
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/ranger_robot.hpp
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/scout_robot.hpp
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/tracer_robot.hpp
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/hunter_robot.hpp
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/bunker_robot.hpp
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities
+[0.186s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/protocol_detector.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/stopwatch.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/ranger_base.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/tracer_base.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/bunker_base.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/hunter_base.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_types.h
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/scout_interface.hpp
+[0.187s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/tracer_interface.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/bunker_interface.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/hunter_interface.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/ranger_interface.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/protocol_v1_parser.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/robot_limits.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/agilex_msg_parser_v1.h
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2/protocol_v2_parser.hpp
+[0.188s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port
+[0.189s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_can.hpp
+[0.189s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp
+[0.189s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_serial.hpp
+[0.189s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/ring_buffer.hpp
+[0.189s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets.cmake
+[0.190s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets-release.cmake
+[0.190s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfig.cmake
+[0.190s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfigVersion.cmake
+[0.190s] Invoked command in '/home/scv/SCV/build/ugv_sdk' returned '0': /usr/bin/cmake --install /home/scv/SCV/build/ugv_sdk

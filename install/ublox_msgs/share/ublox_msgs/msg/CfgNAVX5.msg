@@ -1,0 +1,1 @@
+/home/scv/SCV/src/sensor_pkg/ublox/ublox_msgs/msg/CfgNAVX5.msg

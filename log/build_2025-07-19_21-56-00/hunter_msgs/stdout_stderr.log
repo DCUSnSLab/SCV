@@ -1,0 +1,38 @@
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found builtin_interfaces: 1.2.1 (/opt/ros/humble/share/builtin_interfaces/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/scv/SCV/build/hunter_msgs
+[35m[1mConsolidate compiler generated dependencies of target hunter_msgs__rosidl_generator_c[0m
+failed to create symbolic link '/home/scv/SCV/build/hunter_msgs/ament_cmake_python/hunter_msgs/hunter_msgs' because existing path cannot be removed: Is a directory
+[  1%] [32mBuilding C object CMakeFiles/hunter_msgs__rosidl_generator_c.dir/rosidl_generator_c/hunter_msgs/msg/detail/hunter_actuator_state__functions.c.o[0m
+gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_hunter_msgs.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_hunter_msgs] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_hunter_msgs.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[  3%] Built target hunter_msgs__cpp
+[  4%] [32mBuilding C object CMakeFiles/hunter_msgs__rosidl_generator_c.dir/rosidl_generator_c/hunter_msgs/msg/detail/hunter_light_cmd__functions.c.o[0m
+[  7%] [32mBuilding C object CMakeFiles/hunter_msgs__rosidl_generator_c.dir/rosidl_generator_c/hunter_msgs/msg/detail/hunter_rc_state__functions.c.o[0m
+[  7%] [32mBuilding C object CMakeFiles/hunter_msgs__rosidl_generator_c.dir/rosidl_generator_c/hunter_msgs/msg/detail/hunter_status__functions.c.o[0m
+[  9%] [32mBuilding C object CMakeFiles/hunter_msgs__rosidl_generator_c.dir/rosidl_generator_c/hunter_msgs/msg/detail/hunter_light_state__functions.c.o[0m
+[ 11%] [32m[1mLinking C shared library libhunter_msgs__rosidl_generator_c.so[0m
+[ 12%] Built target hunter_msgs__rosidl_generator_c
+gmake: *** [Makefile:146: all] Error 2

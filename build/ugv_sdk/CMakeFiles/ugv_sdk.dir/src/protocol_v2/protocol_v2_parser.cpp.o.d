@@ -2,7 +2,7 @@ CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o: \
  /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v2/protocol_v2_parser.cpp \
  /usr/include/stdc-predef.h \
  /home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/protocol_v2/protocol_v2_parser.hpp \
- /home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/parser_base.hpp \
+ /home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

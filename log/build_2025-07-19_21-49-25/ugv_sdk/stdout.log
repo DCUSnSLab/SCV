@@ -1,0 +1,60 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Build package with cmake
+-- Setting build type to 'Release' as none was specified.
+-- Tests will not be built
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Project will be installed to /home/scv/SCV/install/ugv_sdk with 'make install'
+--  - To install LIB components to /home/scv/SCV/install/ugv_sdk/lib
+--  - To install BIN components to /home/scv/SCV/install/ugv_sdk/bin
+--  - To install INCLUDE components to /home/scv/SCV/install/ugv_sdk/include
+--  - To install CMAKE components to /home/scv/SCV/install/ugv_sdk/share/cmake/ugv_sdk
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/scv/SCV/build/ugv_sdk
+[  8%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/async_port/async_serial.cpp.o[0m
+[  8%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/async_port/async_can.cpp.o[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/utilities/protocol_detector.cpp.o[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.o[0m
+[ 29%] [32mBuilding C object CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o[0m
+[ 37%] [32mBuilding C object CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o[0m
+[ 41%] [32m[1mLinking CXX static library lib/libugv_sdk.a[0m
+[ 41%] Built target ugv_sdk
+[ 45%] [32mBuilding CXX object demo/scout_demo/CMakeFiles/demo_scout_mini_omni_robot.dir/scout_mini_omni_demo.cpp.o[0m
+[ 50%] [32mBuilding CXX object demo/ranger_demo/CMakeFiles/demo_ranger_robot.dir/ranger_robot_demo.cpp.o[0m
+[ 54%] [32mBuilding CXX object demo/utils_demo/CMakeFiles/demo_protocol_detector.dir/demo_protocol_detector.cpp.o[0m
+[ 58%] [32mBuilding CXX object demo/scout_demo/CMakeFiles/demo_scout_robot.dir/scout_robot_demo.cpp.o[0m
+[ 62%] [32mBuilding CXX object demo/tracer_demo/CMakeFiles/demo_tracer_robot.dir/tracer_robot_demo.cpp.o[0m
+[ 66%] [32mBuilding CXX object demo/hunter_demo/CMakeFiles/demo_hunter_robot.dir/hunter_robot_demo.cpp.o[0m
+[ 70%] [32mBuilding CXX object demo/bunker_demo/CMakeFiles/demo_bunker_robot.dir/bunker_robot_demo.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable ../../bin/demo_bunker_robot[0m
+[ 75%] Built target demo_bunker_robot
+[ 79%] [32m[1mLinking CXX executable ../../bin/demo_hunter_robot[0m
+[ 83%] [32m[1mLinking CXX executable ../../bin/demo_scout_mini_omni_robot[0m
+[ 83%] Built target demo_hunter_robot
+[ 83%] Built target demo_scout_mini_omni_robot
+[ 87%] [32m[1mLinking CXX executable ../../bin/demo_scout_robot[0m
+[ 87%] Built target demo_scout_robot
+[ 91%] [32m[1mLinking CXX executable ../../bin/demo_protocol_detector[0m
+[ 95%] [32m[1mLinking CXX executable ../../bin/demo_ranger_robot[0m
+[ 95%] Built target demo_protocol_detector
+[ 95%] Built target demo_ranger_robot
+[100%] [32m[1mLinking CXX executable ../../bin/demo_tracer_robot[0m
+[100%] Built target demo_tracer_robot

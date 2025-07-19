@@ -1,0 +1,299 @@
+// generated from rosidl_generator_c/resource/idl__struct.h.em
+// with input from ublox_msgs:msg/EsfMEAS.idl
+// generated code does not contain a copyright notice
+
+#ifndef UBLOX_MSGS__MSG__DETAIL__ESF_MEAS__STRUCT_H_
+#define UBLOX_MSGS__MSG__DETAIL__ESF_MEAS__STRUCT_H_
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+
+
+// Constants defined in the message
+
+/// Constant 'CLASS_ID'.
+enum
+{
+  ublox_msgs__msg__EsfMEAS__CLASS_ID = 16
+};
+
+/// Constant 'MESSAGE_ID'.
+enum
+{
+  ublox_msgs__msg__EsfMEAS__MESSAGE_ID = 2
+};
+
+/// Constant 'FLAGS_TIME_MARK_SENT_MASK'.
+/**
+  * Time mark signal was supplied just
+  * prior to sending this message: 0 =
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__FLAGS_TIME_MARK_SENT_MASK = 3
+};
+
+/// Constant 'TIME_MARK_NONE'.
+enum
+{
+  ublox_msgs__msg__EsfMEAS__TIME_MARK_NONE = 0
+};
+
+/// Constant 'TIME_MARK_EXT0'.
+enum
+{
+  ublox_msgs__msg__EsfMEAS__TIME_MARK_EXT0 = 1
+};
+
+/// Constant 'TIME_MARK_EXT'.
+enum
+{
+  ublox_msgs__msg__EsfMEAS__TIME_MARK_EXT = 2
+};
+
+/// Constant 'FLAGS_TIME_MARK_EDGE'.
+/**
+  * Trigger on rising (0) or falling
+  * (1) edge of time mark signal
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__FLAGS_TIME_MARK_EDGE = 4
+};
+
+/// Constant 'FLAGS_CALIB_T_TAG_VALID'.
+/**
+  * Calibration time tag available.
+  * Always set to zero.
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__FLAGS_CALIB_T_TAG_VALID = 8
+};
+
+/// Constant 'DATA_FIELD_MASK'.
+/**
+  * data
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_FIELD_MASK = 16777215ul
+};
+
+/// Constant 'DATA_TYPE_MASK'.
+/**
+  * type of data (1..63)
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_MASK = 1056964608ul
+};
+
+/// Constant 'DATA_TYPE_SHIFT'.
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_SHIFT = 24ul
+};
+
+/// Constant 'DATA_TYPE_NONE'.
+/**
+  * data field contains no data
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_NONE = 0ul
+};
+
+/// Constant 'DATA_TYPE_Z_AXIS_GYRO'.
+/**
+  * z-axis gyroscope angular rate
+  * [deg/s *2^-12 signed]
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_Z_AXIS_GYRO = 5ul
+};
+
+/// Constant 'DATA_TYPE_WHEEL_TICKS_FRONT_LEFT'.
+/**
+  * front-left wheel ticks
+  * Bits 0-22: unsigned tick value.
+  * Bit 23: direction indicator
+  * (0=forward, 1=backward)
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_WHEEL_TICKS_FRONT_LEFT = 6ul
+};
+
+/// Constant 'DATA_TYPE_WHEEL_TICKS_FRONT_RIGHT'.
+/**
+  * front-right wheel ticks
+  * Bits 0-22: unsigned tick value.
+  * Bit 23: direction indicator
+  * (0=forward, 1=backward)
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_WHEEL_TICKS_FRONT_RIGHT = 7ul
+};
+
+/// Constant 'DATA_TYPE_WHEEL_TICKS_REAR_LEFT'.
+/**
+  * rear-left wheel ticks
+  * Bits 0-22: unsigned tick value.
+  * Bit 23: direction indicator
+  * (0=forward, 1=backward)
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_WHEEL_TICKS_REAR_LEFT = 8ul
+};
+
+/// Constant 'DATA_TYPE_WHEEL_TICKS_REAR_RIGHT'.
+/**
+  * rear-right wheel ticks
+  * Bits 0-22: unsigned tick value.
+  * Bit 23: direction indicator
+  * (0=forward, 1=backward)
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_WHEEL_TICKS_REAR_RIGHT = 9ul
+};
+
+/// Constant 'DATA_TYPE_SINGLE_TICK'.
+/**
+  * single tick (speed tick)
+  * Bits 0-22: unsigned tick value.
+  * Bit 23: direction indicator
+  * (0=forward, 1=backward)
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_SINGLE_TICK = 10ul
+};
+
+/// Constant 'DATA_TYPE_SPEED'.
+/**
+  * speed m/s * 1e-3 signed
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_SPEED = 11ul
+};
+
+/// Constant 'DATA_TYPE_GYRO_TEMPERATURE'.
+/**
+  * gyroscope temperature
+  * [deg Celsius * 1e-2 signed]
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_GYRO_TEMPERATURE = 12ul
+};
+
+/// Constant 'DATA_TYPE_GYRO_ANG_RATE_Y'.
+/**
+  * y-axis gyroscope angular rate
+  * [deg/s *2^-12 signed]
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_GYRO_ANG_RATE_Y = 13ul
+};
+
+/// Constant 'DATA_TYPE_GYRO_ANG_RATE_X'.
+/**
+  * x-axis gyroscope angular rate
+  * [deg/s *2^-12 signed]
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_GYRO_ANG_RATE_X = 14ul
+};
+
+/// Constant 'DATA_TYPE_ACCELEROMETER_X'.
+/**
+  * x-axis accelerometer specific
+  * [force m/s^2 *2^-10 signed]
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_ACCELEROMETER_X = 16ul
+};
+
+/// Constant 'DATA_TYPE_ACCELEROMETER_Y'.
+/**
+  * y-axis accelerometer specific
+  * [force m/s^2 *2^-10 signed]
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_ACCELEROMETER_Y = 17ul
+};
+
+/// Constant 'DATA_TYPE_ACCELEROMETER_Z'.
+/**
+  * z-axis accelerometer specific
+  * [force m/s^2 *2^-10 signed]
+ */
+enum
+{
+  ublox_msgs__msg__EsfMEAS__DATA_TYPE_ACCELEROMETER_Z = 18ul
+};
+
+// Include directives for member types
+// Member 'data'
+// Member 'calib_t_tag'
+#include "rosidl_runtime_c/primitives_sequence.h"
+
+/// Struct defined in msg/EsfMEAS in the package ublox_msgs.
+/**
+  * ESF-MEAS (0x10 0x02)
+  * External Sensor Fusion Measurements
+  *
+  * Possible data types for the data field are described in the ESF Measurement
+  * Data section
+ */
+typedef struct ublox_msgs__msg__EsfMEAS
+{
+  /// Time tag of measurement generated by external
+  /// sensor
+  uint32_t time_tag;
+  /// Flags. Set all unused bits to zero:
+  uint16_t flags;
+  /// Identification number of data provider
+  uint16_t id;
+  /// Start of repeated block (N times)
+  /// data, see mask below
+  rosidl_runtime_c__uint32__Sequence data;
+  /// End of repeated block
+  /// Start of optional block (size is either 0 or 1)
+  /// Receiver local time calibrated.
+  /// This field must not be supplied when
+  /// calibTtagValid is set to 0
+  rosidl_runtime_c__uint32__Sequence calib_t_tag;
+} ublox_msgs__msg__EsfMEAS;
+
+// Struct for a sequence of ublox_msgs__msg__EsfMEAS.
+typedef struct ublox_msgs__msg__EsfMEAS__Sequence
+{
+  ublox_msgs__msg__EsfMEAS * data;
+  /// The number of valid items in data
+  size_t size;
+  /// The number of allocated items in data
+  size_t capacity;
+} ublox_msgs__msg__EsfMEAS__Sequence;
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  // UBLOX_MSGS__MSG__DETAIL__ESF_MEAS__STRUCT_H_

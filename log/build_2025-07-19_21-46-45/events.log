@@ -1,0 +1,403 @@
+[0.000000] (-) TimerEvent: {}
+[0.000680] (-) JobUnselected: {'identifier': 'ublox'}
+[0.000762] (-) JobUnselected: {'identifier': 'ublox_gps'}
+[0.000780] (-) JobUnselected: {'identifier': 'ublox_msgs'}
+[0.000794] (-) JobUnselected: {'identifier': 'ublox_serialization'}
+[0.000811] (-) JobUnselected: {'identifier': 'usb_cam'}
+[0.000917] (-) JobUnselected: {'identifier': 'zed_components'}
+[0.000932] (-) JobUnselected: {'identifier': 'zed_ros2'}
+[0.000945] (-) JobUnselected: {'identifier': 'zed_wrapper'}
+[0.000959] (hunter_msgs) JobQueued: {'identifier': 'hunter_msgs', 'dependencies': OrderedDict()}
+[0.000975] (ugv_sdk) JobQueued: {'identifier': 'ugv_sdk', 'dependencies': OrderedDict()}
+[0.000989] (hunter_base) JobQueued: {'identifier': 'hunter_base', 'dependencies': OrderedDict([('hunter_msgs', '/home/scv/SCV/install/hunter_msgs'), ('ugv_sdk', '/home/scv/SCV/install/ugv_sdk')])}
+[0.001007] (hunter_msgs) JobStarted: {'identifier': 'hunter_msgs'}
+[0.004607] (ugv_sdk) JobStarted: {'identifier': 'ugv_sdk'}
+[0.007403] (hunter_msgs) JobProgress: {'identifier': 'hunter_msgs', 'progress': 'cmake'}
+[0.007869] (hunter_msgs) JobProgress: {'identifier': 'hunter_msgs', 'progress': 'build'}
+[0.008415] (hunter_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/scv/SCV/build/hunter_msgs', '--', '-j8', '-l8'], 'cwd': '/home/scv/SCV/build/hunter_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'scv'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'ko_KR.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/scv'), ('OLDPWD', '/home/scv'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/scv/.nvm/versions/node/v22.17.1/bin'), ('NVM_INC', '/home/scv/.nvm/versions/node/v22.17.1/include/node'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '974'), ('SYSTEMD_EXEC_PID', '1319'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '14599'), ('NVM_DIR', '/home/scv/.nvm'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'scv'), ('JOURNAL_STREAM', '8:10838'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'scv'), ('TERM', 'xterm-256color'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/scv/.nvm/versions/node/v22.17.1/bin:/home/scv/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/scv-Nuvo-8108GC-Series:@/tmp/.ICE-unix/1292,unix/scv-Nuvo-8108GC-Series:/tmp/.ICE-unix/1292'), ('INVOCATION_ID', 'ad060e69abe64fd18e14add368bf7c64'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:86c7938c-922b-4541-ac6c-346d17f4cc9e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/scv/SCV/build/hunter_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.009886] (ugv_sdk) JobProgress: {'identifier': 'ugv_sdk', 'progress': 'cmake'}
+[0.010318] (ugv_sdk) JobProgress: {'identifier': 'ugv_sdk', 'progress': 'build'}
+[0.010543] (ugv_sdk) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/scv/SCV/build/ugv_sdk', '--', '-j8', '-l8'], 'cwd': '/home/scv/SCV/build/ugv_sdk', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'scv'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'ko_KR.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/scv'), ('OLDPWD', '/home/scv'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/scv/.nvm/versions/node/v22.17.1/bin'), ('NVM_INC', '/home/scv/.nvm/versions/node/v22.17.1/include/node'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '974'), ('SYSTEMD_EXEC_PID', '1319'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '14599'), ('NVM_DIR', '/home/scv/.nvm'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'scv'), ('JOURNAL_STREAM', '8:10838'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'scv'), ('TERM', 'xterm-256color'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/scv/.nvm/versions/node/v22.17.1/bin:/home/scv/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/scv-Nuvo-8108GC-Series:@/tmp/.ICE-unix/1292,unix/scv-Nuvo-8108GC-Series:/tmp/.ICE-unix/1292'), ('INVOCATION_ID', 'ad060e69abe64fd18e14add368bf7c64'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:86c7938c-922b-4541-ac6c-346d17f4cc9e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/scv/SCV/build/ugv_sdk'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.051247] (hunter_msgs) StdoutLine: {'line': b'[  3%] Built target hunter_msgs__cpp\n'}
+[0.051397] (hunter_msgs) StdoutLine: {'line': b'[ 12%] Built target hunter_msgs__rosidl_generator_c\n'}
+[0.056556] (hunter_msgs) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_hunter_msgs\n'}
+[0.061180] (ugv_sdk) StdoutLine: {'line': b'[ 41%] Built target ugv_sdk\n'}
+[0.092963] (hunter_msgs) StdoutLine: {'line': b'[ 23%] Built target hunter_msgs__rosidl_typesupport_fastrtps_c\n'}
+[0.093264] (hunter_msgs) StdoutLine: {'line': b'[ 34%] Built target hunter_msgs__rosidl_typesupport_c\n'}
+[0.093377] (ugv_sdk) StdoutLine: {'line': b'[ 50%] Built target demo_bunker_robot\n'}
+[0.096130] (ugv_sdk) StdoutLine: {'line': b'[ 58%] Built target demo_scout_mini_omni_robot\n'}
+[0.097711] (hunter_msgs) StdoutLine: {'line': b'[ 46%] Built target hunter_msgs__rosidl_typesupport_cpp\n'}
+[0.100774] (hunter_msgs) StdoutLine: {'line': b'[ 57%] Built target hunter_msgs__rosidl_typesupport_introspection_cpp\n'}
+[0.100944] (-) TimerEvent: {}
+[0.100974] (hunter_msgs) StdoutLine: {'line': b'[ 68%] Built target hunter_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[0.101054] (ugv_sdk) StdoutLine: {'line': b'[ 66%] Built target demo_scout_robot\n'}
+[0.101281] (hunter_msgs) StdoutLine: {'line': b'[ 79%] Built target hunter_msgs__rosidl_typesupport_introspection_c\n'}
+[0.108881] (ugv_sdk) StdoutLine: {'line': b'[ 75%] Built target demo_tracer_robot\n'}
+[0.109679] (ugv_sdk) StdoutLine: {'line': b'[ 83%] Built target demo_hunter_robot\n'}
+[0.109886] (ugv_sdk) StdoutLine: {'line': b'[ 91%] Built target demo_ranger_robot\n'}
+[0.110901] (ugv_sdk) StdoutLine: {'line': b'[100%] Built target demo_protocol_detector\n'}
+[0.118864] (hunter_msgs) StdoutLine: {'line': b'[ 79%] Built target hunter_msgs\n'}
+[0.121178] (ugv_sdk) CommandEnded: {'returncode': 0}
+[0.122387] (ugv_sdk) JobProgress: {'identifier': 'ugv_sdk', 'progress': 'install'}
+[0.129408] (ugv_sdk) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/scv/SCV/build/ugv_sdk'], 'cwd': '/home/scv/SCV/build/ugv_sdk', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'scv'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'ko_KR.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/scv'), ('OLDPWD', '/home/scv'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/scv/.nvm/versions/node/v22.17.1/bin'), ('NVM_INC', '/home/scv/.nvm/versions/node/v22.17.1/include/node'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '974'), ('SYSTEMD_EXEC_PID', '1319'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '14599'), ('NVM_DIR', '/home/scv/.nvm'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'scv'), ('JOURNAL_STREAM', '8:10838'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'scv'), ('TERM', 'xterm-256color'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/scv/.nvm/versions/node/v22.17.1/bin:/home/scv/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/scv-Nuvo-8108GC-Series:@/tmp/.ICE-unix/1292,unix/scv-Nuvo-8108GC-Series:/tmp/.ICE-unix/1292'), ('INVOCATION_ID', 'ad060e69abe64fd18e14add368bf7c64'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:86c7938c-922b-4541-ac6c-346d17f4cc9e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/scv/SCV/build/ugv_sdk'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.137428] (hunter_msgs) StdoutLine: {'line': b'[ 80%] Built target hunter_msgs__py\n'}
+[0.137581] (ugv_sdk) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[0.137765] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/libugv_sdk.a\n'}
+[0.137837] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk\n'}
+[0.137905] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot\n'}
+[0.137966] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/ranger_robot.hpp\n'}
+[0.138027] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/scout_robot.hpp\n'}
+[0.138087] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/tracer_robot.hpp\n'}
+[0.138146] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/hunter_robot.hpp\n'}
+[0.138205] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/bunker_robot.hpp\n'}
+[0.138264] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities\n'}
+[0.138321] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/protocol_detector.hpp\n'}
+[0.138380] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/stopwatch.hpp\n'}
+[0.138438] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details\n'}
+[0.138496] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base\n'}
+[0.138554] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/ranger_base.hpp\n'}
+[0.138621] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp\n'}
+[0.138679] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/tracer_base.hpp\n'}
+[0.138735] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp\n'}
+[0.138792] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/bunker_base.hpp\n'}
+[0.138860] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/hunter_base.hpp\n'}
+[0.138918] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface\n'}
+[0.138976] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_types.h\n'}
+[0.139034] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/scout_interface.hpp\n'}
+[0.139091] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/tracer_interface.hpp\n'}
+[0.139150] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp\n'}
+[0.139209] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/bunker_interface.hpp\n'}
+[0.139268] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h\n'}
+[0.139329] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp\n'}
+[0.139390] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/hunter_interface.hpp\n'}
+[0.139453] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/ranger_interface.hpp\n'}
+[0.139516] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1\n'}
+[0.139579] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/protocol_v1_parser.hpp\n'}
+[0.139642] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/robot_limits.hpp\n'}
+[0.139705] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/agilex_msg_parser_v1.h\n'}
+[0.139767] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2\n'}
+[0.140089] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2/protocol_v2_parser.hpp\n'}
+[0.140469] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port\n'}
+[0.140544] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_can.hpp\n'}
+[0.140611] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp\n'}
+[0.140676] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_serial.hpp\n'}
+[0.140740] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/ring_buffer.hpp\n'}
+[0.140803] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets.cmake\n'}
+[0.140919] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets-release.cmake\n'}
+[0.141035] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfig.cmake\n'}
+[0.141136] (ugv_sdk) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfigVersion.cmake\n'}
+[0.141201] (ugv_sdk) CommandEnded: {'returncode': 0}
+[0.158894] (ugv_sdk) JobEnded: {'identifier': 'ugv_sdk', 'rc': 0}
+[0.159191] (hunter_msgs) StdoutLine: {'line': b'[ 90%] Built target hunter_msgs__rosidl_generator_py\n'}
+[0.178484] (hunter_msgs) StdoutLine: {'line': b'[100%] Built target hunter_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[0.178626] (hunter_msgs) StdoutLine: {'line': b'[100%] Built target hunter_msgs__rosidl_typesupport_c__pyext\n'}
+[0.178697] (hunter_msgs) StdoutLine: {'line': b'[100%] Built target hunter_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.201042] (-) TimerEvent: {}
+[0.301211] (-) TimerEvent: {}
+[0.314245] (hunter_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[0.314920] (hunter_msgs) StdoutLine: {'line': b'writing hunter_msgs.egg-info/PKG-INFO\n'}
+[0.315206] (hunter_msgs) StdoutLine: {'line': b'writing dependency_links to hunter_msgs.egg-info/dependency_links.txt\n'}
+[0.315290] (hunter_msgs) StdoutLine: {'line': b'writing top-level names to hunter_msgs.egg-info/top_level.txt\n'}
+[0.317006] (hunter_msgs) StdoutLine: {'line': b"reading manifest file 'hunter_msgs.egg-info/SOURCES.txt'\n"}
+[0.317562] (hunter_msgs) StdoutLine: {'line': b"writing manifest file 'hunter_msgs.egg-info/SOURCES.txt'\n"}
+[0.340888] (hunter_msgs) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_hunter_msgs_egg\n'}
+[0.349635] (hunter_msgs) CommandEnded: {'returncode': 0}
+[0.350462] (hunter_msgs) JobProgress: {'identifier': 'hunter_msgs', 'progress': 'install'}
+[0.350491] (hunter_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/scv/SCV/build/hunter_msgs'], 'cwd': '/home/scv/SCV/build/hunter_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'scv'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'ko_KR.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/scv'), ('OLDPWD', '/home/scv'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/scv/.nvm/versions/node/v22.17.1/bin'), ('NVM_INC', '/home/scv/.nvm/versions/node/v22.17.1/include/node'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '974'), ('SYSTEMD_EXEC_PID', '1319'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '14599'), ('NVM_DIR', '/home/scv/.nvm'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'scv'), ('JOURNAL_STREAM', '8:10838'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'scv'), ('TERM', 'xterm-256color'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/scv/.nvm/versions/node/v22.17.1/bin:/home/scv/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/scv-Nuvo-8108GC-Series:@/tmp/.ICE-unix/1292,unix/scv-Nuvo-8108GC-Series:/tmp/.ICE-unix/1292'), ('INVOCATION_ID', 'ad060e69abe64fd18e14add368bf7c64'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:86c7938c-922b-4541-ac6c-346d17f4cc9e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/scv/SCV/build/hunter_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.357825] (hunter_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.357951] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/ament_index/resource_index/rosidl_interfaces/hunter_msgs\n'}
+[0.358010] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs\n'}
+[0.358062] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg\n'}
+[0.358116] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_status.h\n'}
+[0.358168] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_light_cmd.h\n'}
+[0.358218] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_actuator_state.h\n'}
+[0.358269] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail\n'}
+[0.358320] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__functions.c\n'}
+[0.358371] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__functions.h\n'}
+[0.358547] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__type_support.h\n'}
+[0.358599] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__functions.c\n'}
+[0.358651] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__type_support.h\n'}
+[0.358702] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__struct.h\n'}
+[0.358752] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__functions.h\n'}
+[0.358803] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__struct.h\n'}
+[0.359176] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__type_support.h\n'}
+[0.359279] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__struct.h\n'}
+[0.359571] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__functions.c\n'}
+[0.359663] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__functions.h\n'}
+[0.359731] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__struct.h\n'}
+[0.359780] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__functions.h\n'}
+[0.359875] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__type_support.h\n'}
+[0.359927] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__functions.h\n'}
+[0.359977] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__struct.h\n'}
+[0.360026] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__functions.c\n'}
+[0.360213] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__functions.c\n'}
+[0.360268] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__type_support.h\n'}
+[0.360320] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.360372] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_rc_state.h\n'}
+[0.360424] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_light_state.h\n'}
+[0.360475] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/library_path.sh\n'}
+[0.360527] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/library_path.dsv\n'}
+[0.360578] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_generator_c.so\n'}
+[0.360714] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs\n'}
+[0.360769] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg\n'}
+[0.360871] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail\n'}
+[0.360968] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__rosidl_typesupport_fastrtps_c.h\n'}
+[0.361023] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[0.361077] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__rosidl_typesupport_fastrtps_c.h\n'}
+[0.361130] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__rosidl_typesupport_fastrtps_c.h\n'}
+[0.361182] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__rosidl_typesupport_fastrtps_c.h\n'}
+[0.361236] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.361289] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[0.361341] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs\n'}
+[0.361394] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg\n'}
+[0.361446] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_rc_state.hpp\n'}
+[0.361498] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_light_cmd.hpp\n'}
+[0.361550] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_light_state.hpp\n'}
+[0.361602] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail\n'}
+[0.361654] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__traits.hpp\n'}
+[0.361707] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__type_support.hpp\n'}
+[0.361775] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__builder.hpp\n'}
+[0.361948] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__traits.hpp\n'}
+[0.362005] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__builder.hpp\n'}
+[0.362057] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__builder.hpp\n'}
+[0.362107] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__struct.hpp\n'}
+[0.362157] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__type_support.hpp\n'}
+[0.362213] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__struct.hpp\n'}
+[0.362264] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__traits.hpp\n'}
+[0.362314] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__traits.hpp\n'}
+[0.362363] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__traits.hpp\n'}
+[0.362422] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__type_support.hpp\n'}
+[0.362473] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__struct.hpp\n'}
+[0.362524] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__type_support.hpp\n'}
+[0.362575] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__builder.hpp\n'}
+[0.362625] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__struct.hpp\n'}
+[0.362674] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__type_support.hpp\n'}
+[0.362724] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__struct.hpp\n'}
+[0.362774] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__builder.hpp\n'}
+[0.362829] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_status.hpp\n'}
+[0.362884] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[0.362935] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_actuator_state.hpp\n'}
+[0.362985] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs\n'}
+[0.363035] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg\n'}
+[0.363084] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail\n'}
+[0.363133] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.363183] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/dds_fastrtps\n'}
+[0.363232] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.363282] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.363332] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.363381] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.363436] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.363487] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.363541] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs\n'}
+[0.363593] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg\n'}
+[0.363644] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail\n'}
+[0.363694] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__type_support.c\n'}
+[0.363743] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__type_support.c\n'}
+[0.363793] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__type_support.c\n'}
+[0.363856] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__rosidl_typesupport_introspection_c.h\n'}
+[0.363909] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__rosidl_typesupport_introspection_c.h\n'}
+[0.363958] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__type_support.c\n'}
+[0.364009] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__rosidl_typesupport_introspection_c.h\n'}
+[0.364059] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__rosidl_typesupport_introspection_c.h\n'}
+[0.364110] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__type_support.c\n'}
+[0.364168] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__rosidl_typesupport_introspection_c.h\n'}
+[0.364219] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.364268] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_typesupport_introspection_c.so\n'}
+[0.364318] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_typesupport_c.so\n'}
+[0.364367] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs\n'}
+[0.364417] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg\n'}
+[0.364467] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail\n'}
+[0.364517] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.364568] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__type_support.cpp\n'}
+[0.364617] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.364675] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__type_support.cpp\n'}
+[0.364725] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.364776] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__type_support.cpp\n'}
+[0.364834] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__type_support.cpp\n'}
+[0.364887] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.364937] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__type_support.cpp\n'}
+[0.364987] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_rc_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.365036] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[0.365086] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_typesupport_cpp.so\n'}
+[0.365140] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/pythonpath.sh\n'}
+[0.365190] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/pythonpath.dsv\n'}
+[0.365240] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs-0.0.1-py3.10.egg-info\n'}
+[0.365289] (hunter_msgs) StdoutLine: {'line': b'-- Installing: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs-0.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[0.365339] (hunter_msgs) StdoutLine: {'line': b'-- Installing: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs-0.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[0.365387] (hunter_msgs) StdoutLine: {'line': b'-- Installing: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs-0.0.1-py3.10.egg-info/top_level.txt\n'}
+[0.365436] (hunter_msgs) StdoutLine: {'line': b'-- Installing: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs-0.0.1-py3.10.egg-info/PKG-INFO\n'}
+[0.365486] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs\n'}
+[0.365535] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/hunter_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.365585] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/hunter_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.365636] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/libhunter_msgs__rosidl_generator_py.so\n'}
+[0.365685] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/hunter_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.365736] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg\n'}
+[0.365799] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_light_cmd.py\n'}
+[0.365859] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_actuator_state_s.c\n'}
+[0.365911] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_rc_state.py\n'}
+[0.365961] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_light_state.py\n'}
+[0.366011] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_light_cmd_s.c\n'}
+[0.366060] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/__init__.py\n'}
+[0.366110] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_status_s.c\n'}
+[0.366160] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_rc_state_s.c\n'}
+[0.366210] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_light_state_s.c\n'}
+[0.366260] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_status.py\n'}
+[0.366310] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg/_hunter_actuator_state.py\n'}
+[0.366361] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/_hunter_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.366411] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/__init__.py\n'}
+[0.366461] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/_hunter_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[0.366512] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/_hunter_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.388878] (hunter_msgs) StdoutLine: {'line': b"Listing '/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs'...\n"}
+[0.389008] (hunter_msgs) StdoutLine: {'line': b"Listing '/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/msg'...\n"}
+[0.392855] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/hunter_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.393055] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/hunter_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.393233] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages/hunter_msgs/hunter_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.393431] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/lib/libhunter_msgs__rosidl_generator_py.so\n'}
+[0.394101] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterActuatorState.idl\n'}
+[0.394193] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterLightCmd.idl\n'}
+[0.394337] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterLightState.idl\n'}
+[0.394398] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterRCState.idl\n'}
+[0.394455] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterStatus.idl\n'}
+[0.394510] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterActuatorState.msg\n'}
+[0.394564] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterLightCmd.msg\n'}
+[0.394618] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterLightState.msg\n'}
+[0.394671] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterRCState.msg\n'}
+[0.394737] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/msg/HunterStatus.msg\n'}
+[0.394789] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/ament_index/resource_index/package_run_dependencies/hunter_msgs\n'}
+[0.395018] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/ament_index/resource_index/parent_prefix_path/hunter_msgs\n'}
+[0.395076] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/ament_prefix_path.sh\n'}
+[0.395129] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/ament_prefix_path.dsv\n'}
+[0.395181] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/path.sh\n'}
+[0.395410] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/environment/path.dsv\n'}
+[0.395462] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/local_setup.bash\n'}
+[0.395512] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/local_setup.sh\n'}
+[0.395561] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/local_setup.zsh\n'}
+[0.395610] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/local_setup.dsv\n'}
+[0.395659] (hunter_msgs) StdoutLine: {'line': b'-- Installing: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.dsv\n'}
+[0.395708] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/ament_index/resource_index/packages/hunter_msgs\n'}
+[0.395772] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_generator_cExport.cmake\n'}
+[0.395829] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.395884] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.395935] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[0.395987] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_generator_cppExport.cmake\n'}
+[0.396036] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.396086] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[0.396142] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.396192] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.396246] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_cExport.cmake\n'}
+[0.396297] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.396347] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.396398] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.396449] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[0.396500] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.396551] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_generator_pyExport.cmake\n'}
+[0.396603] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/export_hunter_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[0.396679] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[0.396735] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.396790] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.396960] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.397066] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.397120] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.397174] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.397227] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgsConfig.cmake\n'}
+[0.397280] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/cmake/hunter_msgsConfig-version.cmake\n'}
+[0.397333] (hunter_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/scv/SCV/install/hunter_msgs/share/hunter_msgs/package.xml\n'}
+[0.397614] (hunter_msgs) CommandEnded: {'returncode': 0}
+[0.401468] (-) TimerEvent: {}
+[0.411763] (hunter_msgs) JobEnded: {'identifier': 'hunter_msgs', 'rc': 0}
+[0.412684] (hunter_base) JobStarted: {'identifier': 'hunter_base'}
+[0.418653] (hunter_base) JobProgress: {'identifier': 'hunter_base', 'progress': 'cmake'}
+[0.419196] (hunter_base) JobProgress: {'identifier': 'hunter_base', 'progress': 'build'}
+[0.419794] (hunter_base) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/scv/SCV/build/hunter_base', '--', '-j8', '-l8'], 'cwd': '/home/scv/SCV/build/hunter_base', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'scv'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'ko_KR.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('ROS_PACKAGE_PATH', '/home/scv/SCV/install/ugv_sdk/share'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/scv/SCV/install/hunter_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/scv'), ('OLDPWD', '/home/scv'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/scv/.nvm/versions/node/v22.17.1/bin'), ('NVM_INC', '/home/scv/.nvm/versions/node/v22.17.1/include/node'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '974'), ('SYSTEMD_EXEC_PID', '1319'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '14599'), ('NVM_DIR', '/home/scv/.nvm'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'scv'), ('JOURNAL_STREAM', '8:10838'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('PKG_CONFIG_PATH', '/home/scv/SCV/install/ugv_sdk/lib/x86_64-linux-gnu/pkgconfig:/home/scv/SCV/install/ugv_sdk/lib/pkgconfig'), ('USERNAME', 'scv'), ('TERM', 'xterm-256color'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/scv/.nvm/versions/node/v22.17.1/bin:/home/scv/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/scv-Nuvo-8108GC-Series:@/tmp/.ICE-unix/1292,unix/scv-Nuvo-8108GC-Series:/tmp/.ICE-unix/1292'), ('INVOCATION_ID', 'ad060e69abe64fd18e14add368bf7c64'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/scv/SCV/install/hunter_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:86c7938c-922b-4541-ac6c-346d17f4cc9e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/scv/SCV/build/hunter_base'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs')]), 'shell': False}
+[0.462524] (hunter_base) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target hunter_base_node\n'}
+[0.476458] (hunter_base) StdoutLine: {'line': b'[ 25%] Building CXX object CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o\n'}
+[0.501597] (-) TimerEvent: {}
+[0.601770] (-) TimerEvent: {}
+[0.701886] (-) TimerEvent: {}
+[0.802027] (-) TimerEvent: {}
+[0.902204] (-) TimerEvent: {}
+[1.002395] (-) TimerEvent: {}
+[1.102567] (-) TimerEvent: {}
+[1.202751] (-) TimerEvent: {}
+[1.302880] (-) TimerEvent: {}
+[1.403023] (-) TimerEvent: {}
+[1.503200] (-) TimerEvent: {}
+[1.603371] (-) TimerEvent: {}
+[1.703545] (-) TimerEvent: {}
+[1.803718] (-) TimerEvent: {}
+[1.903896] (-) TimerEvent: {}
+[2.004040] (-) TimerEvent: {}
+[2.104262] (-) TimerEvent: {}
+[2.204409] (-) TimerEvent: {}
+[2.304579] (-) TimerEvent: {}
+[2.404751] (-) TimerEvent: {}
+[2.504903] (-) TimerEvent: {}
+[2.605049] (-) TimerEvent: {}
+[2.705227] (-) TimerEvent: {}
+[2.756997] (hunter_base) StderrLine: {'line': b'In file included from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Recorder.h:25,\n'}
+[2.757246] (hunter_base) StderrLine: {'line': b'                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:17,\n'}
+[2.757317] (hunter_base) StderrLine: {'line': b'                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23,\n'}
+[2.757366] (hunter_base) StderrLine: {'line': b'                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12:\n'}
+[2.757412] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:54:7: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]\n'}
+[2.757457] (hunter_base) StderrLine: {'line': b'   54 |       const pointer operator->() const noexcept\n'}
+[2.757500] (hunter_base) StderrLine: {'line': b'      |       ^~~~~\n'}
+[2.757543] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:113:7: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]\n'}
+[2.757586] (hunter_base) StderrLine: {'line': b'  113 |       const pointer operator->() const\n'}
+[2.757629] (hunter_base) StderrLine: {'line': b'      |       ^~~~~\n'}
+[2.760635] (hunter_base) StderrLine: {'line': b'In file included from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/RK2.h:17,\n'}
+[2.760774] (hunter_base) StderrLine: {'line': b'                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:26,\n'}
+[2.760852] (hunter_base) StderrLine: {'line': b'                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23,\n'}
+[2.760909] (hunter_base) StderrLine: {'line': b'                 from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12:\n'}
+[2.760962] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:25:14: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]\n'}
+[2.761015] (hunter_base) StderrLine: {'line': b'   25 |    constexpr const value_t cx(long double v) { return static_cast<value_t>(v); }\n'}
+[2.761067] (hunter_base) StderrLine: {'line': b'      |              ^~~~~\n'}
+[2.761118] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:26:14: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]\n'}
+[2.761171] (hunter_base) StderrLine: {'line': b'   26 |    constexpr const value_t operator"" _v(long double v) { return static_cast<value_t>(v); }\n'}
+[2.761223] (hunter_base) StderrLine: {'line': b'      |              ^~~~~\n'}
+[2.805345] (-) TimerEvent: {}
+[2.905515] (-) TimerEvent: {}
+[3.005685] (-) TimerEvent: {}
+[3.105864] (-) TimerEvent: {}
+[3.119429] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp: In member function \xe2\x80\x98bool westonrobot::HunterBaseRos::Initialize()\xe2\x80\x99:\n'}
+[3.119557] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:61:3: error: \xe2\x80\x98ProtocolDetector\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ProtocolDectctor\xe2\x80\x99?\n'}
+[3.119612] (hunter_base) StderrLine: {'line': b'   61 |   ProtocolDetector detector;\n'}
+[3.119659] (hunter_base) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~\n'}
+[3.119704] (hunter_base) StderrLine: {'line': b'      |   ProtocolDectctor\n'}
+[3.125537] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:62:7: error: \xe2\x80\x98detector\xe2\x80\x99 was not declared in this scope\n'}
+[3.125642] (hunter_base) StderrLine: {'line': b'   62 |   if (detector.Connect(port_name_)) {\n'}
+[3.125697] (hunter_base) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.144177] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp: In member function \xe2\x80\x98void westonrobot::HunterBaseRos::Run()\xe2\x80\x99:\n'}
+[3.144301] (hunter_base) StderrLine: {'line': b'/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:117:26: error: could not convert \xe2\x80\x98((std::__shared_ptr_access<westonrobot::HunterRobot, __gnu_cxx::_S_atomic, false, false>*)(&((westonrobot::HunterBaseRos*)this)->westonrobot::HunterBaseRos::robot_))->std::__shared_ptr_access<westonrobot::HunterRobot, __gnu_cxx::_S_atomic, false, false>::operator->()->westonrobot::HunterRobot::Connect(std::__cxx11::basic_string<char>(((westonrobot::HunterBaseRos*)this)->westonrobot::HunterBaseRos::port_name_))\xe2\x80\x99 from \xe2\x80\x98void\xe2\x80\x99 to \xe2\x80\x98bool\xe2\x80\x99\n'}
+[3.144370] (hunter_base) StderrLine: {'line': b'  117 |       if (robot_->Connect(port_name_)) {\n'}
+[3.144419] (hunter_base) StderrLine: {'line': b'      |           ~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[3.144466] (hunter_base) StderrLine: {'line': b'      |                          |\n'}
+[3.144511] (hunter_base) StderrLine: {'line': b'      |                          void\n'}
+[3.205985] (-) TimerEvent: {}
+[3.306165] (-) TimerEvent: {}
+[3.406338] (-) TimerEvent: {}
+[3.506512] (-) TimerEvent: {}
+[3.606684] (-) TimerEvent: {}
+[3.706854] (-) TimerEvent: {}
+[3.806996] (-) TimerEvent: {}
+[3.907167] (-) TimerEvent: {}
+[4.007340] (-) TimerEvent: {}
+[4.107517] (-) TimerEvent: {}
+[4.207721] (-) TimerEvent: {}
+[4.307905] (-) TimerEvent: {}
+[4.408054] (-) TimerEvent: {}
+[4.508232] (-) TimerEvent: {}
+[4.608404] (-) TimerEvent: {}
+[4.708579] (-) TimerEvent: {}
+[4.808754] (-) TimerEvent: {}
+[4.908900] (-) TimerEvent: {}
+[5.009045] (-) TimerEvent: {}
+[5.109221] (-) TimerEvent: {}
+[5.209398] (-) TimerEvent: {}
+[5.309573] (-) TimerEvent: {}
+[5.409746] (-) TimerEvent: {}
+[5.429304] (hunter_base) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/hunter_base_node.dir/build.make:76: CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o] Error 1\n'}
+[5.429492] (hunter_base) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:154: CMakeFiles/hunter_base_node.dir/all] Error 2\n'}
+[5.429757] (hunter_base) StderrLine: {'line': b'gmake: *** [Makefile:166: all] Error 2\n'}
+[5.431742] (hunter_base) CommandEnded: {'returncode': 2}
+[5.434941] (hunter_base) JobEnded: {'identifier': 'hunter_base', 'rc': 2}
+[5.445239] (-) EventReactorShutdown: {}

@@ -1,0 +1,66 @@
+[0.021s] Invoking command in '/home/scv/SCV/build/usb_cam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/usb_cam -- -j8 -l8
+[0.069s] [35m[1mConsolidate compiler generated dependencies of target usb_cam[0m
+[0.069s] [35m[1mConsolidate compiler generated dependencies of target gtest[0m
+[0.069s] [35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
+[0.073s] [35m[1mConsolidate compiler generated dependencies of target usb_cam_node_exe[0m
+[0.086s] [ 14%] Built target gtest_main
+[0.092s] [ 28%] Built target gtest
+[0.092s] [ 42%] Built target usb_cam
+[0.121s] [35m[1mConsolidate compiler generated dependencies of target test_usb_cam_utils[0m
+[0.129s] [ 57%] Built target usb_cam_node_exe
+[0.137s] [35m[1mConsolidate compiler generated dependencies of target test_pixel_formats[0m
+[0.148s] [ 71%] Built target test_usb_cam_utils
+[0.152s] [35m[1mConsolidate compiler generated dependencies of target usb_cam_node[0m
+[0.161s] [ 85%] Built target test_pixel_formats
+[0.172s] [100%] Built target usb_cam_node
+[0.204s] Invoked command in '/home/scv/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/usb_cam -- -j8 -l8
+[0.205s] Invoking command in '/home/scv/SCV/build/usb_cam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/usb_cam
+[0.212s] -- Install configuration: "Release"
+[0.212s] -- Execute custom install script
+[0.212s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/environment/library_path.sh
+[0.221s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/environment/library_path.dsv
+[0.229s] -- Symlinking: /home/scv/SCV/install/usb_cam/lib/usb_cam/usb_cam_node_exe
+[0.237s] -- Symlinking: /home/scv/SCV/install/usb_cam/lib/usb_cam/show_image.py
+[0.246s] -- Symlinking: /home/scv/SCV/install/usb_cam/lib/libusb_cam.so
+[0.253s] -- Symlinking: /home/scv/SCV/install/usb_cam/lib/libusb_cam_node.so
+[0.260s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/constants.hpp
+[0.268s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/conversions.hpp
+[0.275s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/av_pixel_format_helper.hpp
+[0.283s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/m420.hpp
+[0.291s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/mjpeg.hpp
+[0.299s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/mono.hpp
+[0.308s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/pixel_format_base.hpp
+[0.317s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/rgb.hpp
+[0.327s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/utils.hpp
+[0.336s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/uyvy.hpp
+[0.346s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/formats/yuyv.hpp
+[0.355s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/usb_cam.hpp
+[0.364s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/usb_cam_node.hpp
+[0.373s] -- Symlinking: /home/scv/SCV/install/usb_cam/include/usb_cam/utils.hpp
+[0.382s] -- Up-to-date symlink: /home/scv/SCV/install/usb_cam/lib/libusb_cam_node.so
+[0.383s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/launch/__init__.py
+[0.392s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/launch/camera.launch.py
+[0.401s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/launch/camera_config.py
+[0.410s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/config/camera_info.yaml
+[0.422s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/config/params_1.yaml
+[0.430s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/config/params_2.yaml
+[0.436s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/ament_index/resource_index/package_run_dependencies/usb_cam
+[0.445s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/ament_index/resource_index/parent_prefix_path/usb_cam
+[0.455s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/environment/ament_prefix_path.sh
+[0.463s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/environment/ament_prefix_path.dsv
+[0.472s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/environment/path.sh
+[0.483s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/environment/path.dsv
+[0.490s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/local_setup.bash
+[0.499s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/local_setup.sh
+[0.508s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/local_setup.zsh
+[0.518s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/local_setup.dsv
+[0.526s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/package.dsv
+[0.536s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/ament_index/resource_index/packages/usb_cam
+[0.545s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/ament_index/resource_index/rclcpp_components/usb_cam
+[0.554s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/cmake/ament_cmake_export_libraries-extras.cmake
+[0.564s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.573s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.582s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/cmake/usb_camConfig.cmake
+[0.594s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/cmake/usb_camConfig-version.cmake
+[0.600s] -- Symlinking: /home/scv/SCV/install/usb_cam/share/usb_cam/package.xml
+[0.611s] Invoked command in '/home/scv/SCV/build/usb_cam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/usb_cam

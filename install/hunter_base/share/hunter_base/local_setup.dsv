@@ -1,2 +1,1 @@
-source;share/hunter_base/environment/ament_prefix_path.sh
-source;share/hunter_base/environment/path.sh
+/home/scv/SCV/build/hunter_base/ament_cmake_environment_hooks/local_setup.dsv

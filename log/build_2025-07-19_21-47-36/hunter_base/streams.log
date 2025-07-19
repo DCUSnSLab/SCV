@@ -1,0 +1,51 @@
+[0.009s] Invoking command in '/home/scv/SCV/build/hunter_base': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/scv/SCV/install/ugv_sdk/lib/x86_64-linux-gnu/pkgconfig:/home/scv/SCV/install/ugv_sdk/lib/pkgconfig PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/scv/SCV/install/ugv_sdk/share /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8
+[0.048s] Consolidate compiler generated dependencies of target hunter_base_node
+[0.062s] [ 25%] Building CXX object CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o
+[2.399s] In file included from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Recorder.h:25,
+[2.399s]                  from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:17,
+[2.399s]                  from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23,
+[2.399s]                  from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12:
+[2.399s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:54:7: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+[2.399s]    54 |       const pointer operator->() const noexcept
+[2.399s]       |       ^~~~~
+[2.399s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:113:7: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+[2.399s]   113 |       const pointer operator->() const
+[2.399s]       |       ^~~~~
+[2.402s] In file included from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/RK2.h:17,
+[2.402s]                  from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:26,
+[2.402s]                  from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23,
+[2.402s]                  from /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12:
+[2.402s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:25:14: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+[2.402s]    25 |    constexpr const value_t cx(long double v) { return static_cast<value_t>(v); }
+[2.403s]       |              ^~~~~
+[2.403s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:26:14: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+[2.403s]    26 |    constexpr const value_t operator"" _v(long double v) { return static_cast<value_t>(v); }
+[2.403s]       |              ^~~~~
+[2.758s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp: In member function ‘bool westonrobot::HunterBaseRos::Initialize()’:
+[2.758s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:61:3: error: ‘ProtocolDetector’ was not declared in this scope; did you mean ‘ProtocolDectctor’?
+[2.758s]    61 |   ProtocolDetector detector;
+[2.758s]       |   ^~~~~~~~~~~~~~~~
+[2.759s]       |   ProtocolDectctor
+[2.764s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:62:7: error: ‘detector’ was not declared in this scope
+[2.764s]    62 |   if (detector.Connect(port_name_)) {
+[2.764s]       |       ^~~~~~~~
+[2.783s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp: At global scope:
+[2.783s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:125:7: error: expected unqualified-id before ‘else’
+[2.783s]   125 |     } else {
+[2.783s]       |       ^~~~
+[2.785s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:132:5: error: ‘messenger’ does not name a type
+[2.785s]   132 |     messenger->SetupSubscription();
+[2.785s]       |     ^~~~~~~~~
+[2.788s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:134:5: error: ‘keep_running_’ does not name a type
+[2.788s]   134 |     keep_running_ = true;
+[2.788s]       |     ^~~~~~~~~~~~~
+[2.788s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:135:5: error: expected unqualified-id before ‘while’
+[2.788s]   135 |     while (keep_running_) {
+[2.788s]       |     ^~~~~
+[2.788s] /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:143:1: error: expected declaration before ‘}’ token
+[2.788s]   143 | }  // namespace westonrobot
+[2.788s]       | ^
+[3.243s] gmake[2]: *** [CMakeFiles/hunter_base_node.dir/build.make:76: CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o] Error 1
+[3.243s] gmake[1]: *** [CMakeFiles/Makefile2:154: CMakeFiles/hunter_base_node.dir/all] Error 2
+[3.243s] gmake: *** [Makefile:166: all] Error 2
+[3.245s] Invoked command in '/home/scv/SCV/build/hunter_base' returned '2': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/scv/SCV/install/ugv_sdk/lib/x86_64-linux-gnu/pkgconfig:/home/scv/SCV/install/ugv_sdk/lib/pkgconfig PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/scv/SCV/install/ugv_sdk/share /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8

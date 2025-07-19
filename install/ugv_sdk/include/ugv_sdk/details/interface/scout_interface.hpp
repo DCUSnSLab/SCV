@@ -17,7 +17,7 @@
 
 namespace westonrobot {
 struct ScoutCoreState {
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   SystemStateMessage system_state;
   MotionStateMessage motion_state;
@@ -26,7 +26,7 @@ struct ScoutCoreState {
 };
 
 struct ScoutActuatorState {
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   // actuator state
   // - for v2 robots only
@@ -37,19 +37,21 @@ struct ScoutActuatorState {
 };
 
 struct ScoutCommonSensorState {
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   BmsBasicMessage bms_basic_state;
-  BmsExtendedMessage bms_extended_state;
 };
 
 struct ScoutInterface {
   virtual ~ScoutInterface() = default;
 
+  virtual void Connect(std::string uart_name, uint32_t baudrate){
+      // use derived version
+  };
+
   virtual void SetMotionCommand(double linear_vel, double angular_vel) = 0;
-  virtual void SetLightCommand(AgxLightMode f_mode, uint8_t f_value,
-                               AgxLightMode r_mode, uint8_t r_value) = 0;
-  virtual void DisableLightControl() = 0;
+  virtual void SetLightCommand(LightMode f_mode, uint8_t f_value,
+                               LightMode r_mode, uint8_t r_value) = 0;
 
   // get robot state
   virtual ScoutCoreState GetRobotState() = 0;

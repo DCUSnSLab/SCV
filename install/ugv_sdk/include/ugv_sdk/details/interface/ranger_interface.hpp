@@ -18,58 +18,51 @@
 namespace westonrobot {
 struct RangerCoreState {
   // system state
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   SystemStateMessage system_state;
   MotionStateMessage motion_state;
   LightStateMessage light_state;
-  MotionModeStateMessage motion_mode_state;
+  MotionModeStateMessage current_motion_mode;
 
   RcStateMessage rc_state;
   OdometryMessage odometry;
 };
 
 struct RangerActuatorState {
-  SdkTimePoint time_stamp;
-
-  MotorAngleMessage motor_angles;
-  MotorSpeedMessage motor_speeds;
+  AgxMsgTimeStamp time_stamp;
 
   ActuatorHSStateMessage actuator_hs_state[8];
   ActuatorLSStateMessage actuator_ls_state[8];
 };
 
-struct RangerCommonSensorState {
-  SdkTimePoint time_stamp;
+struct RangerMotorState {
+  MotorAngleMessage motor_angle_state;
+  MotorSpeedMessage motor_speed_state;
+};
 
-  BmsBasicMessage bms_basic_state;
+struct RangerBmsState {
+  BmsBasicMessage bmsbasic;
 };
 
 /////////////////////////////////////////////////////////////////////////
 
 struct RangerInterface {
-  enum MotionMode {
-    kDualAckerman = 0,
-    kParallel = 1,
-    kSpinning = 2,
-    kPark = 3,
-    kSideSlip = 4
-  };
-
   virtual ~RangerInterface() = default;
+  virtual void Connect(std::string dev_name, uint32_t baudrate){};
 
   // robot control
   virtual void SetMotionMode(uint8_t mode) = 0;
   virtual void SetMotionCommand(double linear_vel, double steer_angle,
-                                double angular_vel) = 0;
-  virtual void SetLightCommand(AgxLightMode f_mode, uint8_t f_value,
-                               AgxLightMode r_mode, uint8_t r_value) = 0;
-  virtual void DisableLightControl() = 0;
+                                double lateral_vel, double angular_vel) = 0;
+  virtual void SetLightCommand(LightMode f_mode, uint8_t f_value,
+                               LightMode r_mode, uint8_t r_value) = 0;
 
   // get robot state
   virtual RangerCoreState GetRobotState() = 0;
   virtual RangerActuatorState GetActuatorState() = 0;
-  virtual RangerCommonSensorState GetCommonSensorState() = 0;
+  virtual RangerMotorState GetMotorState() = 0;
+  virtual RangerBmsState GetBmsState() = 0;
 };
 }  // namespace westonrobot
 

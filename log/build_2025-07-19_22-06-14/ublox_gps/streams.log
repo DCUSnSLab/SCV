@@ -1,0 +1,95 @@
+[0.009s] Invoking command in '/home/scv/SCV/build/ublox_gps': AMENT_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:/home/scv/SCV/install/hunter_base:/home/scv/SCV/install/hunter_msgs:/opt/ros/humble:/home/scv/SCV/install/ugv_sdk LD_LIBRARY_PATH=/home/scv/SCV/install/ublox_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/ublox_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/scv/SCV/src/sensor_pkg/ublox/ublox_gps -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/ublox_gps
+[0.019s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.136s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.145s] -- Found diagnostic_msgs: 4.9.0 (/opt/ros/humble/share/diagnostic_msgs/cmake)
+[0.167s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.169s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.175s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.184s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.195s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.233s] -- Found diagnostic_updater: 4.0.6 (/opt/ros/humble/share/diagnostic_updater/cmake)
+[0.262s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.263s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.348s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.386s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.398s] -- Found nmea_msgs: 2.0.0 (/opt/ros/humble/share/nmea_msgs/cmake)
+[0.410s] -- Found rclcpp_components: 16.0.12 (/opt/ros/humble/share/rclcpp_components/cmake)
+[0.427s] -- Found rtcm_msgs: 1.1.6 (/opt/ros/humble/share/rtcm_msgs/cmake)
+[0.440s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.457s] -- Found tf2: 0.25.13 (/opt/ros/humble/share/tf2/cmake)
+[0.459s] -- Found ublox_msgs: 2.3.0 (/home/scv/SCV/install/ublox_msgs/share/ublox_msgs/cmake)
+[0.546s] -- Configuring done
+[0.596s] -- Generating done
+[0.607s] -- Build files have been written to: /home/scv/SCV/build/ublox_gps
+[0.615s] Invoked command in '/home/scv/SCV/build/ublox_gps' returned '0': AMENT_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:/home/scv/SCV/install/hunter_base:/home/scv/SCV/install/hunter_msgs:/opt/ros/humble:/home/scv/SCV/install/ugv_sdk LD_LIBRARY_PATH=/home/scv/SCV/install/ublox_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/ublox_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/scv/SCV/src/sensor_pkg/ublox/ublox_gps -DCMAKE_INSTALL_PREFIX=/home/scv/SCV/install/ublox_gps
+[0.616s] Invoking command in '/home/scv/SCV/build/ublox_gps': AMENT_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:/home/scv/SCV/install/hunter_base:/home/scv/SCV/install/hunter_msgs:/opt/ros/humble:/home/scv/SCV/install/ugv_sdk LD_LIBRARY_PATH=/home/scv/SCV/install/ublox_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/ublox_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/scv/SCV/build/ublox_gps -- -j8 -l8
+[0.667s] [35m[1mConsolidate compiler generated dependencies of target ublox_gps[0m
+[0.725s] [ 77%] Built target ublox_gps
+[0.734s] [35m[1mConsolidate compiler generated dependencies of target ublox_logger[0m
+[0.734s] [35m[1mConsolidate compiler generated dependencies of target ublox_gps_node[0m
+[0.750s] [ 90%] Built target ublox_logger
+[0.754s] [100%] Built target ublox_gps_node
+[0.764s] Invoked command in '/home/scv/SCV/build/ublox_gps' returned '0': AMENT_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:/home/scv/SCV/install/hunter_base:/home/scv/SCV/install/hunter_msgs:/opt/ros/humble:/home/scv/SCV/install/ugv_sdk LD_LIBRARY_PATH=/home/scv/SCV/install/ublox_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/ublox_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/scv/SCV/build/ublox_gps -- -j8 -l8
+[0.765s] Invoking command in '/home/scv/SCV/build/ublox_gps': AMENT_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:/home/scv/SCV/install/hunter_base:/home/scv/SCV/install/hunter_msgs:/opt/ros/humble:/home/scv/SCV/install/ugv_sdk LD_LIBRARY_PATH=/home/scv/SCV/install/ublox_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/ublox_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/scv/SCV/build/ublox_gps
+[0.771s] -- Install configuration: "Release"
+[0.771s] -- Execute custom install script
+[0.771s] -- Symlinking: /home/scv/SCV/install/ublox_gps/lib/ublox_gps/ublox_gps_node
+[0.779s] -- Symlinking: /home/scv/SCV/install/ublox_gps/lib/ublox_gps/ublox_logger
+[0.786s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/adr_udr_product.hpp
+[0.794s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/async_worker.hpp
+[0.801s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/callback.hpp
+[0.808s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/component_interface.hpp
+[0.815s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/fix_diagnostic.hpp
+[0.823s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/fts_product.hpp
+[0.830s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/gnss.hpp
+[0.837s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/gps.hpp
+[0.844s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/hp_pos_rec_product.hpp
+[0.852s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/hpg_ref_product.hpp
+[0.859s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/hpg_rov_product.hpp
+[0.867s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/mkgmtime.h
+[0.874s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/node.hpp
+[0.881s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/raw_data_pa.hpp
+[0.889s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/raw_data_product.hpp
+[0.897s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/rtcm.hpp
+[0.905s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/tim_product.hpp
+[0.913s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware.hpp
+[0.921s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware6.hpp
+[0.929s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware7.hpp
+[0.936s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware7plus.hpp
+[0.944s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware8.hpp
+[0.952s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_firmware9.hpp
+[0.959s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/ublox_topic_diagnostic.hpp
+[0.967s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/utils.hpp
+[0.974s] -- Symlinking: /home/scv/SCV/install/ublox_gps/include/ublox_gps/ublox_gps/worker.hpp
+[0.982s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/launch/ublox_gps_node-composed-launch.py
+[0.989s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/launch/ublox_gps_node-launch.py
+[0.997s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8p_base.yaml
+[1.005s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8p_rover.yaml
+[1.013s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8t_base.yaml
+[1.021s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/config/c94_m8t_rover.yaml
+[1.030s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/config/neo_m8u_rover.yaml
+[1.038s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/config/nmea.yaml
+[1.046s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/config/zed_f9p.yaml
+[1.056s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ament_index/resource_index/package_run_dependencies/ublox_gps
+[1.064s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ament_index/resource_index/parent_prefix_path/ublox_gps
+[1.073s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/environment/ament_prefix_path.sh
+[1.081s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/environment/ament_prefix_path.dsv
+[1.089s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/environment/path.sh
+[1.098s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/environment/path.dsv
+[1.106s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/local_setup.bash
+[1.114s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/local_setup.sh
+[1.122s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/local_setup.zsh
+[1.130s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/local_setup.dsv
+[1.138s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/package.dsv
+[1.146s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ament_index/resource_index/packages/ublox_gps
+[1.154s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ament_index/resource_index/rclcpp_components/ublox_gps
+[1.162s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.170s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/cmake/ament_cmake_export_targets-extras.cmake
+[1.178s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/cmake/ublox_gpsConfig.cmake
+[1.187s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/cmake/ublox_gpsConfig-version.cmake
+[1.195s] -- Symlinking: /home/scv/SCV/install/ublox_gps/share/ublox_gps/package.xml
+[1.206s] -- Installing: /home/scv/SCV/install/ublox_gps/lib/libublox_gps.so
+[1.208s] -- Set runtime path of "/home/scv/SCV/install/ublox_gps/lib/libublox_gps.so" to ""
+[1.208s] -- Installing: /home/scv/SCV/install/ublox_gps/share/ublox_gps/cmake/export_ublox_gpsExport.cmake
+[1.208s] -- Installing: /home/scv/SCV/install/ublox_gps/share/ublox_gps/cmake/export_ublox_gpsExport-release.cmake
+[1.210s] Invoked command in '/home/scv/SCV/build/ublox_gps' returned '0': AMENT_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/scv/SCV/install/ublox_msgs:/home/scv/SCV/install/ublox_serialization:/home/scv/SCV/install/hunter_base:/home/scv/SCV/install/hunter_msgs:/opt/ros/humble:/home/scv/SCV/install/ugv_sdk LD_LIBRARY_PATH=/home/scv/SCV/install/ublox_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/scv/SCV/install/ublox_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/scv/SCV/build/ublox_gps

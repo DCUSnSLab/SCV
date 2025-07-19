@@ -153,52 +153,10 @@ CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/bunker_robot.cpp -o CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.s
 
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o: CMakeFiles/ugv_sdk.dir/flags.make
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o: /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/ranger_robot.cpp
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o: CMakeFiles/ugv_sdk.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o -MF CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o.d -o CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o -c /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/ranger_robot.cpp
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/ranger_robot.cpp > CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.i
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/ranger_robot.cpp -o CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.s
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o: CMakeFiles/ugv_sdk.dir/flags.make
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o: /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/tracer_robot.cpp
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o: CMakeFiles/ugv_sdk.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o -MF CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o.d -o CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o -c /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/tracer_robot.cpp
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/tracer_robot.cpp > CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.i
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/tracer_robot.cpp -o CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.s
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o: CMakeFiles/ugv_sdk.dir/flags.make
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o: /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/titan_robot.cpp
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o: CMakeFiles/ugv_sdk.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o -MF CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o.d -o CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o -c /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/titan_robot.cpp
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/titan_robot.cpp > CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.i
-
-CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/titan_robot.cpp -o CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.s
-
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o: CMakeFiles/ugv_sdk.dir/flags.make
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o: /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v2/agilex_msg_parser_v2.c
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o: CMakeFiles/ugv_sdk.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o -MF CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o.d -o CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o -c /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v2/agilex_msg_parser_v2.c
 
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.i: cmake_force
@@ -212,7 +170,7 @@ CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.s: cmake_force
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o: CMakeFiles/ugv_sdk.dir/flags.make
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o: /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v2/protocol_v2_parser.cpp
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o: CMakeFiles/ugv_sdk.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o -MF CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o.d -o CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o -c /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v2/protocol_v2_parser.cpp
 
 CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.i: cmake_force
@@ -226,7 +184,7 @@ CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.s: cmake_force
 CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o: CMakeFiles/ugv_sdk.dir/flags.make
 CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o: /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v1/agilex_msg_parser_v1.c
 CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o: CMakeFiles/ugv_sdk.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o -MF CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o.d -o CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o -c /home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/protocol_v1/agilex_msg_parser_v1.c
 
 CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.i: cmake_force
@@ -245,9 +203,6 @@ ugv_sdk_OBJECTS = \
 "CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.o" \
 "CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.o" \
 "CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.o" \
-"CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o" \
-"CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o" \
-"CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o" \
 "CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o" \
 "CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o" \
 "CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o"
@@ -261,15 +216,12 @@ lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/utilities/protocol_detector.cpp.o
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.o
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.o
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.o
-lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o
-lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o
-lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/protocol_v2/agilex_msg_parser_v2.c.o
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/protocol_v2/protocol_v2_parser.cpp.o
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/src/protocol_v1/agilex_msg_parser_v1.c.o
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/build.make
 lib/libugv_sdk.a: CMakeFiles/ugv_sdk.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library lib/libugv_sdk.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/scv/SCV/build/ugv_sdk/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library lib/libugv_sdk.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ugv_sdk.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ugv_sdk.dir/link.txt --verbose=$(VERBOSE)
 

@@ -1,0 +1,1 @@
+/home/scv/SCV/src/sensor_pkg/usb_cam/include/usb_cam/formats/pixel_format_base.hpp

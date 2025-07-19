@@ -1,0 +1,30 @@
+[0.008s] Invoking command in '/home/scv/SCV/build/hunter_base': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/scv/SCV/install/ugv_sdk/lib/x86_64-linux-gnu/pkgconfig:/home/scv/SCV/install/ugv_sdk/lib/pkgconfig PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/scv/SCV/install/ugv_sdk/share /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8
+[0.047s] [35m[1mConsolidate compiler generated dependencies of target hunter_base_node[0m
+[0.073s] [ 25%] [32mBuilding CXX object CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o[0m
+[2.967s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Recorder.h:25[m[K,
+[2.967s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:17[m[K,
+[2.967s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23[m[K,
+[2.967s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12[m[K:
+[2.967s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:54:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[2.967s]    54 |       [01;35m[Kconst[m[K pointer operator->() const noexcept
+[2.967s]       |       [01;35m[K^~~~~[m[K
+[2.967s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/containers/stack.h:113:7:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[2.967s]   113 |       [01;35m[Kconst[m[K pointer operator->() const
+[2.967s]       |       [01;35m[K^~~~~[m[K
+[2.971s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/RK2.h:17[m[K,
+[2.971s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:26[m[K,
+[2.971s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_messenger.hpp:23[m[K,
+[2.971s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:12[m[K:
+[2.971s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:25:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[2.971s]    25 |    constexpr [01;35m[Kconst[m[K value_t cx(long double v) { return static_cast<value_t>(v); }
+[2.971s]       |              [01;35m[K^~~~~[m[K
+[2.971s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:26:14:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on function return type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers-Wignored-qualifiers]8;;[m[K]
+[2.971s]    26 |    constexpr [01;35m[Kconst[m[K value_t operator"" _v(long double v) { return static_cast<value_t>(v); }
+[2.971s]       |              [01;35m[K^~~~~[m[K
+[3.470s] [01m[K/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:139:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[3.470s]   139 | [01;31m[K}[m[K  // namespace westonrobot
+[3.470s]       | [01;31m[K^[m[K
+[6.294s] gmake[2]: *** [CMakeFiles/hunter_base_node.dir/build.make:76: CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o] Error 1
+[6.294s] gmake[1]: *** [CMakeFiles/Makefile2:154: CMakeFiles/hunter_base_node.dir/all] Error 2
+[6.294s] gmake: *** [Makefile:166: all] Error 2
+[6.296s] Invoked command in '/home/scv/SCV/build/hunter_base' returned '2': AMENT_PREFIX_PATH=/home/scv/SCV/install/hunter_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs LD_LIBRARY_PATH=/home/scv/SCV/install/hunter_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/scv/SCV/install/ugv_sdk/lib/x86_64-linux-gnu/pkgconfig:/home/scv/SCV/install/ugv_sdk/lib/pkgconfig PYTHONPATH=/home/scv/SCV/install/hunter_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/scv/SCV/install/ugv_sdk/share /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8

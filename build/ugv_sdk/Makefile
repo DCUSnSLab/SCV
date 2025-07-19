@@ -204,7 +204,7 @@ demo_scout_robot: cmake_check_build_system
 
 # fast build rule for target.
 demo_scout_robot/fast:
-	$(MAKE) $(MAKESILENT) -f sample/scout_demo/CMakeFiles/demo_scout_robot.dir/build.make sample/scout_demo/CMakeFiles/demo_scout_robot.dir/build
+	$(MAKE) $(MAKESILENT) -f demo/scout_demo/CMakeFiles/demo_scout_robot.dir/build.make demo/scout_demo/CMakeFiles/demo_scout_robot.dir/build
 .PHONY : demo_scout_robot/fast
 
 #=============================================================================
@@ -217,7 +217,7 @@ demo_scout_mini_omni_robot: cmake_check_build_system
 
 # fast build rule for target.
 demo_scout_mini_omni_robot/fast:
-	$(MAKE) $(MAKESILENT) -f sample/scout_demo/CMakeFiles/demo_scout_mini_omni_robot.dir/build.make sample/scout_demo/CMakeFiles/demo_scout_mini_omni_robot.dir/build
+	$(MAKE) $(MAKESILENT) -f demo/scout_demo/CMakeFiles/demo_scout_mini_omni_robot.dir/build.make demo/scout_demo/CMakeFiles/demo_scout_mini_omni_robot.dir/build
 .PHONY : demo_scout_mini_omni_robot/fast
 
 #=============================================================================
@@ -230,7 +230,7 @@ demo_tracer_robot: cmake_check_build_system
 
 # fast build rule for target.
 demo_tracer_robot/fast:
-	$(MAKE) $(MAKESILENT) -f sample/tracer_demo/CMakeFiles/demo_tracer_robot.dir/build.make sample/tracer_demo/CMakeFiles/demo_tracer_robot.dir/build
+	$(MAKE) $(MAKESILENT) -f demo/tracer_demo/CMakeFiles/demo_tracer_robot.dir/build.make demo/tracer_demo/CMakeFiles/demo_tracer_robot.dir/build
 .PHONY : demo_tracer_robot/fast
 
 #=============================================================================
@@ -243,7 +243,7 @@ demo_ranger_robot: cmake_check_build_system
 
 # fast build rule for target.
 demo_ranger_robot/fast:
-	$(MAKE) $(MAKESILENT) -f sample/ranger_demo/CMakeFiles/demo_ranger_robot.dir/build.make sample/ranger_demo/CMakeFiles/demo_ranger_robot.dir/build
+	$(MAKE) $(MAKESILENT) -f demo/ranger_demo/CMakeFiles/demo_ranger_robot.dir/build.make demo/ranger_demo/CMakeFiles/demo_ranger_robot.dir/build
 .PHONY : demo_ranger_robot/fast
 
 #=============================================================================
@@ -256,7 +256,7 @@ demo_bunker_robot: cmake_check_build_system
 
 # fast build rule for target.
 demo_bunker_robot/fast:
-	$(MAKE) $(MAKESILENT) -f sample/bunker_demo/CMakeFiles/demo_bunker_robot.dir/build.make sample/bunker_demo/CMakeFiles/demo_bunker_robot.dir/build
+	$(MAKE) $(MAKESILENT) -f demo/bunker_demo/CMakeFiles/demo_bunker_robot.dir/build.make demo/bunker_demo/CMakeFiles/demo_bunker_robot.dir/build
 .PHONY : demo_bunker_robot/fast
 
 #=============================================================================
@@ -269,7 +269,7 @@ demo_hunter_robot: cmake_check_build_system
 
 # fast build rule for target.
 demo_hunter_robot/fast:
-	$(MAKE) $(MAKESILENT) -f sample/hunter_demo/CMakeFiles/demo_hunter_robot.dir/build.make sample/hunter_demo/CMakeFiles/demo_hunter_robot.dir/build
+	$(MAKE) $(MAKESILENT) -f demo/hunter_demo/CMakeFiles/demo_hunter_robot.dir/build.make demo/hunter_demo/CMakeFiles/demo_hunter_robot.dir/build
 .PHONY : demo_hunter_robot/fast
 
 #=============================================================================
@@ -282,21 +282,8 @@ demo_protocol_detector: cmake_check_build_system
 
 # fast build rule for target.
 demo_protocol_detector/fast:
-	$(MAKE) $(MAKESILENT) -f sample/utils_demo/CMakeFiles/demo_protocol_detector.dir/build.make sample/utils_demo/CMakeFiles/demo_protocol_detector.dir/build
+	$(MAKE) $(MAKESILENT) -f demo/utils_demo/CMakeFiles/demo_protocol_detector.dir/build.make demo/utils_demo/CMakeFiles/demo_protocol_detector.dir/build
 .PHONY : demo_protocol_detector/fast
-
-#=============================================================================
-# Target rules for targets named demo_robot_version
-
-# Build rule for target.
-demo_robot_version: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo_robot_version
-.PHONY : demo_robot_version
-
-# fast build rule for target.
-demo_robot_version/fast:
-	$(MAKE) $(MAKESILENT) -f sample/utils_demo/CMakeFiles/demo_robot_version.dir/build.make sample/utils_demo/CMakeFiles/demo_robot_version.dir/build
-.PHONY : demo_robot_version/fast
 
 src/async_port/async_can.o: src/async_port/async_can.cpp.o
 .PHONY : src/async_port/async_can.o
@@ -394,30 +381,6 @@ src/mobile_robot/hunter_robot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.s
 .PHONY : src/mobile_robot/hunter_robot.cpp.s
 
-src/mobile_robot/ranger_robot.o: src/mobile_robot/ranger_robot.cpp.o
-.PHONY : src/mobile_robot/ranger_robot.o
-
-# target to build an object file
-src/mobile_robot/ranger_robot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.o
-.PHONY : src/mobile_robot/ranger_robot.cpp.o
-
-src/mobile_robot/ranger_robot.i: src/mobile_robot/ranger_robot.cpp.i
-.PHONY : src/mobile_robot/ranger_robot.i
-
-# target to preprocess a source file
-src/mobile_robot/ranger_robot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.i
-.PHONY : src/mobile_robot/ranger_robot.cpp.i
-
-src/mobile_robot/ranger_robot.s: src/mobile_robot/ranger_robot.cpp.s
-.PHONY : src/mobile_robot/ranger_robot.s
-
-# target to generate assembly for a file
-src/mobile_robot/ranger_robot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/ranger_robot.cpp.s
-.PHONY : src/mobile_robot/ranger_robot.cpp.s
-
 src/mobile_robot/scout_robot.o: src/mobile_robot/scout_robot.cpp.o
 .PHONY : src/mobile_robot/scout_robot.o
 
@@ -441,54 +404,6 @@ src/mobile_robot/scout_robot.s: src/mobile_robot/scout_robot.cpp.s
 src/mobile_robot/scout_robot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.s
 .PHONY : src/mobile_robot/scout_robot.cpp.s
-
-src/mobile_robot/titan_robot.o: src/mobile_robot/titan_robot.cpp.o
-.PHONY : src/mobile_robot/titan_robot.o
-
-# target to build an object file
-src/mobile_robot/titan_robot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.o
-.PHONY : src/mobile_robot/titan_robot.cpp.o
-
-src/mobile_robot/titan_robot.i: src/mobile_robot/titan_robot.cpp.i
-.PHONY : src/mobile_robot/titan_robot.i
-
-# target to preprocess a source file
-src/mobile_robot/titan_robot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.i
-.PHONY : src/mobile_robot/titan_robot.cpp.i
-
-src/mobile_robot/titan_robot.s: src/mobile_robot/titan_robot.cpp.s
-.PHONY : src/mobile_robot/titan_robot.s
-
-# target to generate assembly for a file
-src/mobile_robot/titan_robot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/titan_robot.cpp.s
-.PHONY : src/mobile_robot/titan_robot.cpp.s
-
-src/mobile_robot/tracer_robot.o: src/mobile_robot/tracer_robot.cpp.o
-.PHONY : src/mobile_robot/tracer_robot.o
-
-# target to build an object file
-src/mobile_robot/tracer_robot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.o
-.PHONY : src/mobile_robot/tracer_robot.cpp.o
-
-src/mobile_robot/tracer_robot.i: src/mobile_robot/tracer_robot.cpp.i
-.PHONY : src/mobile_robot/tracer_robot.i
-
-# target to preprocess a source file
-src/mobile_robot/tracer_robot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.i
-.PHONY : src/mobile_robot/tracer_robot.cpp.i
-
-src/mobile_robot/tracer_robot.s: src/mobile_robot/tracer_robot.cpp.s
-.PHONY : src/mobile_robot/tracer_robot.s
-
-# target to generate assembly for a file
-src/mobile_robot/tracer_robot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ugv_sdk.dir/build.make CMakeFiles/ugv_sdk.dir/src/mobile_robot/tracer_robot.cpp.s
-.PHONY : src/mobile_robot/tracer_robot.cpp.s
 
 src/protocol_v1/agilex_msg_parser_v1.o: src/protocol_v1/agilex_msg_parser_v1.c.o
 .PHONY : src/protocol_v1/agilex_msg_parser_v1.o
@@ -604,7 +519,6 @@ help:
 	@echo "... demo_hunter_robot"
 	@echo "... demo_protocol_detector"
 	@echo "... demo_ranger_robot"
-	@echo "... demo_robot_version"
 	@echo "... demo_scout_mini_omni_robot"
 	@echo "... demo_scout_robot"
 	@echo "... demo_tracer_robot"
@@ -621,18 +535,9 @@ help:
 	@echo "... src/mobile_robot/hunter_robot.o"
 	@echo "... src/mobile_robot/hunter_robot.i"
 	@echo "... src/mobile_robot/hunter_robot.s"
-	@echo "... src/mobile_robot/ranger_robot.o"
-	@echo "... src/mobile_robot/ranger_robot.i"
-	@echo "... src/mobile_robot/ranger_robot.s"
 	@echo "... src/mobile_robot/scout_robot.o"
 	@echo "... src/mobile_robot/scout_robot.i"
 	@echo "... src/mobile_robot/scout_robot.s"
-	@echo "... src/mobile_robot/titan_robot.o"
-	@echo "... src/mobile_robot/titan_robot.i"
-	@echo "... src/mobile_robot/titan_robot.s"
-	@echo "... src/mobile_robot/tracer_robot.o"
-	@echo "... src/mobile_robot/tracer_robot.i"
-	@echo "... src/mobile_robot/tracer_robot.s"
 	@echo "... src/protocol_v1/agilex_msg_parser_v1.o"
 	@echo "... src/protocol_v1/agilex_msg_parser_v1.i"
 	@echo "... src/protocol_v1/agilex_msg_parser_v1.s"

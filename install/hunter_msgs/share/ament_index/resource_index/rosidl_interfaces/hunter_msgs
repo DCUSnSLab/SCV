@@ -1,10 +1,1 @@
-msg/HunterActuatorState.idl
-msg/HunterActuatorState.msg
-msg/HunterLightCmd.idl
-msg/HunterLightCmd.msg
-msg/HunterLightState.idl
-msg/HunterLightState.msg
-msg/HunterRCState.idl
-msg/HunterRCState.msg
-msg/HunterStatus.idl
-msg/HunterStatus.msg
+/home/scv/SCV/build/hunter_msgs/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/hunter_msgs

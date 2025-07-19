@@ -1,0 +1,2 @@
+Invoking command in '/home/scv/SCV/build/hunter_base': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs:/home/scv/SCV/install/hunter_base /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8
+Invoked command in '/home/scv/SCV/build/hunter_base' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/scv/SCV/install/ugv_sdk:/home/scv/SCV/install/hunter_msgs:/home/scv/SCV/install/hunter_base /usr/bin/cmake --build /home/scv/SCV/build/hunter_base -- -j8 -l8

@@ -22,13 +22,15 @@ class ScoutRobot : public RobotCommonInterface, public ScoutInterface {
              bool is_mini_model = false);
   virtual ~ScoutRobot();
 
-  bool Connect(std::string can_name) override;
+  void Connect(std::string can_name) override;
+  void Connect(std::string uart_name, uint32_t baudrate) override;
 
   void EnableCommandedMode() override;
-  std::string RequestVersion(int timeout_sec = 3) override;
+  std::string sendRequest() override;
+//  std::string checkVersionRequest() override;
 
   void SetMotionCommand(double linear_vel, double angular_vel) override;
-  void SetLightCommand(AgxLightMode f_mode, uint8_t f_value, AgxLightMode r_mode,
+  void SetLightCommand(LightMode f_mode, uint8_t f_value, LightMode r_mode,
                        uint8_t r_value) override;
   void DisableLightControl() override;
 
@@ -50,6 +52,7 @@ class ScoutRobot : public RobotCommonInterface, public ScoutInterface {
 class ScoutMiniOmniRobot : public ScoutRobot, public ScoutOmniInterface {
  public:
   ScoutMiniOmniRobot(ProtocolVersion protocol = ProtocolVersion::AGX_V2);
+  ~ScoutMiniOmniRobot();
 
   void SetMotionCommand(double linear_vel, double angular_vel,
                         double lateral_velocity) override;

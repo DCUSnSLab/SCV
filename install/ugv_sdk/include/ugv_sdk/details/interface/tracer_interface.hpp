@@ -17,7 +17,7 @@
 
 namespace westonrobot {
 struct TracerCoreState {
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   SystemStateMessage system_state;
   MotionStateMessage motion_state;
@@ -26,31 +26,26 @@ struct TracerCoreState {
 };
 
 struct TracerActuatorState {
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   // actuator state
   ActuatorHSStateMessage actuator_hs_state[2];
   ActuatorLSStateMessage actuator_ls_state[2];
 };
-struct TracerCommonSensorState {
-  SdkTimePoint time_stamp;
-
-  BmsBasicMessage bms_basic_state;
-  BmsExtendedMessage bms_extended_state;
-};
 
 struct TracerInterface {
   virtual ~TracerInterface() = default;
 
+  virtual void Connect(std::string uart_name, uint32_t baudrate){
+      // use derived version
+  };
+
   virtual void SetMotionCommand(double linear_vel, double angular_vel) = 0;
-  virtual void SetLightCommand(AgxLightMode f_mode, uint8_t f_value) = 0;
-  virtual void DisableLightControl() = 0;
+  virtual void SetLightCommand(LightMode f_mode, uint8_t f_value) = 0;
 
   // get robot state
   virtual TracerCoreState GetRobotState() = 0;
   virtual TracerActuatorState GetActuatorState() = 0;
-  virtual TracerCommonSensorState GetCommonSensorState() = 0;
-
 };
 }  // namespace westonrobot
 

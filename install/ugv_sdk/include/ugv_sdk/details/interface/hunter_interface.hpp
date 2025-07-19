@@ -17,7 +17,7 @@
 
 namespace westonrobot {
 struct HunterCoreState {
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   SystemStateMessage system_state;
   MotionStateMessage motion_state;
@@ -25,20 +25,13 @@ struct HunterCoreState {
 };
 
 struct HunterActuatorState {
-  SdkTimePoint time_stamp;
+  AgxMsgTimeStamp time_stamp;
 
   // actuator state
   ActuatorHSStateMessage actuator_hs_state[3];
   ActuatorLSStateMessage actuator_ls_state[3];
   // - for v1 robots only
   ActuatorStateMessageV1 actuator_state[3];
-};
-
-struct HunterCommonSensorState {
-  SdkTimePoint time_stamp;
-
-  BmsBasicMessage bms_basic_state;
-  BmsExtendedMessage bms_extend_state;
 };
 
 struct HunterInterface {
@@ -52,7 +45,6 @@ struct HunterInterface {
   // get robot state
   virtual HunterCoreState GetRobotState() = 0;
   virtual HunterActuatorState GetActuatorState() = 0;
-  virtual HunterCommonSensorState GetCommonSensorState() = 0;
 };
 }  // namespace westonrobot
 

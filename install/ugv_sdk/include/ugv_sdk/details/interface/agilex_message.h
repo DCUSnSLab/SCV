@@ -32,8 +32,8 @@ typedef struct {
 
 typedef struct {
   bool enable_cmd_ctrl;
-  AgxLightOperation front_light;
-  AgxLightOperation rear_light;
+  LightOperation front_light;
+  LightOperation rear_light;
 } LightCommandMessage;
 
 typedef struct {
@@ -46,7 +46,7 @@ typedef struct {
 
 // V1-only messages
 typedef struct {
-  AgxControlMode control_mode;
+  ControlMode control_mode;
   bool clear_all_error;
   float linear;
   float angular;
@@ -73,8 +73,8 @@ typedef ValueSetCommandMessageV1 ValueSetStateMessageV1;
 #define SYSTEM_ERROR_STEER_ENCODER_MASK ((uint16_t)0x0080)
 
 typedef struct {
-  AgxVehicleState vehicle_state;
-  AgxControlMode control_mode;
+  VehicleState vehicle_state;
+  ControlMode control_mode;
   float battery_voltage;
   uint16_t error_code;
 } SystemStateMessage;
@@ -89,10 +89,10 @@ typedef struct {
 typedef LightCommandMessage LightStateMessage;
 
 typedef struct {
-  AgxRcSwitchState swa;
-  AgxRcSwitchState swb;
-  AgxRcSwitchState swc;
-  AgxRcSwitchState swd;
+  RcSwitchState swa;
+  RcSwitchState swb;
+  RcSwitchState swc;
+  RcSwitchState swd;
   int8_t stick_right_v;
   int8_t stick_right_h;
   int8_t stick_left_v;
@@ -124,7 +124,6 @@ typedef struct {
   uint8_t driver_state;
 } ActuatorLSStateMessage;
 
-// for ranger
 typedef struct {
   uint8_t motion_mode;
   uint8_t mode_changing;
@@ -230,10 +229,12 @@ typedef struct {
 #define BMS_PROT4_WEAK_SIGNAL_SWITCH_OPEN_SET_MASK ((uint8_t)0x10)
 
 typedef struct {
-  uint8_t alarm_status_1;
-  uint8_t alarm_status_2;
-  uint8_t warn_status_1;
-  uint8_t warn_status_2;
+  uint8_t protection_code1;
+  uint8_t protection_code2;
+  uint8_t protection_code3;
+  uint8_t protection_code4;
+  uint8_t battery_max_teperature;
+  uint8_t battery_min_teperature;
 } BmsExtendedMessage;
 
 /************  Query/config messages ****************/
@@ -243,15 +244,18 @@ typedef struct {
 } VersionRequestMessage;
 
 typedef struct {
-  uint8_t bytes[8];
+  uint16_t controller_hw_version;
+  uint16_t motor_driver_hw_version;
+  uint16_t controller_sw_version;
+  uint16_t motor_driver_sw_version;
 } VersionResponseMessage;
 
 typedef struct {
-  AgxControlMode mode;
+  ControlMode mode;
 } ControlModeConfigMessage;
 
 typedef struct {
-  AgxBrakeMode mode;
+  BrakeMode mode;
 } BrakeModeConfigMessage;
 
 typedef struct {
@@ -349,6 +353,8 @@ typedef struct {
     // query/config
     VersionRequestMessage version_request_msg;
     VersionResponseMessage version_response_msg;
+//    uint8_t version_str[10][8];
+    uint8_t version_str[8];
     ControlModeConfigMessage control_mode_config_msg;
     BrakeModeConfigMessage brake_mode_config_msg;
     SteerNeutralRequestMessage steer_neutral_request_msg;
@@ -362,6 +368,7 @@ typedef struct {
 
     MotorAngleMessage motor_angle_msg;
     MotorSpeedMessage motor_speed_msg;
+
   } body;
 } AgxMessage;
 

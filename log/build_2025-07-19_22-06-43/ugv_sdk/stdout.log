@@ -1,0 +1,71 @@
+-- Build package with cmake
+-- Tests will not be built
+-- Project will be installed to /home/scv/SCV/install/ugv_sdk with 'make install'
+--  - To install LIB components to /home/scv/SCV/install/ugv_sdk/lib
+--  - To install BIN components to /home/scv/SCV/install/ugv_sdk/bin
+--  - To install INCLUDE components to /home/scv/SCV/install/ugv_sdk/include
+--  - To install CMAKE components to /home/scv/SCV/install/ugv_sdk/share/cmake/ugv_sdk
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/scv/SCV/build/ugv_sdk
+Consolidate compiler generated dependencies of target ugv_sdk
+[ 41%] Built target ugv_sdk
+Consolidate compiler generated dependencies of target demo_scout_robot
+Consolidate compiler generated dependencies of target demo_scout_mini_omni_robot
+Consolidate compiler generated dependencies of target demo_ranger_robot
+Consolidate compiler generated dependencies of target demo_bunker_robot
+Consolidate compiler generated dependencies of target demo_tracer_robot
+Consolidate compiler generated dependencies of target demo_protocol_detector
+[ 50%] Built target demo_scout_robot
+[ 58%] Built target demo_bunker_robot
+Consolidate compiler generated dependencies of target demo_hunter_robot
+[ 75%] Built target demo_ranger_robot
+[ 66%] Built target demo_scout_mini_omni_robot
+[ 83%] Built target demo_tracer_robot
+[ 91%] Built target demo_protocol_detector
+[100%] Built target demo_hunter_robot
+-- Install configuration: "Release"
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/libugv_sdk.a
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/ranger_robot.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/scout_robot.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/tracer_robot.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/hunter_robot.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/bunker_robot.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/protocol_detector.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/stopwatch.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/ranger_base.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/tracer_base.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/bunker_base.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/hunter_base.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_types.h
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/scout_interface.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/tracer_interface.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/bunker_interface.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/hunter_interface.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/ranger_interface.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/protocol_v1_parser.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/robot_limits.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/agilex_msg_parser_v1.h
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2/protocol_v2_parser.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_can.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_serial.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/ring_buffer.hpp
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets.cmake
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets-release.cmake
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfig.cmake
+-- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfigVersion.cmake

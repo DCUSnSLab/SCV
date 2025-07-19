@@ -1,14 +1,1 @@
-// generated from rosidl_adapter/resource/msg.idl.em
-// with input from hunter_msgs/msg/HunterLightState.msg
-// generated code does not contain a copyright notice
-
-
-module hunter_msgs {
-  module msg {
-    struct HunterLightState {
-      uint8 mode;
-
-      uint8 custom_value;
-    };
-  };
-};
+/home/scv/SCV/build/hunter_msgs/rosidl_adapter/hunter_msgs/msg/HunterLightState.idl

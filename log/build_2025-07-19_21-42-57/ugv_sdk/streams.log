@@ -1,0 +1,243 @@
+[0.008s] Invoking command in '/home/scv/SCV/build/ugv_sdk': /usr/bin/cmake --build /home/scv/SCV/build/ugv_sdk -- -j8 -l8
+[0.045s] [35m[1mConsolidate compiler generated dependencies of target ugv_sdk[0m
+[0.078s] [  4%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/hunter_robot.cpp.o[0m
+[0.078s] [  8%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/scout_robot.cpp.o[0m
+[0.078s] [ 12%] [32mBuilding CXX object CMakeFiles/ugv_sdk.dir/src/mobile_robot/bunker_robot.cpp.o[0m
+[1.619s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[1.619s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[1.619s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp:17[m[K,
+[1.619s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/bunker_robot.hpp:15[m[K,
+[1.619s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/bunker_robot.cpp:10[m[K:
+[1.619s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[1.619s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::BunkerLimits>][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[1.619s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[1.619s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[1.619s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.619s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[1.619s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.619s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/bunker_base.hpp:19[m[K,
+[1.619s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/bunker_robot.cpp:11[m[K:
+[1.619s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::BunkerLimits>][m[K’:
+[1.619s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[1.619s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[1.619s]       |                 [01;36m[K^~~~~~~~[m[K
+[1.626s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[1.626s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[1.626s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp:17[m[K,
+[1.626s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/bunker_robot.hpp:15[m[K,
+[1.626s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/bunker_robot.cpp:10[m[K:
+[1.626s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[1.626s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[1.627s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[1.627s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[1.627s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.627s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[1.627s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.627s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/bunker_base.hpp:19[m[K,
+[1.627s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/bunker_robot.cpp:11[m[K:
+[1.627s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’:
+[1.627s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[1.627s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[1.627s]       |                 [01;36m[K^~~~~~~~[m[K
+[1.655s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[1.655s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[1.655s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp:17[m[K,
+[1.655s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/hunter_robot.hpp:15[m[K,
+[1.655s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/hunter_robot.cpp:10[m[K:
+[1.655s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[1.655s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::HunterV1Limits>][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[1.655s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[1.655s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[1.655s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.655s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[1.656s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.656s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/hunter_base.hpp:19[m[K,
+[1.656s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/hunter_robot.cpp:11[m[K:
+[1.656s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::HunterV1Limits>][m[K’:
+[1.656s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[1.656s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[1.656s]       |                 [01;36m[K^~~~~~~~[m[K
+[1.662s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[1.662s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[1.663s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp:17[m[K,
+[1.663s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/hunter_robot.hpp:15[m[K,
+[1.663s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/hunter_robot.cpp:10[m[K:
+[1.663s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[1.663s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[1.663s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[1.663s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[1.663s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.663s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[1.663s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.663s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/hunter_base.hpp:19[m[K,
+[1.663s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/hunter_robot.cpp:11[m[K:
+[1.663s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’:
+[1.663s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[1.663s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[1.664s]       |                 [01;36m[K^~~~~~~~[m[K
+[1.956s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[1.956s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[1.957s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp:17[m[K,
+[1.957s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/scout_robot.hpp:15[m[K,
+[1.957s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/scout_robot.cpp:10[m[K:
+[1.957s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[1.957s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::ScoutMiniLimits>][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[1.957s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[1.957s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[1.957s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.957s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[1.957s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.957s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp:19[m[K,
+[1.957s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/scout_robot.cpp:11[m[K:
+[1.957s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::ScoutMiniLimits>][m[K’:
+[1.957s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[1.957s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[1.957s]       |                 [01;36m[K^~~~~~~~[m[K
+[1.963s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[1.963s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[1.963s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp:17[m[K,
+[1.963s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/scout_robot.hpp:15[m[K,
+[1.963s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/scout_robot.cpp:10[m[K:
+[1.963s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[1.963s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[1.963s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[1.963s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[1.964s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.964s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[1.964s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.964s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp:19[m[K,
+[1.964s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/scout_robot.cpp:11[m[K:
+[1.964s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’:
+[1.964s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[1.964s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[1.964s]       |                 [01;36m[K^~~~~~~~[m[K
+[1.970s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[1.970s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[1.970s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp:17[m[K,
+[1.970s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/scout_robot.hpp:15[m[K,
+[1.970s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/scout_robot.cpp:10[m[K:
+[1.970s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[1.970s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::ScoutV2Limits>][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[1.970s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[1.970s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[1.970s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.970s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[1.970s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.970s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp:19[m[K,
+[1.970s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/src/mobile_robot/scout_robot.cpp:11[m[K:
+[1.970s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV1Parser<westonrobot::ScoutV2Limits>][m[K’:
+[1.970s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[1.971s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[1.971s]       |                 [01;36m[K^~~~~~~~[m[K
+[2.221s] [ 16%] [32m[1mLinking CXX static library lib/libugv_sdk.a[0m
+[2.253s] [ 41%] Built target ugv_sdk
+[2.271s] [ 50%] [32mBuilding CXX object demo/ranger_demo/CMakeFiles/demo_ranger_robot.dir/ranger_robot_demo.cpp.o[0m
+[2.272s] [ 50%] [32mBuilding CXX object demo/scout_demo/CMakeFiles/demo_scout_mini_omni_robot.dir/scout_mini_omni_demo.cpp.o[0m
+[2.272s] [ 58%] [32mBuilding CXX object demo/bunker_demo/CMakeFiles/demo_bunker_robot.dir/bunker_robot_demo.cpp.o[0m
+[2.272s] [ 54%] [32mBuilding CXX object demo/tracer_demo/CMakeFiles/demo_tracer_robot.dir/tracer_robot_demo.cpp.o[0m
+[2.272s] [ 66%] [32mBuilding CXX object demo/scout_demo/CMakeFiles/demo_scout_robot.dir/scout_robot_demo.cpp.o[0m
+[2.272s] [ 66%] [32mBuilding CXX object demo/utils_demo/CMakeFiles/demo_protocol_detector.dir/demo_protocol_detector.cpp.o[0m
+[2.275s] [ 70%] [32mBuilding CXX object demo/hunter_demo/CMakeFiles/demo_hunter_robot.dir/hunter_robot_demo.cpp.o[0m
+[2.725s] [ 75%] [32m[1mLinking CXX executable ../../bin/demo_bunker_robot[0m
+[2.829s] [ 75%] Built target demo_bunker_robot
+[3.637s] [ 79%] [32m[1mLinking CXX executable ../../bin/demo_protocol_detector[0m
+[3.706s] [ 83%] [32m[1mLinking CXX executable ../../bin/demo_hunter_robot[0m
+[3.744s] [ 83%] Built target demo_protocol_detector
+[3.753s] [ 87%] [32m[1mLinking CXX executable ../../bin/demo_scout_mini_omni_robot[0m
+[3.763s] [ 91%] [32m[1mLinking CXX executable ../../bin/demo_scout_robot[0m
+[3.819s] [ 91%] Built target demo_hunter_robot
+[3.864s] [ 91%] Built target demo_scout_mini_omni_robot
+[3.868s] [ 91%] Built target demo_scout_robot
+[3.945s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[3.945s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[3.945s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/ranger_interface.hpp:15[m[K,
+[3.945s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/ranger_base.hpp:18[m[K,
+[3.945s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/ranger_robot.hpp:13[m[K,
+[3.945s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/demo/ranger_demo/ranger_robot_demo.cpp:10[m[K:
+[3.945s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[3.945s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[3.945s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[3.945s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[3.945s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.945s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[3.945s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.945s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/ranger_base.hpp:19[m[K,
+[3.946s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/ranger_robot.hpp:13[m[K,
+[3.946s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/demo/ranger_demo/ranger_robot_demo.cpp:10[m[K:
+[3.946s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’:
+[3.946s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[3.946s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[3.946s]       |                 [01;36m[K^~~~~~~~[m[K
+[3.973s] In file included from [01m[K/usr/include/string.h:535[m[K,
+[3.974s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h:20[m[K,
+[3.974s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/interface/tracer_interface.hpp:15[m[K,
+[3.974s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/tracer_base.hpp:18[m[K,
+[3.974s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/tracer_robot.hpp:13[m[K,
+[3.974s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/demo/tracer_demo/tracer_robot_demo.cpp:15[m[K:
+[3.974s] In function ‘[01m[Kvoid* memcpy(void*, const void*, size_t)[m[K’,
+[3.974s]     inlined from ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’ at [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:251:10[m[K:
+[3.974s] [01m[K/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* __builtin_memcpy(void*, const void*, long unsigned int)[m[K’ reading 8 bytes from a region of size 1 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overread-Wstringop-overread]8;;[m[K]
+[3.974s]    29 |   return [01;35m[K__builtin___memcpy_chk (__dest, __src, __len,[m[K
+[3.974s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.974s]    30 | [01;35m[K                                 __glibc_objsize0 (__dest))[m[K;
+[3.974s]       |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.974s] In file included from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/tracer_base.hpp:19[m[K,
+[3.974s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/mobile_robot/tracer_robot.hpp:13[m[K,
+[3.974s]                  from [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/demo/tracer_demo/tracer_robot_demo.cpp:15[m[K:
+[3.975s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:[m[K In member function ‘[01m[Kstd::string westonrobot::AgilexBase<ParserType>::sendRequest() [with ParserType = westonrobot::ProtocolV2Parser][m[K’:
+[3.975s] [01m[K/home/scv/SCV/src/vehicle/SCV_ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp:248:17:[m[K [01;36m[Knote: [m[Ksource object ‘[01m[Ktx_frame[m[K’ of size 1
+[3.975s]   248 |    CheckRequest [01;36m[Ktx_frame[m[K;
+[3.975s]       |                 [01;36m[K^~~~~~~~[m[K
+[4.149s] [ 95%] [32m[1mLinking CXX executable ../../bin/demo_ranger_robot[0m
+[4.181s] [100%] [32m[1mLinking CXX executable ../../bin/demo_tracer_robot[0m
+[4.220s] [100%] Built target demo_ranger_robot
+[4.251s] [100%] Built target demo_tracer_robot
+[4.259s] Invoked command in '/home/scv/SCV/build/ugv_sdk' returned '0': /usr/bin/cmake --build /home/scv/SCV/build/ugv_sdk -- -j8 -l8
+[4.260s] Invoking command in '/home/scv/SCV/build/ugv_sdk': /usr/bin/cmake --install /home/scv/SCV/build/ugv_sdk
+[4.265s] -- Install configuration: "Release"
+[4.265s] -- Installing: /home/scv/SCV/install/ugv_sdk/lib/libugv_sdk.a
+[4.266s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk
+[4.266s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot
+[4.266s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/ranger_robot.hpp
+[4.266s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/scout_robot.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/tracer_robot.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/hunter_robot.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/mobile_robot/bunker_robot.hpp
+[4.267s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/protocol_detector.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/stopwatch.hpp
+[4.267s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details
+[4.267s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/ranger_base.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/agilex_base.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/tracer_base.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/scout_base.hpp
+[4.267s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/bunker_base.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/robot_base/hunter_base.hpp
+[4.268s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_types.h
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/scout_interface.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/tracer_interface.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/bunker_interface.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/hunter_interface.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/ranger_interface.hpp
+[4.268s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/protocol_v1_parser.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/robot_limits.hpp
+[4.268s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v1/agilex_msg_parser_v1.h
+[4.269s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2
+[4.269s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/protocol_v2/protocol_v2_parser.hpp
+[4.269s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port
+[4.269s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_can.hpp
+[4.269s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp
+[4.269s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_serial.hpp
+[4.269s] -- Installing: /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/ring_buffer.hpp
+[4.269s] -- Old export file "/home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets.cmake" will be replaced.  Removing files [/home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets-release.cmake].
+[4.269s] -- Installing: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets.cmake
+[4.269s] -- Installing: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkTargets-release.cmake
+[4.269s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfig.cmake
+[4.269s] -- Up-to-date: /home/scv/SCV/install/ugv_sdk/lib/cmake/ugv_sdk/ugv_sdkConfigVersion.cmake
+[4.271s] Invoked command in '/home/scv/SCV/build/ugv_sdk' returned '0': /usr/bin/cmake --install /home/scv/SCV/build/ugv_sdk

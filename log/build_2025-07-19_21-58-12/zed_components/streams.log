@@ -1,0 +1,43 @@
+[0.015s] Invoking command in '/home/scv/SCV/build/zed_components': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/zed_components -- -j8 -l8
+[0.055s] [35m[1mConsolidate compiler generated dependencies of target zed_camera_one_component[0m
+[0.061s] [35m[1mConsolidate compiler generated dependencies of target zed_camera_component[0m
+[0.104s] [ 40%] Built target zed_camera_one_component
+[0.126s] [100%] Built target zed_camera_component
+[0.151s] Invoked command in '/home/scv/SCV/build/zed_components' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/scv/SCV/build/zed_components -- -j8 -l8
+[0.151s] Invoking command in '/home/scv/SCV/build/zed_components': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/zed_components
+[0.161s] -- Install configuration: "Release"
+[0.161s] -- Execute custom install script
+[0.162s] -- Symlinking: /home/scv/SCV/install/zed_components/lib/libzed_camera_component.so
+[0.171s] -- Symlinking: /home/scv/SCV/install/zed_components/lib/libzed_camera_one_component.so
+[0.180s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//cost_traversability.hpp
+[0.190s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//zed_camera_component.hpp
+[0.196s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//zed_camera_one_component.hpp
+[0.206s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//gnss_replay.hpp
+[0.214s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//json.hpp
+[0.220s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//sl_logging.hpp
+[0.227s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//sl_tools.hpp
+[0.236s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//sl_types.hpp
+[0.243s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//sl_win_avg.hpp
+[0.251s] -- Symlinking: /home/scv/SCV/install/zed_components/include/zed_components//visibility_control.hpp
+[0.258s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/environment/library_path.sh
+[0.266s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/environment/library_path.dsv
+[0.274s] -- Symlinking: /home/scv/SCV/install/zed_components/share/ament_index/resource_index/package_run_dependencies/zed_components
+[0.282s] -- Symlinking: /home/scv/SCV/install/zed_components/share/ament_index/resource_index/parent_prefix_path/zed_components
+[0.289s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/environment/ament_prefix_path.sh
+[0.301s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/environment/ament_prefix_path.dsv
+[0.306s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/environment/path.sh
+[0.319s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/environment/path.dsv
+[0.328s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/local_setup.bash
+[0.339s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/local_setup.sh
+[0.349s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/local_setup.zsh
+[0.357s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/local_setup.dsv
+[0.366s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/package.dsv
+[0.375s] -- Symlinking: /home/scv/SCV/install/zed_components/share/ament_index/resource_index/packages/zed_components
+[0.385s] -- Symlinking: /home/scv/SCV/install/zed_components/share/ament_index/resource_index/rclcpp_components/zed_components
+[0.394s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.404s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/cmake/ament_cmake_export_libraries-extras.cmake
+[0.413s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.423s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/cmake/zed_componentsConfig.cmake
+[0.433s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/cmake/zed_componentsConfig-version.cmake
+[0.442s] -- Symlinking: /home/scv/SCV/install/zed_components/share/zed_components/package.xml
+[0.453s] Invoked command in '/home/scv/SCV/build/zed_components' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/scv/SCV/build/zed_components

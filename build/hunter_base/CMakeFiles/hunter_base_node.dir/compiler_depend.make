@@ -104,6 +104,7 @@ CMakeFiles/hunter_base_node.dir/src/bicycle_model.cpp.o: /home/scv/SCV/src/vehic
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -111,7 +112,9 @@ CMakeFiles/hunter_base_node.dir/src/bicycle_model.cpp.o: /home/scv/SCV/src/vehic
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
@@ -132,6 +135,7 @@ CMakeFiles/hunter_base_node.dir/src/bicycle_model.cpp.o: /home/scv/SCV/src/vehic
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -182,6 +186,8 @@ CMakeFiles/hunter_base_node.dir/src/bicycle_model.cpp.o: /home/scv/SCV/src/vehic
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
@@ -358,6 +364,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_node.cpp.o: /home/scv/SCV/src/ve
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -434,6 +441,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_node.cpp.o: /home/scv/SCV/src/ve
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
@@ -485,8 +493,11 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_node.cpp.o: /home/scv/SCV/src/ve
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -495,6 +506,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_node.cpp.o: /home/scv/SCV/src/ve
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -587,6 +600,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_node.cpp.o: /home/scv/SCV/src/ve
   /usr/include/c++/11/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /opt/ros/humble/include/rcutils/rcutils/snprintf.h \
   /opt/ros/humble/include/rcutils/rcutils/time.h \
   /opt/ros/humble/include/rcutils/rcutils/types.h \
@@ -1006,7 +1021,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_node.cpp.o: /home/scv/SCV/src/ve
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp \
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h \
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_types.h \
-  /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/parser_base.hpp \
+  /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp \
   /usr/include/linux/can.h \
   /usr/include/linux/types.h \
   /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -1111,6 +1126,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -1185,6 +1201,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
@@ -1236,8 +1253,11 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -1246,6 +1266,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -1337,6 +1359,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/c++/11/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /opt/ros/humble/include/rcutils/rcutils/snprintf.h \
   /opt/ros/humble/include/rcutils/rcutils/time.h \
   /opt/ros/humble/include/rcutils/rcutils/types.h \
@@ -1710,7 +1734,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/robot_common_interface.hpp \
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_message.h \
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/agilex_types.h \
-  /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/parser_base.hpp \
+  /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp \
   /usr/include/linux/can.h \
   /usr/include/linux/types.h \
   /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -1887,20 +1911,23 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_params.hpp \
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/utilities/protocol_detector.hpp \
   /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_can.hpp \
-  /usr/include/asio.hpp \
-  /usr/include/asio/associated_allocator.hpp \
+  /usr/include/asio/posix/basic_stream_descriptor.hpp \
   /usr/include/asio/detail/config.hpp \
   /usr/include/linux/version.h \
+  /usr/include/asio/posix/descriptor.hpp \
+  /usr/include/asio/posix/basic_descriptor.hpp \
+  /usr/include/asio/any_io_executor.hpp \
+  /usr/include/asio/execution.hpp \
+  /usr/include/asio/execution/allocator.hpp \
   /usr/include/asio/detail/type_traits.hpp \
-  /usr/include/asio/detail/push_options.hpp \
-  /usr/include/asio/detail/pop_options.hpp \
-  /usr/include/asio/associated_executor.hpp \
   /usr/include/asio/execution/executor.hpp \
   /usr/include/asio/execution/execute.hpp \
   /usr/include/asio/execution/detail/as_invocable.hpp \
   /usr/include/asio/detail/atomic_count.hpp \
   /usr/include/asio/detail/memory.hpp \
   /usr/include/asio/execution/receiver_invocation_error.hpp \
+  /usr/include/asio/detail/push_options.hpp \
+  /usr/include/asio/detail/pop_options.hpp \
   /usr/include/asio/execution/impl/receiver_invocation_error.ipp \
   /usr/include/asio/execution/set_done.hpp \
   /usr/include/asio/traits/set_done_member.hpp \
@@ -1917,11 +1944,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/traits/execute_free.hpp \
   /usr/include/asio/execution/invocable_archetype.hpp \
   /usr/include/asio/traits/equality_comparable.hpp \
-  /usr/include/asio/is_executor.hpp \
-  /usr/include/asio/detail/is_executor.hpp \
-  /usr/include/asio/system_executor.hpp \
-  /usr/include/asio/execution.hpp \
-  /usr/include/asio/execution/allocator.hpp \
   /usr/include/asio/execution/scheduler.hpp \
   /usr/include/asio/execution/schedule.hpp \
   /usr/include/asio/traits/schedule_member.hpp \
@@ -2007,6 +2029,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/poll.h \
   /usr/include/x86_64-linux-gnu/sys/poll.h \
   /usr/include/x86_64-linux-gnu/bits/poll.h \
+  /usr/include/x86_64-linux-gnu/bits/poll2.h \
   /usr/include/x86_64-linux-gnu/sys/stat.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
   /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
@@ -2020,6 +2043,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/linux/falloc.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/bits/socket.h \
   /usr/include/x86_64-linux-gnu/bits/socket_type.h \
@@ -2029,6 +2053,7 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/sys/uio.h \
   /usr/include/x86_64-linux-gnu/bits/uio-ext.h \
   /usr/include/x86_64-linux-gnu/sys/un.h \
@@ -2065,6 +2090,22 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/execution/detail/submit_receiver.hpp \
   /usr/include/asio/traits/submit_member.hpp \
   /usr/include/asio/traits/submit_free.hpp \
+  /usr/include/asio/execution_context.hpp \
+  /usr/include/asio/impl/execution_context.hpp \
+  /usr/include/asio/detail/handler_type_requirements.hpp \
+  /usr/include/asio/async_result.hpp \
+  /usr/include/asio/detail/service_registry.hpp \
+  /usr/include/asio/detail/impl/service_registry.hpp \
+  /usr/include/asio/detail/impl/service_registry.ipp \
+  /usr/include/asio/impl/execution_context.ipp \
+  /usr/include/asio/detail/io_object_impl.hpp \
+  /usr/include/asio/io_context.hpp \
+  /usr/include/asio/detail/wrapped_handler.hpp \
+  /usr/include/asio/detail/bind_handler.hpp \
+  /usr/include/asio/associated_executor.hpp \
+  /usr/include/asio/is_executor.hpp \
+  /usr/include/asio/detail/is_executor.hpp \
+  /usr/include/asio/system_executor.hpp \
   /usr/include/asio/impl/system_executor.hpp \
   /usr/include/asio/detail/executor_op.hpp \
   /usr/include/asio/detail/fenced_block.hpp \
@@ -2077,14 +2118,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/detail/posix_global.hpp \
   /usr/include/asio/system_context.hpp \
   /usr/include/asio/detail/scheduler.hpp \
-  /usr/include/asio/execution_context.hpp \
-  /usr/include/asio/impl/execution_context.hpp \
-  /usr/include/asio/detail/handler_type_requirements.hpp \
-  /usr/include/asio/async_result.hpp \
-  /usr/include/asio/detail/service_registry.hpp \
-  /usr/include/asio/detail/impl/service_registry.hpp \
-  /usr/include/asio/detail/impl/service_registry.ipp \
-  /usr/include/asio/impl/execution_context.ipp \
   /usr/include/asio/detail/conditionally_enabled_event.hpp \
   /usr/include/asio/detail/conditionally_enabled_mutex.hpp \
   /usr/include/asio/detail/null_event.hpp \
@@ -2123,16 +2156,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/detail/thread_group.hpp \
   /usr/include/asio/impl/system_context.hpp \
   /usr/include/asio/impl/system_context.ipp \
-  /usr/include/asio/async_result.hpp \
-  /usr/include/asio/awaitable.hpp \
-  /usr/include/asio/basic_datagram_socket.hpp \
-  /usr/include/asio/basic_socket.hpp \
-  /usr/include/asio/any_io_executor.hpp \
-  /usr/include/asio/detail/io_object_impl.hpp \
-  /usr/include/asio/io_context.hpp \
-  /usr/include/asio/detail/wrapped_handler.hpp \
-  /usr/include/asio/detail/bind_handler.hpp \
-  /usr/include/asio/associated_executor.hpp \
   /usr/include/asio/detail/handler_cont_helpers.hpp \
   /usr/include/asio/handler_continuation_hook.hpp \
   /usr/include/asio/detail/chrono.hpp \
@@ -2141,20 +2164,36 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/detail/handler_work.hpp \
   /usr/include/asio/executor_work_guard.hpp \
   /usr/include/asio/impl/io_context.ipp \
-  /usr/include/asio/post.hpp \
-  /usr/include/asio/impl/post.hpp \
-  /usr/include/asio/detail/work_dispatcher.hpp \
-  /usr/include/asio/socket_base.hpp \
-  /usr/include/asio/detail/io_control.hpp \
-  /usr/include/asio/detail/socket_option.hpp \
-  /usr/include/asio/detail/reactive_socket_service.hpp \
+  /usr/include/asio/detail/reactive_descriptor_service.hpp \
   /usr/include/asio/buffer.hpp \
   /usr/include/asio/detail/array_fwd.hpp \
   /usr/include/asio/detail/string_view.hpp \
   /usr/include/asio/detail/is_buffer_sequence.hpp \
   /usr/include/asio/detail/buffer_sequence_adapter.hpp \
   /usr/include/asio/detail/impl/buffer_sequence_adapter.ipp \
+  /usr/include/asio/detail/descriptor_ops.hpp \
+  /usr/include/asio/detail/impl/descriptor_ops.ipp \
+  /usr/include/asio/detail/descriptor_read_op.hpp \
+  /usr/include/asio/detail/descriptor_write_op.hpp \
   /usr/include/asio/detail/reactive_null_buffers_op.hpp \
+  /usr/include/asio/detail/reactive_wait_op.hpp \
+  /usr/include/asio/posix/descriptor_base.hpp \
+  /usr/include/asio/detail/io_control.hpp \
+  /usr/include/asio/detail/socket_option.hpp \
+  /usr/include/asio/detail/impl/reactive_descriptor_service.ipp \
+  /home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp \
+  /usr/include/asio.hpp \
+  /usr/include/asio/associated_allocator.hpp \
+  /usr/include/asio/associated_executor.hpp \
+  /usr/include/asio/async_result.hpp \
+  /usr/include/asio/awaitable.hpp \
+  /usr/include/asio/basic_datagram_socket.hpp \
+  /usr/include/asio/basic_socket.hpp \
+  /usr/include/asio/post.hpp \
+  /usr/include/asio/impl/post.hpp \
+  /usr/include/asio/detail/work_dispatcher.hpp \
+  /usr/include/asio/socket_base.hpp \
+  /usr/include/asio/detail/reactive_socket_service.hpp \
   /usr/include/asio/detail/reactive_socket_accept_op.hpp \
   /usr/include/asio/detail/socket_holder.hpp \
   /usr/include/asio/detail/socket_ops.hpp \
@@ -2166,7 +2205,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/detail/reactive_socket_recv_op.hpp \
   /usr/include/asio/detail/reactive_socket_recvmsg_op.hpp \
   /usr/include/asio/detail/reactive_socket_send_op.hpp \
-  /usr/include/asio/detail/reactive_wait_op.hpp \
   /usr/include/asio/detail/impl/reactive_socket_service_base.ipp \
   /usr/include/asio/basic_deadline_timer.hpp \
   /usr/include/asio/basic_io_object.hpp \
@@ -2188,13 +2226,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/impl/serial_port_base.hpp \
   /usr/include/asio/impl/serial_port_base.ipp \
   /usr/include/asio/detail/reactive_serial_port_service.hpp \
-  /usr/include/asio/detail/descriptor_ops.hpp \
-  /usr/include/asio/detail/impl/descriptor_ops.ipp \
-  /usr/include/asio/detail/reactive_descriptor_service.hpp \
-  /usr/include/asio/detail/descriptor_read_op.hpp \
-  /usr/include/asio/detail/descriptor_write_op.hpp \
-  /usr/include/asio/posix/descriptor_base.hpp \
-  /usr/include/asio/detail/impl/reactive_descriptor_service.ipp \
   /usr/include/asio/detail/impl/reactive_serial_port_service.ipp \
   /usr/include/asio/basic_signal_set.hpp \
   /usr/include/asio/detail/signal_set_service.hpp \
@@ -2408,11 +2439,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/posix/basic_descriptor.hpp \
   /usr/include/asio/posix/basic_stream_descriptor.hpp \
   /usr/include/asio/posix/descriptor.hpp \
-  /usr/include/asio/posix/basic_descriptor.hpp \
-  /usr/include/asio/posix/descriptor.hpp \
   /usr/include/asio/posix/descriptor_base.hpp \
   /usr/include/asio/posix/stream_descriptor.hpp \
-  /usr/include/asio/posix/basic_stream_descriptor.hpp \
   /usr/include/asio/post.hpp \
   /usr/include/asio/prefer.hpp \
   /usr/include/asio/query.hpp \
@@ -2480,34 +2508,38 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
   /usr/include/asio/write.hpp \
   /usr/include/asio/write_at.hpp \
   /usr/include/asio/impl/write_at.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_status.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__struct.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__struct.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__builder.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__traits.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__traits.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__type_support.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_light_cmd.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__struct.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__builder.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__traits.hpp \
-  /home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__type_support.hpp
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/hunter_status.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__struct.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_actuator_state__struct.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__builder.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__traits.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_actuator_state__traits.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__type_support.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/hunter_light_cmd.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__struct.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__builder.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__traits.hpp \
+  /home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__type_support.hpp
 
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__type_support.hpp:
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__type_support.hpp:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__builder.hpp:
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__traits.hpp:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__traits.hpp:
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__builder.hpp:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__traits.hpp:
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_light_cmd__struct.hpp:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__builder.hpp:
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/hunter_light_cmd.hpp:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_actuator_state__struct.hpp:
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__type_support.hpp:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__struct.hpp:
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_actuator_state__traits.hpp:
+
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__traits.hpp:
+
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/hunter_status.hpp:
 
 /usr/include/asio/impl/write_at.hpp:
 
@@ -2520,8 +2552,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/windows/basic_stream_handle.hpp:
 
 /usr/include/asio/windows/basic_random_access_handle.hpp:
-
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_light_cmd.hpp:
 
 /usr/include/asio/windows/overlapped_ptr.hpp:
 
@@ -2566,8 +2596,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/impl/read.hpp:
 
 /usr/include/asio/read.hpp:
-
-/usr/include/asio/posix/basic_descriptor.hpp:
 
 /usr/include/asio/packaged_task.hpp:
 
@@ -2681,6 +2709,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/impl/buffered_read_stream.hpp:
 
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_actuator_state__struct.hpp:
+
 /usr/include/asio/detail/buffered_stream_storage.hpp:
 
 /usr/include/asio/detail/buffer_resize_guard.hpp:
@@ -2735,16 +2765,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/basic_signal_set.hpp:
 
-/usr/include/asio/posix/descriptor_base.hpp:
-
-/usr/include/asio/detail/descriptor_write_op.hpp:
-
-/usr/include/asio/detail/descriptor_read_op.hpp:
-
-/usr/include/asio/detail/reactive_descriptor_service.hpp:
-
-/usr/include/asio/detail/impl/descriptor_ops.ipp:
-
 /usr/include/asio/detail/reactive_serial_port_service.hpp:
 
 /usr/include/asio/impl/serial_port_base.ipp:
@@ -2785,16 +2805,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/detail/socket_holder.hpp:
 
-/usr/include/asio/detail/reactive_null_buffers_op.hpp:
-
-/usr/include/asio/detail/buffer_sequence_adapter.hpp:
-
-/usr/include/asio/detail/string_view.hpp:
-
-/usr/include/asio/detail/socket_option.hpp:
-
-/usr/include/asio/detail/io_control.hpp:
-
 /usr/include/asio/socket_base.hpp:
 
 /usr/include/asio/detail/impl/strand_service.ipp:
@@ -2802,6 +2812,30 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/impl/post.hpp:
 
 /usr/include/asio/post.hpp:
+
+/usr/include/asio/detail/impl/reactive_serial_port_service.ipp:
+
+/usr/include/asio/basic_socket.hpp:
+
+/usr/include/asio/detail/socket_option.hpp:
+
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
+
+/usr/include/asio/detail/io_control.hpp:
+
+/usr/include/asio/posix/descriptor_base.hpp:
+
+/usr/include/asio/detail/reactive_null_buffers_op.hpp:
+
+/usr/include/asio/detail/descriptor_write_op.hpp:
+
+/usr/include/asio/detail/descriptor_read_op.hpp:
+
+/usr/include/asio/detail/impl/descriptor_ops.ipp:
+
+/usr/include/asio/detail/buffer_sequence_adapter.hpp:
+
+/usr/include/asio/detail/reactive_descriptor_service.hpp:
 
 /usr/include/asio/is_read_buffered.hpp:
 
@@ -2819,27 +2853,19 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/detail/handler_cont_helpers.hpp:
 
-/usr/include/asio/detail/bind_handler.hpp:
+/usr/include/asio/impl/system_context.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/message_memory_strategy.hpp:
+/usr/include/asio/detail/signal_blocker.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/generic_publisher.hpp:
+/usr/include/x86_64-linux-gnu/bits/epoll.h:
 
-/opt/ros/humble/include/rclcpp/rclcpp/intra_process_setting.hpp:
+/usr/include/x86_64-linux-gnu/sys/epoll.h:
 
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__builder.hpp:
+/usr/include/asio/detail/impl/epoll_reactor.hpp:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance_stamped.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_use_intra_process.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/parameter.hpp:
+/usr/include/x86_64-linux-gnu/sys/timerfd.h:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/rate.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/stat.h:
 
 /usr/include/asio/ip/impl/network_v4.ipp:
 
@@ -2917,14 +2943,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:
 
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:
-
-/usr/include/asio/read_until.hpp:
-
-/usr/include/asio/co_spawn.hpp:
-
-/usr/include/asio/traits/set_error_free.hpp:
-
 /opt/ros/humble/include/rmw/rmw/topic_endpoint_info.h:
 
 /usr/include/wctype.h:
@@ -2993,8 +3011,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/rcl/rcl/subscription.h:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__struct.hpp:
-
 /opt/ros/humble/include/rcl/rcl/service.h:
 
 /opt/ros/humble/include/rcl/rcl/node.h:
@@ -3017,6 +3033,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdalign.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
 /usr/include/c++/11/bits/locale_facets.tcc:
 
 /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h:
@@ -3032,6 +3050,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /opt/ros/humble/include/rcl/rcl/visibility_control.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp:
+
+/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/async_port/async_port_base.hpp:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/requested_deadline_missed.h:
 
@@ -3083,6 +3103,16 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/rcutils/rcutils/snprintf.h:
 
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:
+
+/usr/include/asio/read_until.hpp:
+
+/usr/include/asio/co_spawn.hpp:
+
+/usr/include/asio/traits/set_error_free.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+
 /opt/ros/humble/include/rmw/rmw/impl/cpp/demangle.hpp:
 
 /usr/include/c++/11/stdlib.h:
@@ -3124,6 +3154,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/coroutine.hpp:
 
 /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h:
+
+/usr/include/asio/detail/bind_handler.hpp:
 
 /opt/ros/humble/include/rcutils/rcutils/testing/fault_injection.h:
 
@@ -3169,15 +3201,21 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/c++/11/bits/stl_tree.h:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
-
 /usr/include/c++/11/set:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp:
 
 /usr/include/asio/detail/cstddef.hpp:
 
+/usr/include/asio/detail/posix_signal_blocker.hpp:
+
+/usr/include/c++/11/atomic:
+
 /usr/include/asm-generic/int-ll64.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/message_memory_strategy.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/generic_publisher.hpp:
 
 /usr/include/asio/impl/executor.hpp:
 
@@ -3197,7 +3235,15 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
+/usr/include/asio/detail/string_view.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /opt/ros/humble/include/rcl/rcl/init_options.h:
 
@@ -3221,8 +3267,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
 
-/usr/include/x86_64-linux-gnu/bits/epoll.h:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/sigcontext.h:
@@ -3234,8 +3278,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
-
-/usr/include/asio/detail/signal_blocker.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:
 
@@ -3250,8 +3292,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
-
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/hunter_status.hpp:
 
 /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__traits.hpp:
 
@@ -3277,6 +3317,12 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/stdc-predef.h:
 
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__builder.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/intra_process_setting.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance_stamped.hpp:
+
 /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/ParamV.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp:
@@ -3291,10 +3337,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/c++/11/cwctype:
 
-/usr/include/c++/11/atomic:
-
-/usr/include/asio/detail/posix_signal_blocker.hpp:
-
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:
 
 /usr/include/asio/ip/resolver_query_base.hpp:
@@ -3303,15 +3345,29 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/rclcpp/rclcpp/typesupport_helpers.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/c++/11/bits/ostream.tcc:
+
+/opt/ros/humble/include/rclcpp/rclcpp/create_generic_publisher.hpp:
+
+/usr/include/c++/11/tr1/modified_bessel_func.tcc:
+
+/opt/ros/humble/include/rcl/rcl/macros.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp:
+
+/usr/include/netinet/in.h:
+
+/usr/include/c++/11/tr1/hypergeometric.tcc:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__builder.hpp:
+
+/opt/ros/humble/include/tf2/tf2/exceptions.hpp:
+
+/usr/include/c++/11/tr1/ell_integral.tcc:
 
 /usr/include/wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/asio/execution/relationship.hpp:
-
-/usr/include/c++/11/cwchar:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__traits.hpp:
 
@@ -3342,6 +3398,10 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/c++/11/ext/new_allocator.h:
+
+/usr/include/asio/execution/relationship.hpp:
+
+/usr/include/c++/11/cwchar:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp:
 
@@ -3439,14 +3499,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
-/usr/include/c++/11/bits/ostream.tcc:
-
-/opt/ros/humble/include/rclcpp/rclcpp/create_generic_publisher.hpp:
-
-/usr/include/c++/11/tr1/modified_bessel_func.tcc:
-
-/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:
-
 /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/bicycle_model.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__type_support.hpp:
@@ -3461,6 +3513,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__type_support.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
 /usr/include/c++/11/vector:
 
 /usr/include/c++/11/backward/binders.h:
@@ -3468,6 +3522,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/c++/11/bits/deque.tcc:
 
 /usr/include/asio/detail/impl/handler_tracking.ipp:
+
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__struct.hpp:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
 
@@ -3543,19 +3599,11 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Ascent.h:
 
-/opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_intra_process_buffer_type.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
 /usr/include/c++/11/limits:
 
 /usr/include/c++/11/bits/vector.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/synchronization_policy_common.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:
 
@@ -3565,15 +3613,21 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__traits.hpp:
 
-/usr/include/c++/11/debug/assertions.h:
-
-/opt/ros/humble/include/tracetools/tracetools/config.h:
-
 /usr/include/c++/11/fstream:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
 /usr/include/asio/detail/conditionally_enabled_mutex.hpp:
+
+/usr/include/c++/11/typeindex:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/asio/detail/thread_context.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/c++/11/bits/stl_relops.h:
 
@@ -3615,8 +3669,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/include/asio/execution/receiver.hpp:
-
 /usr/include/linux/falloc.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
@@ -3626,16 +3678,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/detail/impl/posix_thread.ipp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
-
-/usr/include/c++/11/typeindex:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/asio/detail/thread_context.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
@@ -3653,10 +3695,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/sys/eventfd.h:
-
 /usr/include/termios.h:
 
 /usr/include/c++/11/ext/atomicity.h:
@@ -3664,6 +3702,18 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/c++/11/bits/stl_iterator.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/c++/11/tr1/beta_function.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__builder.hpp:
+
+/usr/include/asio/execution/detail/bulk_sender.hpp:
+
+/usr/include/c++/11/tr1/poly_laguerre.tcc:
+
+/usr/include/c++/11/array:
 
 /usr/include/strings.h:
 
@@ -3675,13 +3725,13 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.hpp:
 
-/usr/include/asio/system_executor.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/x86_64-linux-gnu/bits/socket_type.h:
 
 /usr/include/asio/error.hpp:
+
+/usr/include/asio/system_executor.hpp:
 
 /usr/include/asio/ip/address_v4_iterator.hpp:
 
@@ -3733,6 +3783,16 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/c++/11/bits/streambuf.tcc:
 
+/opt/ros/humble/include/tracetools/tracetools/config.h:
+
+/usr/include/c++/11/debug/assertions.h:
+
+/usr/include/x86_64-linux-gnu/sys/eventfd.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:
+
 /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
@@ -3758,10 +3818,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/asio/detail/posix_mutex.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp:
 
 /usr/include/c++/11/iterator:
 
@@ -3823,11 +3879,19 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/rclcpp/rclcpp/detail/qos_parameters.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp:
+
 /usr/include/c++/11/unordered_set:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/c++/11/bits/specfun.h:
 
 /usr/include/asio/impl/connect.hpp:
 
@@ -3857,11 +3921,19 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/c++/11/bits/nested_exception.h:
 
+/usr/include/asio/impl/system_context.ipp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/any_subscription_callback.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_timers_interface.hpp:
 
 /usr/include/asio/windows/random_access_handle.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stat.h:
+
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
 /usr/include/c++/11/cstdint:
 
@@ -3875,18 +3947,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/impl/system_executor.hpp:
 
-/opt/ros/humble/include/rcl/rcl/macros.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp:
-
-/usr/include/netinet/in.h:
-
-/usr/include/c++/11/tr1/hypergeometric.tcc:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__builder.hpp:
-
-/opt/ros/humble/include/tf2/tf2/exceptions.hpp:
-
 /usr/include/asio/local/basic_endpoint.hpp:
 
 /usr/include/asio/dispatch.hpp:
@@ -3898,6 +3958,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/select2.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:
 
@@ -3941,15 +4003,33 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/execution/context.hpp:
 
+/usr/include/asio/write.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/x86_64-linux-gnu/bits/uio-ext.h:
+
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/PC233.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__builder.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/c++/11/tr1/legendre_function.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_params.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/11/functional:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp:
-
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_light_cmd__traits.hpp:
 
 /usr/include/asio/impl/compose.hpp:
 
@@ -4007,6 +4087,16 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/wrench_stamped.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+
+/usr/include/c++/11/bits/this_thread_sleep.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:
+
+/opt/ros/humble/include/rmw/rmw/event.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
 /opt/ros/humble/include/rcl/rcl/arguments.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
@@ -4025,6 +4115,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/bits/signum-arch.h:
 
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__type_support.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
@@ -4040,6 +4132,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/sched.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
+
+/usr/include/asio/posix/basic_descriptor.hpp:
 
 /usr/include/asio/detail/impl/strand_executor_service.hpp:
 
@@ -4058,8 +4152,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/system_context.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/c++/11/tr1/ell_integral.tcc:
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
 
@@ -4090,8 +4182,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/parser_base.hpp:
 
 /usr/include/c++/11/utility:
 
@@ -4138,14 +4228,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/x86_64-linux-gnu/bits/termios-c_cc.h:
 
 /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Param.h:
-
-/usr/include/c++/11/bits/this_thread_sleep.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:
-
-/opt/ros/humble/include/rmw/rmw/event.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/qos.hpp:
 
@@ -4253,6 +4335,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
+
 /usr/include/netinet/tcp.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
@@ -4261,41 +4345,25 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/c++/11/bits/postypes.h:
 
-/usr/include/asio/write.hpp:
+/opt/ros/humble/include/rclcpp/rclcpp/rate.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+/usr/include/x86_64-linux-gnu/sys/stat.h:
 
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+/opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_use_intra_process.hpp:
 
-/usr/include/c++/11/bits/specfun.h:
+/opt/ros/humble/include/rclcpp/rclcpp/parameter.hpp:
 
-/usr/include/c++/11/tr1/poly_laguerre.tcc:
+/opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_intra_process_buffer_type.hpp:
 
-/usr/include/c++/11/array:
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
-/usr/include/c++/11/tr1/beta_function.tcc:
+/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/synchronization_policy_common.hpp:
 
-/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__builder.hpp:
+/usr/include/x86_64-linux-gnu/bits/timerfd.h:
 
-/usr/include/asio/execution/detail/bulk_sender.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/uio-ext.h:
-
-/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/integrators/PC233.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
-
-/home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_params.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__builder.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/c++/11/tr1/legendre_function.tcc:
+/opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:
 
@@ -4361,6 +4429,12 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/src/hunter_base_ros.cpp:
 
+/usr/include/asio/time_traits.hpp:
+
+/usr/include/asio/awaitable.hpp:
+
+/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
+
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__type_support.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:
@@ -4384,6 +4458,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /opt/ros/humble/include/rclcpp/rclcpp/is_ros_compatible_type.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/loaned_message.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/socket2.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/publisher_options.hpp:
 
@@ -4457,10 +4533,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/detail/atomic_count.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/timerfd.h:
-
 /opt/ros/humble/include/rmw/rmw/init.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/generic_subscription.hpp:
@@ -4468,6 +4540,12 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_clock_interface.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/quaternion_stamped.hpp:
+
+/usr/include/asio.hpp:
+
+/usr/include/c++/11/sstream:
+
+/usr/include/asio/detail/executor_function.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_logging_interface.hpp:
 
@@ -4478,8 +4556,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__type_support.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__type_support.hpp:
 
@@ -4512,6 +4588,10 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/x86_64-linux-gnu/bits/eventfd.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:
+
+/usr/include/asio/detail/thread_group.hpp:
+
+/usr/include/asio/detail/variadic_templates.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/create_client.hpp:
 
@@ -4675,8 +4755,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp:
 
-/home/scv/SCV/install/hunter_msgs/include/hunter_msgs/hunter_msgs/msg/detail/hunter_status__type_support.hpp:
-
 /opt/ros/humble/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
 /usr/include/c++/11/initializer_list:
@@ -4701,8 +4779,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
-/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp:
-
 /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform.hpp:
@@ -4722,6 +4798,10 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/include/hunter_base/hunter_base_ros.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp:
+
+/usr/include/asio/execution/receiver.hpp:
+
+/home/scv/SCV/install/ugv_sdk/include/ugv_sdk/details/interface/parser_interface.hpp:
 
 /usr/include/linux/can.h:
 
@@ -4811,10 +4891,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__builder.hpp:
 
-/usr/include/asio/posix/descriptor.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__type_support.hpp:
-
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.hpp:
 
 /home/scv/SCV/src/vehicle/SCV_hunter_ros2/hunter_base/ascent/include/ascent/Utility.h:
@@ -4852,12 +4928,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/detail/signal_set_service.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__builder.hpp:
-
-/usr/include/c++/11/sstream:
-
-/usr/include/asio/detail/executor_function.hpp:
-
-/usr/include/asio.hpp:
 
 /usr/include/asio/io_service_strand.hpp:
 
@@ -4951,9 +5021,19 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
-/usr/include/asio/detail/type_traits.hpp:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__type_support.hpp:
 
-/usr/include/asio/detail/pop_options.hpp:
+/usr/include/asio/posix/descriptor.hpp:
+
+/home/scv/SCV/build/hunter_msgs/rosidl_generator_cpp/hunter_msgs/msg/detail/hunter_status__builder.hpp:
+
+/usr/include/linux/types.h:
+
+/usr/include/asio/detail/impl/null_event.ipp:
+
+/usr/include/asio/execution.hpp:
+
+/usr/include/asio/detail/type_traits.hpp:
 
 /usr/include/asio/execution/executor.hpp:
 
@@ -4969,6 +5049,8 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/execution/bad_executor.hpp:
 
+/usr/include/asio/detail/pop_options.hpp:
+
 /usr/include/c++/11/bits/move.h:
 
 /usr/include/asio/execution/set_done.hpp:
@@ -4980,16 +5062,6 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/traits/execute_member.hpp:
 
 /usr/include/asio/traits/execute_free.hpp:
-
-/usr/include/asio/is_executor.hpp:
-
-/opt/ros/humble/include/rcl/rcl/types.h:
-
-/usr/include/asm-generic/ioctls.h:
-
-/usr/include/asio/detail/is_executor.hpp:
-
-/usr/include/asio/execution.hpp:
 
 /usr/include/asio/ip/multicast.hpp:
 
@@ -5091,6 +5163,16 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/error_code.hpp:
 
+/usr/include/asio/basic_datagram_socket.hpp:
+
+/usr/include/asio/detail/socket_types.hpp:
+
+/opt/ros/humble/include/rcl/rcl/types.h:
+
+/usr/include/asm-generic/ioctls.h:
+
+/usr/include/asio/is_executor.hpp:
+
 /usr/include/linux/ioctl.h:
 
 /usr/include/asm-generic/ioctl.h:
@@ -5099,15 +5181,27 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/x86_64-linux-gnu/bits/poll.h:
 
+/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/poll2.h:
+
 /usr/include/x86_64-linux-gnu/bits/statx.h:
 
 /opt/ros/humble/include/tracetools/tracetools/utils.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
 
+/usr/include/x86_64-linux-gnu/bits/fcntl2.h:
+
 /usr/include/asio/detail/resolve_query_op.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/socket.h:
+
+/usr/include/asio/detail/scheduler_thread_info.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/time.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/uio.h:
 
 /opt/ros/humble/include/rmw/rmw/visibility_control.h:
 
@@ -5123,17 +5217,11 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/c++/11/any:
 
-/usr/include/asio/detail/socket_types.hpp:
-
-/usr/include/asio/basic_datagram_socket.hpp:
-
 /usr/include/asio/ip/impl/network_v4.hpp:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
 /usr/include/asio/execution/mapping.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/epoll.h:
 
 /usr/include/asio/detail/handler_type_requirements.hpp:
 
@@ -5151,21 +5239,27 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 
 /usr/include/asio/traits/submit_free.hpp:
 
-/usr/include/asio/detail/fenced_block.hpp:
+/usr/include/asio/detail/impl/service_registry.ipp:
 
-/usr/include/asio/detail/posix_global.hpp:
+/usr/include/asio/io_context.hpp:
+
+/usr/include/asio/detail/impl/epoll_reactor.ipp:
+
+/usr/include/c++/11/bits/stringfwd.h:
+
+/usr/include/asio/associated_executor.hpp:
+
+/usr/include/asio/detail/is_executor.hpp:
+
+/usr/include/asio/detail/fenced_block.hpp:
 
 /usr/include/asio/async_result.hpp:
 
-/usr/include/asio/detail/impl/service_registry.ipp:
+/usr/include/asio/detail/posix_global.hpp:
 
 /usr/include/asio/detail/conditionally_enabled_event.hpp:
 
 /usr/include/asio/detail/null_event.hpp:
-
-/usr/include/linux/types.h:
-
-/usr/include/asio/detail/impl/null_event.ipp:
 
 /usr/include/asio/detail/reactor_fwd.hpp:
 
@@ -5188,43 +5282,3 @@ CMakeFiles/hunter_base_node.dir/src/hunter_base_ros.cpp.o: /home/scv/SCV/src/veh
 /usr/include/asio/detail/assert.hpp:
 
 /usr/include/asio/detail/timer_queue_set.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/timerfd.h:
-
-/usr/include/asio/detail/impl/epoll_reactor.hpp:
-
-/usr/include/c++/11/bits/stringfwd.h:
-
-/usr/include/asio/associated_executor.hpp:
-
-/usr/include/asio/detail/impl/epoll_reactor.ipp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/time.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/uio.h:
-
-/usr/include/asio/detail/scheduler_thread_info.hpp:
-
-/usr/include/asio/detail/variadic_templates.hpp:
-
-/usr/include/asio/detail/thread_group.hpp:
-
-/usr/include/asio/impl/system_context.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/any_subscription_callback.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/asio/impl/system_context.ipp:
-
-/usr/include/asio/time_traits.hpp:
-
-/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
-
-/usr/include/asio/awaitable.hpp:
-
-/usr/include/asio/detail/impl/reactive_serial_port_service.ipp:
-
-/usr/include/asio/basic_socket.hpp:
-
-/usr/include/asio/io_context.hpp:
