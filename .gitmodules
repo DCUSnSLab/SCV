@@ -18,3 +18,7 @@
 	path = src/sensor_pkg/ROS_velodyne
 	url = https://github.com/user/ROS_velodyne.git
 	branch = ros2
+[submodule "src/sensor_pkg/vectornav"]
+	path = src/sensor_pkg/vectornav
+	url = https://github.com/DCUSnSLab/vectornav/
+	branch = ros2
