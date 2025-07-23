@@ -25,3 +25,4 @@
 [submodule "src/localization/tiny_localization"]
 	path = src/localization/tiny_localization
 	url = https://github.com/DCUSnSLab/tiny_localization.git
+	branch = ros2_humble
