@@ -22,3 +22,6 @@
 	path = src/sensor_pkg/vectornav
 	url = https://github.com/DCUSnSLab/vectornav/
 	branch = ros2
+[submodule "src/localization/tiny_localization"]
+	path = src/localization/tiny_localization
+	url = https://github.com/DCUSnSLab/tiny_localization.git
