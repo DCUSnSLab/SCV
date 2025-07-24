@@ -26,5 +26,7 @@
 	path = src/sensor_pkg/ntrip_client_ros2
 	url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
 	branch = ros2
-
-
+[submodule "src/localization/tiny_localization"]
+	path = src/localization/tiny_localization
+	url = https://github.com/DCUSnSLab/tiny_localization.git
+	branch = ros2_humble
