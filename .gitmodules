@@ -22,3 +22,9 @@
 	path = src/sensor_pkg/vectornav
 	url = https://github.com/DCUSnSLab/vectornav/
 	branch = ros2
+[submodule "src/sensor_pkg/ntrip_client_ros2"]
+	path = src/sensor_pkg/ntrip_client_ros2
+	url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
+	branch = ros2
+
+
