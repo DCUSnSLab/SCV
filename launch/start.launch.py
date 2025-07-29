@@ -62,11 +62,27 @@ def generate_launch_description():
             ])
         ])
     )
-
+    
+    ntrip_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('ntrip_client'),
+                'launch',
+                'ntrip_client_launch.py'
+            ])
+        ]),
+        launch_arguments={
+            'host': 'rts2.ngii.go.kr',
+            'username': 'junhp1234',
+            'password': 'ngii',
+            'mountpoint': 'VRS-RTCM32',
+        }.items()
+    )
     return LaunchDescription([
         zed_launch,
         ublox_launch,
         velodyne_launch,
         vectornav_launch,
-        hunter_base_launch
+        hunter_base_launch,
+        ntrip_launch
     ])
