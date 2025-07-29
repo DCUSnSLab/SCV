@@ -1,0 +1,20 @@
+ntrip_client:
+  ros__parameters:
+    host: 'rts2.ngii.go.kr'
+    port: 2101
+    mountpoint: 'VRS-RTCM32'
+    ntrip_version: ''  # 빈 문자열 또는 'None'
+    authenticate: true
+    username: 'junhp1234'
+    password: 'ngii'
+    ssl: false
+    cert: ''
+    key: ''
+    ca_cert: ''
+    rtcm_frame_id: 'odom'
+    nmea_max_length: 128
+    nmea_min_length: 3
+    rtcm_message_package: 'rtcm_msgs'
+    reconnect_attempt_max: 10
+    reconnect_attempt_wait_seconds: 5
+    rtcm_timeout_seconds: 4
