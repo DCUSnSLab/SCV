@@ -15,7 +15,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             name='scan_topic', 
-            default_value='/scan',
+            default_value='ptl/scan',
             description='Output laserscan topic'
         ),
         DeclareLaunchArgument(
@@ -37,7 +37,7 @@ def generate_launch_description():
                 'target_frame': LaunchConfiguration('target_frame'),
                 'transform_tolerance': 0.01,
                 'queue_size': 10,
-                'min_height': 0.1,
+                'min_height': 0.5,
                 'max_height': 2.0,
                 'angle_min': -math.pi / 1.5,
                 'angle_max': math.pi / 1.5,

@@ -30,4 +30,7 @@
 	path = src/localization/tiny_localization
 	url = https://github.com/DCUSnSLab/tiny_localization.git
 	branch = ros2-SCV
-
+[submodule "src/controller"]
+	path = src/scv_nav/controller
+	url = https://github.com/DCUSnSLab/SCV_Local_Path.git
+	branch = ros2
