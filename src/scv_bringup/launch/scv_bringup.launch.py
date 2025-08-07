@@ -79,6 +79,6 @@ def generate_launch_description():
        #ublox_launch,
        velodyne_launch,
        vectornav_launch,
-       hunter_base_launch,
+       #hunter_base_launch,
        #ntrip_launch
    ])
