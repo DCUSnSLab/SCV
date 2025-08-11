@@ -10,11 +10,11 @@
 	url = https://github.com/DCUSnSLab/zed-ros2-wrapper
 	branch = ros2
 [submodule "src/vehicle/SCV_hunter_ros2"]
-	path = src/vehicle/SCV_hunter_ros2
+	path = src/vehicle/SCV/SCV_hunter_ros2
 	url = https://github.com/DCUSnSLab/SCV_hunter_ros2
 	branch = master
 [submodule "src/vehicle/SCV_ugv_sdk"]
-	path = src/vehicle/SCV_ugv_sdk
+	path = src/vehicle/SCV/SCV_ugv_sdk
 	url = https://github.com/DCUSnSLab/SCV_ugv_sdk
 	branch = main
 [submodule "src/sensor_pkg/ROS_velodyne"]
