@@ -37,3 +37,7 @@
 	path = src/command_center
 	url = https://github.com/DCUSnSLab/command_center.git
 	branch = main
+[submodule "src/vehicle/SSC/SSC_actuator_control"]
+	path = src/vehicle/SSC/SSC_actuator_control
+	url = https://github.com/DCUSnSLab/SSC_actuator_control
+	branch = main

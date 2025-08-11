@@ -27,17 +27,6 @@ def generate_launch_description():
         executable='nmea_init_pub.py'
     )
     
-    # NTRIP Client Launch
-    ntrip_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                FindPackageShare('ntrip_client'),
-                'launch',
-                'ntrip_client_launch.py'
-            ])
-        ])
-    )
-    
     # uBlox GPS Launch
     ublox_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -48,6 +37,18 @@ def generate_launch_description():
             ])
         ])
     )
+    
+    # NTRIP Client Launch
+    ntrip_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('ntrip_client'),
+                'launch',
+                'ntrip_client_launch.py'
+            ])
+        ])
+    )
+
 
     # Velodyne LiDAR Launch
     velodyne_launch = IncludeLaunchDescription(
