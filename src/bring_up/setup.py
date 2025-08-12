@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 import os
 from glob import glob
 
-package_name = 'scv_bringup'
+package_name = 'bring_up'
 
 setup(
     name=package_name,

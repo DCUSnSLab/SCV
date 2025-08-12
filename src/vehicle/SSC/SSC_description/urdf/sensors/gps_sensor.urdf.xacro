@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- GPS Sensor Macro -->
+  <xacro:macro name="gps_sensor" params="parent:=base_link name:=gps *origin">
+    
+    <!-- GNSS antenna link -->
+    <link name="${name}_antenna">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find SSC_description)/meshes/GNSS_antenna.stl" scale="0.0009 0.0009 0.0009"/>
+        </geometry>
+        <material name="white">
+          <color rgba="0.9 0.9 0.9 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.05"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <!-- GPS antenna joint -->
+    <joint name="${name}_antenna_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_antenna"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>
