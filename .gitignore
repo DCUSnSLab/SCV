@@ -1,4 +1,7 @@
 build/
 install/
 log/
-src/Lanelet2
+src/Lanelet2/
+
+.vscode/
+
