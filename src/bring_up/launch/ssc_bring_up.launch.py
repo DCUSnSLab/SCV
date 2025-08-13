@@ -59,10 +59,28 @@ def generate_launch_description():
         ])
     )
     
+    joy_run = Node(
+        package='SSC_manual_control',
+        executable='xbox_joystick',
+    )
+    
+    # arduino bridge and control arbiter
+    control_system_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('SSC_control_system'),
+                'launch',
+                'SSC_control_system.launch.py'
+            ])
+        ])
+    )
+    
     return LaunchDescription([
         ublox_launch,
         robot_launch,
         zed_launch,
         nmea_init,
-        ntrip_launch
+        ntrip_launch,
+        joy_run,
+        control_system_launch
     ])
