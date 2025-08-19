@@ -2,6 +2,6 @@ build/
 install/
 log/
 src/Lanelet2/
-
+rosbag*
 .vscode/
 
