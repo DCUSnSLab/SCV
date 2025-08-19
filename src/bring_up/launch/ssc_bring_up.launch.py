@@ -43,7 +43,6 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
                 FindPackageShare('ntrip_client'),
-                'launch',
                 'ntrip_client_launch.py'
             ])
         ])

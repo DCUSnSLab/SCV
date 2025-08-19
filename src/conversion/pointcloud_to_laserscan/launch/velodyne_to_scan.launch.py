@@ -10,7 +10,7 @@ def generate_launch_description():
         # Launch arguments
         DeclareLaunchArgument(
             name='cloud_topic', 
-            default_value='/velodyne_points',
+            default_value='/zed/zed_node/point_cloud/cloud_registered',
             description='Input pointcloud topic from velodyne'
         ),
         DeclareLaunchArgument(
