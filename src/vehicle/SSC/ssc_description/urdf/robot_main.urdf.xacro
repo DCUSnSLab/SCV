@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<robot name="SSC_with_modular_sensors" xmlns:xacro="http://www.ros.org/wiki/xacro" xmlns:urdf="http://www.ros.org/wiki/urdf">
+<robot name="ssc_with_modular_sensors" xmlns:xacro="http://www.ros.org/wiki/xacro" xmlns:urdf="http://www.ros.org/wiki/urdf">
 
   <xacro:property name="M_PI" value="3.1415926535897931" />
 
-  <xacro:include filename="$(find SSC_description)/urdf/sensors/gps_sensor.urdf.xacro" />
+  <xacro:include filename="$(find ssc_description)/urdf/sensors/gps_sensor.urdf.xacro" />
   
   <xacro:include filename="$(find zed_wrapper)/urdf/zed_macro.urdf.xacro" />
   
