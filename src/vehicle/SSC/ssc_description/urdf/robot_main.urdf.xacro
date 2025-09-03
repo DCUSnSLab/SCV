@@ -36,6 +36,13 @@
     <origin xyz="-0.2 0 0.6" rpy="0 0 0"/>
   </xacro:gps_sensor>
 
+
+  <joint name="d435i_to_chassis" type="fixed">
+    <parent link="chassis"/>
+    <child link="camera_link"/>
+    <origin xyz="0.2 0 0.45" rpy="0 0 0"/>
+  </joint>
+
   <xacro:zed_camera name="zed" model="zed2i" enable_gnss="true">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:zed_camera>
