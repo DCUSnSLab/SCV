@@ -41,3 +41,7 @@
 	path = src/vehicle/SSC/SSC_actuator_control
 	url = https://github.com/DCUSnSLab/SSC_actuator_control
 	branch = main
+[submodule "src/sensor_pkg/realsense-ros"]
+	path = src/sensor_pkg/realsense-ros
+	url = https://github.com/DCUSnSLab/realsense-ros
+	branch = ros2-master
