@@ -5,7 +5,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
-    pkg_path = os.path.join(get_package_share_directory('SSC_description'))
+    pkg_path = os.path.join(get_package_share_directory('ssc_description'))
     
     urdf_file = os.path.join(pkg_path, 'urdf', 'robot_main.urdf.xacro')
 
@@ -18,7 +18,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'robot_description': robot_description,
-            'use_sim_time': True
+            'use_sim_time': False
         }]
     )
     

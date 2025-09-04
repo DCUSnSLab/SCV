@@ -7,6 +7,8 @@
   
   <xacro:include filename="$(find zed_wrapper)/urdf/zed_macro.urdf.xacro" />
   
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro" />
+
   <!-- 차량의 주요 바디를 나타내는 base_link 정의 -->
   <link name="base_link">
     <visual>
@@ -36,12 +38,15 @@
     <origin xyz="-0.2 0 0.6" rpy="0 0 0"/>
   </xacro:gps_sensor>
 
-
-  <joint name="d435i_to_chassis" type="fixed">
+  <xacro:sensor_d435i name="camera_link" parent="chassis" use_nominal_extrinsics="true">
+    <origin xyz="0.7 0 0.08" rpy="0 0 0"/>
+  </xacro:sensor_d435i>
+<!-- 
+  <joint name="camera_to_chassis" type="fixed">
     <parent link="chassis"/>
     <child link="camera_link"/>
     <origin xyz="0.2 0 0.45" rpy="0 0 0"/>
-  </joint>
+  </joint> -->
 
   <xacro:zed_camera name="zed" model="zed2i" enable_gnss="true">
     <origin xyz="0 0 0" rpy="0 0 0"/>
