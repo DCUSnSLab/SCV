@@ -1,0 +1,16 @@
+{
+  "names": {
+    "hunter_base": {
+      "skip": true
+    },
+    "hunter2": {
+      "skip": true
+    },
+    "hunter_msgs": {
+      "skip": true
+    },
+    "ugv_sdk": {
+      "skip": true
+    }
+  }
+}
