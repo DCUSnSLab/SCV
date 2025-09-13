@@ -45,3 +45,7 @@
 	path = src/sensor_pkg/realsense-ros
 	url = https://github.com/DCUSnSLab/realsense-ros
 	branch = ros2-master
+[submodule "src/sensor_pkg/iahrs_ros2"]
+	path = src/sensor_pkg/iahrs_ros2
+	url = https://github.com/DCUSnSLab/iAHRS_ros2.git
+	branch = main
