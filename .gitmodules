@@ -49,3 +49,7 @@
 	path = src/sensor_pkg/iahrs_ros2
 	url = https://github.com/DCUSnSLab/iAHRS_ros2.git
 	branch = main
+[submodule "src/sensor_pkg/sllidar_ros2"]
+	path = src/sensor_pkg/sllidar_ros2
+	url = https://github.com/DCUSnSLab/sllidar_ros2.git
+	branch = main
