@@ -53,3 +53,7 @@
 	path = src/sensor_pkg/sllidar_ros2
 	url = https://github.com/DCUSnSLab/sllidar_ros2.git
 	branch = main
+[submodule "src/perception"]
+	path = src/perception
+	url = https://github.com/DCUSnSLab/SCV_Perception.git
+	branch = ros2_humble
