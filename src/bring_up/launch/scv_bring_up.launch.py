@@ -21,6 +21,17 @@ def generate_launch_description():
         }.items()
     )
 
+    # IMU Launch
+    iahrs_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('iahrs_ro2'),
+                'launch',
+                'iahrs_driver.launch.py'
+            ])
+        ])
+    )
+
     # NMEA Init Publisher
     nmea_init = Node(
         package='ntrip_client',
@@ -95,6 +106,7 @@ def generate_launch_description():
     
     return LaunchDescription([
         zed_launch,
+        iahrs_launch,
         ublox_launch,
         ntrip_launch,
         nmea_init,

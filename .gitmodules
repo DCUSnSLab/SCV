@@ -1,47 +1,59 @@
 [submodule "src/sensor_pkg/ublox"]
-	path = src/sensor_pkg/ublox
-	url = https://github.com/DCUSnSLab/ublox.git
-	branch = ros2
+    path = src/sensor_pkg/ublox
+    url = https://github.com/DCUSnSLab/ublox.git
+    branch = ros2
 [submodule "src/sensor_pkg/usb_cam"]
-	path = src/sensor_pkg/usb_cam
-	url = https://github.com/DCUSnSLab/usb_cam.git
+    path = src/sensor_pkg/usb_cam
+    url = https://github.com/DCUSnSLab/usb_cam.git
 [submodule "src/sensor_pkg/zed-ros2-wrapper"]
-	path = src/sensor_pkg/zed-ros2-wrapper
-	url = https://github.com/DCUSnSLab/zed-ros2-wrapper
-	branch = ros2
+    path = src/sensor_pkg/zed-ros2-wrapper
+    url = https://github.com/DCUSnSLab/zed-ros2-wrapper.git
+    branch = ros2
 [submodule "src/vehicle/SCV/SCV_hunter_ros2"]
-	path = src/vehicle/SCV/SCV_hunter_ros2
-	url = https://github.com/DCUSnSLab/SCV_hunter_ros2
-	branch = master
+    path = src/vehicle/SCV/SCV_hunter_ros2
+    url = https://github.com/DCUSnSLab/SCV_hunter_ros2.git
+    branch = master
 [submodule "src/vehicle/SCV/SCV_ugv_sdk"]
-	path = src/vehicle/SCV/SCV_ugv_sdk
-	url = https://github.com/DCUSnSLab/SCV_ugv_sdk
-	branch = main
+    path = src/vehicle/SCV/SCV_ugv_sdk
+    url = https://github.com/DCUSnSLab/SCV_ugv_sdk.git
+    branch = main
 [submodule "src/sensor_pkg/ROS_velodyne"]
-	path = src/sensor_pkg/ROS_velodyne
-	url = https://github.com/DCUSnSLab/ROS_velodyne.git
-	branch = ros2
+    path = src/sensor_pkg/ROS_velodyne
+    url = https://github.com/DCUSnSLab/ROS_velodyne.git
+    branch = ros2
 [submodule "src/sensor_pkg/vectornav"]
-	path = src/sensor_pkg/vectornav
-	url = https://github.com/DCUSnSLab/vectornav/
-	branch = ros2
+    path = src/sensor_pkg/vectornav
+    url = https://github.com/DCUSnSLab/vectornav.git
+    branch = ros2
 [submodule "src/sensor_pkg/ntrip_client_ros2"]
-	path = src/sensor_pkg/ntrip_client_ros2
-	url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
-	branch = ros2
+    path = src/sensor_pkg/ntrip_client_ros2
+    url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
+    branch = ros2
 [submodule "src/localization/tiny_localization"]
-	path = src/localization/tiny_localization
-	url = https://github.com/DCUSnSLab/tiny_localization.git
-	branch = ros2-SCV
+    path = src/localization/tiny_localization
+    url = https://github.com/DCUSnSLab/tiny_localization.git
+    branch = ros2-SCV
 [submodule "src/command_center"]
-	path = src/command_center
-	url = https://github.com/DCUSnSLab/command_center.git
-	branch = main
+    path = src/command_center
+    url = https://github.com/DCUSnSLab/command_center.git
+    branch = main
 [submodule "src/vehicle/SSC/SSC_actuator_control"]
-	path = src/vehicle/SSC/SSC_actuator_control
-	url = https://github.com/DCUSnSLab/SSC_actuator_control
-	branch = main
+    path = src/vehicle/SSC/SSC_actuator_control
+    url = https://github.com/DCUSnSLab/SSC_actuator_control.git
+    branch = main
 [submodule "src/sensor_pkg/realsense-ros"]
-	path = src/sensor_pkg/realsense-ros
-	url = https://github.com/DCUSnSLab/realsense-ros
-	branch = ros2-master
+    path = src/sensor_pkg/realsense-ros
+    url = https://github.com/DCUSnSLab/realsense-ros.git
+    branch = ros2-master
+[submodule "src/sensor_pkg/iahrs_ros2"]
+	path = src/sensor_pkg/iahrs_ros2
+	url = https://github.com/DCUSnSLab/iAHRS_ros2.git
+	branch = main
+[submodule "src/sensor_pkg/sllidar_ros2"]
+	path = src/sensor_pkg/sllidar_ros2
+	url = https://github.com/DCUSnSLab/sllidar_ros2.git
+	branch = main
+[submodule "src/perception"]
+	path = src/perception
+	url = https://github.com/DCUSnSLab/SCV_Perception.git
+	branch = ros2_humble
