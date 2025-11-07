@@ -27,20 +27,17 @@ def generate_launch_description():
             PathJoinSubstitution([
                 FindPackageShare('ublox_gps'),
                 'launch',
-                'ublox_gps_node.launch.py'
+                'ublox_gps_node-launch.py'
             ])
         ])
     )
     
-
     # NMEA Init Publisher
     nmea_init = Node(
         package='ntrip_client',
         executable='nmea_init_pub.py'
     )
     
-    
-    # NTRIP Client Launch
     ntrip_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
@@ -50,8 +47,6 @@ def generate_launch_description():
             ])
         ])
     )
-    
-
 
     # Velodyne LiDAR Launch
     velodyne_launch = IncludeLaunchDescription(
@@ -99,8 +94,8 @@ def generate_launch_description():
     return LaunchDescription([
         zed_launch,
         ublox_launch,
-        ntrip_launch,
         nmea_init,
+        ntrip_launch,
         velodyne_launch,
         vectornav_launch,
         hunter_base_launch,
