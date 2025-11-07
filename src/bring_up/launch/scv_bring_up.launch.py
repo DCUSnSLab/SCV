@@ -1,12 +1,12 @@
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess
+from launch.actions import IncludeLaunchDescription, ExecuteProcess, DeclareLaunchArgument, TimerAction
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import PathJoinSubstitution
+from launch.substitutions import PathJoinSubstitution, LaunchConfiguration
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
 
 def generate_launch_description():
-
     # ZED Camera Launch
     zed_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -20,23 +20,6 @@ def generate_launch_description():
             'camera_model': 'zed2i'
         }.items()
     )
-
-    # IMU Launch
-    iahrs_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                FindPackageShare('iahrs_ro2'),
-                'launch',
-                'iahrs_driver.launch.py'
-            ])
-        ])
-    )
-
-    # NMEA Init Publisher
-    nmea_init = Node(
-        package='ntrip_client',
-        executable='nmea_init_pub.py'
-    )
     
     # uBlox GPS Launch
     ublox_launch = IncludeLaunchDescription(
@@ -44,10 +27,18 @@ def generate_launch_description():
             PathJoinSubstitution([
                 FindPackageShare('ublox_gps'),
                 'launch',
-                'ublox_gps_node-launch.py'
+                'ublox_gps_node.launch.py'
             ])
         ])
     )
+    
+
+    # NMEA Init Publisher
+    nmea_init = Node(
+        package='ntrip_client',
+        executable='nmea_init_pub.py'
+    )
+    
     
     # NTRIP Client Launch
     ntrip_launch = IncludeLaunchDescription(
@@ -59,6 +50,7 @@ def generate_launch_description():
             ])
         ])
     )
+    
 
 
     # Velodyne LiDAR Launch
@@ -106,7 +98,6 @@ def generate_launch_description():
     
     return LaunchDescription([
         zed_launch,
-        iahrs_launch,
         ublox_launch,
         ntrip_launch,
         nmea_init,
