@@ -43,7 +43,7 @@
 [submodule "src/vehicle/SCV/SCV_hunter_ros2"]
     path = src/vehicle/SCV/SCV_hunter_ros2
     url = https://github.com/DCUSnSLab/SCV_hunter_ros2.git
-    branch = master
+    branch = main
 [submodule "src/vehicle/SCV/hunter2_description"]
     path = src/vehicle/SCV/hunter2_description
     url = https://github.com/DCUSnSLab/hunter2_description.git
@@ -52,6 +52,7 @@
     path = src/vehicle/SCV/SCV_ugv_sdk
     url = https://github.com/DCUSnSLab/SCV_ugv_sdk.git
     branch = main
+
 #SSC
 [submodule "src/vehicle/SSC/SSC_actuator_control"]
     path = src/vehicle/SSC/SSC_actuator_control
