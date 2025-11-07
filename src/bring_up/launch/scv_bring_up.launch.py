@@ -84,7 +84,7 @@ def generate_launch_description():
     robot_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                FindPackageShare('hunter2'),
+                FindPackageShare('hunter2_description'),
                 'launch',
                 'robot.launch.py'
             ])

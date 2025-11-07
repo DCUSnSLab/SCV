@@ -59,7 +59,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("hunter2"), "urdf", description_file]
+                [FindPackageShare("hunter2_description"), "urdf", description_file]
             ),
             " gps_latitude:=", gps_latitude,
             " gps_longitude:=", gps_longitude, 
@@ -71,6 +71,7 @@ def generate_launch_description():
         'use_sim_time': ParameterValue(use_sim_time, value_type=bool),
     }
 
+    # Joint State Publisher (without GUI by default)
     joint_state_publisher_node = Node(
         package="joint_state_publisher",
         executable="joint_state_publisher",
@@ -78,6 +79,7 @@ def generate_launch_description():
         condition=UnlessCondition(jsp_gui)
     )
     
+    # Joint State Publisher GUI (optional)
     joint_state_publisher_gui_node = Node(
         package="joint_state_publisher_gui",
         executable="joint_state_publisher_gui",
@@ -85,6 +87,7 @@ def generate_launch_description():
         condition=IfCondition(jsp_gui)
     )
     
+    # Robot State Publisher - Always runs
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
@@ -93,20 +96,10 @@ def generate_launch_description():
         arguments=["--ros-args", "--log-level", "info"]
     )
 
-    rviz_node = Node(
-        package="rviz2",
-        executable="rviz2",
-        name="rviz2",
-        output="log",
-        arguments=["-d", PathJoinSubstitution([FindPackageShare("hunter2"), "rviz", "robot_view.rviz"])],
-        parameters=[{'use_sim_time': use_sim_time}]
-    )
-
     nodes = [
         joint_state_publisher_node,
         joint_state_publisher_gui_node,
         robot_state_publisher_node,
-        rviz_node,
     ]
 
     return LaunchDescription(declared_arguments + nodes)

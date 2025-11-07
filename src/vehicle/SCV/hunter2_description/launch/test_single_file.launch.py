@@ -59,7 +59,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("hunter2"), "urdf", description_file]
+                [FindPackageShare("hunter2_description"), "urdf", description_file]
             ),
             " gps_latitude:=", gps_latitude,
             " gps_longitude:=", gps_longitude, 
@@ -98,7 +98,7 @@ def generate_launch_description():
         executable="rviz2",
         name="rviz2",
         output="log",
-        arguments=["-d", PathJoinSubstitution([FindPackageShare("hunter2"), "rviz", "robot_view.rviz"])],
+        arguments=["-d", PathJoinSubstitution([FindPackageShare("hunter2_description"), "rviz", "robot_view.rviz"])],
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
