@@ -45,9 +45,9 @@
     url = https://github.com/DCUSnSLab/SCV_hunter_ros2.git
     branch = main
 [submodule "src/vehicle/SCV/hunter2_description"]
-    path = src/vehicle/SCV/hunter2_description
-    url = https://github.com/DCUSnSLab/hunter2_description.git
-    branch = ros2
+	path = src/vehicle/SCV/hunter2_description
+	url = https://github.com/DCUSnSLab/hunter2_description.git
+	branch = ros2
 [submodule "src/vehicle/SCV/SCV_ugv_sdk"]
     path = src/vehicle/SCV/SCV_ugv_sdk
     url = https://github.com/DCUSnSLab/SCV_ugv_sdk.git
