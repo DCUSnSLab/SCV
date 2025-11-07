@@ -11,7 +11,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(backward_ros REQUIRED)
+#find_package(backward_ros REQUIRED)
 
 install(
   DIRECTORY urdf launch config rviz meshes
