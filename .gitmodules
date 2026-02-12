@@ -8,12 +8,6 @@
     branch = humble
 
 #LiDAR
-[submodule "src/sensor_pkg/ROS_velodyne"]
-    path = src/sensor_pkg/ROS_velodyne
-    url = https://github.com/DCUSnSLab/ROS_velodyne.git
-    branch = ros2
-
-#IMU
 [submodule "src/sensor_pkg/vectornav"]
     path = src/sensor_pkg/vectornav
     url = https://github.com/DCUSnSLab/vectornav.git
@@ -56,3 +50,7 @@
 	path = src/perception
 	url = https://github.com/DCUSnSLab/SCV_Perception.git
 	branch = ros2_humble
+[submodule "src/sensor_pkg/velodyne"]
+	path = src/sensor_pkg/velodyne
+	url = https://github.com/DCUSnSLab/ROS_velodyne.git
+	branch = ros2
