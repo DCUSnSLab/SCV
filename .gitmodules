@@ -1,11 +1,11 @@
 [submodule "src/sensor_pkg/ublox"]
     path = src/sensor_pkg/ublox
     url = https://github.com/DCUSnSLab/ublox.git
-    branch = ros2
+    branch = humble
 [submodule "src/sensor_pkg/ntrip_client_ros2"]
     path = src/sensor_pkg/ntrip_client_ros2
     url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
-    branch = ros2
+    branch = humble
 
 #LiDAR
 [submodule "src/sensor_pkg/ROS_velodyne"]
@@ -16,6 +16,7 @@
 	path = src/sensor_pkg/sllidar_ros2
 	url = https://github.com/DCUSnSLab/sllidar_ros2.git
 	branch = main
+
 #IMU
 [submodule "src/sensor_pkg/vectornav"]
     path = src/sensor_pkg/vectornav
@@ -34,30 +35,24 @@
 [submodule "src/sensor_pkg/realsense-ros"]
     path = src/sensor_pkg/realsense-ros
     url = https://github.com/DCUSnSLab/realsense-ros.git
-    branch = ros2-master
+    branch = 4.56.4
 [submodule "src/sensor_pkg/usb_cam"]
     path = src/sensor_pkg/usb_cam
     url = https://github.com/DCUSnSLab/usb_cam.git
 
 #hunter2.0
-[submodule "src/vehicle/SCV/SCV_hunter_ros2"]
-    path = src/vehicle/SCV/SCV_hunter_ros2
-    url = https://github.com/DCUSnSLab/SCV_hunter_ros2.git
-    branch = main
-[submodule "src/vehicle/SCV/hunter2_description"]
-	path = src/vehicle/SCV/hunter2_description
+[submodule "src/vehicle/hunter_ros2"]
+    path = src/vehicle/hunter_ros2
+    url = https://github.com/DCUSnSLab/hunter_ros2.git
+    branch = humble-devel
+[submodule "src/vehicle/hunter2_description"]
+	path = src/vehicle/hunter2_description
 	url = https://github.com/DCUSnSLab/hunter2_description.git
-	branch = ros2
-[submodule "src/vehicle/SCV/SCV_ugv_sdk"]
-    path = src/vehicle/SCV/SCV_ugv_sdk
-    url = https://github.com/DCUSnSLab/SCV_ugv_sdk.git
-    branch = main
-
-#SSC
-[submodule "src/vehicle/SSC/SSC_actuator_control"]
-    path = src/vehicle/SSC/SSC_actuator_control
-    url = https://github.com/DCUSnSLab/SSC_actuator_control.git
-    branch = main
+	branch = humble-devel
+[submodule "src/vehicle/ugv_sdk"]
+    path = src/vehicle/ugv_sdk
+    url = https://github.com/DCUSnSLab/ugv_sdk.git
+    branch = scv-devel
 
 #etc
 [submodule "src/localization/tiny_localization"]
