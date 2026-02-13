@@ -54,3 +54,7 @@
 	path = src/sensor_pkg/velodyne
 	url = https://github.com/DCUSnSLab/ROS_velodyne.git
 	branch = ros2
+[submodule "src/localization/robot_localization"]
+	path = src/localization/robot_localization
+	url = https://github.com/nevlife/robot_localization
+    branch = humble-devel
