@@ -58,3 +58,15 @@
 	path = src/localization/robot_localization
 	url = https://github.com/nevlife/robot_localization
     branch = humble-devel
+[submodule "src/monitoring/system_monitor"]
+	path = src/monitoring/system_monitor
+	url = https://github.com/nevlife/system_monitor
+    branch = main
+[submodule "src/teleop/nev_remote"]
+	path = src/teleop/nev_remote
+	url = https://github.com/nevlife/nev_remote
+    branch = main
+[submodule "src/localization/FAST_LIO_ROS2"]
+	path = src/localization/FAST_LIO_ROS2
+	url = https://github.com/nevlife/FAST_LIO_ROS2.git
+    branch = main
