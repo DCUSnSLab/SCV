@@ -18,8 +18,8 @@ setup(
     zip_safe=True,
     maintainer='scv',
     maintainer_email='pcdpcd100@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='SCV 통합 bringup: 차량/센서/측위 서브시스템을 조립하는 최상위 launch 패키지',
+    license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

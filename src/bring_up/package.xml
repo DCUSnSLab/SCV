@@ -3,18 +3,25 @@
 <package format="3">
   <name>bring_up</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>SCV 통합 bringup: 차량/센서/측위 서브시스템을 조립하는 최상위 launch 패키지</description>
   <maintainer email="pcdpcd100@gmail.com">scv</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
-  <exec_depend>zed_wrapper</exec_depend>
-  <exec_depend>iahrs_ros2</exec_depend>
-  <exec_depend>ublox_gps</exec_depend>
+  <!-- 차량 -->
+  <exec_depend>hunter_base</exec_depend>
+  <exec_depend>hunter_teleop_mux</exec_depend>
+  <exec_depend>hunter2_description</exec_depend>
+  <!-- 센서 -->
   <exec_depend>velodyne</exec_depend>
   <exec_depend>vectornav</exec_depend>
-  <exec_depend>hunter_base</exec_depend>
+  <exec_depend>ublox_gps</exec_depend>
   <exec_depend>ntrip_client</exec_depend>
   <exec_depend>realsense2_camera</exec_depend>
+  <!-- 측위 -->
+  <exec_depend>robot_localization</exec_depend>
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
+  <!-- 선택(미설치 시 해당 서브시스템 비활성): fast_lio(livox), zed_wrapper(ZED SDK), iahrs_ros2 -->
+  <exec_depend>fast_lio</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

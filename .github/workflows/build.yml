@@ -1,0 +1,67 @@
+name: build
+
+# 컨테이너 이미지 빌드 + 워크스페이스 colcon 빌드를 검증한다.
+# CI 러너에는 GPU 가 없으므로 docker compose(gpus:all) 대신 plain docker 로 빌드/실행한다.
+
+on:
+  push:
+    branches: [ros2_humble, "feat/**"]
+  pull_request:
+    branches: [ros2_humble]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - name: Checkout (superproject only)
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc || true
+          df -h /
+
+      - name: Init submodules (소실 모듈 tolerant)
+        run: ./tools/init_workspace.sh
+
+      - name: Build dev image
+        run: |
+          docker build \
+            --build-arg USERNAME=scv \
+            --build-arg USER_UID=$(id -u) \
+            --build-arg USER_GID=$(id -g) \
+            -t scv:ci -f docker/Dockerfile docker/
+
+      - name: colcon build (in container, no GPU)
+        run: |
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}:/ws" \
+            -w /ws scv:ci \
+            bash -lc '/ws/docker/build_ws.sh'
+
+      - name: Assert core packages built
+        run: |
+          docker run --rm -v "${GITHUB_WORKSPACE}:/ws" scv:ci bash -lc '
+            source /opt/ros/humble/setup.bash
+            source /ws/install/setup.bash
+            fail=0
+            for p in bring_up hunter_base velodyne_driver realsense2_camera robot_localization pointcloud_to_laserscan; do
+              if ros2 pkg prefix "$p" >/dev/null 2>&1; then echo "OK   $p"; else echo "MISS $p"; fail=1; fi
+            done
+            exit $fail
+          '
+
+      - name: Smoke test — bringup launch 파싱
+        run: |
+          docker run --rm -v "${GITHUB_WORKSPACE}:/ws" scv:ci bash -lc '
+            source /opt/ros/humble/setup.bash
+            source /ws/install/setup.bash
+            ros2 launch bring_up scv_bringup.launch.py --show-args >/dev/null
+            ros2 launch bring_up sensors.launch.py --show-args >/dev/null
+            ros2 launch bring_up localization.launch.py --show-args >/dev/null
+            echo "launch 파싱 OK"
+          '

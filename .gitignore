@@ -3,5 +3,6 @@ install/
 log/
 rosbag*
 .vscode/
+.claude/
 
 yolo*
