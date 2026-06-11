@@ -7,6 +7,10 @@
     path = src/sensor_pkg/ntrip_client_ros2
     url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
     branch = humble
+[submodule "src/sensor_pkg/septentrio_gnss_driver"]
+    path = src/sensor_pkg/septentrio_gnss_driver
+    url = https://github.com/DCUSnSLab/septentrio_gnss_driver.git
+    branch = master
 
 #imu
 [submodule "src/sensor_pkg/vectornav"]
@@ -29,12 +33,6 @@
     path = src/sensor_pkg/realsense-ros
     url = https://github.com/DCUSnSLab/realsense-ros.git
     branch = 4.56.4
-[submodule "src/sensor_pkg/multi_fisheye"]
-	path = src/sensor_pkg/multi_fisheye
-	url = https://github.com/nevlife/multi_fisheye_camera_ros2.git
-	branch = humble
-
-#hunter2.0
 [submodule "src/vehicle/hunter_ros2"]
     path = src/vehicle/hunter_ros2
     url = https://github.com/DCUSnSLab/hunter_ros2.git
@@ -69,11 +67,15 @@
 	path = src/monitoring/system_monitor
 	url = https://github.com/nevlife/system_monitor
     branch = main
-[submodule "src/teleop/nev_teleop_bot"]
-	path = src/teleop/nev_teleop_bot
-	url = https://github.com/nevlife/nev_teleop_bot
-    branch = main
 [submodule "src/localization/FAST_LIO_ROS2"]
 	path = src/localization/FAST_LIO_ROS2
 	url = https://github.com/nevlife/FAST_LIO_ROS2.git
     branch = main
+[submodule "src/sensor_pkg/multi_cam_ros2"]
+	path = src/sensor_pkg/multi_cam_ros2
+	url = https://github.com/nevlife/multi_cam_ros2.git
+	branch = humble
+[submodule "src/sensor_pkg/sllidar_ros2"]
+	path = src/sensor_pkg/sllidar_ros2
+	url = https://github.com/DCUSnSLab/sllidar_ros2.git
+	branch = main

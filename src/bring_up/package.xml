@@ -12,6 +12,7 @@
   <exec_depend>ublox_gps</exec_depend>
   <exec_depend>velodyne</exec_depend>
   <exec_depend>vectornav</exec_depend>
+  <exec_depend>sllidar_ros2</exec_depend>
   <exec_depend>hunter_base</exec_depend>
   <exec_depend>ntrip_client</exec_depend>
   <exec_depend>realsense2_camera</exec_depend>

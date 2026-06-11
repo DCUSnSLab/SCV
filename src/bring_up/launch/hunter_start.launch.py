@@ -32,7 +32,7 @@ def generate_launch_description():
             PathJoinSubstitution([
                 FindPackageShare('hunter2_description'),
                 'launch',
-                'robot.launch.py'
+                'display.launch.py'
             ])
         ])
     )
