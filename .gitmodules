@@ -79,3 +79,11 @@
 	path = src/sensor_pkg/sllidar_ros2
 	url = https://github.com/DCUSnSLab/sllidar_ros2.git
 	branch = main
+[submodule "src/localization/SCV_localization_ros2"]
+	path = src/localization/SCV_localization_ros2
+	url = https://github.com/DCUSnSLab/SCV_localization_ros2.git
+	branch = main
+[submodule "src/SCV_MapManager"]
+	path = src/SCV_MapManager
+	url = https://github.com/DCUSnSLab/SCV_MapManager.git
+	branch = main
