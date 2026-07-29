@@ -58,7 +58,7 @@
 [submodule "src/perception"]
 	path = src/perception
 	url = https://github.com/DCUSnSLab/SCV_Perception.git
-	branch = ros2_humble
+	branch = main_perception
 [submodule "src/localization/robot_localization"]
 	path = src/localization/robot_localization
 	url = https://github.com/nevlife/robot_localization
