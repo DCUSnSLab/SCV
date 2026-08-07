@@ -2,80 +2,88 @@
 [submodule "src/sensor_pkg/ublox"]
     path = src/sensor_pkg/ublox
     url = https://github.com/DCUSnSLab/ublox.git
-    branch = humble
+	branch = humble_park
 [submodule "src/sensor_pkg/ntrip_client_ros2"]
     path = src/sensor_pkg/ntrip_client_ros2
     url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
-    branch = humble
+	branch = humble_park
 [submodule "src/sensor_pkg/septentrio_gnss_driver"]
     path = src/sensor_pkg/septentrio_gnss_driver
     url = https://github.com/DCUSnSLab/septentrio_gnss_driver.git
-    branch = master
+	branch = master_park
 
 #imu
 [submodule "src/sensor_pkg/vectornav"]
     path = src/sensor_pkg/vectornav
     url = https://github.com/DCUSnSLab/vectornav.git
-	branch = humble
+	branch = humble_park
 
 #lidar
 [submodule "src/sensor_pkg/velodyne"]
 	path = src/sensor_pkg/velodyne
 	url = https://github.com/DCUSnSLab/velodyne.git
-	branch = ros2
+	branch = feature/field-hardening_park
 
 #camera
 [submodule "src/sensor_pkg/zed-ros2-wrapper"]
     path = src/sensor_pkg/zed-ros2-wrapper
     url = https://github.com/DCUSnSLab/zed-ros2-wrapper.git
-    branch = ros2
+	branch = ros2_park
 [submodule "src/sensor_pkg/realsense-ros"]
     path = src/sensor_pkg/realsense-ros
     url = https://github.com/DCUSnSLab/realsense-ros.git
-    branch = 4.56.4
+	branch = 4.56.4_park
 [submodule "src/vehicle/hunter_ros2"]
     path = src/vehicle/hunter_ros2
     url = https://github.com/DCUSnSLab/hunter_ros2.git
-    branch = humble-devel
+	branch = feature/field-hardening_park
 [submodule "src/vehicle/hunter2_description"]
 	path = src/vehicle/hunter2_description
 	url = https://github.com/DCUSnSLab/hunter2_description.git
-	branch = humble-devel
+	branch = humble-devel_park
 [submodule "src/vehicle/ugv_sdk"]
     path = src/vehicle/ugv_sdk
     url = https://github.com/DCUSnSLab/ugv_sdk.git
-    branch = scv-devel
+	branch = scv-devel_park
 
 #etc
 [submodule "src/localization/tiny_localization"]
     path = src/localization/tiny_localization
     url = https://github.com/DCUSnSLab/tiny_localization.git
-    branch = ros2-SCV
+	branch = ros2-SCV_park
 [submodule "src/command_center"]
     path = src/command_center
     url = https://github.com/DCUSnSLab/command_center.git
-    branch = main
+	branch = feature/curb-safety_park
 [submodule "src/perception"]
 	path = src/perception
 	url = https://github.com/DCUSnSLab/SCV_Perception.git
-	branch = ros2_humble
+	branch = feature/curb-safety_park
 [submodule "src/localization/robot_localization"]
 	path = src/localization/robot_localization
 	url = https://github.com/nevlife/robot_localization
-    branch = humble-devel
+	branch = feature/scv-localization_park
 [submodule "src/monitoring/system_monitor"]
 	path = src/monitoring/system_monitor
 	url = https://github.com/nevlife/system_monitor
-    branch = main
+	branch = main_park
 [submodule "src/localization/FAST_LIO_ROS2"]
 	path = src/localization/FAST_LIO_ROS2
 	url = https://github.com/nevlife/FAST_LIO_ROS2.git
-    branch = main
+	branch = ros2_park
 [submodule "src/sensor_pkg/multi_cam_ros2"]
 	path = src/sensor_pkg/multi_cam_ros2
 	url = https://github.com/nevlife/multi_cam_ros2.git
-	branch = humble
+	branch = humble_park
 [submodule "src/sensor_pkg/sllidar_ros2"]
 	path = src/sensor_pkg/sllidar_ros2
 	url = https://github.com/DCUSnSLab/sllidar_ros2.git
-	branch = main
+	branch = main_park
+[submodule "src/localization/faster-lio-ros2"]
+	path = src/localization/faster-lio-ros2
+	url = https://github.com/DCUSnSLab/faster-lio-ros2.git
+	branch = master_park
+[submodule "src/localization/rko_lio"]
+	path = src/localization/rko_lio
+	url = https://github.com/DCUSnSLab/rko_lio.git
+	branch = master_park
