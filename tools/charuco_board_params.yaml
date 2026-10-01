@@ -1,0 +1,10 @@
+# ChArUco boards used for the D435 <-> VLP-32C calibration (2026-09/10).
+# Board k uses marker IDs [k*id_stride, k*id_stride + 16]. Boards: 2, 3, 4, 5.
+# Square size measured on the printed boards: 7 squares = 505 mm.
+aruco_dict: DICT_5X5_1000
+squares_x: 7
+squares_y: 5
+square_length_m: 0.07214
+marker_length_m: 0.053
+id_stride: 100
+boards: [2, 3, 4, 5]
