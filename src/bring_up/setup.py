@@ -12,7 +12,10 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*'))),
+        (os.path.join('share', package_name, 'launch'),
+         glob(os.path.join('launch', '*.launch.py'))
+         + glob(os.path.join('launch', '*.launch.xml'))
+         + glob(os.path.join('launch', '*.launch.yaml'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -23,6 +26,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'd555_velodyne_bev = bring_up.d555_velodyne_bev:main',
         ],
     },
 )

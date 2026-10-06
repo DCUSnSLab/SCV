@@ -5,3 +5,5 @@ rosbag*
 .vscode/
 
 yolo*
+__pycache__/
+*.pyc

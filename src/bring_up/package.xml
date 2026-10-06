@@ -3,9 +3,19 @@
 <package format="3">
   <name>bring_up</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>SCV vehicle and calibrated D555 sensor bringup.</description>
   <maintainer email="pcdpcd100@gmail.com">scv</maintainer>
   <license>TODO: License declaration</license>
+
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>sensor_msgs_py</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
 
   <exec_depend>zed_wrapper</exec_depend>
   <exec_depend>iahrs_ros2</exec_depend>
@@ -14,8 +24,10 @@
   <exec_depend>vectornav</exec_depend>
   <exec_depend>sllidar_ros2</exec_depend>
   <exec_depend>hunter_base</exec_depend>
+  <exec_depend>hunter2_description</exec_depend>
   <exec_depend>ntrip_client</exec_depend>
   <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>d555_velodyne_bev</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

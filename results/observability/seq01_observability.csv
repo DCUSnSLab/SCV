@@ -1,0 +1,1 @@
+timestamp,frame_id,track_id,class_id,x,y,z,detector_confidence,lidar_point_count,lidar_point_density,lidar_score,camera_available,camera_visible,camera_supported,camera_iou,camera_score,depth_available,depth_consistency,observation_state,observation_score,association_cost,matched,track_age_sec,miss_count,observation_analysis_ms,association_ms,tracker_update_ms,total_ms
