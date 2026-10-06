@@ -1,0 +1,15 @@
+# SCV Logger 녹화 프로파일 — GUI(프로파일 탭)에서 저장하면 이 파일이 다시 쓰인다.
+# extends로 부모를 지정하면 부모와의 차이만 적는다.
+name: perception_dataset
+description: 학습·라벨링용 데이터 수집 — 카메라 원본, 포인트클라우드, TF, 위치 (매우 큼)
+extends: base
+groups:
+- lidar
+- lidar_points
+- camera_info
+- camera_raw
+- imu_gnss
+- localization
+- tf
+options:
+  split_duration_sec: 120

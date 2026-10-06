@@ -1,0 +1,237 @@
+# SCV Logger 토픽 카탈로그 — GUI(카탈로그 탭)에서 저장하면 이 파일이 다시 쓰인다.
+# 주석은 보존되지 않으니 설명은 description 필드에 적을 것.
+#
+# topic 필드: type, hz(기준 주기), required(필수), heavy(큰 메시지 — 녹화 시 best-effort),
+#             size_kb(평균 크기, 용량 추정용), monitor_via(주기를 대신 잴 가벼운 토픽),
+#             latched(transient_local — 주기 판정 제외), description
+version: 1
+heavy_threshold_kb: 500.0
+auto_markers:
+- topic: /vehicle/mux_status
+  label: 주행 모드(mux)
+- topic: /remote/cmd_mode
+  label: 원격 명령 모드
+- topic: /vehicle/estop_status
+  label: 비상정지
+groups:
+  lidar:
+    description: LiDAR — Velodyne은 원시 패킷으로 녹화하고 재생 시 포인트클라우드로 변환
+    topics:
+      /velodyne_packets:
+        type: velodyne_msgs/msg/VelodyneScan
+        hz: 10.0
+        required: true
+        size_kb: 220.0
+        description: VLP-32C 원시 패킷 (크기는 추정값)
+      /front/scan:
+        type: sensor_msgs/msg/LaserScan
+        hz: 10.0
+        size_kb: 6.0
+      /rear/scan:
+        type: sensor_msgs/msg/LaserScan
+        hz: 10.0
+        size_kb: 6.0
+  lidar_points:
+    description: 변환된 포인트클라우드 (큼 — 패킷으로 대체 가능)
+    topics:
+      /velodyne_points:
+        type: sensor_msgs/msg/PointCloud2
+        hz: 10.0
+        heavy: true
+        size_kb: 1246.0
+  camera_info:
+    description: 카메라 내부 파라미터 — 영상(원본·압축)을 쓰려면 같이 녹화
+    topics:
+      /camera/camera/color/camera_info:
+        hz: 30.0
+        size_kb: 0.4
+      /camera/camera/depth/camera_info:
+        hz: 30.0
+        size_kb: 0.4
+      /d435_left/d435_left/color/camera_info:
+        hz: 15.0
+        size_kb: 0.4
+      /d435_center/d435_center/color/camera_info:
+        hz: 15.0
+        size_kb: 0.4
+      /d435_right/d435_right/color/camera_info:
+        hz: 15.0
+        size_kb: 0.4
+      /d435_left/d435_left/depth/camera_info:
+        hz: 15.0
+        size_kb: 0.4
+      /d435_center/d435_center/depth/camera_info:
+        hz: 15.0
+        size_kb: 0.4
+      /d435_right/d435_right/depth/camera_info:
+        hz: 15.0
+        size_kb: 0.4
+  camera_compressed:
+    description: 압축 영상 (image_transport) — 크기는 추정값, 카탈로그 스캔으로 갱신할 것
+    topics:
+      /camera/camera/color/image_raw/compressed:
+        hz: 30.0
+        size_kb: 100.0
+      /camera/camera/depth/image_rect_raw/compressedDepth:
+        hz: 30.0
+        size_kb: 250.0
+      /d435_left/d435_left/color/image_raw/compressed:
+        hz: 15.0
+        size_kb: 150.0
+      /d435_center/d435_center/color/image_raw/compressed:
+        hz: 15.0
+        size_kb: 150.0
+      /d435_right/d435_right/color/image_raw/compressed:
+        hz: 15.0
+        size_kb: 150.0
+  camera_raw:
+    description: 원본 영상 (매우 큼 — 녹화 시 best-effort, 주기는 camera_info로 측정)
+    topics:
+      /camera/camera/color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 30.0
+        heavy: true
+        size_kb: 1323.0
+        monitor_via: /camera/camera/color/camera_info
+      /camera/camera/depth/image_rect_raw:
+        type: sensor_msgs/msg/Image
+        hz: 30.0
+        heavy: true
+        size_kb: 795.0
+        monitor_via: /camera/camera/depth/camera_info
+      /d435_left/d435_left/color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 2700.0
+        monitor_via: /d435_left/d435_left/color/camera_info
+      /d435_center/d435_center/color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 2700.0
+        monitor_via: /d435_center/d435_center/color/camera_info
+      /d435_right/d435_right/color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 2700.0
+        monitor_via: /d435_right/d435_right/color/camera_info
+      /d435_left/d435_left/depth/image_rect_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 795.0
+        monitor_via: /d435_left/d435_left/depth/camera_info
+      /d435_center/d435_center/depth/image_rect_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 795.0
+        monitor_via: /d435_center/d435_center/depth/camera_info
+      /d435_right/d435_right/depth/image_rect_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 795.0
+        monitor_via: /d435_right/d435_right/depth/camera_info
+  imu_gnss:
+    description: IMU·GNSS — GNSS 기준 주기는 미확인 (실외에서 카탈로그 스캔으로 채울 것)
+    topics:
+      /vectornav/imu:
+        type: sensor_msgs/msg/Imu
+        hz: 20.0
+        required: true
+        size_kb: 0.4
+      /vectornav/pose:
+        hz: 20.0
+        size_kb: 0.4
+      /ublox_gps_node/fix:
+        type: sensor_msgs/msg/NavSatFix
+        size_kb: 0.2
+      /ublox_gps_node/fix_velocity:
+        size_kb: 0.4
+      /navpvt:
+        size_kb: 0.2
+      /rxmrtcm:
+        size_kb: 0.1
+  vehicle:
+    description: 차대 상태·휠 속도·조향
+    topics:
+      /hunter_status:
+        type: hunter_msgs/msg/HunterStatus
+        hz: 50.0
+        required: true
+        size_kb: 0.2
+      /hunter/velocity:
+        type: std_msgs/msg/Float64
+        hz: 50.0
+        size_kb: 0.1
+      /current_speed:
+        size_kb: 0.1
+      /current_steer_angle:
+        size_kb: 0.1
+      /odom:
+        size_kb: 0.7
+  localization:
+    description: 위치 추정 출력 (field_drive 스택)
+    topics:
+      /odometry/global:
+        type: nav_msgs/msg/Odometry
+        hz: 30.0
+        required: true
+        size_kb: 0.7
+        description: 기준 주기는 dual EKF frequency 30 Hz 기준 (참고값)
+      /odometry/fast_lio:
+        size_kb: 0.7
+      /gps/fix_gated:
+        type: sensor_msgs/msg/NavSatFix
+        size_kb: 0.2
+      /map_anchor/mode:
+        type: std_msgs/msg/String
+        size_kb: 0.1
+      /map_anchor/yaw_corr:
+        size_kb: 0.1
+  planning:
+    description: 경로·행동·코스트맵
+    topics:
+      /behavior_status:
+        size_kb: 0.2
+      /planned_path_detailed:
+        size_kb: 20.0
+      /multiple_waypoints:
+        size_kb: 5.0
+      /costmap:
+        type: nav_msgs/msg/OccupancyGrid
+        hz: 10.0
+        size_kb: 40.0
+      /costmap_keepout:
+        size_kb: 40.0
+  control:
+    description: 제어 명령·주행 모드·비상정지
+    topics:
+      /cmd_vel:
+        type: geometry_msgs/msg/Twist
+        hz: 10.0
+        size_kb: 0.1
+      /final_cmd:
+        type: geometry_msgs/msg/Twist
+        size_kb: 0.1
+      /vehicle/mux_status:
+        size_kb: 0.1
+      /vehicle/estop_status:
+        size_kb: 0.1
+      /remote/cmd_mode:
+        size_kb: 0.1
+  tf:
+    description: 좌표 변환·로봇 모델
+    topics:
+      /tf:
+        type: tf2_msgs/msg/TFMessage
+        size_kb: 1.0
+      /tf_static:
+        type: tf2_msgs/msg/TFMessage
+        latched: true
+      /robot_description:
+        type: std_msgs/msg/String
+        latched: true

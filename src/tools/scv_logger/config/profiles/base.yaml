@@ -1,0 +1,17 @@
+# SCV Logger 녹화 프로파일 — GUI(프로파일 탭)에서 저장하면 이 파일이 다시 쓰인다.
+# extends로 부모를 지정하면 부모와의 차이만 적는다.
+name: base
+description: 공통 옵션 (직접 쓰지 않음 — 다른 프로파일이 상속)
+abstract: true
+options:
+  storage: mcap
+  compression: none
+  split_duration_sec: 300
+  split_size_mb: 0
+  heavy_qos: best_effort
+  start_mode: wait_ready
+  wait_ready_sec: 30
+  start_delay_sec: 5
+  disk_warn_gb: 30.0
+  disk_stop_gb: 10.0
+  max_cache_mb: 100
