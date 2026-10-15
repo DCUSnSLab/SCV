@@ -26,6 +26,8 @@ setup(
             'scv_logger = scv_logger.gui.app:main',
             'scv_logger_monitor = scv_logger.ros.monitor_node:main',
             'scv_logger_scan = scv_logger.ros.scan:main',
+            'scv_logger_lidar_convert = scv_logger.ros.lidar_convert:main',
+            'scv_logger_retime_points = scv_logger.ros.retime_points:main',
         ],
     },
 )

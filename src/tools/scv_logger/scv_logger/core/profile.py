@@ -53,7 +53,7 @@ OPTION_LABELS: dict[str, str] = {
 CHOICE_LABELS: dict[str, str] = {
     'mcap': 'mcap', 'sqlite3': 'sqlite3',
     'none': '없음', 'zstd': 'zstd',
-    'best_effort': 'best-effort (주행 노드 보호)', 'keep': '원래 QoS 유지',
+    'best_effort': 'best-effort (큰 메시지 손실 가능)', 'keep': '원래 QoS 유지 (권장)',
     'wait_ready': '필수 토픽 준비 후', 'delay': 'N초 지연 후', 'immediate': '즉시',
 }
 
@@ -68,7 +68,7 @@ class RecordOptions:
     compression: str = 'none'
     split_duration_sec: int = 300
     split_size_mb: int = 0
-    heavy_qos: str = 'best_effort'
+    heavy_qos: str = 'keep'
     start_mode: str = 'wait_ready'
     wait_ready_sec: int = 30
     start_delay_sec: int = 5

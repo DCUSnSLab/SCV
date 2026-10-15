@@ -10,6 +10,7 @@ from PyQt5.QtGui import QColor
 STATUS_TEXT = {
     'ok': '정상',
     'low': '주기 낮음',
+    'abnormal': '값 이상',
     'stale': '끊김',
     'waiting': '수신 대기',
     'no_publisher': '발행자 없음',
@@ -19,6 +20,7 @@ STATUS_TEXT = {
 STATUS_BG = {
     'ok': QColor('#d9f2d9'),
     'low': QColor('#fff0b3'),
+    'abnormal': QColor('#ffc890'),
     'stale': QColor('#f7c6c6'),
     'waiting': QColor('#e8e8e8'),
     'no_publisher': QColor('#e8e8e8'),

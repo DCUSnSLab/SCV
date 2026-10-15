@@ -21,8 +21,13 @@ CATALOG_HEADER = (
     '\n'
     'topic 필드: type, hz(기준 주기), required(필수), heavy(큰 메시지 — 녹화 시 best-effort),\n'
     '            size_kb(평균 크기, 용량 추정용), monitor_via(주기를 대신 잴 가벼운 토픽),\n'
-    '            latched(transient_local — 주기 판정 제외), description'
+    '            latched(transient_local — 주기 판정 제외), description\n'
+    '\n'
+    'value_checks: 값 검사 기준 (C++ 감시 노드). 생략한 키는 기본값.\n'
+    '  stamp_delay_max_s, stamp_future_max_s, gnss_max_std_m'
 )
+
+VALUE_CHECK_NUMBERS = ('stamp_delay_max_s', 'stamp_future_max_s', 'gnss_max_std_m')
 
 
 class CatalogError(ValueError):
@@ -107,10 +112,24 @@ def _opt_bool(value: Any, where: str) -> bool:
     return value
 
 
+def _value_checks(data: Any, where: str) -> dict[str, Any]:
+    if data is None:
+        return {}
+    if not isinstance(data, dict):
+        raise CatalogError(f'{where}: 매핑이어야 함')
+    _check_keys(data, set(VALUE_CHECK_NUMBERS), where)
+    out: dict[str, Any] = {}
+    for k in VALUE_CHECK_NUMBERS:
+        if k in data:
+            out[k] = _opt_number(data[k], f'{where}.{k}')
+    return out
+
+
 @dataclass
 class Catalog:
     groups: dict[str, Group] = field(default_factory=dict)
     auto_markers: list[AutoMarker] = field(default_factory=list)
+    value_checks: dict[str, Any] = field(default_factory=dict)
     heavy_threshold_kb: float = 500.0
     version: int = 1
 
@@ -184,7 +203,7 @@ class Catalog:
     def from_dict(cls, data: Any, source: str = 'catalog') -> 'Catalog':
         if not isinstance(data, dict):
             raise CatalogError(f'{source}: 최상위가 매핑이 아님')
-        _check_keys(data, {'version', 'heavy_threshold_kb', 'groups', 'auto_markers'}, source)
+        _check_keys(data, {'version', 'heavy_threshold_kb', 'groups', 'auto_markers', 'value_checks'}, source)
         cat = cls(version=int(data.get('version', 1)),
                   heavy_threshold_kb=_opt_number(data.get('heavy_threshold_kb'), f'{source}.heavy_threshold_kb') or 500.0)
         groups = data.get('groups') or {}
@@ -236,6 +255,7 @@ class Catalog:
                 topic=_check_topic_name(m.get('topic'), where),
                 label=str(m.get('label') or ''), field=m.get('field') or None,
                 kind=str(m.get('kind') or 'auto')))
+        cat.value_checks = _value_checks(data.get('value_checks'), f'{source}.value_checks')
         return cat
 
     def to_dict(self) -> dict[str, Any]:
@@ -243,6 +263,7 @@ class Catalog:
             'version': self.version,
             'heavy_threshold_kb': self.heavy_threshold_kb,
             'auto_markers': [m.to_dict() for m in self.auto_markers],
+            **({'value_checks': self.value_checks} if self.value_checks else {}),
             'groups': {
                 g.name: {'description': g.description,
                          'topics': {t.name: t.to_dict() for t in g.topics.values()}}

@@ -8,7 +8,7 @@ options:
   compression: none
   split_duration_sec: 300
   split_size_mb: 0
-  heavy_qos: best_effort
+  heavy_qos: keep
   start_mode: wait_ready
   wait_ready_sec: 30
   start_delay_sec: 5

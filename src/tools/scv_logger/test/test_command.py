@@ -32,7 +32,8 @@ def test_command_sqlite_zstd_no_split(catalog):
 
 
 def test_qos_overrides_only_heavy(catalog):
-    r = resolved(['/packets', '/points', '/cam/image', '/tf_static'])
+    assert qos_overrides(resolved(['/points']), catalog) == {}          # 기본값 keep → override 없음
+    r = resolved(['/packets', '/points', '/cam/image', '/tf_static'], heavy_qos='best_effort')
     assert set(qos_overrides(r, catalog)) == {'/points', '/cam/image'}
     assert qos_overrides(r, catalog)['/points']['reliability'] == 'best_effort'
     assert qos_overrides(resolved(['/points'], heavy_qos='keep'), catalog) == {}

@@ -20,10 +20,11 @@ HEAVY_QOS = {'history': 'keep_last', 'depth': 10, 'reliability': 'best_effort',
 
 
 def qos_overrides(resolved: ResolvedProfile, catalog: Catalog) -> dict[str, dict]:
-    """큰 토픽의 녹화 구독을 best-effort로.
+    """heavy_qos=best_effort일 때만 큰 토픽의 녹화 구독을 best-effort로 바꾼다.
 
-    녹화기가 reliable로 붙으면, 녹화기가 늦을 때 발행 노드(카메라·LiDAR 드라이버)의
-    publish()가 블로킹되어 그 토픽을 받는 모든 노드의 주기가 떨어진다.
+    기본값은 keep(원래 QoS). 실측(2026-10-08, VLP-32C /velodyne_points 1.2 MB): reliable 구독은
+    10 Hz를 다 받았지만 best-effort 구독은 4.5 Hz(그 전 녹화에서는 1.2 Hz)만 받았다.
+    Fast DDS는 큰 메시지를 조각으로 보내는데 best-effort는 조각 하나만 빠져도 재전송 없이 버린다.
     """
     if resolved.options.heavy_qos != 'best_effort':
         return {}
@@ -96,6 +97,7 @@ def monitor_config(resolved: ResolvedProfile, catalog: Catalog, *, hz_tolerance:
         'profile': resolved.name,
         'topics': topics,
         'auto_markers': [m.to_dict() for m in catalog.auto_markers],
+        'value_checks': catalog.value_checks,
         'hz_tolerance': hz_tolerance,
         'output_dir': str(output_dir),
         'disk_warn_gb': o.disk_warn_gb,

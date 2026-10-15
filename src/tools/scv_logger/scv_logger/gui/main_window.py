@@ -4,6 +4,7 @@ from __future__ import annotations
 from PyQt5.QtWidgets import QLabel, QMainWindow, QMessageBox, QTabWidget
 
 from .. import __version__
+from .bag_tab import BagTab
 from .catalog_tab import CatalogTab
 from .common import LEVEL_COLOR
 from .context import AppContext
@@ -30,6 +31,7 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(ProfileTab(ctx), '프로파일')
         self.tabs.addTab(CatalogTab(ctx), '카탈로그')
         self.tabs.addTab(SessionsTab(ctx, self.controller), '세션')
+        self.tabs.addTab(BagTab(ctx, self.controller), '녹화 점검')
         self.tabs.addTab(SettingsTab(ctx), '설정')
         self.setCentralWidget(self.tabs)
 

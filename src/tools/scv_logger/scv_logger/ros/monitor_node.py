@@ -37,7 +37,7 @@ from ..constants import HEALTH_TOPIC, MARKER_TOPIC
 from ..core import recorder
 from ..core.preflight import disk_free_gb
 from ..core.session import Session
-from .probe import BEST_EFFORT_QOS, LATCHED_QOS, Probe, evaluate
+from .probe import BEST_EFFORT_QOS, LATCHED_QOS, RELIABLE_QOS, Probe, evaluate
 
 DISK_STOP_TICKS = 3
 
@@ -99,6 +99,7 @@ class MonitorNode(Node):
             mon = t.get('monitor') or t['name']
             probe = self.probes.setdefault(mon, Probe(mon))
             probe.latched = probe.latched or bool(t.get('latched'))
+            probe.heavy = probe.heavy or (bool(t.get('heavy')) and mon == t['name'])
             self.watches.append(Watch(t, probe))
 
         self.health_pub = self.create_publisher(String, HEALTH_TOPIC, 10)
@@ -159,8 +160,8 @@ class MonitorNode(Node):
             if not p.latched:
                 infos = self.get_publishers_info_by_topic(p.topic)
                 p.latched = any(i.qos_profile.durability == DurabilityPolicy.TRANSIENT_LOCAL for i in infos)
-            p.sub = self.create_subscription(cls, p.topic, p.on_msg,
-                                             LATCHED_QOS if p.latched else BEST_EFFORT_QOS, raw=True)
+            qos = LATCHED_QOS if p.latched else RELIABLE_QOS if p.heavy else BEST_EFFORT_QOS
+            p.sub = self.create_subscription(cls, p.topic, p.on_msg, qos, raw=True)
         for a in pending_auto:
             topic = a['cfg']['topic']
             tnames = types.get(topic)

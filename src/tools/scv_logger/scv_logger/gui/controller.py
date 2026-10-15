@@ -9,9 +9,11 @@ RECORDING에서는 ros2 bag record와 session monitor가 GUI와 분리돼 돈다
 """
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
 from PyQt5.QtCore import QObject, QTimer, pyqtSignal
@@ -32,7 +34,33 @@ from .ros_bridge import RosBridge
 IDLE, WAITING, STARTING, RECORDING, STOPPING = 'idle', 'waiting', 'starting', 'recording', 'stopping'
 
 
+def _cpp_monitor() -> str | None:
+    """C++ 감시 노드(scv_logger_monitor) 실행 파일. 없거나 SCV_LOGGER_PY_MONITOR=1 이면 None → 파이썬 노드."""
+    if os.environ.get('SCV_LOGGER_PY_MONITOR'):
+        return None
+    try:
+        from ament_index_python.packages import get_package_prefix
+        exe = Path(get_package_prefix('scv_logger_monitor')) / 'lib' / 'scv_logger_monitor' / 'scv_logger_monitor'
+    except Exception:  # noqa: BLE001 — 패키지 미설치
+        return None
+    return str(exe) if exe.exists() else None
+
+
+def _session_start_epoch(session: Session) -> float:
+    try:
+        return datetime.fromisoformat(session.read_manifest()['started_at']).timestamp()
+    except (KeyError, TypeError, ValueError):
+        return time.time()
+
+
 def _monitor_cmd(config: Path, session: Session | None = None, recorder_pid: int | None = None) -> list[str]:
+    exe = _cpp_monitor()
+    if exe:
+        cmd = [exe, '--config', str(config)]
+        if session is not None:
+            cmd += ['--session-dir', str(session.path), '--recorder-pid', str(recorder_pid),
+                    '--session-start', f'{_session_start_epoch(session):.3f}', '--python', sys.executable]
+        return cmd
     cmd = [sys.executable, '-m', 'scv_logger.ros.monitor_node', '--config', str(config)]
     if session is not None:
         cmd += ['--session-dir', str(session.path), '--recorder-pid', str(recorder_pid)]

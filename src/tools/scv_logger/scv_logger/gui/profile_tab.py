@@ -5,7 +5,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QBrush, QColor
 from PyQt5.QtWidgets import (QComboBox, QDoubleSpinBox, QFormLayout, QGroupBox, QHBoxLayout,
                              QHeaderView, QInputDialog, QLabel, QLineEdit, QListWidget,
-                             QListWidgetItem, QMessageBox, QPushButton, QSpinBox, QSplitter,
+                             QListWidgetItem, QMessageBox, QPushButton, QScrollArea, QSpinBox, QSplitter,
                              QTreeWidget, QTreeWidgetItem, QVBoxLayout, QWidget)
 
 from ..core.command import estimate_mb_per_min
@@ -28,6 +28,7 @@ class ProfileTab(QWidget):
         self.parent_resolved: ResolvedProfile | None = None
         self.dirty = False
         self._loading = False
+        self._col_sized = False
 
         root = QHBoxLayout(self)
         split = QSplitter()
@@ -60,14 +61,20 @@ class ProfileTab(QWidget):
         head.addRow('상속', self.parent_combo)
         rlay.addLayout(head)
 
-        body = QHBoxLayout()
+        # 토픽 트리 ↔ 옵션 사이도 끌어서 폭 조절
+        body = QSplitter(Qt.Horizontal)
+        body.setChildrenCollapsible(False)
         self.tree = QTreeWidget()
         self.tree.setHeaderLabels(['토픽', 'Hz', '크기 KB', '비고', '부모 대비'])
-        self.tree.header().setSectionResizeMode(0, QHeaderView.Stretch)
-        for i in range(1, 5):
-            self.tree.header().setSectionResizeMode(i, QHeaderView.ResizeToContents)
+        # 모든 열을 헤더에서 끌어 늘리고 줄일 수 있게 (긴 토픽 이름이 잘리지 않도록)
+        hdr = self.tree.header()
+        hdr.setSectionResizeMode(QHeaderView.Interactive)
+        hdr.setStretchLastSection(True)
+        hdr.setMinimumSectionSize(40)
+        self.tree.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.tree.setTextElideMode(Qt.ElideMiddle)
         self.tree.itemChanged.connect(self._on_item_changed)
-        body.addWidget(self.tree, 3)
+        body.addWidget(self.tree)
 
         opt_box = QGroupBox('녹화 옵션')
         self.opt_form = QFormLayout(opt_box)
@@ -91,8 +98,16 @@ class ProfileTab(QWidget):
                 w.valueChanged.connect(self._on_option_changed)
             self.opt_widgets[key] = w
             self.opt_form.addRow(OPTION_LABELS.get(key, key), w)
-        body.addWidget(opt_box, 2)
-        rlay.addLayout(body, 1)
+        # 옵션은 스크롤 영역에 — 경계를 끌어 옵션 쪽을 줄여도 토픽 트리를 넓힐 수 있게
+        opt_scroll = QScrollArea()
+        opt_scroll.setWidgetResizable(True)
+        opt_scroll.setWidget(opt_box)
+        opt_scroll.setMinimumWidth(180)
+        body.addWidget(opt_scroll)
+        body.setStretchFactor(0, 3)
+        body.setStretchFactor(1, 1)
+        body.setSizes([800, 430])         # 처음 비율 — 경계를 끌어 조절
+        rlay.addWidget(body, 1)
 
         self.estimate = QLabel()
         self.estimate.setWordWrap(True)
@@ -228,6 +243,16 @@ class ProfileTab(QWidget):
                 gi.addChild(ti)
             self.tree.addTopLevelItem(gi)
         self.tree.expandAll()
+        if not self._col_sized:          # 처음 한 번만 내용에 맞춤 — 이후엔 사용자가 정한 폭 유지
+            for c in range(1, self.tree.columnCount() - 1):
+                self.tree.resizeColumnToContents(c)
+            # 첫 열은 그룹 설명이 아니라 가장 긴 토픽 이름 기준
+            fm = self.tree.fontMetrics()
+            longest = max((fm.horizontalAdvance(self.tree.topLevelItem(i).child(j).text(0))
+                           for i in range(self.tree.topLevelItemCount())
+                           for j in range(self.tree.topLevelItem(i).childCount())), default=200)
+            self.tree.setColumnWidth(0, longest + self.tree.indentation() * 2 + 40)
+            self._col_sized = True
         self.tree.blockSignals(False)
 
     def selected_topics(self) -> list[str]:

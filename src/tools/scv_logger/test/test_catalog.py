@@ -45,3 +45,13 @@ def test_edit(catalog):
     assert catalog.topic('/new') is None
     with pytest.raises(CatalogError):
         catalog.add_group('lidar')
+
+
+def test_value_checks():
+    cat = Catalog.from_dict({'value_checks': {'gnss_max_std_m': 5}})
+    assert cat.value_checks == {'gnss_max_std_m': 5.0}
+    assert Catalog.from_dict(cat.to_dict()).value_checks == cat.value_checks
+    assert 'value_checks' not in Catalog.from_dict({}).to_dict()
+    for bad in ({'gnss_max_std': 1}, {'gnss_max_std_m': -1}, 'x'):
+        with pytest.raises(CatalogError):
+            Catalog.from_dict({'value_checks': bad})

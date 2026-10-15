@@ -130,6 +130,9 @@ class SessionsTab(QWidget):
             self._show(None)
         elif not self.table.selectedIndexes():
             self.table.selectRow(0)
+        else:
+            # 같은 행이 계속 선택돼 있으면 selectionChanged가 안 와서 상세가 낡은 채로 남는다
+            self._on_select()
 
     def _on_select(self) -> None:
         rows = {i.row() for i in self.table.selectedIndexes()}

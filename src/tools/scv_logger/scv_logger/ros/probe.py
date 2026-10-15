@@ -13,6 +13,10 @@ from rclpy.qos import DurabilityPolicy, HistoryPolicy, QoSProfile, ReliabilityPo
 BEST_EFFORT_QOS = QoSProfile(history=HistoryPolicy.KEEP_LAST, depth=10,
                              reliability=ReliabilityPolicy.BEST_EFFORT,
                              durability=DurabilityPolicy.VOLATILE)
+# 큰 메시지를 직접 재는 경우 — best-effort는 조각 손실로 주기를 실제보다 낮게 잰다
+RELIABLE_QOS = QoSProfile(history=HistoryPolicy.KEEP_LAST, depth=5,
+                          reliability=ReliabilityPolicy.RELIABLE,
+                          durability=DurabilityPolicy.VOLATILE)
 LATCHED_QOS = QoSProfile(history=HistoryPolicy.KEEP_LAST, depth=1,
                          reliability=ReliabilityPolicy.RELIABLE,
                          durability=DurabilityPolicy.TRANSIENT_LOCAL)
@@ -30,6 +34,7 @@ class Probe:
         self.type_name: str | None = None
         self.error = ''
         self.latched = False
+        self.heavy = False
         self.publishers = 0
 
     def on_msg(self, data: bytes) -> None:

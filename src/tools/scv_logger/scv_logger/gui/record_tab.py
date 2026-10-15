@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import time
 
-from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtCore import Qt, QTimer, pyqtSignal
 from PyQt5.QtGui import QBrush, QColor, QKeySequence
 from PyQt5.QtWidgets import (QAbstractItemView, QComboBox, QFormLayout, QGroupBox, QHBoxLayout,
                              QHeaderView, QLabel, QLineEdit, QListWidget, QListWidgetItem,
@@ -17,14 +17,61 @@ from .common import (LEVEL_COLOR, LEVEL_ICON, STATUS_BG, STATUS_TEXT, fmt_bytes,
                      fmt_kb, fmt_minutes, fmt_num)
 from .context import AppContext
 from .controller import IDLE, RECORDING, STARTING, STOPPING, WAITING, RecordingController
+from .lidar_convert_button import LidarConvertButton
 from .ros_bridge import RosBridge
 
-COLUMNS = ['토픽', '기준 Hz', '현재 Hz', '마지막 수신', '크기 KB', '상태']
+COLUMNS = ['토픽', '기준 Hz', '현재 Hz', '마지막 수신', '크기 KB', '상태', '값 검사', '최근 변경']
+CHECK_COL = COLUMNS.index('값 검사')
 
 MARKER_BUTTONS = [
     ('F1', 'intervention', '개입'),
     ('F2', 'anomaly', '이상 동작'),
 ]
+
+
+def check_text(check: dict | None) -> str:
+    """값 검사 칸: 문제가 있으면 문제, 없으면 참고값."""
+    if not check:
+        return ''
+    issues = check.get('issues') or []
+    if issues:
+        return '⚠ ' + issues[0] + (f' 외 {len(issues) - 1}건' if len(issues) > 1 else '')
+    return ' · '.join(check.get('values') or [])
+
+
+def check_tooltip(check: dict | None) -> str:
+    if not check:
+        return '값 검사 없음 (C++ 감시 노드에서만)'
+    lines = [f'⚠ {x}' for x in check.get('issues') or []] + list(check.get('values') or [])
+    return '\n'.join(lines) or '-'
+
+
+class DragTable(QTableWidget):
+    """행을 끌어다 놓아 순서를 바꾸는 표. 실제 순서는 RecordTab이 관리한다."""
+    row_moved = pyqtSignal(int, int)          # (원래 행, 놓은 위치)
+
+    def __init__(self, rows: int, cols: int):
+        super().__init__(rows, cols)
+        self.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.setDragEnabled(True)
+        self.setAcceptDrops(True)
+        self.viewport().setAcceptDrops(True)
+        self.setDragDropMode(QAbstractItemView.InternalMove)
+        self.setDropIndicatorShown(True)
+
+    def dropEvent(self, event) -> None:
+        src = self.currentRow()
+        dst = self.rowAt(event.pos().y())
+        if dst < 0:
+            dst = self.rowCount() - 1
+        elif self.dropIndicatorPosition() == QAbstractItemView.BelowItem:
+            dst += 1
+        # 기본 동작(셀 단위 이동)은 막고 순서만 알린다
+        event.setDropAction(Qt.IgnoreAction)
+        event.accept()
+        if src >= 0 and dst != src:
+            self.row_moved.emit(src, dst)
 
 
 class RecordTab(QWidget):
@@ -34,7 +81,13 @@ class RecordTab(QWidget):
         self.ctl = controller
         self.bridge = bridge
         self._segment_open = False
-        self._rows: dict[str, int] = {}
+        self._order: list[str] = []                 # 표에 보이는 토픽 순서
+        self._topic_data: dict[str, dict] = {}      # 마지막 health 값
+        self._prev_status: dict[str, str] = {}      # 상태 변화 감지용
+        self._changes: dict[str, str] = {}          # 최근 변경 표시 문구
+        self._shown: dict[str, tuple] = {}          # 행별 마지막 표시값 (바뀐 칸만 갱신)
+        self._status_color = ''
+        self._last_checks: list = []
 
         root = QVBoxLayout(self)
 
@@ -85,7 +138,11 @@ class RecordTab(QWidget):
         self.cancel_btn.clicked.connect(self.ctl.cancel_wait)
         wait_btns.addWidget(self.now_btn)
         wait_btns.addWidget(self.cancel_btn)
+        # 녹화가 끝난 세션의 LiDAR 패킷 → 포인트 변환 (시작 버튼의 절반 높이)
+        self.convert_btn = LidarConvertButton(ctx, controller)
+        self.convert_btn.setFixedHeight(self.start_btn.minimumHeight() // 2)
         btn_col.addWidget(self.start_btn)
+        btn_col.addWidget(self.convert_btn)
         btn_col.addWidget(self.wait_label)
         btn_col.addLayout(wait_btns)
         btn_col.addStretch()
@@ -102,15 +159,18 @@ class RecordTab(QWidget):
         root.addWidget(self.status_label)
 
         # ---- 토픽 표 -------------------------------------------------------
-        self.table = QTableWidget(0, len(COLUMNS))
+        self.table = DragTable(0, len(COLUMNS))
         self.table.setHorizontalHeaderLabels(COLUMNS)
         self.table.verticalHeader().setVisible(False)
         self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.table.setSelectionMode(QAbstractItemView.NoSelection)
+        self.table.setToolTip('행을 끌어다 놓아 순서를 바꿀 수 있습니다.\n녹화 중 상태가 바뀐 토픽은 맨 위로 올라갑니다.')
+        self.table.row_moved.connect(self._on_row_moved)
         hdr = self.table.horizontalHeader()
         hdr.setSectionResizeMode(0, QHeaderView.Stretch)
         for i in range(1, len(COLUMNS)):
             hdr.setSectionResizeMode(i, QHeaderView.ResizeToContents)
+        hdr.setSectionResizeMode(CHECK_COL, QHeaderView.Interactive)   # 문구가 길어 고정 폭, 전체는 툴팁
+        hdr.resizeSection(CHECK_COL, 260)
         root.addWidget(self.table, 1)
 
         # ---- 마커 ----------------------------------------------------------
@@ -145,7 +205,7 @@ class RecordTab(QWidget):
         self.ctl.health_updated.connect(self._on_health)
         self.ctl.waiting_progress.connect(self.wait_label.setText)
         self.ctl.ready_timeout.connect(self._on_ready_timeout)
-        self.ctl.session_started.connect(lambda _: self.marker_list.clear())
+        self.ctl.session_started.connect(self._on_session_started)
         ctx.profiles_changed.connect(self.reload_profiles)
         ctx.catalog_changed.connect(lambda: self._on_profile_changed(self.profile_combo.currentText()))
         self._timer = QTimer(self, interval=1000)
@@ -187,11 +247,27 @@ class RecordTab(QWidget):
         self._build_rows(resolved.topics + resolved.unknown_topics)
 
     def _build_rows(self, topics: list[str]) -> None:
-        self._rows = {t: i for i, t in enumerate(topics)}
-        self.table.setRowCount(len(topics))
-        for t, i in self._rows.items():
-            spec = self.ctx.catalog.topic(t)
-            item = QTableWidgetItem(t)
+        """표에 보일 토픽 설정. 이미 있던 토픽은 사용자가 정한 순서를 유지한다."""
+        keep = [x for x in self._order if x in topics]
+        self._order = keep + [x for x in topics if x not in keep]
+        self._topic_data = {k: v for k, v in self._topic_data.items() if k in topics}
+        self._changes = {k: v for k, v in self._changes.items() if k in topics}
+        self._render()
+
+    def _on_row_moved(self, src: int, dst: int) -> None:
+        name = self._order.pop(src)
+        self._order.insert(dst - 1 if dst > src else dst, name)
+        self._render()
+        self.table.clearSelection()           # 선택 강조가 상태 색을 가리지 않게
+
+    def _render(self) -> None:
+        """행 구조를 새로 만든다 — 순서·토픽이 바뀔 때만. 값 갱신은 _refresh_row."""
+        self.table.setUpdatesEnabled(False)
+        self.table.setRowCount(len(self._order))
+        self._shown.clear()
+        for i, name in enumerate(self._order):
+            spec = self.ctx.catalog.topic(name)
+            item = QTableWidgetItem(name)
             tips = []
             if spec and spec.required:
                 f = item.font()
@@ -201,33 +277,73 @@ class RecordTab(QWidget):
             if spec and spec.monitor_via:
                 tips.append(f'주기는 {spec.monitor_via}로 측정')
             elif spec and spec.heavy:
-                tips.append('큰 토픽을 직접 구독해 측정 (부하 있음)')
+                tips.append('큰 토픽을 직접 구독해 측정 (reliable)')
             if spec is None:
                 tips.append('카탈로그에 없음 — 기준 없음')
             item.setToolTip('\n'.join(tips))
             self.table.setItem(i, 0, item)
-            self.table.setItem(i, 1, QTableWidgetItem(fmt_num(spec.hz if spec else None)))
-            for c in range(2, len(COLUMNS)):
-                self.table.setItem(i, c, QTableWidgetItem('-'))
+            for c in range(1, len(COLUMNS)):
+                self.table.setItem(i, c, QTableWidgetItem())
+            self._refresh_row(i, name)
+        self.table.setUpdatesEnabled(True)
+
+    def _row_values(self, name: str) -> tuple:
+        spec = self.ctx.catalog.topic(name)
+        t = self._topic_data.get(name)
+        if t is None:
+            return (fmt_num(spec.hz if spec else None), '-', '-', '-', '-', '', self._changes.get(name, '')), None
+        status = t.get('status', '')
+        return (fmt_num(t.get('expected')), fmt_num(t.get('hz')),
+                '-' if t.get('age') is None else f'{t["age"]:.1f} s',
+                fmt_kb(t.get('size_kb')), STATUS_TEXT.get(status, status), check_text(t.get('check')),
+                self._changes.get(name, '')), status
+
+    def _refresh_row(self, row: int, name: str) -> None:
+        """값이 바뀐 칸만 고친다 (매초 표 전체를 새로 만들지 않음)."""
+        values, status = self._row_values(name)
+        if self._shown.get(name) == (values, status):
+            return
+        old = self._shown.get(name)
+        self._shown[name] = (values, status)
+        if old is None or old[1] != status:
+            bg = QBrush(STATUS_BG.get(status, QColor('white'))) if status is not None else QBrush()
+            for c in range(len(COLUMNS)):
+                item = self.table.item(row, c)
+                if item is not None:
+                    item.setBackground(bg)
+        for c, v in enumerate(values, start=1):
+            item = self.table.item(row, c)
+            if item is not None and (old is None or old[0][c - 1] != v):
+                item.setText(v)
+                if c == CHECK_COL:
+                    item.setToolTip(check_tooltip((self._topic_data.get(name) or {}).get('check')))
 
     # ---- 상태 갱신 -----------------------------------------------------
     def _on_health(self, h: dict) -> None:
+        recording = self.ctl.state == RECORDING
+        moved = []
         for name, t in h.get('topics', {}).items():
-            row = self._rows.get(name)
-            if row is None:
+            if name not in self._order:
                 continue
+            self._topic_data[name] = t
             status = t.get('status', '')
-            values = [None, fmt_num(t.get('expected')), fmt_num(t.get('hz')),
-                      '-' if t.get('age') is None else f'{t["age"]:.1f} s',
-                      fmt_kb(t.get('size_kb')), STATUS_TEXT.get(status, status)]
-            bg = QBrush(STATUS_BG.get(status, QColor('white')))
-            for c, v in enumerate(values):
-                item = self.table.item(row, c)
-                if item is None:
-                    continue
-                if v is not None:
-                    item.setText(v)
-                item.setBackground(bg)
+            prev = self._prev_status.get(name)
+            self._prev_status[name] = status
+            # 녹화 중 상태가 바뀐 토픽 → 맨 위로 (첫 값·수신 대기에서 넘어온 건 기준값이라 제외)
+            if recording and prev is not None and prev != status and prev != 'waiting':
+                self._changes[name] = (f'{time.strftime("%H:%M:%S")}  '
+                                       f'{STATUS_TEXT.get(prev, prev)} → {STATUS_TEXT.get(status, status)}')
+                moved.append(name)
+        if moved:
+            for name in moved:
+                self._order.remove(name)
+                self._order.insert(0, name)
+            self._render()
+        else:
+            self.table.setUpdatesEnabled(False)
+            for i, name in enumerate(self._order):
+                self._refresh_row(i, name)
+            self.table.setUpdatesEnabled(True)
         self._update_status_line()
 
     def _update_status_line(self) -> None:
@@ -260,14 +376,21 @@ class RecordTab(QWidget):
             text = (f'대기   토픽 정상 {s.get("ok", 0)} / 문제 {s.get("bad", 0)}   '
                     f'디스크 {disk_txt}   저장 경로 {self.ctx.settings.output_path}')
             color = '#eeeeee'
-        self.status_label.setText(text)
-        self.status_label.setStyleSheet(f'padding: 6px; border-radius: 4px; background: {color}')
+        if self.status_label.text() != text:
+            self.status_label.setText(text)
+        if color != self._status_color:          # 스타일시트 재적용은 비싸서 색이 바뀔 때만
+            self._status_color = color
+            self.status_label.setStyleSheet(f'padding: 6px; border-radius: 4px; background: {color}')
 
     def _refresh_checks(self) -> None:
         self._update_status_line()
         if self.ctl.state not in (IDLE, WAITING) or self.ctl.resolved is None:
             return
         checks = run_checks(self.ctl.resolved, self.ctx.settings.output_path, self.ctl.latest_health)
+        key = [(c.level, c.text) for c in checks]
+        if key == self._last_checks:
+            return
+        self._last_checks = key
         self.checks.clear()
         for c in checks:
             item = QListWidgetItem(f'{LEVEL_ICON[c.level]} {c.text}')
@@ -292,6 +415,7 @@ class RecordTab(QWidget):
         if recording:
             self.checks.clear()
             self.checks.addItem('녹화 중 — 점검은 녹화 전에만 표시')
+            self._last_checks = []
         if idle:
             self._segment_open = False
             self.segment_btn.setText('[F3] 구간 시작')
@@ -306,6 +430,10 @@ class RecordTab(QWidget):
                 self.ctl.request_stop()
             return
         if self.ctl.state != IDLE or self.ctl.resolved is None:
+            return
+        if self.convert_btn.proc is not None and QMessageBox.question(
+                self, 'LiDAR 변환 중', 'LiDAR 포인트 변환이 진행 중입니다. CPU를 나눠 쓰게 되어 녹화가 '
+                '메시지를 잃을 수 있습니다.\n그래도 녹화를 시작할까요?') != QMessageBox.Yes:
             return
         checks = run_checks(self.ctl.resolved, self.ctx.settings.output_path, self.ctl.latest_health)
         errors = [c.text for c in checks if c.level == ERROR]
@@ -324,6 +452,10 @@ class RecordTab(QWidget):
                + '\n\n그래도 녹화를 시작할까요?')
         if QMessageBox.question(self, '필수 토픽 미준비', msg) == QMessageBox.Yes:
             self.ctl.start_after_timeout()
+
+    def _on_session_started(self, _path: str) -> None:
+        self.marker_list.clear()
+        self._prev_status.clear()          # 새 녹화 monitor의 첫 상태를 기준값으로
 
     # ---- 마커 ----------------------------------------------------------
     def _marker(self, kind: str, text: str) -> None:

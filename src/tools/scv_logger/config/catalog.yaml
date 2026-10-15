@@ -4,6 +4,9 @@
 # topic 필드: type, hz(기준 주기), required(필수), heavy(큰 메시지 — 녹화 시 best-effort),
 #             size_kb(평균 크기, 용량 추정용), monitor_via(주기를 대신 잴 가벼운 토픽),
 #             latched(transient_local — 주기 판정 제외), description
+#
+# value_checks: 값 검사 기준 (C++ 감시 노드). 생략한 키는 기본값.
+#   stamp_delay_max_s, stamp_future_max_s, gnss_max_std_m
 version: 1
 heavy_threshold_kb: 500.0
 auto_markers:
@@ -13,6 +16,10 @@ auto_markers:
   label: 원격 명령 모드
 - topic: /vehicle/estop_status
   label: 비상정지
+value_checks:
+  stamp_delay_max_s: 0.5
+  stamp_future_max_s: 0.2
+  gnss_max_std_m: 10.0
 groups:
   lidar:
     description: LiDAR — Velodyne은 원시 패킷으로 녹화하고 재생 시 포인트클라우드로 변환
@@ -48,6 +55,9 @@ groups:
       /camera/camera/depth/camera_info:
         hz: 30.0
         size_kb: 0.4
+      /camera/camera/aligned_depth_to_color/camera_info:
+        hz: 30.0
+        size_kb: 0.4
       /d435_left/d435_left/color/camera_info:
         hz: 15.0
         size_kb: 0.4
@@ -75,6 +85,10 @@ groups:
       /camera/camera/depth/image_rect_raw/compressedDepth:
         hz: 30.0
         size_kb: 250.0
+      /camera/camera/aligned_depth_to_color/image_raw/compressedDepth:
+        hz: 30.0
+        size_kb: 280.0
+        description: D555 정렬 depth 압축(PNG) — 크기는 추정값
       /d435_left/d435_left/color/image_raw/compressed:
         hz: 15.0
         size_kb: 150.0
@@ -84,6 +98,18 @@ groups:
       /d435_right/d435_right/color/image_raw/compressed:
         hz: 15.0
         size_kb: 150.0
+      /d435_left/d435_left/depth/image_rect_raw/compressedDepth:
+        hz: 15.0
+        size_kb: 250.0
+        description: D435 depth 압축(PNG) — 크기는 추정값
+      /d435_center/d435_center/depth/image_rect_raw/compressedDepth:
+        hz: 15.0
+        size_kb: 250.0
+        description: D435 depth 압축(PNG) — 크기는 추정값
+      /d435_right/d435_right/depth/image_rect_raw/compressedDepth:
+        hz: 15.0
+        size_kb: 250.0
+        description: D435 depth 압축(PNG) — 크기는 추정값
   camera_raw:
     description: 원본 영상 (매우 큼 — 녹화 시 best-effort, 주기는 camera_info로 측정)
     topics:
@@ -99,6 +125,13 @@ groups:
         heavy: true
         size_kb: 795.0
         monitor_via: /camera/camera/depth/camera_info
+      /camera/camera/aligned_depth_to_color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 30.0
+        heavy: true
+        size_kb: 882.0
+        monitor_via: /camera/camera/aligned_depth_to_color/camera_info
+        description: D555 color 해상도에 맞춘 depth (16UC1, align_depth.enable) — 크기는 추정값
       /d435_left/d435_left/color/image_raw:
         type: sensor_msgs/msg/Image
         hz: 15.0

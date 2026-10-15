@@ -139,6 +139,7 @@ class Session:
     monitor_log = property(lambda self: self.path / 'monitor.log')
     qos_path = property(lambda self: self.path / 'qos_overrides.yaml')
     monitor_config_path = property(lambda self: self.path / 'monitor_config.json')
+    stop_reason_path = property(lambda self: self.path / 'stop_reason')
     _lock_path = property(lambda self: self.path / '.manifest.lock')
 
     # ---- 생성 ----------------------------------------------------------
@@ -231,7 +232,12 @@ class Session:
             if m.get('status') != STATUS_RECORDING and not force:
                 return m
             if status is None:
-                status = STOP_REASON_STATUS.get(m.get('stop_reason'), 'recorder_exited')
+                reason = m.get('stop_reason')
+                if not reason and self.stop_reason_path.exists():
+                    # C++ 감시 노드는 manifest 대신 stop_reason 파일에 남긴다 (디스크 부족 자동 정지)
+                    reason = self.stop_reason_path.read_text().strip() or None
+                    m['stop_reason'] = reason
+                status = STOP_REASON_STATUS.get(reason, 'recorder_exited')
             ended = datetime.now().astimezone()
             duration = None
             try:

@@ -3,9 +3,10 @@
 name: localization_eval
 description: localization 재실행·평가 — IMU, GNSS, LiDAR 패킷, 휠 odometry, TF, localization 출력
 extends: base
-groups:
+add_groups:
 - lidar
 - imu_gnss
 - vehicle
 - localization
+- control
 - tf
