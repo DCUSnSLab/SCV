@@ -1,0 +1,64 @@
+# ============================================================================
+#  local_odometry_sim.yaml  —  Gazebo 시뮬레이션용
+#  대상: SCV_hunter_gazebo (hunter_test.launch.py), /odom_GT 로 검증
+#  real 과 다른 핵심:
+#    - wheel_scale: sim /hunter/velocity 는 컨트롤러 odom(개루프) 값이라 GT 대비 과다측정.
+#      GT 재보정값 사용. (real 은 LIO-SAM 보정 0.923)
+#    - imu_extrinsic: URDF imu_joint rpy 0 0 0 -> identity (real 은 실장착값 필요)
+#  → 실환경용은 local_odometry_real.yaml
+# ============================================================================
+/**:
+    ros__parameters:
+        topics:
+            imu: "/vectornav/imu"          # sensor_msgs/Imu (100Hz)
+            speed: "/hunter/velocity"      # std_msgs/Float64, 전진 속도 [m/s]
+            output_odom: "/odom"           # nav_msgs/Odometry 출력
+
+        frames:
+            odom: "odom"                   # local 프레임 (로봇 켠 지점)
+            base_link: "base_link"         # 로봇 몸체
+        publish_tf: true                   # odom->base_link 발행 (map->odom 은 발행 안 함)
+
+        estimator: "eskf"                  # "eskf"(15-state, 기본) | "gyro_odometry"(2D baseline, 비교용)
+        use_imu_orientation: false
+        max_dt: 0.5
+
+        # [SIM] 안정화된 필터로 재보정 (circle run3/run4, 2026-07-13):
+        #   raw 휠속도(≈GT속도)라 스케일≈1. path ratio run3=1.002/run4=0.963 @0.954 -> 0.96 확정.
+        #   (이전 0.786 은 필터가 발산한 데이터로 뽑은 잘못된 값이었음.)
+        wheel_scale: 0.988
+
+        # [SIM] URDF imu_joint rpy 0 0 0 확인됨 -> identity
+        imu_extrinsic:
+            roll: 0.0
+            pitch: 0.0
+            yaw: 0.0
+
+        # ESKF 노이즈/임계.
+        eskf:
+            planar: true                 # z 위치·수직속도를 0으로 pin (지상 로봇 평면 구속)
+            stationary_hold: true        # 정지 확정 시 pose 홀드(적분 중단) -> at-rest 드리프트 0
+            # [SIM] CRITICAL: ZARU 끔. sim 자이로 바이어스≈0인데, 불완전한 정지에서 ZARU 가 헛된
+            #   바이어스(~0.03rad/s)를 잡아 -> 이후 yaw 에서 계속 빼서 장시간 발산(10분 run: odom
+            #   yaw 235° vs GT 1215°). 끄면 odom yaw 가 자이로 완벽 추종(45s turn test diff 0.14°).
+            #   real(VN-100 실제 바이어스 존재) 은 켜야 함 -> local_odometry_real.yaml
+            zaru_enable: false           # SIM 전용. 자이로 바이어스 추정 비활성 (yaw 발산 방지)
+            # 프로세스 노이즈
+            gyro_noise: 0.000061         # rad/s/sqrt(Hz) (VN-100 density)
+            # [SIM] CRITICAL: Gazebo IMU 가속도는 쓰레기값(std~2.9, peak±26 m/s^2, 속도 수치미분 지터).
+            #   0.05 로 두면 필터가 이 가속도를 신뢰->속도 적분 발산(v_body 1e50, t~14s).
+            #   실측 가속도 std(≈2.9)에 맞춰 3.0 으로 -> 속도는 휠로만 잡고 발산 제거(run2~4 spike 0).
+            #   real(VN-100 실측 가속도 깨끗) 은 작은 값 사용 -> local_odometry_real.yaml
+            accel_noise: 3.0             # SIM 전용. Gazebo 가속도 노이즈 흡수(발산 방지)
+            gyro_bias_rw: 0.00001
+            accel_bias_rw: 0.0001
+            # 측정 노이즈 (stddev)
+            wheel_speed_sigma: 0.1       # 휠 전진속도
+            nhc_sigma: 0.03              # 비홀로노믹 측/수직 (작을수록 측면미끄러짐 억제 강함)
+            zupt_vel_sigma: 0.01         # 정지 시 속도=0 (tight)
+            zaru_sigma: 0.005            # 정지 시 각속도=0 (자이로 bias 보정)
+            # 정지 판정 (ZUPT/ZARU) 3중 조건
+            zupt_speed_thresh: 0.05      # m/s
+            zupt_gyro_thresh: 0.02       # rad/s
+            zupt_acc_var_thresh: 0.05    # accel-norm 분산
+            stationary_window: 20        # accel 분산 윈도우 샘플수

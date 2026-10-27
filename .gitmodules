@@ -47,14 +47,6 @@
 	path = src/localization/prior_map_localization
 	url = https://github.com/nevlife/prior_map_localization.git
 	branch = jazzy
-[submodule "src/localization/lidar_localization_ros2"]
-	path = src/localization/lidar_localization_ros2
-	url = https://github.com/nevlife/lidar_localization_ros2
-	branch = jazzy
-[submodule "src/localization/ndt_omp_ros2"]
-	path = src/localization/ndt_omp_ros2
-	url = https://github.com/rsasaki0109/ndt_omp_ros2
-	branch = humble
 [submodule "src/localization/small_gicp"]
 	path = src/localization/small_gicp
 	url = https://github.com/nevlife/small_gicp
@@ -86,4 +78,8 @@
 [submodule "src/vehicle/teleop_rover"]
 	path = src/vehicle/teleop_rover
 	url = https://github.com/nevlife/teleop_rover.git
+	branch = jazzy
+[submodule "src/localization/LIO-SAM"]
+	path = src/localization/LIO-SAM
+	url = https://github.com/nevlife/LIO-SAM
 	branch = jazzy

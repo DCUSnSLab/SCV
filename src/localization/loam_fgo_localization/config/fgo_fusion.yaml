@@ -1,0 +1,96 @@
+# ============================================================================
+#  fgo_fusion.yaml — FGO 파이프라인 (gps_measurement_node + fgo_fusion_node)
+#  DESIGN_FGO.md §3 참조. 튜닝 기준 bag: record_20260721_214104 (RTK→열화).
+# ============================================================================
+gps_measurement:
+  ros__parameters:
+    topics:
+      gps: "/ublox_gps_node/fix"
+      measurement: "/gps/measurement"
+      coarse_position: "/gps/coarse_position"   # PCD BBS 전역초기화 prior (기존 규약)
+      fix_state: "/gps/fix_state"
+    frames:
+      map: "map"
+    map_origin:
+      # record_20260714_150909 첫 GNSS 샘플 (hybrid_localization 과 동일 datum)
+      easting: 482278.2382001437
+      northing: 3974410.5352799334
+      utm_zone: 52
+      northern_hemisphere: true
+    gps:
+      # RTK 판정: status>=2(GBAS) AND σ<0.05  (record_20260721 RTK 구간 σ p50=0.037)
+      rtk_status_min: 2
+      rtk_sigma_max: 0.05
+      # fix-type별 σ floor (보고 공분산 과신 차단)
+      rtk_sigma_floor: 0.05
+      float_sigma_floor: 1.5
+      unknown_sigma: 5.0
+
+fgo_fusion:
+  ros__parameters:
+    topics:
+      odom: "/odom"
+      gps_measurement: "/gps/measurement"
+      pcd_global_pose: "/pcd/global_pose"
+      map_to_odom: "/localization/map_to_odom"  # 기존 토픽명 유지 (하위 호환)
+      global_pose: "/global_pose"
+      status: "/fgo/status"
+      gps_bias: "/fgo/gps_bias"
+    frames:
+      map: "map"
+      odom: "odom"
+      base_link: "base_link"
+    publish_tf: true
+    publish_rate_hz: 5.0     # 그래프 최적화(solve) 주기
+    tf_rate_hz: 50.0         # map->odom TF 재스탬프 발행 주기 (map->base 매끄러움 담당)
+
+    keyframe:
+      dist_m: 0.5
+      time_sec: 0.5
+    smoother:
+      lag_sec: 20.0
+
+    odom:                        # between factor 노이즈 (keyframe 간, 거리 비례)
+      pos_noise_per_m: 0.02
+      yaw_noise_per_m: 0.005
+      pos_noise_floor: 0.005
+      yaw_noise_floor: 0.002
+
+    gps:
+      factor_min_interval_sec: 0.2   # 10Hz -> 최대 5Hz 다운샘플
+      huber_k: 1.345
+      # 비RTK GPS는 기본적으로 융합에서 제외하고 PCD와 RTK로 전역 위치를 보정한다.
+      # GT 없는 비교만으로 비RTK GPS를 전역 보정에 추가하지 않도록 보수적으로 선택.
+      #   off      : 비RTK GPS 팩터 제외. PCD/RTK 공백에는 odom으로 이어가며,
+      #              워치독 DEGRADED로 상위 주행 모듈에 공백을 알린다.
+      #   inflated : float 을 σ x float_sigma_inflation 의 약한 닻으로 사용
+      #              (수십 분급 공백의 드리프트 상한이 필요할 때).
+      #   normal   : v1.1 이전 동작.
+      # PCD/RTK 장기 공백에서 FLOAT를 쓰려면 현장 오차를 확인한 뒤 inflated로 선택.
+      # off여도 gps_measurement의 coarse_position은 BBS 탐색 위치 prior로 유지된다.
+      float_mode: "off"
+      float_sigma_inflation: 4.0
+      # float 바이어스 추정. record_20260721 분석: float 오프셋이 분 단위로 수 m 배회
+      # -> RW 를 0.1 에서 소폭 상향 (주 추적 채널은 PCD; 이건 보조).
+      bias_node_interval_sec: 10.0
+      bias_random_walk_sigma: 0.2
+      bias_prior_sigma: 3.0
+      bias_rtk_prior_sigma: 0.1
+
+    pcd:
+      cauchy_k: 1.0
+      gate_chi2: 11.34             # 3-DoF 99%
+      # v1.1 (2026-07-31 락아웃 진단): Hessian 공분산 과신 보정 + relax 히스테리시스.
+      cov_scale: 100.0             # 보고 공분산 x100 (σ x10; cm급 -> dm급 현실화)
+      gate_relax_after: 10         # 연속 거부 N회 -> 완화 모드 (정상 통과 시 해제)
+      relax_cov_scale: 25.0        # 완화 수락 시 추가 인플레 (σ x5) — 부드러운 재획득
+      sigma_floor_xy: 0.05
+      sigma_floor_yaw: 0.01
+
+    init:
+      yaw_sigma: 3.1416            # 첫 keyframe 자유도 고정용 약한 prior
+      # GPS 단독 앵커: 이 거리만큼 GPS/odom 변위가 쌓이면 이동방향으로 yaw 추정 후 앵커
+      # (v1.1: run2 초기 발산 방지. PCD 가 먼저 수락되면 그쪽이 앵커)
+      yaw_init_min_travel: 2.0
+      yaw_init_prior_sigma: 0.3
+    watchdog_sec: 10.0             # 절대 팩터 공백 -> DEGRADED
