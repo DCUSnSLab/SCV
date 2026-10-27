@@ -1,38 +1,10 @@
-#gnss
-[submodule "src/sensor_pkg/ublox"]
-    path = src/sensor_pkg/ublox
-    url = https://github.com/DCUSnSLab/ublox.git
-    branch = humble
-[submodule "src/sensor_pkg/ntrip_client_ros2"]
-    path = src/sensor_pkg/ntrip_client_ros2
-    url = https://github.com/DCUSnSLab/ntrip_client_ros2.git
-    branch = humble
-[submodule "src/sensor_pkg/septentrio_gnss_driver"]
-    path = src/sensor_pkg/septentrio_gnss_driver
-    url = https://github.com/DCUSnSLab/septentrio_gnss_driver.git
-    branch = master
-
-#imu
-[submodule "src/sensor_pkg/vectornav"]
-    path = src/sensor_pkg/vectornav
-    url = https://github.com/DCUSnSLab/vectornav.git
-	branch = humble
-
-#lidar
-[submodule "src/sensor_pkg/velodyne"]
-	path = src/sensor_pkg/velodyne
-	url = https://github.com/DCUSnSLab/velodyne.git
-	branch = ros2
-
 #camera
-[submodule "src/sensor_pkg/zed-ros2-wrapper"]
-    path = src/sensor_pkg/zed-ros2-wrapper
-    url = https://github.com/DCUSnSLab/zed-ros2-wrapper.git
-    branch = ros2
 [submodule "src/sensor_pkg/realsense-ros"]
-    path = src/sensor_pkg/realsense-ros
-    url = https://github.com/DCUSnSLab/realsense-ros.git
-    branch = 4.56.4
+	path = src/sensor_pkg/realsense-ros
+	url = https://github.com/DCUSnSLab/realsense-ros
+	branch = flux/4.56.4
+
+#robot
 [submodule "src/vehicle/hunter_ros2"]
     path = src/vehicle/hunter_ros2
     url = https://github.com/DCUSnSLab/hunter_ros2.git
@@ -47,43 +19,23 @@
     branch = scv-devel
 
 #etc
-[submodule "src/localization/tiny_localization"]
-    path = src/localization/tiny_localization
-    url = https://github.com/DCUSnSLab/tiny_localization.git
-    branch = ros2-SCV
-[submodule "src/command_center"]
-    path = src/command_center
-    url = https://github.com/DCUSnSLab/command_center.git
-    branch = main
-[submodule "src/perception"]
-	path = src/perception
-	url = https://github.com/DCUSnSLab/SCV_Perception.git
-	branch = main_perception
-[submodule "src/localization/robot_localization"]
-	path = src/localization/robot_localization
-	url = https://github.com/nevlife/robot_localization
-    branch = humble-devel
-[submodule "src/monitoring/system_monitor"]
-	path = src/monitoring/system_monitor
-	url = https://github.com/nevlife/system_monitor
-    branch = main
-[submodule "src/localization/FAST_LIO_ROS2"]
-	path = src/localization/FAST_LIO_ROS2
-	url = https://github.com/nevlife/FAST_LIO_ROS2.git
-    branch = main
-[submodule "src/sensor_pkg/multi_cam_ros2"]
-	path = src/sensor_pkg/multi_cam_ros2
-	url = https://github.com/nevlife/multi_cam_ros2.git
-	branch = humble
-[submodule "src/sensor_pkg/sllidar_ros2"]
-	path = src/sensor_pkg/sllidar_ros2
-	url = https://github.com/DCUSnSLab/sllidar_ros2.git
+[submodule "src/capa"]
+	path = src/capa
+	url = https://github.com/DCUSnSLab/capa
+	branch = devel
+[submodule "src/flux"]
+	path = src/flux
+	url = https://github.com/DCUSnSLab/flux
+	branch = devel
+[submodule "src/tools/orma"]
+	path = src/tools/orma
+	url = https://github.com/DCUSnSLab/orma
 	branch = main
-[submodule "src/localization/SCV_localization_ros2"]
-	path = src/localization/SCV_localization_ros2
-	url = https://github.com/DCUSnSLab/SCV_localization_ros2.git
+[submodule "src/tools/rosbag2_dataset"]
+	path = src/tools/rosbag2_dataset
+	url = https://github.com/DCUSnSLab/rosbag2_dataset
 	branch = main
-[submodule "src/SCV_MapManager"]
-	path = src/SCV_MapManager
-	url = https://github.com/DCUSnSLab/SCV_MapManager.git
+[submodule "src/tools/rosbag_recorder"]
+	path = src/tools/rosbag_recorder
+	url = https://github.com/DCUSnSLab/rosbag_recorder
 	branch = main
