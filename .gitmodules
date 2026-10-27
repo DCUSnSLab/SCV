@@ -43,3 +43,43 @@
 	path = src/sensor_pkg/vectornav
 	url = https://github.com/DCUSnSLab/vectornav
 	branch = humble
+[submodule "src/localization/prior_map_localization"]
+	path = src/localization/prior_map_localization
+	url = https://github.com/nevlife/prior_map_localization.git
+	branch = jazzy
+[submodule "src/localization/lidar_localization_ros2"]
+	path = src/localization/lidar_localization_ros2
+	url = https://github.com/nevlife/lidar_localization_ros2
+	branch = jazzy
+[submodule "src/localization/ndt_omp_ros2"]
+	path = src/localization/ndt_omp_ros2
+	url = https://github.com/rsasaki0109/ndt_omp_ros2
+	branch = humble
+[submodule "src/localization/small_gicp"]
+	path = src/localization/small_gicp
+	url = https://github.com/nevlife/small_gicp
+	branch = jazzy
+[submodule "src/localization/robot_localization"]
+	path = src/localization/robot_localization
+	url = https://github.com/nevlife/robot_localization
+	branch = jazzy
+[submodule "src/localization/FAST_LIO"]
+	path = src/localization/FAST_LIO
+	url = https://github.com/nevlife/FAST_LIO
+	branch = jazzy
+[submodule "src/sensor_pkg/ntrip_client_ros2"]
+	path = src/sensor_pkg/ntrip_client_ros2
+	url = https://github.com/DCUSnSLab/ntrip_client_ros2
+	branch = humble
+[submodule "src/sensor_pkg/ublox"]
+	path = src/sensor_pkg/ublox
+	url = https://github.com/DCUSnSLab/ublox
+	branch = humble
+[submodule "src/sensor_pkg/zed-ros2-wrapper"]
+	path = src/sensor_pkg/zed-ros2-wrapper
+	url = https://github.com/nevlife/zed-ros2-wrapper
+	branch = master
+[submodule "src/sensor_pkg/velodyne"]
+	path = src/sensor_pkg/velodyne
+	url = https://github.com/nevlife/velodyne
+	branch = ros2
