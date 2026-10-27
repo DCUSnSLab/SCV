@@ -24,6 +24,8 @@
   <exec_depend>vectornav</exec_depend>
   <exec_depend>sllidar_ros2</exec_depend>
   <exec_depend>hunter_base</exec_depend>
+  <exec_depend>hunter_mux</exec_depend>
+  <exec_depend>rclcpp_components</exec_depend>
   <exec_depend>hunter2_description</exec_depend>
   <exec_depend>ntrip_client</exec_depend>
   <exec_depend>realsense2_camera</exec_depend>

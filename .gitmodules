@@ -8,7 +8,7 @@
 [submodule "src/vehicle/hunter_ros2"]
     path = src/vehicle/hunter_ros2
     url = https://github.com/DCUSnSLab/hunter_ros2.git
-    branch = humble-devel
+	branch = jazzy
 [submodule "src/vehicle/hunter2_description"]
 	path = src/vehicle/hunter2_description
 	url = https://github.com/DCUSnSLab/hunter2_description.git
@@ -83,3 +83,7 @@
 	path = src/sensor_pkg/velodyne
 	url = https://github.com/nevlife/velodyne
 	branch = ros2
+[submodule "src/vehicle/teleop_rover"]
+	path = src/vehicle/teleop_rover
+	url = https://github.com/nevlife/teleop_rover.git
+	branch = jazzy
