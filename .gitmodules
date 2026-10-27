@@ -39,3 +39,7 @@
 	path = src/tools/rosbag_recorder
 	url = https://github.com/DCUSnSLab/rosbag_recorder
 	branch = main
+[submodule "src/sensor_pkg/vectornav"]
+	path = src/sensor_pkg/vectornav
+	url = https://github.com/DCUSnSLab/vectornav
+	branch = humble
