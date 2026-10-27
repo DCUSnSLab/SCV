@@ -8,3 +8,4 @@ rosbag*
 yolo*
 __pycache__/
 *.pyc
+maps/
