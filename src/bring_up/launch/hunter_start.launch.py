@@ -17,10 +17,10 @@ def generate_launch_description():
         ])
     )
 
-    hunter_teleop_mux = IncludeLaunchDescription(
+    hunter_mux = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                FindPackageShare('hunter_teleop_mux'),
+                FindPackageShare('hunter_mux'),
                 'launch',
                 'mux_node.launch.py'
             ])
@@ -39,6 +39,6 @@ def generate_launch_description():
     
     return LaunchDescription([
         hunter_base_launch,
-        #hunter_teleop_mux,
+        #hunter_mux,
         robot_launch
     ])
