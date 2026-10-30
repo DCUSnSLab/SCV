@@ -83,3 +83,7 @@
 	path = src/localization/LIO-SAM
 	url = https://github.com/nevlife/LIO-SAM
 	branch = jazzy
+[submodule "src/system/system_monitor"]
+	path = src/system/system_monitor
+	url = https://github.com/nevlife/system_monitor
+	branch = main
