@@ -26,7 +26,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'd555_velodyne_bev = bring_up.d555_velodyne_bev:main',
         ],
     },
 )

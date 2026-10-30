@@ -1,0 +1,12 @@
+[package]
+name = "simple_mission_planner"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "simple_mission_planner_node"
+path = "src/main.rs"
+
+[dependencies]
+rclrs = "*"
+ros-env = "0.3"

@@ -17,17 +17,15 @@
   <exec_depend>python3-numpy</exec_depend>
   <exec_depend>python3-opencv</exec_depend>
 
-  <exec_depend>zed_wrapper</exec_depend>
-  <exec_depend>iahrs_ros2</exec_depend>
   <exec_depend>ublox_gps</exec_depend>
   <exec_depend>velodyne</exec_depend>
   <exec_depend>vectornav</exec_depend>
-  <exec_depend>sllidar_ros2</exec_depend>
   <exec_depend>hunter_base</exec_depend>
   <exec_depend>hunter2_description</exec_depend>
   <exec_depend>ntrip_client</exec_depend>
   <exec_depend>realsense2_camera</exec_depend>
-  <exec_depend>d555_velodyne_bev</exec_depend>
+  <exec_depend>simple_sd_map</exec_depend>
+  <exec_depend>simple_mission_planner</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
