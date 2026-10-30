@@ -1,0 +1,4 @@
+# Same width as flux and VNR. cargo fmt formats one Cargo package at a time, and flux keeps its own
+# rustfmt.toml, so submodules are not reformatted from here.
+edition = "2021"
+max_width = 100

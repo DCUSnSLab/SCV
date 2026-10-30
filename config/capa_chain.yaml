@@ -1,0 +1,41 @@
+# The one chain file of this workspace; every process finds it through CAPA_SPEC.
+# i7-12700F: P-cores are cpus 0-15, E-cores 16-19. capa_component_container binds the default group
+# of each prior_map_localization node; fast_lio and the EKFs do not bind yet, so their stages stay
+# unset.
+chains:
+  scan_to_pose:
+    target: soft
+    criticality: 1
+    stages:
+      - node: /prior_map_matcher
+        policy: fifo
+        priority: 60
+        # Cores 2-5 with their hyperthreads: 8 OpenMP threads aligned in 6.4 ms against 8.6 ms on
+        # the 4 cores alone.
+        cpus: [4, 5, 6, 7, 8, 9, 10, 11]
+        children: inherit # OpenMP team threads do this stage's work
+      - node: /ekf_map
+        policy: fifo
+        priority: 65
+        cpus: [12]
+  odom:
+    target: soft
+    criticality: 2
+    stages:
+      - node: /fast_lio
+        policy: fifo
+        priority: 68
+        cpus: [0, 2]
+        children: inherit # OpenMP team threads do this stage's work
+      - node: /lio_twist_relay
+        policy: fifo
+        priority: 68
+        cpus: [16]
+      - node: /wheel_twist_relay
+        policy: fifo
+        priority: 68
+        cpus: [17]
+      - node: /ekf_odom
+        policy: fifo
+        priority: 70
+        cpus: [14]

@@ -9,3 +9,4 @@ yolo*
 __pycache__/
 *.pyc
 maps/
+.cargo/

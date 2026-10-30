@@ -1,0 +1,24 @@
+# Submodules follow their own upstream style and are never formatted from here.
+line-length = 100
+extend-exclude = [
+  "src/sensor_pkg/realsense-ros",
+  "src/vehicle/hunter_ros2",
+  "src/vehicle/hunter2_description",
+  "src/vehicle/ugv_sdk",
+  "src/capa",
+  "src/flux",
+  "src/tools/orma",
+  "src/tools/rosbag2_dataset",
+  "src/tools/rosbag_recorder",
+  "src/sensor_pkg/vectornav",
+  "src/localization/prior_map_localization",
+  "src/localization/small_gicp",
+  "src/localization/robot_localization",
+  "src/localization/FAST_LIO",
+  "src/sensor_pkg/ntrip_client_ros2",
+  "src/sensor_pkg/ublox",
+  "src/sensor_pkg/zed-ros2-wrapper",
+  "src/sensor_pkg/velodyne",
+  "src/vehicle/teleop_rover",
+  "src/localization/LIO-SAM",
+]
