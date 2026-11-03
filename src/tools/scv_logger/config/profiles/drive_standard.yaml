@@ -10,6 +10,8 @@ groups:
 - imu_gnss
 - vehicle
 - localization
+- map
 - planning
 - control
+- system
 - tf

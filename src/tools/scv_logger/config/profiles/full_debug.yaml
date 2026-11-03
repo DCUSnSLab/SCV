@@ -9,11 +9,19 @@ groups:
 - camera_info
 - camera_compressed
 - camera_raw
+- camera_extra
 - imu_gnss
+- sensor_aux
 - vehicle
 - localization
+- localization_debug
+- map
 - planning
+- planning_viz
 - control
+- perception
+- perception_viz
+- system
 - tf
 options:
   split_duration_sec: 60

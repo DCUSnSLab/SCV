@@ -16,4 +16,5 @@ topics:
 - /vectornav/pose
 - /ublox_gps_node/fix
 - /ublox_gps_node/fix_velocity
+- /global_pose
 - /final_cmd

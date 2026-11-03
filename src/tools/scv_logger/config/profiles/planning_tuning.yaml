@@ -6,7 +6,9 @@ extends: base
 groups:
 - vehicle
 - localization
+- map
 - planning
+- planning_viz
 - control
 - tf
 options:

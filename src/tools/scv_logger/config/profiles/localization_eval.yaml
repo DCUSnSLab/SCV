@@ -6,7 +6,9 @@ extends: base
 add_groups:
 - lidar
 - imu_gnss
+- sensor_aux
 - vehicle
 - localization
+- map
 - control
 - tf

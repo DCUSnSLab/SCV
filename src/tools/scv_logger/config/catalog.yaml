@@ -16,6 +16,24 @@ auto_markers:
   label: 원격 명령 모드
 - topic: /vehicle/estop_status
   label: 비상정지
+- topic: /behavior_status
+  label: 행동 상태
+- topic: /bt/behavior
+  label: BT 행동
+- topic: /map_anchor/mode
+  label: 위치추정 모드
+- topic: /emergency_stop
+  label: 비상정지(계획기)
+  field: data
+- topic: /scenario/status
+  label: 시나리오 진행
+- topic: /sequential_planner_status
+  label: 경로계획 상태
+- topic: /hunter_status
+  label: 차량 제어 모드
+  field: control_mode
+- topic: /gps/fix_state
+  label: GPS fix 등급
 value_checks:
   stamp_delay_max_s: 0.5
   stamp_future_max_s: 0.2
@@ -28,16 +46,23 @@ groups:
         type: velodyne_msgs/msg/VelodyneScan
         hz: 10.0
         required: true
-        size_kb: 220.0
-        description: VLP-32C 원시 패킷 (크기는 추정값)
+        size_kb: 184.0
+        description: VLP-32C 원시 패킷 (151 패킷/스캔, 실측 184 KB)
       /front/scan:
         type: sensor_msgs/msg/LaserScan
         hz: 10.0
-        size_kb: 6.0
+        size_kb: 5.8
+        description: RPLIDAR C1 전방 (720빔, 실측)
       /rear/scan:
         type: sensor_msgs/msg/LaserScan
         hz: 10.0
-        size_kb: 6.0
+        size_kb: 5.8
+        description: RPLIDAR C1 후방 (720빔, 실측)
+      /scan:
+        type: sensor_msgs/msg/LaserScan
+        hz: 10.0
+        size_kb: 7.0
+        description: velodyne_laserscan (Velodyne 한 링 → 2D 스캔, 크기 추정)
   lidar_points:
     description: 변환된 포인트클라우드 (큼 — 패킷으로 대체 가능)
     topics:
@@ -45,68 +70,123 @@ groups:
         type: sensor_msgs/msg/PointCloud2
         hz: 10.0
         heavy: true
-        size_kb: 1246.0
+        size_kb: 1276.0
+        description: organized XYZIRT (실측 1.28 MB)
   camera_info:
-    description: 카메라 내부 파라미터 — 영상(원본·압축)을 쓰려면 같이 녹화
+    description: 카메라 내부 파라미터·외부 파라미터 — 영상(원본·압축)을 쓰려면 같이 녹화
     topics:
       /camera/camera/color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 30.0
-        size_kb: 0.4
+        size_kb: 0.38
       /camera/camera/depth/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 30.0
-        size_kb: 0.4
+        size_kb: 0.38
       /camera/camera/aligned_depth_to_color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 30.0
-        size_kb: 0.4
+        size_kb: 0.38
       /d435_left/d435_left/color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 15.0
-        size_kb: 0.4
+        size_kb: 0.38
       /d435_center/d435_center/color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 15.0
-        size_kb: 0.4
+        size_kb: 0.38
       /d435_right/d435_right/color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 15.0
-        size_kb: 0.4
+        size_kb: 0.38
       /d435_left/d435_left/depth/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 15.0
-        size_kb: 0.4
+        size_kb: 0.38
       /d435_center/d435_center/depth/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 15.0
-        size_kb: 0.4
+        size_kb: 0.38
       /d435_right/d435_right/depth/camera_info:
+        type: sensor_msgs/msg/CameraInfo
         hz: 15.0
-        size_kb: 0.4
+        size_kb: 0.38
+      /camera/camera/extrinsics/depth_to_color:
+        type: realsense2_camera_msgs/msg/Extrinsics
+        size_kb: 0.1
+        latched: true
+        description: D555 depth→color 외부 파라미터 (1회성)
+      /d435_left/d435_left/aligned_depth_to_color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
+        hz: 15.0
+        size_kb: 0.38
+      /d435_left/d435_left/extrinsics/depth_to_color:
+        type: realsense2_camera_msgs/msg/Extrinsics
+        size_kb: 0.1
+        latched: true
+        description: D435 left depth→color 외부 파라미터 (1회성)
+      /d435_center/d435_center/aligned_depth_to_color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
+        hz: 15.0
+        size_kb: 0.38
+      /d435_center/d435_center/extrinsics/depth_to_color:
+        type: realsense2_camera_msgs/msg/Extrinsics
+        size_kb: 0.1
+        latched: true
+        description: D435 center depth→color 외부 파라미터 (1회성)
+      /d435_right/d435_right/aligned_depth_to_color/camera_info:
+        type: sensor_msgs/msg/CameraInfo
+        hz: 15.0
+        size_kb: 0.38
+      /d435_right/d435_right/extrinsics/depth_to_color:
+        type: realsense2_camera_msgs/msg/Extrinsics
+        size_kb: 0.1
+        latched: true
+        description: D435 right depth→color 외부 파라미터 (1회성)
   camera_compressed:
     description: 압축 영상 (image_transport) — 크기는 추정값, 카탈로그 스캔으로 갱신할 것
     topics:
       /camera/camera/color/image_raw/compressed:
+        type: sensor_msgs/msg/CompressedImage
         hz: 30.0
-        size_kb: 100.0
+        size_kb: 145.0
+        description: D555 color JPEG 896x504 (실측 145 KB)
       /camera/camera/depth/image_rect_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
         hz: 30.0
         size_kb: 250.0
       /camera/camera/aligned_depth_to_color/image_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
         hz: 30.0
-        size_kb: 280.0
-        description: D555 정렬 depth 압축(PNG) — 크기는 추정값
+        size_kb: 212.0
+        description: D555 정렬 depth PNG (실측 약 212 KB)
       /d435_left/d435_left/color/image_raw/compressed:
+        type: sensor_msgs/msg/CompressedImage
         hz: 15.0
-        size_kb: 150.0
+        size_kb: 300.0
+        description: D435 color JPEG 1280x720 — 크기 추정
       /d435_center/d435_center/color/image_raw/compressed:
+        type: sensor_msgs/msg/CompressedImage
         hz: 15.0
-        size_kb: 150.0
+        size_kb: 300.0
+        description: D435 color JPEG 1280x720 — 크기 추정
       /d435_right/d435_right/color/image_raw/compressed:
+        type: sensor_msgs/msg/CompressedImage
         hz: 15.0
-        size_kb: 150.0
+        size_kb: 300.0
+        description: D435 color JPEG 1280x720 — 크기 추정
       /d435_left/d435_left/depth/image_rect_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
         hz: 15.0
         size_kb: 250.0
         description: D435 depth 압축(PNG) — 크기는 추정값
       /d435_center/d435_center/depth/image_rect_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
         hz: 15.0
         size_kb: 250.0
         description: D435 depth 압축(PNG) — 크기는 추정값
       /d435_right/d435_right/depth/image_rect_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
         hz: 15.0
         size_kb: 250.0
         description: D435 depth 압축(PNG) — 크기는 추정값
@@ -117,154 +197,609 @@ groups:
         type: sensor_msgs/msg/Image
         hz: 30.0
         heavy: true
-        size_kb: 1323.0
+        size_kb: 1355.0
         monitor_via: /camera/camera/color/camera_info
       /camera/camera/depth/image_rect_raw:
         type: sensor_msgs/msg/Image
         hz: 30.0
         heavy: true
-        size_kb: 795.0
+        size_kb: 226.0
         monitor_via: /camera/camera/depth/camera_info
+        description: decimation 2 적용 448x252 (추정)
       /camera/camera/aligned_depth_to_color/image_raw:
         type: sensor_msgs/msg/Image
         hz: 30.0
         heavy: true
-        size_kb: 882.0
+        size_kb: 903.0
         monitor_via: /camera/camera/aligned_depth_to_color/camera_info
         description: D555 color 해상도에 맞춘 depth (16UC1, align_depth.enable) — 크기는 추정값
       /d435_left/d435_left/color/image_raw:
         type: sensor_msgs/msg/Image
         hz: 15.0
         heavy: true
-        size_kb: 2700.0
+        size_kb: 2765.0
         monitor_via: /d435_left/d435_left/color/camera_info
       /d435_center/d435_center/color/image_raw:
         type: sensor_msgs/msg/Image
         hz: 15.0
         heavy: true
-        size_kb: 2700.0
+        size_kb: 2765.0
         monitor_via: /d435_center/d435_center/color/camera_info
       /d435_right/d435_right/color/image_raw:
         type: sensor_msgs/msg/Image
         hz: 15.0
         heavy: true
-        size_kb: 2700.0
+        size_kb: 2765.0
         monitor_via: /d435_right/d435_right/color/camera_info
       /d435_left/d435_left/depth/image_rect_raw:
         type: sensor_msgs/msg/Image
         hz: 15.0
         heavy: true
-        size_kb: 795.0
+        size_kb: 814.0
         monitor_via: /d435_left/d435_left/depth/camera_info
       /d435_center/d435_center/depth/image_rect_raw:
         type: sensor_msgs/msg/Image
         hz: 15.0
         heavy: true
-        size_kb: 795.0
+        size_kb: 814.0
         monitor_via: /d435_center/d435_center/depth/camera_info
       /d435_right/d435_right/depth/image_rect_raw:
         type: sensor_msgs/msg/Image
         hz: 15.0
         heavy: true
-        size_kb: 795.0
+        size_kb: 814.0
         monitor_via: /d435_right/d435_right/depth/camera_info
+  camera_extra:
+    description: 추가 영상 (큼) — D435 정렬 depth(원본·압축), D555 포인트클라우드
+    topics:
+      /d435_left/d435_left/aligned_depth_to_color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 1843.0
+        monitor_via: /d435_left/d435_left/aligned_depth_to_color/camera_info
+      /d435_center/d435_center/aligned_depth_to_color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 1843.0
+        monitor_via: /d435_center/d435_center/aligned_depth_to_color/camera_info
+      /d435_right/d435_right/aligned_depth_to_color/image_raw:
+        type: sensor_msgs/msg/Image
+        hz: 15.0
+        heavy: true
+        size_kb: 1843.0
+        monitor_via: /d435_right/d435_right/aligned_depth_to_color/camera_info
+      /camera/camera/depth/color/points:
+        type: sensor_msgs/msg/PointCloud2
+        hz: 30.0
+        heavy: true
+        size_kb: 1500.0
+        description: D555 포인트클라우드 xyz+rgb (BEV 노드가 구독해 항상 계산됨, 크기 추정)
+      /d435_left/d435_left/aligned_depth_to_color/image_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
+        hz: 15.0
+        size_kb: 400.0
+        description: D435 정렬 depth PNG 1280x720 — 크기 추정
+      /d435_center/d435_center/aligned_depth_to_color/image_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
+        hz: 15.0
+        size_kb: 400.0
+        description: D435 정렬 depth PNG 1280x720 — 크기 추정
+      /d435_right/d435_right/aligned_depth_to_color/image_raw/compressedDepth:
+        type: sensor_msgs/msg/CompressedImage
+        hz: 15.0
+        size_kb: 400.0
+        description: D435 정렬 depth PNG 1280x720 — 크기 추정
   imu_gnss:
-    description: IMU·GNSS — GNSS 기준 주기는 미확인 (실외에서 카탈로그 스캔으로 채울 것)
+    description: IMU(VN-100 100 Hz)·GNSS(ZED-F9P 10 Hz)
     topics:
       /vectornav/imu:
         type: sensor_msgs/msg/Imu
-        hz: 20.0
+        hz: 100.0
         required: true
-        size_kb: 0.4
+        size_kb: 0.32
+        description: VN-100 800 Hz / rateDivisor 8 (실측 100 Hz)
       /vectornav/pose:
-        hz: 20.0
-        size_kb: 0.4
+        type: geometry_msgs/msg/PoseWithCovarianceStamped
+        hz: 100.0
+        size_kb: 0.37
       /ublox_gps_node/fix:
         type: sensor_msgs/msg/NavSatFix
-        size_kb: 0.2
+        hz: 10.0
+        size_kb: 0.14
       /ublox_gps_node/fix_velocity:
-        size_kb: 0.4
-      /navpvt:
-        size_kb: 0.2
+        type: geometry_msgs/msg/TwistWithCovarianceStamped
+        hz: 10.0
+        size_kb: 0.37
+      /ublox_gps_node/navpvt:
+        type: ublox_msgs/msg/NavPVT
+        hz: 10.0
+        size_kb: 0.13
+        description: u-blox NAV-PVT (fix 종류·carrier solution·정확도)
       /rxmrtcm:
+        type: ublox_msgs/msg/RxmRTCM
+        size_kb: 0.012
+        description: 수신기가 받은 RTCM 보정 (보정 수신 시마다, 실측 약 1.7 Hz)
+  sensor_aux:
+    description: 센서 부가 출력 — 자기장·온도·기압, GNSS 상세 상태, RTK 보정, 카메라 IMU
+    topics:
+      /vectornav/imu_uncompensated:
+        type: sensor_msgs/msg/Imu
+        hz: 100.0
+        size_kb: 0.32
+        description: 바이어스 보정 전 IMU
+      /vectornav/magnetic:
+        type: sensor_msgs/msg/MagneticField
+        hz: 100.0
+        size_kb: 0.12
+      /vectornav/temperature:
+        type: sensor_msgs/msg/Temperature
+        hz: 100.0
+        size_kb: 0.05
+      /vectornav/pressure:
+        type: sensor_msgs/msg/FluidPressure
+        hz: 100.0
+        size_kb: 0.05
+      /navstatus:
+        type: ublox_msgs/msg/NavSTATUS
+        hz: 10.0
+        size_kb: 0.04
+        description: u-blox NAV-STATUS
+      /navcov:
+        type: ublox_msgs/msg/NavCOV
+        hz: 10.0
         size_kb: 0.1
+        description: u-blox 위치·속도 공분산
+      /navclock:
+        type: ublox_msgs/msg/NavCLOCK
+        hz: 10.0
+        size_kb: 0.04
+      /navstate:
+        type: ublox_msgs/msg/NavSAT
+        hz: 0.5
+        size_kb: 0.5
+        description: u-blox NAV-SAT 위성 목록 (드라이버 이름이 navstate, 20 epoch마다)
+      /navrelposned:
+        type: ublox_msgs/msg/NavRELPOSNED9
+        hz: 10.0
+        size_kb: 0.08
+        description: RTK 상대 위치 (moving base 없으면 의미 적음)
+      /monhw:
+        type: ublox_msgs/msg/MonHW
+        hz: 1.0
+        size_kb: 0.1
+        description: 수신기 하드웨어 상태 (안테나·재밍)
+      /rtcm:
+        type: rtcm_msgs/msg/Message
+        size_kb: 0.5
+        description: NTRIP 보정 데이터 (수신 시마다)
+      /nmea:
+        type: nmea_msgs/msg/Sentence
+        size_kb: 0.1
+        description: u-blox NMEA 문장
+      /camera/camera/gyro/sample:
+        type: sensor_msgs/msg/Imu
+        hz: 200.0
+        size_kb: 0.3
+        description: D555 내장 자이로 (주기 추정, best-effort)
+      /camera/camera/accel/sample:
+        type: sensor_msgs/msg/Imu
+        hz: 100.0
+        size_kb: 0.3
+        description: D555 내장 가속도 (주기 추정, best-effort)
   vehicle:
-    description: 차대 상태·휠 속도·조향
+    description: 차대 상태·휠 속도·조향·휠 오도메트리
     topics:
       /hunter_status:
         type: hunter_msgs/msg/HunterStatus
         hz: 50.0
         required: true
-        size_kb: 0.2
+        size_kb: 0.15
       /hunter/velocity:
         type: std_msgs/msg/Float64
         hz: 50.0
-        size_kb: 0.1
+        size_kb: 0.01
       /current_speed:
-        size_kb: 0.1
+        type: std_msgs/msg/Float64
+        hz: 50.0
+        size_kb: 0.01
       /current_steer_angle:
-        size_kb: 0.1
+        type: std_msgs/msg/Float64
+        hz: 50.0
+        size_kb: 0.01
+      /odometry/wheel:
+        type: nav_msgs/msg/Odometry
+        hz: 50.0
+        size_kb: 0.72
+        description: hunter_base 휠 오도메트리 (TF 없음)
+      /joint_states:
+        type: sensor_msgs/msg/JointState
+        hz: 10.0
+        size_kb: 0.4
+        description: joint_state_publisher (조향·바퀴 관절, 값은 0)
       /odom:
-        size_kb: 0.7
+        type: nav_msgs/msg/Odometry
+        hz: 30.0
+        size_kb: 0.72
+        description: ekf_filter_node_odom 출력 (field_drive, 30 Hz). local_odometry_node를 쓰면 IMU 주기로 나옴
   localization:
-    description: 위치 추정 출력 (field_drive 스택)
+    description: 위치 추정 출력 (field_drive dual EKF·FAST-LIO·map_anchor, pcd_loc 시 PCD 정합)
     topics:
       /odometry/global:
         type: nav_msgs/msg/Odometry
         hz: 30.0
         required: true
-        size_kb: 0.7
-        description: 기준 주기는 dual EKF frequency 30 Hz 기준 (참고값)
+        size_kb: 0.72
+        description: map_anchor 출력 (/odom마다 1회, 30 Hz)
       /odometry/fast_lio:
-        size_kb: 0.7
+        type: nav_msgs/msg/Odometry
+        hz: 10.0
+        size_kb: 0.72
+        description: FAST-LIO (스캔당 1회)
       /gps/fix_gated:
         type: sensor_msgs/msg/NavSatFix
-        size_kb: 0.2
+        hz: 10.0
+        size_kb: 0.14
+        description: gps_fix_gate 통과 fix (불량 fix는 빠짐)
+      /global_pose:
+        type: nav_msgs/msg/Odometry
+        hz: 50.0
+        size_kb: 0.72
+        description: 최종 전역 위치 (map->base_link, map_anchor 융합 결과, stamp는 최신 /odom 기준)
+      /localization/map_to_odom:
+        type: geometry_msgs/msg/TransformStamped
+        hz: 50.0
+        size_kb: 0.1
+        description: map_anchor의 map->odom 보정값 (TF와 같은 값)
       /map_anchor/mode:
         type: std_msgs/msg/String
-        size_kb: 0.1
+        size_kb: 0.05
+        description: map_anchor 모드 (변할 때만)
       /map_anchor/yaw_corr:
+        type: std_msgs/msg/Float32
+        size_kb: 0.01
+        description: yaw 보정값 (갱신 시)
+      /map_anchor/yaw_converged:
+        type: std_msgs/msg/Bool
+        hz: 1.0
+        size_kb: 0.01
+        description: yaw 수렴 여부
+      /odometry/gps:
+        type: nav_msgs/msg/Odometry
+        size_kb: 0.72
+        description: navsat_transform GPS 오도메트리 (새 fix마다, 최대 10 Hz)
+      /initialpose:
+        type: geometry_msgs/msg/PoseWithCovarianceStamped
+        size_kb: 0.4
+        description: 초기 위치 지정 (RViz·map_anchor)
+      /pcd/global_pose:
+        type: nav_msgs/msg/Odometry
+        size_kb: 0.72
+        description: PCD 정합 위치 (pcd_loc:=true일 때, 2~10 Hz)
+      /lio_sam_localization/state:
+        type: std_msgs/msg/String
         size_kb: 0.1
+        latched: true
+        description: PCD 정합기 상태 (pcd_loc)
+      /lio_sam_localization/correction_status:
+        type: std_msgs/msg/String
+        size_kb: 0.1
+        description: PCD 정합 보정 상태 (pcd_loc)
+      /gps/coarse_position:
+        type: geometry_msgs/msg/PoseWithCovarianceStamped
+        size_kb: 0.4
+        description: gps_measurement (pcd_loc)
+      /gps/fix_state:
+        type: std_msgs/msg/String
+        size_kb: 0.1
+        latched: true
+        description: GPS fix 등급 (pcd_loc, 변할 때만)
+      /diagnostics:
+        type: diagnostic_msgs/msg/DiagnosticArray
+        size_kb: 1.0
+        description: EKF·Velodyne·u-blox 진단 (약 1 Hz씩)
+  localization_debug:
+    description: 위치 추정 디버그 (큼) — FAST-LIO 정합 클라우드, PCD 정합 경로
+    topics:
+      /cloud_registered:
+        type: sensor_msgs/msg/PointCloud2
+        hz: 10.0
+        heavy: true
+        size_kb: 350.0
+        description: FAST-LIO 정합 스캔 (camera_init 좌표, 크기 추정)
+      /cloud_registered_body:
+        type: sensor_msgs/msg/PointCloud2
+        hz: 10.0
+        heavy: true
+        size_kb: 350.0
+        description: FAST-LIO 정합 스캔 (body 좌표, 크기 추정)
+      /lio_sam_localization/path:
+        type: nav_msgs/msg/Path
+        description: PCD 정합 경로 — 메시지가 계속 커짐 (30분이면 약 1.4 MB/개)
+  map:
+    description: 지도 (map_provider, 시작 시 1회 발행) — bag만으로 재생하려면 필요. 큰 PCD·semantic grid는 제외
+    topics:
+      /map_provider_node/utm:
+        type: map_interfaces/msg/UtmLayer
+        size_kb: 0.1
+        latched: true
+        description: 지도 원점(UTM)
+      /map_provider_node/graph:
+        type: map_interfaces/msg/GraphLayer
+        size_kb: 50.0
+        latched: true
+        description: 경로 그래프
+      /map_provider_node/semantic:
+        type: map_interfaces/msg/SemanticLayer
+        size_kb: 100.0
+        latched: true
+        description: semantic 레이어
+      /map_provider_node/pcd/full/corner_path:
+        type: std_msgs/msg/String
+        size_kb: 0.1
+        latched: true
+        description: PCD 지도 경로 (pcd_loc)
+      /map_provider_node/pcd/full/surf_path:
+        type: std_msgs/msg/String
+        size_kb: 0.1
+        latched: true
+        description: PCD 지도 경로 (pcd_loc)
   planning:
-    description: 경로·행동·코스트맵
+    description: 경로·행동·목표·코스트맵
     topics:
       /behavior_status:
-        size_kb: 0.2
+        type: std_msgs/msg/String
+        size_kb: 0.05
+        description: NORMAL / BLOCKED_WAIT / CREEP / ASSIST (변할 때만)
       /planned_path_detailed:
-        size_kb: 20.0
+        type: command_center_interfaces/msg/PlannedPath
+        size_kb: 100.0
+        description: 전역 경로 (sequential은 1회성 transient_local, A*는 목표마다)
       /multiple_waypoints:
-        size_kb: 5.0
+        type: command_center_interfaces/msg/MultipleWaypoints
+        size_kb: 1.0
+        description: 제어기 목표 웨이포인트 (변할 때, waypoint_manage면 5 Hz)
       /costmap:
         type: nav_msgs/msg/OccupancyGrid
         hz: 10.0
         size_kb: 40.0
-      /costmap_keepout:
+        description: local_costmap 200x200
+      /costmap/keepout:
+        type: nav_msgs/msg/OccupancyGrid
+        hz: 10.0
         size_kb: 40.0
+        description: semantic keepout (local_costmap separate 출력)
+      /goal_status:
+        type: command_center_interfaces/msg/ControllerGoalStatus
+        hz: 10.0
+        size_kb: 0.1
+        description: 제어기 목표 도달 상태
+      /target_waypoints:
+        type: command_center_interfaces/msg/TargetWaypoints
+        size_kb: 0.2
+        description: 현재 목표 노드 (약 1 Hz + 변경 시)
+      /mppi_update_params:
+        type: command_center_interfaces/msg/MPPIParams
+        size_kb: 0.5
+        description: 제어 파라미터 프로파일 변경
+      /pause_command:
+        type: command_center_interfaces/msg/PauseCommand
+        size_kb: 0.1
+        description: 일시정지 명령
+      /emergency_stop:
+        type: std_msgs/msg/Bool
+        size_kb: 0.01
+        description: 목표 포기 후 비상정지 (20 Hz 반복)
+      /blocked_assist_request:
+        type: std_msgs/msg/String
+        size_kb: 0.1
+        description: ASSIST 요청
+      /request_replan:
+        type: command_center_interfaces/msg/RequestReplan
+        size_kb: 0.1
+        description: 재계획 요청
+      /behavior/localization_hint:
+        type: std_msgs/msg/String
+        size_kb: 0.05
+        description: BT 위치추정 힌트
+      /bt/behavior:
+        type: std_msgs/msg/String
+        size_kb: 0.05
+        description: BT 현재 행동 (bt·shadow)
+      /sequential_planner_status:
+        type: std_msgs/msg/String
+        size_kb: 0.1
+        description: sequential_planner 상태
+      /sequential_path_nav:
+        type: nav_msgs/msg/Path
+        hz: 1.0
+        size_kb: 20.0
+        description: sequential 경로 (Path)
+      /planned_path:
+        type: nav_msgs/msg/Path
+        size_kb: 20.0
+        description: A* 경로 (route_source:=graph)
+      /route_status:
+        type: command_center_interfaces/msg/RouteStatus
+        size_kb: 0.2
+        description: A* 경로 상태
+      /route_request:
+        type: command_center_interfaces/msg/RouteRequest
+        size_kb: 0.2
+        description: route_tool 경로 요청
+      /goal_node_id:
+        type: std_msgs/msg/String
+        size_kb: 0.05
+        description: scenario_runner 목표 노드
+      /scenario/status:
+        type: std_msgs/msg/String
+        hz: 1.0
+        size_kb: 0.1
+        description: scenario_runner 진행 (GATE / RUN / DONE)
+      /goal_pose:
+        type: geometry_msgs/msg/PoseStamped
+        size_kb: 0.1
+        description: loop_manager 목표
+  planning_viz:
+    description: 계획·제어 시각화 (RViz용, 구독할 때만 나오는 것 포함)
+    topics:
+      /mppi_optimal_path:
+        type: smppi/msg/OptimalPath
+        hz: 5.0
+        size_kb: 8.0
+        description: MPPI 최적 경로 (구독 시)
+      /smppi/debug:
+        type: smppi/msg/MPPIDebug
+        hz: 5.0
+        size_kb: 1.0
+        description: MPPI 디버그 (구독 시)
+      /smppi/rollouts:
+        type: smppi/msg/RolloutSamples
+        hz: 5.0
+        size_kb: 30.0
+        description: MPPI 샘플 궤적 (구독 시)
+      /smppi_visualization:
+        type: visualization_msgs/msg/MarkerArray
+        hz: 5.0
+        size_kb: 30.0
+      /sequential_path_markers:
+        type: visualization_msgs/msg/MarkerArray
+        hz: 1.0
+        size_kb: 100.0
+      /planned_path_markers:
+        type: visualization_msgs/msg/MarkerArray
+        size_kb: 50.0
+      /map_provider_node/graph/markers:
+        type: visualization_msgs/msg/MarkerArray
+        size_kb: 100.0
+        latched: true
+        description: 지도 그래프 마커 (1회성)
   control:
     description: 제어 명령·주행 모드·비상정지
     topics:
       /cmd_vel:
         type: geometry_msgs/msg/Twist
         hz: 10.0
-        size_kb: 0.1
+        size_kb: 0.05
+        description: teleop/mux 입력 (현재 기본 구성에선 소비자 없음)
       /final_cmd:
         type: geometry_msgs/msg/Twist
-        size_kb: 0.1
+        hz: 10.0
+        size_kb: 0.05
+        description: smppi → hunter_base 실제 명령 (10 Hz)
       /vehicle/mux_status:
+        type: std_msgs/msg/String
         size_kb: 0.1
+        description: hunter_teleop_mux가 켜졌을 때만 (현재 hunter_start에서 주석 처리)
       /vehicle/estop_status:
         size_kb: 0.1
+        description: hunter_teleop_mux가 켜졌을 때만 (현재 hunter_start에서 주석 처리)
       /remote/cmd_mode:
         size_kb: 0.1
+        description: hunter_teleop_mux가 켜졌을 때만 (현재 hunter_start에서 주석 처리)
+  perception:
+    description: 인지 결과 (각 런치를 따로 켰을 때만 나옴)
+    topics:
+      /detected_objects_3d:
+        type: tracking_msgs/msg/DetectedObjectArray
+        size_kb: 5.0
+        description: PointPillars 3D 검출 (GPU 추론 속도에 따름)
+      /tracked_objects_3d:
+        type: tracking_msgs/msg/DetectedObjectArray
+        size_kb: 5.0
+        description: observation_tracker 추적 결과
+      /yolo/detections:
+        type: perception_interface/msg/DetectionArray
+        size_kb: 5.0
+        description: YOLO 세그멘테이션 검출 (카메라 주기)
+      /perception/points_nonground:
+        type: sensor_msgs/msg/PointCloud2
+        hz: 10.0
+        heavy: true
+        size_kb: 300.0
+        description: ground_filter 비지면 점 (scv_system costmap 입력, 크기 추정)
+      /velodyne_points_curb:
+        type: sensor_msgs/msg/PointCloud2
+        hz: 10.0
+        heavy: true
+        size_kb: 300.0
+        description: 연석 점 (field_drive costmap 입력, 크기 추정)
+      /ptl/scan:
+        type: sensor_msgs/msg/LaserScan
+        hz: 10.0
+        size_kb: 2.0
+        description: pointcloud_to_laserscan
+      /traversability/terrain_status:
+        type: std_msgs/msg/String
+        hz: 2.0
+        size_kb: 0.5
+        description: 노면 분석 (JSON)
+  perception_viz:
+    description: 인지 시각화 (큼)
+    topics:
+      /bev/d555_velodyne/image:
+        type: sensor_msgs/msg/Image
+        hz: 10.0
+        heavy: true
+        size_kb: 600.0
+        description: D555+Velodyne BEV (sensors_start 기본 켜짐)
+      /bev/d555_velodyne/mask:
+        type: sensor_msgs/msg/Image
+        hz: 10.0
+        size_kb: 200.0
+        description: BEV 마스크
+      /yolo/seg_image:
+        type: sensor_msgs/msg/Image
+        heavy: true
+        size_kb: 1355.0
+        description: YOLO 오버레이 영상
+      /detections/visual_markers:
+        type: visualization_msgs/msg/MarkerArray
+        size_kb: 20.0
+      /pcdet/observation_tracks:
+        type: visualization_msgs/msg/MarkerArray
+        size_kb: 20.0
+        description: 추적 마커 (구독 시)
+      /traversability/terrain_markers:
+        type: visualization_msgs/msg/MarkerArray
+        hz: 2.0
+        size_kb: 20.0
+  system:
+    description: 시스템 자원 (system_monitor 실행 시, 1 Hz)
+    topics:
+      /system_monitor/cpu:
+        type: system_monitor_msgs/msg/CpuMetrics
+        hz: 1.0
+        size_kb: 0.2
+      /system_monitor/memory:
+        type: system_monitor_msgs/msg/MemoryMetrics
+        hz: 1.0
+        size_kb: 0.2
+      /system_monitor/disk:
+        type: system_monitor_msgs/msg/DiskMetrics
+        hz: 1.0
+        size_kb: 0.2
+      /system_monitor/network:
+        type: system_monitor_msgs/msg/NetworkMetrics
+        hz: 1.0
+        size_kb: 0.2
+      /system_monitor/gpu:
+        type: system_monitor_msgs/msg/GpuMetrics
+        hz: 1.0
+        size_kb: 0.2
   tf:
     description: 좌표 변환·로봇 모델
     topics:
       /tf:
         type: tf2_msgs/msg/TFMessage
-        size_kb: 1.0
+        size_kb: 0.6
+        description: EKF odom→base_link 30 Hz, map_anchor map→odom 30 Hz, RSP 관절 10 Hz
       /tf_static:
         type: tf2_msgs/msg/TFMessage
+        size_kb: 1.5
         latched: true
       /robot_description:
         type: std_msgs/msg/String
+        size_kb: 13.7
         latched: true
