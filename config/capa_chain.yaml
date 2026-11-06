@@ -1,7 +1,7 @@
 # The one chain file of this workspace; every process finds it through CAPA_SPEC.
 # i7-12700F: P-cores are cpus 0-15, E-cores 16-19. capa_component_container binds the default group
-# of each prior_map_localization node; fast_lio and the EKFs do not bind yet, so their stages stay
-# unset.
+# of each prior_map_localization node, and the mins subscribe main binds its own; fast_lio and the
+# EKFs do not bind yet, so their stages stay unset.
 chains:
   scan_to_pose:
     target: soft
@@ -39,3 +39,13 @@ chains:
         policy: fifo
         priority: 70
         cpus: [14]
+  vio:
+    target: soft
+    criticality: 3
+    stages:
+      # One thread runs the whole estimator. OpenCV workers it starts drop to SCHED_OTHER on all cpus.
+      # Cpu 13 shares a P-core with the light /ekf_map.
+      - node: /mins
+        policy: fifo
+        priority: 66
+        cpus: [13]

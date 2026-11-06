@@ -20,5 +20,4 @@ extend-exclude = [
   "src/sensor_pkg/zed-ros2-wrapper",
   "src/sensor_pkg/velodyne",
   "src/vehicle/teleop_rover",
-  "src/localization/LIO-SAM",
 ]

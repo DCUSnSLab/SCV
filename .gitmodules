@@ -79,11 +79,11 @@
 	path = src/vehicle/teleop_rover
 	url = https://github.com/nevlife/teleop_rover.git
 	branch = jazzy
-[submodule "src/localization/LIO-SAM"]
-	path = src/localization/LIO-SAM
-	url = https://github.com/nevlife/LIO-SAM
-	branch = jazzy
 [submodule "src/system/system_monitor"]
 	path = src/system/system_monitor
 	url = https://github.com/nevlife/system_monitor
 	branch = main
+[submodule "src/localization/MINS"]
+	path = src/localization/MINS
+	url = https://github.com/nevlife/MINS
+	branch = jazzy
