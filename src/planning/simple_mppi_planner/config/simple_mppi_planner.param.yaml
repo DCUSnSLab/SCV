@@ -1,0 +1,68 @@
+/**:
+  ros__parameters:
+    motion_model: ackermann
+    control_rate_hz: 20.0
+    pose_timeout_sec: 0.3
+    grid_timeout_sec: 0.5
+    occupied_threshold: 50
+    # Below this the odometry yaw rate does not determine the steering angle.
+    min_observable_speed: 0.1
+
+    # Current Hunter 2, from hunter_params.hpp and the URDF.
+    vehicle:
+      min_speed: 0.0
+      max_speed: 1.5
+      max_accel: 0.8
+      max_decel: 1.0
+      # Rear axle in base_link.
+      kinematic_center_x: -0.28
+    ackermann:
+      wheelbase: 0.65
+      # Central angle, 1.31 m minimum turning radius.
+      max_steer: 0.461
+      steer_time_constant: 0.2
+      terminal_heading: 20.0
+
+    # Four circles of 0.40 m cover the 0.98 x 0.745 m body, centered 0.046 m ahead of base_link. They
+    # need a 0.80 m gap, where two circles of 0.45 m needed 0.90 m.
+    # Distances run between cell centers, so the radius needs no extra cell of margin.
+    footprint:
+      circle_x: [-0.298, -0.069, 0.161, 0.39]
+      radius: 0.40
+
+    route:
+      spacing: 0.2
+      cruise_speed: 1.0
+      stop_decel: 0.5
+      goal_tolerance: 0.3
+      # 5 m of route per cycle at this spacing.
+      search_points: 25
+
+    stuck:
+      min_progress: 0.3
+      window_sec: 5.0
+
+    mppi:
+      sample_count: 1500
+      # 3 s at 0.1 s, 4.5 m at top speed against 10 m of grid in each direction.
+      horizon_steps: 30
+      step_sec: 0.1
+      lambda: 0.3
+      alpha: 0.9
+      non_biased_rate: 0.1
+      noise_correlation: 0.9
+      speed_std: 0.4
+      turn_std: 0.3
+      smoothing_half_window: 4
+      # 3.9 ms per cycle on one core of an i7-14700K (doc/simple_mppi_planner.md), of 50 ms.
+      thread_count: 1
+      seed: 1
+
+    cost:
+      path_distance: 0.2
+      path_heading: 0.2
+      speed: 2.0
+      progress: 10.0
+      clearance: 20.0
+      clearance_margin: 0.5
+      collision: 1000.0

@@ -1,0 +1,62 @@
+/**:
+  ros__parameters:
+    motion_model: diff
+    control_rate_hz: 20.0
+    pose_timeout_sec: 0.3
+    grid_timeout_sec: 0.5
+    occupied_threshold: 50
+    # Below this the odometry yaw rate does not determine the steering angle.
+    min_observable_speed: 0.1
+
+    # Example values for a small differential-drive base; set them for the real vehicle.
+    vehicle:
+      min_speed: 0.0
+      max_speed: 1.5
+      max_accel: 0.8
+      max_decel: 1.0
+      # Wheel axis at the base frame origin.
+      kinematic_center_x: 0.0
+    diff:
+      max_angular_speed: 1.5
+      max_angular_accel: 3.0
+
+    footprint:
+      circle_x: [0.0]
+      radius: 0.45
+
+    route:
+      spacing: 0.2
+      cruise_speed: 1.0
+      stop_decel: 0.5
+      goal_tolerance: 0.3
+      # 5 m of route per cycle at this spacing.
+      search_points: 25
+
+    stuck:
+      min_progress: 0.3
+      window_sec: 5.0
+
+    mppi:
+      sample_count: 1500
+      # 3 s at 0.1 s, 4.5 m at top speed against 10 m of grid in each direction.
+      horizon_steps: 30
+      step_sec: 0.1
+      lambda: 0.3
+      alpha: 0.9
+      non_biased_rate: 0.1
+      noise_correlation: 0.9
+      speed_std: 0.4
+      turn_std: 0.6
+      smoothing_half_window: 4
+      # 2.8 ms per cycle on one core of an i7-14700K (doc/simple_mppi_planner.md), of 50 ms.
+      thread_count: 1
+      seed: 1
+
+    cost:
+      path_distance: 0.2
+      path_heading: 0.2
+      speed: 2.0
+      progress: 10.0
+      clearance: 20.0
+      clearance_margin: 0.5
+      collision: 1000.0
