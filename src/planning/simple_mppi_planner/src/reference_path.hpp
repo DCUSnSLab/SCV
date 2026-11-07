@@ -19,7 +19,7 @@ struct RoutePoint
 };
 
 // The route resampled at a fixed spacing, since simple_mission_planner sends only SD map nodes,
-// which can be many meters apart. Replaces the distance, angle and speed fields .
+// which can be many meters apart.
 class ReferencePath
 {
 public:

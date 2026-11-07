@@ -7,11 +7,11 @@
   <maintainer email="nevlife000720@gmail.com">nevlife</maintainer>
   <license>Apache-2.0</license>
 
-  <depend>rclrs</depend>
   <depend>geometry_msgs</depend>
   <depend>nav_msgs</depend>
-  <depend>std_msgs</depend>
+  <depend>rclrs</depend>
   <depend>simple_sd_map_msgs</depend>
+  <depend>std_msgs</depend>
 
   <export>
     <build_type>ament_cargo</build_type>

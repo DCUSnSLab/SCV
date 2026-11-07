@@ -4,11 +4,17 @@ from geometry_msgs.msg import Point
 import rclpy
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-from rclpy.qos import DurabilityPolicy, QoSProfile, ReliabilityPolicy
+from rclpy.qos import DurabilityPolicy
+from rclpy.qos import QoSProfile
+from rclpy.qos import ReliabilityPolicy
 from simple_sd_map import osm
-from simple_sd_map_msgs.msg import SdEdge, SdMap, SdNode
-from std_msgs.msg import ColorRGBA, Header
-from visualization_msgs.msg import Marker, MarkerArray
+from simple_sd_map_msgs.msg import SdEdge
+from simple_sd_map_msgs.msg import SdMap
+from simple_sd_map_msgs.msg import SdNode
+from std_msgs.msg import ColorRGBA
+from std_msgs.msg import Header
+from visualization_msgs.msg import Marker
+from visualization_msgs.msg import MarkerArray
 
 
 def key_values(tags):
@@ -19,13 +25,24 @@ def to_msg(header, nodes, edges):
     return SdMap(
         header=header,
         nodes=[
-            SdNode(id=n.id, x=n.x, y=n.y, latitude=n.latitude, longitude=n.longitude,
-                   tags=key_values(n.tags))
+            SdNode(
+                id=n.id,
+                x=n.x,
+                y=n.y,
+                latitude=n.latitude,
+                longitude=n.longitude,
+                tags=key_values(n.tags),
+            )
             for n in nodes
         ],
         edges=[
-            SdEdge(way_id=e.way_id, from_id=e.from_id, to_id=e.to_id, length=e.length,
-                   tags=key_values(e.tags))
+            SdEdge(
+                way_id=e.way_id,
+                from_id=e.from_id,
+                to_id=e.to_id,
+                length=e.length,
+                tags=key_values(e.tags),
+            )
             for e in edges
         ],
     )
@@ -38,7 +55,7 @@ def markers(header, sd_map):
     by_id = {n.id: n for n in sd_map.nodes}
 
     def base():
-        m = Marker(header=header, ns="sd_map", action=Marker.ADD)
+        m = Marker(header=header, ns='sd_map', action=Marker.ADD)
         m.pose.orientation.w = 1.0
         return m
 
@@ -61,24 +78,27 @@ def markers(header, sd_map):
 
 class SdMapNode(Node):
     def __init__(self):
-        super().__init__("simple_sd_map")
-        osm_file = self.declare_parameter("osm_file", rclpy.Parameter.Type.STRING).value
-        frame_id = self.declare_parameter("frame_id", rclpy.Parameter.Type.STRING).value
-        zone = self.declare_parameter("utm_zone", rclpy.Parameter.Type.INTEGER).value
-        easting = self.declare_parameter("origin_easting", rclpy.Parameter.Type.DOUBLE).value
-        northing = self.declare_parameter("origin_northing", rclpy.Parameter.Type.DOUBLE).value
+        super().__init__('simple_sd_map')
+        osm_file = self.declare_parameter('osm_file', rclpy.Parameter.Type.STRING).value
+        frame_id = self.declare_parameter('frame_id', rclpy.Parameter.Type.STRING).value
+        zone = self.declare_parameter('utm_zone', rclpy.Parameter.Type.INTEGER).value
+        easting = self.declare_parameter('origin_easting', rclpy.Parameter.Type.DOUBLE).value
+        northing = self.declare_parameter('origin_northing', rclpy.Parameter.Type.DOUBLE).value
 
         nodes, edges = osm.load(osm_file, zone, (easting, northing))
         header = Header(stamp=self.get_clock().now().to_msg(), frame_id=frame_id)
         sd_map = to_msg(header, nodes, edges)
         # Published once; transient local hands the map to subscribers that start later.
-        latched = QoSProfile(depth=1, reliability=ReliabilityPolicy.RELIABLE,
-                             durability=DurabilityPolicy.TRANSIENT_LOCAL)
-        self.map_pub = self.create_publisher(SdMap, "~/output/sd_map", latched)
-        self.marker_pub = self.create_publisher(MarkerArray, "~/output/markers", latched)
+        latched = QoSProfile(
+            depth=1,
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+        )
+        self.map_pub = self.create_publisher(SdMap, '~/output/sd_map', latched)
+        self.marker_pub = self.create_publisher(MarkerArray, '~/output/markers', latched)
         self.marker_pub.publish(markers(header, sd_map))
         self.map_pub.publish(sd_map)
-        self.get_logger().info(f"{osm_file}: {len(nodes)} nodes, {len(edges)} edges")
+        self.get_logger().info(f'{osm_file}: {len(nodes)} nodes, {len(edges)} edges')
 
 
 def main():
@@ -89,5 +109,5 @@ def main():
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

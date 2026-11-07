@@ -40,7 +40,6 @@ double twist_to_inner_steer(
   double linear, double angular, double wheelbase, double track, double max_steer_angle);
 // hunter_messenger.hpp ConvertInnerAngleToCentral.
 double inner_to_central_steer(double inner, double wheelbase, double track);
-// value inside (-band, band) becomes 0; outside it passes unchanged.
 double apply_dead_band(double value, double band);
 
 class VehicleModel

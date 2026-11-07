@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Runs this repository's linters and formatters on the files under the given paths, including a
 # repository from dependencies.repos. Those are in .gitignore, so ruff, prettier and yamllint would
-# skip them and src/.clang-format would turn clang-format off; this run lifts both.
+# skip them; this run lifts that.
 # Usage: scripts/lint.sh PATH...
 set -eu
 root=$(cd "$(dirname "$0")/.." && pwd)
@@ -17,6 +17,8 @@ for path in "$@"; do
   [ -d "$dir" ] || dir=$(dirname "$path")
   top=$(git -C "$dir" rev-parse --show-toplevel)
   while IFS= read -r file; do
+    # Vendored code keeps the style of the project it came from.
+    case /$file in */thirdparty/*) continue ;; esac
     files+=("$(realpath --relative-to="$root" "$top/$file")")
   done < <(git -C "$top" ls-files -co --exclude-standard -- "$(realpath --relative-to="$top" "$path")")
 done
@@ -39,7 +41,6 @@ with open(f"{root}/.pre-commit-config.yaml") as stream:
 extra = {
     "ruff-format": ["--no-force-exclude"],
     "prettier": ["--ignore-path", ".prettierignore"],
-    "clang-format": [f"--style=file:{root}/.clang-format"],
 }
 for repo in config["repos"]:
     for hook in repo["hooks"]:

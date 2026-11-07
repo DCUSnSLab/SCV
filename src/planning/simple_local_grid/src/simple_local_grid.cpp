@@ -19,7 +19,7 @@ namespace
 
 using FluxCloud = sensor_msgs::flux_msg::PointCloud2;
 
-constexpr int kThrottleMs = 5000;
+constexpr int throttle_ms = 5000;
 
 ObstacleFilter read_filter(rclcpp::Node & node)
 {
@@ -111,7 +111,7 @@ void SimpleLocalGrid::on_points(
     base_from_sensor = tf2::transformToEigen(
       tf_buffer_.lookupTransform(base_frame_, sensor_frame, stamp, tf_timeout_));
   } catch (const tf2::TransformException & e) {
-    RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), kThrottleMs, "scan dropped: %s", e.what());
+    RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), throttle_ms, "scan dropped: %s", e.what());
     return;
   }
   grid_.center_on(grid_from_base.translation().x(), grid_from_base.translation().y());

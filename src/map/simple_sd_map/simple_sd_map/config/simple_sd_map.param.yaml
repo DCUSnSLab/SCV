@@ -1,7 +1,7 @@
 # UTM origin of the d2_20260813_v2 bundle (manifest.yaml), so x, y match the localization map frame.
 /**:
   ros__parameters:
-    osm_file: /home/nev/josm/path.osm
+    osm_file: d2_20260813_v2/path.osm # relative to the workspace's maps/ (copied by hand)
     frame_id: map
     utm_zone: 52
     origin_easting: 482278.238

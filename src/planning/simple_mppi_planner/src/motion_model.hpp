@@ -58,7 +58,7 @@ inline double max_turn(const VehicleParams & vehicle)
 }
 
 // The input pair bicycle model plus speed, integrated with its first-order steer
-// lag. Upstream models a center of gravity; here the state is the rear axle, so there is no slip.
+// lag. The state is the rear axle, so there is no slip.
 inline void step(const VehicleParams & vehicle, const Control & control, double dt, State * state)
 {
   state->speed +=

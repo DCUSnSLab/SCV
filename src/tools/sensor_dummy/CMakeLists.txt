@@ -30,6 +30,7 @@ find_package(GeographicLib REQUIRED)
 
 add_library(sensor_dummy_core STATIC
   src/fault.cpp
+  src/frames.cpp
   src/gnss_model.cpp
   src/imu_model.cpp
   src/lidar_model.cpp
@@ -73,6 +74,7 @@ if(BUILD_TESTING)
 
   ament_add_gtest(test_sensor_dummy_core
     test/test_fault.cpp
+    test/test_frames.cpp
     test/test_gnss_model.cpp
     test/test_imu_model.cpp
     test/test_lidar_model.cpp
@@ -82,6 +84,9 @@ if(BUILD_TESTING)
   target_link_libraries(test_sensor_dummy_core sensor_dummy_core)
   target_compile_definitions(test_sensor_dummy_core PRIVATE
     VLP32C_CALIBRATION="${CMAKE_CURRENT_SOURCE_DIR}/../../sensor_pkg/velodyne/velodyne_pointcloud/params/VeloView-VLP-32C.yaml")
+
+  ament_add_gtest(test_sensor_dummy_messages test/test_fault_params.cpp test/test_fault_traits.cpp)
+  target_link_libraries(test_sensor_dummy_messages ${node_libraries})
 
   ament_add_pytest_test(test_launch_helpers test/test_launch_helpers.py)
   add_launch_test(test/test_sensor_dummy_launch.py TIMEOUT 240 ENV ROS_DOMAIN_ID=87)

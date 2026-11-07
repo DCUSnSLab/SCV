@@ -2,6 +2,7 @@
 
 #include "fault_params.hpp"
 #include "fault_traits.hpp"
+#include "frames.hpp"
 #include "imu_model.hpp"
 
 #include <rclcpp_components/register_node_macro.hpp>
@@ -23,11 +24,11 @@ namespace
 {
 using sensor_msgs::msg::PointField;
 
-const std::vector<std::string> kChannels{"lidar", "imu", "gnss",        "hunter",
-                                         "odom",  "tf",  "ground_truth"};
+const std::vector<std::string> channels{"lidar", "imu", "gnss",        "hunter",
+                                        "odom",  "tf",  "ground_truth"};
 
 // hunter_messenger.hpp PublishOdometryToROS: the covariance of pose and twist.
-constexpr std::array<double, 36> kOdomCovariance{
+constexpr std::array<double, 36> odom_covariance{
   0.001, 0.0, 0.0,       0.0, 0.0,       0.0, 0.0, 0.001, 0.0, 0.0,       0.0, 0.0,
   0.0,   0.0, 1000000.0, 0.0, 0.0,       0.0, 0.0, 0.0,   0.0, 1000000.0, 0.0, 0.0,
   0.0,   0.0, 0.0,       0.0, 1000000.0, 0.0, 0.0, 0.0,   0.0, 0.0,       0.0, 1000.0};
@@ -80,16 +81,8 @@ std::vector<PointField> cloud_fields()
     field("y", 4, PointField::FLOAT32),
     field("z", 8, PointField::FLOAT32),
     field("intensity", 12, PointField::FLOAT32),
-    field("ring", kRingOffset, PointField::UINT16),
-    field("time", kTimeOffset, PointField::FLOAT32)};
-}
-
-Eigen::Vector3d map_position(const Pose2d & base, const Eigen::Vector3d & mount)
-{
-  const double c = std::cos(base.yaw);
-  const double s = std::sin(base.yaw);
-  return {
-    base.x + c * mount.x() - s * mount.y(), base.y + s * mount.x() + c * mount.y(), mount.z()};
+    field("ring", ring_offset, PointField::UINT16),
+    field("time", time_offset, PointField::FLOAT32)};
 }
 }  // namespace
 
@@ -102,7 +95,7 @@ SensorSim::SensorSim(const rclcpp::NodeOptions & options)
   map_frame_ = declare_parameter<std::string>("frames.map");
   odom_frame_ = declare_parameter<std::string>("frames.odom");
   base_frame_ = declare_parameter<std::string>("frames.base");
-  for (const auto & channel : kChannels) {
+  for (const auto & channel : channels) {
     faults_.emplace(channel, declare_fault(*this, "fault." + channel));
   }
 
@@ -240,7 +233,7 @@ void SensorSim::setup_lidar()
   cloud_.fields = cloud_fields();
   cloud_.is_bigendian = false;
   cloud_.is_dense = false;
-  cloud_.point_step = kPointStep;
+  cloud_.point_step = point_step;
   cloud_.width = static_cast<std::uint32_t>(beams_.size());
   cloud_.height = static_cast<std::uint32_t>(lidar_config_.blocks);
   cloud_.row_step = cloud_.width * cloud_.point_step;
@@ -504,23 +497,19 @@ void SensorSim::on_hunter_tick()
 
 nav_msgs::msg::Odometry SensorSim::make_wheel_odometry(const rclcpp::Time & stamp) const
 {
-  const Pose2d pose = vehicle_->base_pose();
-  const double c = std::cos(odom_origin_.yaw);
-  const double s = std::sin(odom_origin_.yaw);
-  const double dx = pose.x - odom_origin_.x;
-  const double dy = pose.y - odom_origin_.y;
+  const Pose2d pose = relative_pose(odom_origin_, vehicle_->base_pose());
 
   nav_msgs::msg::Odometry odom;
   odom.header.stamp = stamp;
   odom.header.frame_id = odom_frame_;
   odom.child_frame_id = base_frame_;
-  odom.pose.pose.position.x = c * dx + s * dy;
-  odom.pose.pose.position.y = -s * dx + c * dy;
-  odom.pose.pose.orientation = yaw_quaternion(pose.yaw - odom_origin_.yaw);
+  odom.pose.pose.position.x = pose.x;
+  odom.pose.pose.position.y = pose.y;
+  odom.pose.pose.orientation = yaw_quaternion(pose.yaw);
   odom.twist.twist.linear.x = vehicle_->speed();
   odom.twist.twist.angular.z = vehicle_->yaw_rate();
-  odom.pose.covariance = kOdomCovariance;
-  odom.twist.covariance = kOdomCovariance;
+  odom.pose.covariance = odom_covariance;
+  odom.twist.covariance = odom_covariance;
   return odom;
 }
 

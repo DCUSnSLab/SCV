@@ -8,7 +8,7 @@ namespace sensor_dummy
 {
 namespace
 {
-constexpr double kDt = 0.005;
+constexpr double time_step = 0.005;
 
 VehicleParams hunter_v2(MotionModel model)
 {
@@ -17,9 +17,9 @@ VehicleParams hunter_v2(MotionModel model)
 
 void run(VehicleModel & vehicle, double start, double duration)
 {
-  const int steps = static_cast<int>(duration / kDt);
+  const int steps = static_cast<int>(duration / time_step);
   for (int i = 0; i < steps; ++i) {
-    vehicle.step(start + i * kDt, kDt);
+    vehicle.step(start + i * time_step, time_step);
   }
 }
 
@@ -93,9 +93,9 @@ TEST(VehicleModelTest, DelayHoldsTheCommandBack)
   params.cmd_delay_s = 0.1;
   VehicleModel vehicle(params, {0.0, 0.0, 0.0});
   vehicle.command(0.0, 1.0, 0.0);
-  vehicle.step(0.095, kDt);
+  vehicle.step(0.095, time_step);
   EXPECT_DOUBLE_EQ(vehicle.speed(), 0.0);
-  vehicle.step(0.1, kDt);
+  vehicle.step(0.1, time_step);
   EXPECT_DOUBLE_EQ(vehicle.speed(), 1.0);
 }
 

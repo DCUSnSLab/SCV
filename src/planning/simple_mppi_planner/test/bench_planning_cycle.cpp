@@ -23,8 +23,8 @@ using Clock = std::chrono::steady_clock;
 namespace
 {
 
-constexpr int kWarmup = 50;
-constexpr int kCycles = 2000;
+constexpr int warmup = 50;
+constexpr int cycles = 2000;
 
 double milliseconds_since(Clock::time_point start)
 {
@@ -54,8 +54,8 @@ int main(int argc, char ** argv)
     simple_mppi_planner::footprint_of(vehicle));
   const std::vector<std::pair<double, double>> waypoints{{0.0, 0.0}, {12.0, 0.0}};
   const ReferencePath route(
-    waypoints, simple_mppi_planner::kRouteSpacing, simple_mppi_planner::kCruiseSpeed,
-    simple_mppi_planner::kStopDecel);
+    waypoints, simple_mppi_planner::route_spacing, simple_mppi_planner::route_cruise_speed,
+    simple_mppi_planner::route_stop_decel);
 
   // The 200 x 200 local grid with obstacles on the path and along both sides.
   std::vector<std::int8_t> cells(40000, 0);
@@ -79,10 +79,10 @@ int main(int argc, char ** argv)
   State state;
   state.speed = 1.0;
   std::vector<double> solve_times;
-  for (int i = 0; i < kWarmup + kCycles; ++i) {
+  for (int i = 0; i < warmup + cycles; ++i) {
     const auto start = Clock::now();
     solver.solve(state, route, 0, map);
-    if (i >= kWarmup) {
+    if (i >= warmup) {
       solve_times.push_back(milliseconds_since(start));
     }
   }

@@ -16,6 +16,15 @@ colcon build --symlink-install
 
 일부 저장소 안에는 submodule이 있어서 `--recursive`로 받아야 한다.
 
+## 지도
+
+지도 파일은 git에 넣지 않는다. 작업공간 루트의 `maps/`에 직접 복사한다. 설정 파일은 `maps/` 기준 상대 경로를 적고, launch가 앞에 작업공간의 `maps/` 경로를 붙인다.
+
+| 파일                                                     | 설정                                                |
+| -------------------------------------------------------- | --------------------------------------------------- |
+| `maps/d2_20260813_v2/ndt_map_0p4.pcd`, `full_corner.pcd` | `prior_map_localization`의 `config/map.param.yaml`  |
+| `maps/d2_20260813_v2/path.osm`                           | `simple_sd_map`의 `config/simple_sd_map.param.yaml` |
+
 ## 저장소 버전 올리기
 
 1. `dependencies.repos`에서 해당 저장소의 `version`을 새 커밋으로 바꾼다.
@@ -30,7 +39,7 @@ colcon build --symlink-install
 scripts/install_hooks.sh
 ```
 
-- `src/.clang-format`이 `src/` 전체의 clang-format을 끈다. 이 저장소의 패키지는 자기 폴더의 `.clang-format`으로 켠다.
+- 편집기의 저장 시 자동 포맷을 쓰면 포크 파일도 바뀐다. clang-format은 가장 가까운 `.clang-format`을 찾아 쓰므로, 자기 설정이 없는 포크에는 이 저장소의 스타일이 적용된다.
 - `ruff`, `prettier`, `yamllint`은 `.gitignore`를 따른다. `flake8`은 커밋할 때 추적 파일에만 돈다.
 - 별도 저장소로 받은 직접 작성 패키지는 `scripts/lint.sh <경로>`로 같은 설정을 적용한다. 그 저장소에 설정 파일을 따로 두지 않는다.
 - 새 저장소를 `dependencies.repos`에 넣으면 `.gitignore`에도 넣는다. 빠뜨리면 커밋할 때 `repos-ignored` 검사가 알린다.

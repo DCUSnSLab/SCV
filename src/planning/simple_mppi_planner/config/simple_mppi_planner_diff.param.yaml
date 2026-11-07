@@ -48,7 +48,7 @@
       speed_std: 0.4
       turn_std: 0.6
       smoothing_half_window: 4
-      # 2.8 ms per cycle on one core of an i7-14700K (doc/simple_mppi_planner.md), of 50 ms.
+      # Solve p50 2.8 ms on one i7-14700K core (bench_planning_cycle diff), of 50 ms.
       thread_count: 1
       seed: 1
 

@@ -17,9 +17,9 @@ OSM = """<?xml version='1.0' encoding='UTF-8'?>
 
 
 def load(tmp_path):
-    path = tmp_path / "map.osm"
+    path = tmp_path / 'map.osm'
     path.write_text(OSM)
-    to_utm = Transformer.from_crs("EPSG:4326", "EPSG:32652", always_xy=True)
+    to_utm = Transformer.from_crs('EPSG:4326', 'EPSG:32652', always_xy=True)
     return osm.load(str(path), 52, to_utm.transform(128.8040, 35.9130))
 
 
@@ -38,5 +38,5 @@ def test_places_nodes_relative_to_the_origin(tmp_path):
 
 def test_keeps_tags(tmp_path):
     nodes, edges = load(tmp_path)
-    assert nodes[0].tags == {"kind": "corner"}
-    assert edges[0].tags == {"highway": "footway"}
+    assert nodes[0].tags == {'kind': 'corner'}
+    assert edges[0].tags == {'highway': 'footway'}

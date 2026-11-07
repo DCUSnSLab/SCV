@@ -77,28 +77,28 @@ inline CostParams cost_params(const VehicleParams & v)
   return c;
 }
 
-constexpr double kRouteSpacing = 0.2;
-constexpr double kCruiseSpeed = 1.0;
-constexpr double kStopDecel = 0.5;
+constexpr double route_spacing = 0.2;
+constexpr double route_cruise_speed = 1.0;
+constexpr double route_stop_decel = 0.5;
 
 // A fixed 40 x 40 m world around the origin at the resolution of the local grid.
 class World
 {
 public:
-  static constexpr int kSize = 400;
-  static constexpr double kResolution = 0.1;
-  static constexpr double kOrigin = -20.0;
+  static constexpr int side_cells = 400;
+  static constexpr double resolution = 0.1;
+  static constexpr double origin = -20.0;
 
-  World() : cells_(std::size_t(kSize) * kSize, 0) {}
+  World() : cells_(std::size_t(side_cells) * side_cells, 0) {}
 
   void add_box(double min_x, double min_y, double max_x, double max_y)
   {
-    for (int row = 0; row < kSize; ++row) {
-      for (int col = 0; col < kSize; ++col) {
-        const double x = kOrigin + (col + 0.5) * kResolution;
-        const double y = kOrigin + (row + 0.5) * kResolution;
+    for (int row = 0; row < side_cells; ++row) {
+      for (int col = 0; col < side_cells; ++col) {
+        const double x = origin + (col + 0.5) * resolution;
+        const double y = origin + (row + 0.5) * resolution;
         if (x >= min_x && x <= max_x && y >= min_y && y <= max_y) {
-          cells_[std::size_t(row) * kSize + col] = 100;
+          cells_[std::size_t(row) * side_cells + col] = 100;
         }
       }
     }
@@ -107,7 +107,7 @@ public:
   DistanceMap distance_map() const
   {
     DistanceMap map;
-    map.build({cells_.data(), kSize, kSize, kResolution, kOrigin, kOrigin, 50});
+    map.build({cells_.data(), side_cells, side_cells, resolution, origin, origin, 50});
     return map;
   }
 

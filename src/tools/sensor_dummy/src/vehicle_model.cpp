@@ -9,11 +9,11 @@ namespace sensor_dummy
 {
 namespace
 {
-constexpr double kSteerAngleTolerance = 0.005;  // hunter_messenger.hpp steer_angle_tolerance
+constexpr double steer_angle_tolerance = 0.005;  // hunter_messenger.hpp steer_angle_tolerance
 
 double lag(double value, double target, double tau, double dt)
 {
-  return tau <= 0.0 ? target : value + (target - value) * (1.0 - std::exp(-dt / tau));
+  return value + (target - value) * (1.0 - std::exp(-dt / tau));
 }
 }  // namespace
 
@@ -48,7 +48,7 @@ double twist_to_inner_steer(
 
 double inner_to_central_steer(double inner, double wheelbase, double track)
 {
-  if (std::abs(inner) <= kSteerAngleTolerance) {
+  if (std::abs(inner) <= steer_angle_tolerance) {
     return 0.0;
   }
   const double radius = wheelbase / std::tan(std::abs(inner)) + track / 2.0;
@@ -115,7 +115,7 @@ void VehicleModel::step(double t, double dt)
     params_.speed_dead_band_mps);
   const double previous_speed = speed_;
   speed_ = lag(speed_, target_speed, params_.speed_tau_s, dt);
-  acceleration_ = dt > 0.0 ? (speed_ - previous_speed) / dt : 0.0;
+  acceleration_ = (speed_ - previous_speed) / dt;
 
   if (params_.model == MotionModel::Ackermann) {
     update_ackermann(dt);

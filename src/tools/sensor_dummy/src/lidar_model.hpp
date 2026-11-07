@@ -16,9 +16,9 @@ namespace sensor_dummy
 
 // velodyne_pointcloud OrganizedCloudXYZIRT: x y z intensity (float32), ring (uint16), time
 // (float32) with no padding.
-inline constexpr std::size_t kPointStep = 22;
-inline constexpr std::size_t kRingOffset = 16;
-inline constexpr std::size_t kTimeOffset = 18;
+inline constexpr std::size_t point_step = 22;
+inline constexpr std::size_t ring_offset = 16;
+inline constexpr std::size_t time_offset = 18;
 
 struct LaserBeam
 {

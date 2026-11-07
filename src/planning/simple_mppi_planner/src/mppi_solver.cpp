@@ -12,7 +12,7 @@ namespace simple_mppi_planner
 namespace
 {
 
-constexpr int kControlDim = 2;
+constexpr int control_dim = 2;
 
 }  // namespace
 
@@ -27,9 +27,9 @@ MppiSolver::MppiSolver(
   // driving, or a vehicle that cannot turn at zero speed never starts its turn. Diff can.
   min_speed_alignment_(vehicle.model == MotionModel::Ackermann ? 0.0 : -1.0),
   smoother_(mppi.smoothing_half_window),
-  mean_(std::size_t(mppi.horizon_steps) * kControlDim, 0.0),
-  issued_(std::size_t(mppi.smoothing_half_window) * kControlDim, 0.0),
-  samples_(std::size_t(mppi.sample_count) * mppi.horizon_steps * kControlDim),
+  mean_(std::size_t(mppi.horizon_steps) * control_dim, 0.0),
+  issued_(std::size_t(mppi.smoothing_half_window) * control_dim, 0.0),
+  samples_(std::size_t(mppi.sample_count) * mppi.horizon_steps * control_dim),
   scores_(mppi.sample_count),
   weights_(mppi.sample_count)
 {
@@ -50,11 +50,11 @@ void MppiSolver::reset()
 void MppiSolver::sample_controls()
 {
   const int biased_count = static_cast<int>((1.0 - mppi_.non_biased_rate) * mppi_.sample_count);
-  const int length = mppi_.horizon_steps * kControlDim;
+  const int length = mppi_.horizon_steps * control_dim;
   const double turn_limit = max_turn(vehicle_);
-  // Upstream draws each step independently, and its steer lag then averages the noise away: the
-  // samples stay near the warm start and never reach around an obstacle. AR(1) noise holds a
-  // turn long enough to matter, at the same variance.
+  // Noise drawn independently per step is averaged away by the steer lag: the samples stay near
+  // the warm start and never reach around an obstacle. AR(1) noise holds a turn long enough to
+  // matter, at the same variance.
   const double keep = mppi_.noise_correlation;
   const double fresh = std::sqrt(1.0 - keep * keep);
 #pragma omp parallel for num_threads(mppi_.thread_count) schedule(static)
@@ -66,7 +66,7 @@ void MppiSolver::sample_controls()
     const double bias = k < biased_count ? 1.0 : 0.0;
     double speed_noise = normal(generator);
     double turn_noise = normal(generator);
-    for (int i = 0; i < length; i += kControlDim) {
+    for (int i = 0; i < length; i += control_dim) {
       u[i] = std::clamp(
         bias * mean_[i] + mppi_.speed_std * speed_noise, vehicle_.min_speed, vehicle_.max_speed);
       u[i + 1] =
@@ -99,7 +99,7 @@ MppiSolver::Score MppiSolver::score(const double * controls, const Scene & scene
   int index = scene.route_index;
   double alignment = 1.0;
   for (int t = 0; t < mppi_.horizon_steps; ++t) {
-    const double * u = controls + t * kControlDim;
+    const double * u = controls + t * control_dim;
     step(vehicle_, {u[0], u[1]}, mppi_.step_sec, &state);
     const double c = std::cos(state.yaw);
     const double s = std::sin(state.yaw);
@@ -139,12 +139,12 @@ void MppiSolver::average_controls()
   // which the zero nominal speed does not mean here.
   const double control_gain =
     mppi_.lambda * (1.0 - mppi_.alpha) / (mppi_.turn_std * mppi_.turn_std);
-  const std::size_t length = std::size_t(mppi_.horizon_steps) * kControlDim;
+  const std::size_t length = std::size_t(mppi_.horizon_steps) * control_dim;
   double min_cost = std::numeric_limits<double>::infinity();
   for (int k = 0; k < mppi_.sample_count; ++k) {
     const double * u = samples_.data() + k * length;
     double control_cost = 0.0;
-    for (std::size_t i = 0; i < length; i += kControlDim) {
+    for (std::size_t i = 0; i < length; i += control_dim) {
       control_cost += mean_[i + 1] * u[i + 1];
     }
     weights_[k] = scores_[k].cost + control_gain * control_cost;
@@ -168,11 +168,11 @@ void MppiSolver::average_controls()
 void MppiSolver::smooth_mean()
 {
   const double * past = issued_.data();
-  smoother_.smooth(past, mean_.data(), mppi_.horizon_steps, kControlDim);
-  smoother_.smooth(past + 1, mean_.data() + 1, mppi_.horizon_steps, kControlDim);
+  smoother_.smooth(past, mean_.data(), mppi_.horizon_steps, control_dim);
+  smoother_.smooth(past + 1, mean_.data() + 1, mppi_.horizon_steps, control_dim);
   // The fit overshoots the limits that the samples were clamped to.
   const double turn_limit = max_turn(vehicle_);
-  for (std::size_t i = 0; i < mean_.size(); i += kControlDim) {
+  for (std::size_t i = 0; i < mean_.size(); i += control_dim) {
     mean_[i] = std::clamp(mean_[i], vehicle_.min_speed, vehicle_.max_speed);
     mean_[i + 1] = std::clamp(mean_[i + 1], -turn_limit, turn_limit);
   }
@@ -183,9 +183,9 @@ void MppiSolver::remember(const Control & control)
   if (issued_.empty()) {
     return;
   }
-  std::rotate(issued_.begin(), issued_.begin() + kControlDim, issued_.end());
-  issued_[issued_.size() - kControlDim] = control.speed;
-  issued_[issued_.size() - kControlDim + 1] = control.turn;
+  std::rotate(issued_.begin(), issued_.begin() + control_dim, issued_.end());
+  issued_[issued_.size() - control_dim] = control.speed;
+  issued_[issued_.size() - control_dim + 1] = control.turn;
 }
 
 void MppiSolver::rollout(const State & start, std::vector<State> * states) const
@@ -193,7 +193,7 @@ void MppiSolver::rollout(const State & start, std::vector<State> * states) const
   states->assign(1, start);
   State state = start;
   for (int t = 0; t < mppi_.horizon_steps; ++t) {
-    step(vehicle_, {mean_[t * kControlDim], mean_[t * kControlDim + 1]}, mppi_.step_sec, &state);
+    step(vehicle_, {mean_[t * control_dim], mean_[t * control_dim + 1]}, mppi_.step_sec, &state);
     states->push_back(state);
   }
 }
@@ -211,7 +211,7 @@ bool MppiSolver::adopt_best_safe_sample()
   if (best < 0) {
     return false;
   }
-  const std::size_t length = std::size_t(mppi_.horizon_steps) * kControlDim;
+  const std::size_t length = std::size_t(mppi_.horizon_steps) * control_dim;
   std::copy_n(samples_.begin() + best * length, length, mean_.begin());
   return true;
 }
@@ -224,7 +224,7 @@ Solution MppiSolver::solve(
   const Scene scene{start, route, route_index, map, progress_goal};
 
   sample_controls();
-  const std::size_t length = std::size_t(mppi_.horizon_steps) * kControlDim;
+  const std::size_t length = std::size_t(mppi_.horizon_steps) * control_dim;
 #pragma omp parallel for num_threads(mppi_.thread_count) schedule(static)
   for (int k = 0; k < mppi_.sample_count; ++k) {
     scores_[k] = score(samples_.data() + k * length, scene);

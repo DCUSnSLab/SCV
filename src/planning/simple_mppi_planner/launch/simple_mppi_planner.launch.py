@@ -17,29 +17,29 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     default_params = PathJoinSubstitution(
-        [FindPackageShare("simple_mppi_planner"), "config", "simple_mppi_planner.param.yaml"]
+        [FindPackageShare('simple_mppi_planner'), 'config', 'simple_mppi_planner.param.yaml']
     )
     planner = Node(
-        package="simple_mppi_planner",
-        executable="simple_mppi_planner_node",
-        name="simple_mppi_planner",
+        package='simple_mppi_planner',
+        executable='simple_mppi_planner_node',
+        name='simple_mppi_planner',
         parameters=[
-            LaunchConfiguration("param_file"),
-            {"use_sim_time": ParameterValue(LaunchConfiguration("use_sim_time"), value_type=bool)},
+            LaunchConfiguration('param_file'),
+            {'use_sim_time': ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)},
         ],
         remappings=[
-            ("~/input/route", "/route"),
-            ("~/input/odometry", "/odometry/global"),
-            ("~/input/grid", "/costmap"),
-            ("~/output/cmd_vel", "/cmd_vel"),
-            ("~/output/diagnostics", "/diagnostics"),
+            ('~/input/route', '/route'),
+            ('~/input/odometry', '/odometry/global'),
+            ('~/input/grid', '/costmap'),
+            ('~/output/cmd_vel', '/cmd_vel'),
+            ('~/output/diagnostics', '/diagnostics'),
         ],
-        output="screen",
+        output='screen',
     )
     return LaunchDescription(
         [
-            DeclareLaunchArgument("param_file", default_value=default_params),
-            DeclareLaunchArgument("use_sim_time", default_value="false"),
+            DeclareLaunchArgument('param_file', default_value=default_params),
+            DeclareLaunchArgument('use_sim_time', default_value='false'),
             planner,
         ]
     )

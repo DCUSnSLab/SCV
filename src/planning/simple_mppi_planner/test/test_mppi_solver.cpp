@@ -18,8 +18,8 @@ namespace
 
 using Waypoints = std::vector<std::pair<double, double>>;
 
-constexpr double kControlPeriod = 0.05;
-constexpr double kMinObservableSpeed = 0.1;
+constexpr double control_period = 0.05;
+constexpr double observable_speed = 0.1;
 
 struct Outcome
 {
@@ -40,7 +40,7 @@ public:
   : vehicle_(vehicle),
     footprint_(footprint_of(vehicle)),
     map_(world.distance_map()),
-    route_(waypoints, kRouteSpacing, kCruiseSpeed, kStopDecel),
+    route_(waypoints, route_spacing, route_cruise_speed, route_stop_decel),
     solver_(mppi_of(vehicle, 1), cost_params(vehicle), vehicle, footprint_)
   {
     state_.x = waypoints.front().first + vehicle.kinematic_center_x;
@@ -61,7 +61,7 @@ public:
     int index = route_.nearest(
       state_.x - vehicle_.kinematic_center_x * std::cos(state_.yaw),
       state_.y - vehicle_.kinematic_center_x * std::sin(state_.yaw));
-    for (double t = 0.0; t < duration_sec && !result.reached_goal; t += kControlPeriod) {
+    for (double t = 0.0; t < duration_sec && !result.reached_goal; t += control_period) {
       const double x = state_.x - vehicle_.kinematic_center_x * std::cos(state_.yaw);
       const double y = state_.y - vehicle_.kinematic_center_x * std::sin(state_.yaw);
       index = route_.advance(index, x, y, 25);
@@ -75,7 +75,7 @@ public:
         const double curvature = std::abs(twist.angular / twist.linear);
         result.max_curvature = std::max(result.max_curvature, curvature);
       }
-      step(vehicle_, control, kControlPeriod, &state_);
+      step(vehicle_, control, control_period, &state_);
       result.min_clearance = std::min(result.min_clearance, clearance());
     }
     result.final_speed = state_.speed;
@@ -170,7 +170,7 @@ TEST_P(BothModels, ReportsNoSolutionWhenTheFootprintIsAlreadyInCollision)
   const VehicleParams v = vehicle();
   MppiSolver solver(mppi_of(v, 1), cost_params(v), v, footprint_of(v));
   const ReferencePath route(
-    Waypoints{{0.0, 0.0}, {12.0, 0.0}}, kRouteSpacing, kCruiseSpeed, kStopDecel);
+    Waypoints{{0.0, 0.0}, {12.0, 0.0}}, route_spacing, route_cruise_speed, route_stop_decel);
   State start;
   start.x = v.kinematic_center_x;
   const DistanceMap map = world.distance_map();
@@ -182,7 +182,7 @@ TEST_P(BothModels, ReportsNoSolutionOutsideTheGrid)
   const VehicleParams v = vehicle();
   MppiSolver solver(mppi_of(v, 1), cost_params(v), v, footprint_of(v));
   const ReferencePath route(
-    Waypoints{{0.0, 0.0}, {12.0, 0.0}}, kRouteSpacing, kCruiseSpeed, kStopDecel);
+    Waypoints{{0.0, 0.0}, {12.0, 0.0}}, route_spacing, route_cruise_speed, route_stop_decel);
   State start;
   start.x = 100.0;
   const DistanceMap map = World().distance_map();
@@ -220,7 +220,7 @@ TEST_P(BothModels, TheFilteredPlanIsTheOneCheckedForCollision)
   world.add_box(4.1, -6.0, 4.7, 0.3);
   const DistanceMap map = world.distance_map();
   const ReferencePath route(
-    Waypoints{{0.0, 0.0}, {12.0, 0.0}}, kRouteSpacing, kCruiseSpeed, kStopDecel);
+    Waypoints{{0.0, 0.0}, {12.0, 0.0}}, route_spacing, route_cruise_speed, route_stop_decel);
   MppiSolver solver(mppi, cost_params(v), v, footprint);
 
   State state;
@@ -237,7 +237,7 @@ TEST_P(BothModels, TheFilteredPlanIsTheOneCheckedForCollision)
     ASSERT_TRUE(solution.feasible) << "cycle " << cycle;
     ASSERT_FALSE(collides(v, footprint, map, state, solver.plan(), mppi.step_sec))
       << "cycle " << cycle;
-    step(v, solution.control, kControlPeriod, &state);
+    step(v, solution.control, control_period, &state);
   }
 }
 
@@ -253,7 +253,7 @@ TEST_P(BothModels, RolloutFollowsTheKeptPlanFromTheStart)
   const MppiParams m = mppi_of(v, 1);
   MppiSolver solver(m, cost_params(v), v, footprint_of(v));
   const ReferencePath route(
-    Waypoints{{0.0, 0.0}, {10.0, 0.0}}, kRouteSpacing, kCruiseSpeed, kStopDecel);
+    Waypoints{{0.0, 0.0}, {10.0, 0.0}}, route_spacing, route_cruise_speed, route_stop_decel);
   State start;
   start.speed = 0.5;
   ASSERT_TRUE(solver.solve(start, route, 0, World().distance_map()).feasible);

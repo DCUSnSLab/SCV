@@ -27,9 +27,9 @@ def _rpy_matrix(roll, pitch, yaw):
 
 
 def _joint_transform(joint):
-    origin = joint.find("origin")
-    xyz = [float(v) for v in origin.get("xyz", "0 0 0").split()]
-    rpy = [float(v) for v in origin.get("rpy", "0 0 0").split()]
+    origin = joint.find('origin')
+    xyz = [float(v) for v in origin.get('xyz', '0 0 0').split()]
+    rpy = [float(v) for v in origin.get('rpy', '0 0 0').split()]
     transform = np.eye(4)
     transform[:3, :3] = _rpy_matrix(*rpy)
     transform[:3, 3] = xyz
@@ -52,7 +52,7 @@ def _quaternion(r):
 
 def urdf_mounts(urdf, base, frames):
     """Return {frame: [x, y, z, qx, qy, qz, qw]} of each frame relative to base."""
-    joints = {j.find("child").get("link"): j for j in ET.fromstring(urdf).findall("joint")}
+    joints = {j.find('child').get('link'): j for j in ET.fromstring(urdf).findall('joint')}
     mounts = {}
     for frame in frames:
         transform = np.eye(4)
@@ -60,7 +60,7 @@ def urdf_mounts(urdf, base, frames):
         while link != base:
             joint = joints[link]
             transform = _joint_transform(joint) @ transform
-            link = joint.find("parent").get("link")
+            link = joint.find('parent').get('link')
         mounts[frame] = [float(v) for v in transform[:3, 3]] + _quaternion(transform[:3, :3])
     return mounts
 
@@ -69,37 +69,37 @@ def resolve_instances(config, names):
     """Expand group names; keep the config order and drop duplicates."""
     wanted = set()
     for name in names:
-        wanted.update(config["groups"].get(name, [name]))
-    unknown = wanted - set(config["instances"])
+        wanted.update(config['groups'].get(name, [name]))
+    unknown = wanted - set(config['instances'])
     if unknown:
-        raise RuntimeError(f"unknown cameras: {sorted(unknown)}")
-    return [name for name in config["instances"] if name in wanted]
+        raise RuntimeError(f'unknown cameras: {sorted(unknown)}')
+    return [name for name in config['instances'] if name in wanted]
 
 
 def camera_node_config(config, name):
     """Return (parameters, remappings) of the camera_dummy instance called name."""
-    instance = config["instances"][name]
-    model = config["models"][instance["model"]]
-    prefix = instance.get("frame_prefix", name)
-    root = instance["root"]
-    parameters = {"streams": list(model["streams"])}
+    instance = config['instances'][name]
+    model = config['models'][instance['model']]
+    prefix = instance.get('frame_prefix', name)
+    root = instance['root']
+    parameters = {'streams': list(model['streams'])}
     remappings = []
-    for stream, spec in model["streams"].items():
+    for stream, spec in model['streams'].items():
         for key, value in spec.items():
-            if key not in ("topic", "info_topic"):
+            if key not in ('topic', 'info_topic'):
                 text = value.format(name=prefix) if isinstance(value, str) else value
-                parameters[f"stream.{stream}.{key}"] = text
-        parameters[f"stream.{stream}.plane_m"] = config["pattern"]["plane_m"]
-        parameters[f"stream.{stream}.bar_m"] = config["pattern"]["bar_m"]
-        remappings.append((f"~/output/{stream}/image", f"{root}/{spec['topic']}"))
-        remappings.append((f"~/output/{stream}/camera_info", f"{root}/{spec['info_topic']}"))
-    imu = model.get("imu")
-    parameters["imu.enable"] = imu is not None
+                parameters[f'stream.{stream}.{key}'] = text
+        parameters[f'stream.{stream}.plane_m'] = config['pattern']['plane_m']
+        parameters[f'stream.{stream}.bar_m'] = config['pattern']['bar_m']
+        remappings.append((f'~/output/{stream}/image', f'{root}/{spec["topic"]}'))
+        remappings.append((f'~/output/{stream}/camera_info', f'{root}/{spec["info_topic"]}'))
+    imu = model.get('imu')
+    parameters['imu.enable'] = imu is not None
     if imu is not None:
-        parameters["imu.frame_id"] = imu["frame_id"].format(name=prefix)
-        parameters["imu.rate_hz"] = imu["rate_hz"]
-        parameters["imu.linear_acceleration"] = imu["linear_acceleration"]
-        remappings.append(("~/output/imu", f"{root}/{imu['topic']}"))
+        parameters['imu.frame_id'] = imu['frame_id'].format(name=prefix)
+        parameters['imu.rate_hz'] = imu['rate_hz']
+        parameters['imu.linear_acceleration'] = imu['linear_acceleration']
+        remappings.append(('~/output/imu', f'{root}/{imu["topic"]}'))
     return parameters, remappings
 
 
@@ -116,21 +116,23 @@ def camera_frames_urdf(config, names, base):
     links = [f'<link name="{base}"/>']
     joints = []
     for name in names:
-        instance = config["instances"][name]
-        model = config["models"][instance["model"]]
-        if "root_frame" not in model:
+        instance = config['instances'][name]
+        model = config['models'][instance['model']]
+        if 'root_frame' not in model:
             continue
-        prefix = instance.get("frame_prefix", name)
-        root_frame = model["root_frame"].format(name=prefix)
-        mount = instance["mount"]
+        prefix = instance.get('frame_prefix', name)
+        root_frame = model['root_frame'].format(name=prefix)
+        mount = instance['mount']
         links.append(f'<link name="{root_frame}"/>')
-        joints.append(_joint(base, root_frame, mount["xyz"], mount["rpy"]))
-        for frame in model["frames"]:
-            child = frame["child"].format(name=prefix)
-            rpy = OPTICAL_RPY if frame.get("optical") else (0.0, 0.0, 0.0)
+        joints.append(_joint(base, root_frame, mount['xyz'], mount['rpy']))
+        for frame in model['frames']:
+            child = frame['child'].format(name=prefix)
+            rpy = OPTICAL_RPY if frame.get('optical') else (0.0, 0.0, 0.0)
             links.append(f'<link name="{child}"/>')
             joints.append(
-                _joint(frame["parent"].format(name=prefix), child, frame.get("xyz", [0, 0, 0]), rpy)
+                _joint(
+                    frame['parent'].format(name=prefix), child, frame.get('xyz', [0, 0, 0]), rpy
+                )
             )
     if not joints:
         return None

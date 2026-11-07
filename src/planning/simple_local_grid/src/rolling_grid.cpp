@@ -12,7 +12,7 @@ namespace
 {
 
 // Below every beam, so an empty cell needs no case of its own in clear_beam.
-const float kEmpty = -std::numeric_limits<float>::infinity();
+const float empty_top = -std::numeric_limits<float>::infinity();
 
 float read_float(const std::uint8_t * point, std::uint32_t offset)
 {
@@ -55,7 +55,7 @@ bool is_obstacle(const ObstacleFilter & filter, const Eigen::Vector3f & point_in
 }
 
 RollingGrid::RollingGrid(double resolution, int size_cells)
-: resolution_(resolution), size_(size_cells), top_(std::size_t(size_cells) * size_cells, kEmpty)
+: resolution_(resolution), size_(size_cells), top_(std::size_t(size_cells) * size_cells, empty_top)
 {
 }
 
@@ -68,7 +68,7 @@ void RollingGrid::center_on(double x, double y)
   if (shift_x == 0 && shift_y == 0) {
     return;
   }
-  std::vector<float> moved(top_.size(), kEmpty);
+  std::vector<float> moved(top_.size(), empty_top);
   for (int64_t row = std::max(int64_t{0}, -shift_y);
        row < std::min<int64_t>(size_, size_ - shift_y); ++row) {
     for (int64_t col = std::max(int64_t{0}, -shift_x);
@@ -111,7 +111,7 @@ void RollingGrid::clear_beam(const Eigen::Vector3d & from, const Eigen::Vector3d
     }
     float & top = top_[index(col, row)];
     if (from.z() + along * (to.z() - from.z()) < top) {
-      top = kEmpty;
+      top = empty_top;
     }
   }
 }
@@ -139,7 +139,7 @@ void RollingGrid::clear_vehicle(
       if (
         in_base.x() >= filter.self_min_x && in_base.x() <= filter.self_max_x &&
         in_base.y() >= filter.self_min_y && in_base.y() <= filter.self_max_y) {
-        top_[index(col, row)] = kEmpty;
+        top_[index(col, row)] = empty_top;
       }
     }
   }
@@ -174,7 +174,7 @@ std::vector<std::int8_t> RollingGrid::occupancy() const
 {
   std::vector<std::int8_t> cells(top_.size());
   std::transform(top_.begin(), top_.end(), cells.begin(), [](float top) {
-    return static_cast<std::int8_t>(top == kEmpty ? 0 : 100);
+    return static_cast<std::int8_t>(top == empty_top ? 0 : 100);
   });
   return cells;
 }

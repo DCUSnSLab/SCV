@@ -31,43 +31,43 @@ def seconds(stamp):
 
 class SimplePlanningEvaluator(Node):
     def __init__(self):
-        super().__init__("simple_planning_evaluator")
+        super().__init__('simple_planning_evaluator')
         p = {
             name: self.declare_parameter(name, kind).value
             for name, kind in (
-                ("footprint.circle_x", Parameter.Type.DOUBLE_ARRAY),
-                ("footprint.radius", Parameter.Type.DOUBLE),
-                ("occupied_threshold", Parameter.Type.INTEGER),
-                ("curvature_min_step", Parameter.Type.DOUBLE),
-                ("turn_deadband", Parameter.Type.DOUBLE),
-                ("stuck.min_progress", Parameter.Type.DOUBLE),
-                ("stuck.window_sec", Parameter.Type.DOUBLE),
-                ("goal_tolerance", Parameter.Type.DOUBLE),
-                ("publish_period_sec", Parameter.Type.DOUBLE),
-                ("summary_path", Parameter.Type.STRING),
+                ('footprint.circle_x', Parameter.Type.DOUBLE_ARRAY),
+                ('footprint.radius', Parameter.Type.DOUBLE),
+                ('occupied_threshold', Parameter.Type.INTEGER),
+                ('curvature_min_step', Parameter.Type.DOUBLE),
+                ('turn_deadband', Parameter.Type.DOUBLE),
+                ('stuck.min_progress', Parameter.Type.DOUBLE),
+                ('stuck.window_sec', Parameter.Type.DOUBLE),
+                ('goal_tolerance', Parameter.Type.DOUBLE),
+                ('publish_period_sec', Parameter.Type.DOUBLE),
+                ('summary_path', Parameter.Type.STRING),
             )
         }
-        self.occupied_threshold = p["occupied_threshold"]
-        self.period = p["publish_period_sec"]
-        self.summary_path = p["summary_path"]
+        self.occupied_threshold = p['occupied_threshold']
+        self.period = p['publish_period_sec']
+        self.summary_path = p['summary_path']
         self.evaluator = Evaluator(
-            list(p["footprint.circle_x"]),
-            p["footprint.radius"],
-            p["curvature_min_step"],
-            p["turn_deadband"],
-            (p["stuck.min_progress"], p["stuck.window_sec"], p["goal_tolerance"]),
+            list(p['footprint.circle_x']),
+            p['footprint.radius'],
+            p['curvature_min_step'],
+            p['turn_deadband'],
+            (p['stuck.min_progress'], p['stuck.window_sec'], p['goal_tolerance']),
         )
         latched = QoSProfile(
             depth=1,
             reliability=ReliabilityPolicy.RELIABLE,
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
         )
-        self.create_subscription(Path, "~/input/route", self.on_route, latched)
-        self.create_subscription(Path, "~/input/trajectory", self.on_trajectory, 1)
-        self.create_subscription(OccupancyGrid, "~/input/grid", self.on_grid, 1)
-        self.create_subscription(Odometry, "~/input/odometry", self.on_odometry, 10)
-        self.create_subscription(Twist, "~/input/cmd_vel", self.on_cmd_vel, 10)
-        self.metrics_pub = self.create_publisher(DiagnosticArray, "~/output/metrics", 1)
+        self.create_subscription(Path, '~/input/route', self.on_route, latched)
+        self.create_subscription(Path, '~/input/trajectory', self.on_trajectory, 1)
+        self.create_subscription(OccupancyGrid, '~/input/grid', self.on_grid, 1)
+        self.create_subscription(Odometry, '~/input/odometry', self.on_odometry, 10)
+        self.create_subscription(Twist, '~/input/cmd_vel', self.on_cmd_vel, 10)
+        self.metrics_pub = self.create_publisher(DiagnosticArray, '~/output/metrics', 1)
         self.create_timer(self.period, self.on_timer)
 
     def now(self):
@@ -75,7 +75,7 @@ class SimplePlanningEvaluator(Node):
 
     def on_route(self, msg):
         if len(msg.poses) < 2:
-            self.get_logger().warn("ignoring a route of fewer than two poses")
+            self.get_logger().warn('ignoring a route of fewer than two poses')
             return
         self.evaluator.set_route(
             np.array([[p.pose.position.x, p.pose.position.y] for p in msg.poses])
@@ -115,16 +115,18 @@ class SimplePlanningEvaluator(Node):
         array = DiagnosticArray()
         array.header.stamp = self.get_clock().now().to_msg()
         for group, stats in self.evaluator.stats.items():
-            status = DiagnosticStatus(name=f"{self.get_name()}: {group}", level=DiagnosticStatus.OK)
-            status.message = f"{len(stats)} metrics"
+            status = DiagnosticStatus(
+                name=f'{self.get_name()}: {group}', level=DiagnosticStatus.OK
+            )
+            status.message = f'{len(stats)} metrics'
             for name, stat in stats.items():
                 for field, value in stat.summary().items():
-                    status.values.append(KeyValue(key=f"{name}.{field}", value=f"{value:.6g}"))
+                    status.values.append(KeyValue(key=f'{name}.{field}', value=f'{value:.6g}'))
             array.status.append(status)
         self.metrics_pub.publish(array)
 
     def write_summary(self):
-        with open(self.summary_path, "w") as out:
+        with open(self.summary_path, 'w') as out:
             json.dump(self.evaluator.summary(), out, indent=2)
 
 

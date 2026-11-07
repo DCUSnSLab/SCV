@@ -15,8 +15,6 @@ class Stat:
         self.max = -math.inf
 
     def add(self, value):
-        if value is None:
-            return
         self.count += 1
         self.total += value
         self.min = min(self.min, value)
@@ -24,12 +22,12 @@ class Stat:
 
     def summary(self):
         if self.count == 0:
-            return {"min": None, "max": None, "mean": None, "count": 0}
+            return {'min': None, 'max': None, 'mean': None, 'count': 0}
         return {
-            "min": self.min,
-            "max": self.max,
-            "mean": self.total / self.count,
-            "count": self.count,
+            'min': self.min,
+            'max': self.max,
+            'mean': self.total / self.count,
+            'count': self.count,
         }
 
 
@@ -56,10 +54,10 @@ class Route:
         """Arc length [m], signed lateral offset [m, left positive] and route heading [rad] of the
         nearest route point to each of points (M, 2)."""
         rel = points[:, None, :] - self.start[None, :, :]
-        along = np.einsum("msk,sk->ms", rel, self.segment) / self.segment_length**2
+        along = np.einsum('msk,sk->ms', rel, self.segment) / self.segment_length**2
         along = np.clip(along, 0.0, 1.0)
         gap = rel - along[:, :, None] * self.segment[None, :, :]
-        nearest = np.argmin(np.einsum("msk,msk->ms", gap, gap), axis=1)
+        nearest = np.argmin(np.einsum('msk,msk->ms', gap, gap), axis=1)
         rows = np.arange(len(points))
         g = gap[rows, nearest]
         seg = self.segment[nearest]
@@ -81,12 +79,12 @@ def trajectory_shape(t, xy, yaw, min_step):
     accel = np.diff(speed) / np.diff(mid)
     jerk = np.diff(accel) / np.diff(0.5 * (mid[1:] + mid[:-1]))
     return {
-        "max_curvature": peak(curvature),
-        "max_lateral_accel": peak(speed[moving] ** 2 * curvature),
-        "max_longitudinal_accel": peak(accel),
-        "max_jerk": peak(jerk),
-        "length": float(ds.sum()),
-        "duration": float(t[-1] - t[0]),
+        'max_curvature': peak(curvature),
+        'max_lateral_accel': peak(speed[moving] ** 2 * curvature),
+        'max_longitudinal_accel': peak(accel),
+        'max_jerk': peak(jerk),
+        'length': float(ds.sum()),
+        'duration': float(t[-1] - t[0]),
     }
 
 

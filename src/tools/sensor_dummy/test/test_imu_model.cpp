@@ -8,32 +8,32 @@ namespace sensor_dummy
 {
 namespace
 {
-const Eigen::Quaterniond kVectornavMount(Eigen::AngleAxisd(-M_PI / 2.0, Eigen::Vector3d::UnitZ()));
+const Eigen::Quaterniond vectornav_mount(Eigen::AngleAxisd(-M_PI / 2.0, Eigen::Vector3d::UnitZ()));
 
 TEST(ImuModelTest, StandingStillReadsGravityUp)
 {
-  const ImuSample sample = sample_imu(0.0, 0.0, 0.0, 0.0, 9.8, kVectornavMount);
+  const ImuSample sample = sample_imu(0.0, 0.0, 0.0, 0.0, 9.8, vectornav_mount);
   EXPECT_NEAR(sample.linear_acceleration.z(), 9.8, 1e-9);
   EXPECT_NEAR(sample.linear_acceleration.norm(), 9.8, 1e-9);
 }
 
 TEST(ImuModelTest, ForwardIsPlusYOfTheRightForwardUpFrame)
 {
-  const ImuSample sample = sample_imu(0.0, 0.0, 1.0, 0.0, 9.8, kVectornavMount);
+  const ImuSample sample = sample_imu(0.0, 0.0, 1.0, 0.0, 9.8, vectornav_mount);
   EXPECT_NEAR(sample.linear_acceleration.y(), 1.0, 1e-9);
   EXPECT_NEAR(sample.linear_acceleration.x(), 0.0, 1e-9);
 }
 
 TEST(ImuModelTest, LeftIsMinusXOfTheRightForwardUpFrame)
 {
-  const ImuSample sample = sample_imu(0.0, 0.3, 0.0, 1.0, 9.8, kVectornavMount);
+  const ImuSample sample = sample_imu(0.0, 0.3, 0.0, 1.0, 9.8, vectornav_mount);
   EXPECT_NEAR(sample.linear_acceleration.x(), -1.0, 1e-9);
   EXPECT_NEAR(sample.angular_velocity.z(), 0.3, 1e-9);
 }
 
 TEST(ImuModelTest, OrientationTakesTheMountIntoEnu)
 {
-  const ImuSample sample = sample_imu(M_PI / 2.0, 0.0, 0.0, 0.0, 9.8, kVectornavMount);
+  const ImuSample sample = sample_imu(M_PI / 2.0, 0.0, 0.0, 0.0, 9.8, vectornav_mount);
   // base_link points north; the sensor's y (forward) must too.
   const Eigen::Vector3d forward = sample.orientation * Eigen::Vector3d::UnitY();
   EXPECT_NEAR(forward.y(), 1.0, 1e-9);

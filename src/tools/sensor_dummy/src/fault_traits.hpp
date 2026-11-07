@@ -1,6 +1,8 @@
 #ifndef FAULT_TRAITS_HPP_
 #define FAULT_TRAITS_HPP_
 
+#include "fault.hpp"
+
 #include <geometry_msgs/msg/pose_with_covariance_stamped.hpp>
 #include <geometry_msgs/msg/twist_with_covariance_stamped.hpp>
 #include <hunter_msgs/msg/hunter_status.hpp>
@@ -22,17 +24,17 @@
 // These overloads live in the message namespaces so that FaultFilter finds them by ADL.
 namespace sensor_dummy
 {
-inline constexpr double kNan = std::numeric_limits<double>::quiet_NaN();
+inline constexpr double quiet_nan = std::numeric_limits<double>::quiet_NaN();
 
 inline void poison_vector(geometry_msgs::msg::Vector3 & v)
 {
-  v.x = v.y = v.z = kNan;
+  v.x = v.y = v.z = quiet_nan;
 }
 
 inline void poison_pose(geometry_msgs::msg::Pose & p)
 {
-  p.position.x = p.position.y = p.position.z = kNan;
-  p.orientation.x = p.orientation.y = p.orientation.z = p.orientation.w = kNan;
+  p.position.x = p.position.y = p.position.z = quiet_nan;
+  p.orientation.x = p.orientation.y = p.orientation.z = p.orientation.w = quiet_nan;
 }
 }  // namespace sensor_dummy
 
@@ -51,19 +53,19 @@ inline void poison(PointCloud2 & msg)
 inline void poison(Imu & msg)
 {
   msg.orientation.x = msg.orientation.y = msg.orientation.z = msg.orientation.w =
-    sensor_dummy::kNan;
+    sensor_dummy::quiet_nan;
   sensor_dummy::poison_vector(msg.angular_velocity);
   sensor_dummy::poison_vector(msg.linear_acceleration);
 }
 
 inline void poison(NavSatFix & msg)
 {
-  msg.latitude = msg.longitude = msg.altitude = sensor_dummy::kNan;
+  msg.latitude = msg.longitude = msg.altitude = sensor_dummy::quiet_nan;
 }
 
 inline void poison(CameraInfo & msg)
 {
-  msg.k.fill(sensor_dummy::kNan);
+  msg.k.fill(sensor_dummy::quiet_nan);
 }
 
 // Only float images can carry NaN; zero is the invalid value of the integer encodings.
@@ -108,7 +110,7 @@ namespace hunter_msgs::msg
 {
 inline void poison(HunterStatus & msg)
 {
-  msg.linear_velocity = msg.steering_angle = msg.battery_voltage = sensor_dummy::kNan;
+  msg.linear_velocity = msg.steering_angle = msg.battery_voltage = sensor_dummy::quiet_nan;
 }
 }  // namespace hunter_msgs::msg
 
@@ -116,7 +118,7 @@ namespace std_msgs::msg
 {
 inline void poison(Float64 & msg)
 {
-  msg.data = sensor_dummy::kNan;
+  msg.data = sensor_dummy::quiet_nan;
 }
 }  // namespace std_msgs::msg
 
@@ -141,7 +143,7 @@ inline void poison(TFMessage & msg)
 {
   for (auto & t : msg.transforms) {
     t.transform.translation.x = t.transform.translation.y = t.transform.translation.z =
-      sensor_dummy::kNan;
+      sensor_dummy::quiet_nan;
   }
 }
 }  // namespace tf2_msgs::msg

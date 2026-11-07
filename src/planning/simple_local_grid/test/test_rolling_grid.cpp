@@ -13,8 +13,8 @@ namespace simple_local_grid
 namespace
 {
 
-constexpr double kResolution = 0.1;
-constexpr int kSize = 100;
+constexpr double grid_resolution = 0.1;
+constexpr int grid_size = 100;
 
 ObstacleFilter filter()
 {
@@ -73,7 +73,7 @@ TEST(ObstacleFilter, RejectsNan)
 
 TEST(RollingGrid, CentersOnTheVehicleAndSnapsToCells)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(12.34, -5.67);
   EXPECT_NEAR(grid.origin_x(), 12.3 - 5.0, 1e-9);
   EXPECT_NEAR(grid.origin_y(), -5.7 - 5.0, 1e-9);
@@ -81,7 +81,7 @@ TEST(RollingGrid, CentersOnTheVehicleAndSnapsToCells)
 
 TEST(RollingGrid, HitKeepsItsWorldPositionAndTopWhenTheWindowMoves)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(3.05, -2.05, 0.3F);
   ASSERT_TRUE(occupied_at(grid, 3.05, -2.05));
@@ -102,7 +102,7 @@ TEST(RollingGrid, HitKeepsItsWorldPositionAndTopWhenTheWindowMoves)
 
 TEST(RollingGrid, HitLeavesWithTheWindowAndDoesNotReturn)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(4.0, 4.0, 0.3F);
   grid.center_on(20.0, 20.0);
@@ -113,7 +113,7 @@ TEST(RollingGrid, HitLeavesWithTheWindowAndDoesNotReturn)
 
 TEST(RollingGrid, HitOutsideTheWindowIsIgnored)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(5.05, 0.0, 0.3F);
   grid.add_hit(-5.05, 0.0, 0.3F);
@@ -122,7 +122,7 @@ TEST(RollingGrid, HitOutsideTheWindowIsIgnored)
 
 TEST(RollingGrid, BeamBelowTheTopClearsTheCell)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(1.05, 0.05, 0.5F);
   grid.clear_beam({0.05, 0.05, 0.4}, {3.05, 0.05, 0.4});
@@ -131,7 +131,7 @@ TEST(RollingGrid, BeamBelowTheTopClearsTheCell)
 
 TEST(RollingGrid, BeamAboveTheTopLeavesTheCell)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(1.05, 0.05, 0.3F);
   grid.clear_beam({0.05, 0.05, 0.9}, {3.05, 0.05, 0.4});
@@ -140,7 +140,7 @@ TEST(RollingGrid, BeamAboveTheTopLeavesTheCell)
 
 TEST(RollingGrid, CellKeepsTheHighestHit)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(1.05, 0.05, 0.3F);
   grid.add_hit(1.05, 0.05, 0.8F);
@@ -151,7 +151,7 @@ TEST(RollingGrid, CellKeepsTheHighestHit)
 
 TEST(RollingGrid, DescendingBeamClearsOnlyWhereItHasFallenBelowTheTop)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(0.55, 0.05, 0.3F);
   grid.add_hit(2.55, 0.05, 0.3F);
@@ -163,7 +163,7 @@ TEST(RollingGrid, DescendingBeamClearsOnlyWhereItHasFallenBelowTheTop)
 
 TEST(RollingGrid, TheReturnCellOfABeamStays)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(2.05, 0.05, 1.0F);
   grid.clear_beam({0.05, 0.05, 0.5}, {2.05, 0.05, 0.5});
@@ -172,7 +172,7 @@ TEST(RollingGrid, TheReturnCellOfABeamStays)
 
 TEST(RollingGrid, DiagonalBeamClearsAlongItsLine)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(1.05, -1.05, 1.0F);
   grid.add_hit(1.05, 1.05, 1.0F);
@@ -183,7 +183,7 @@ TEST(RollingGrid, DiagonalBeamClearsAlongItsLine)
 
 TEST(RollingGrid, BeamStopsAtTheEdgeOfTheWindow)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(4.95, 0.05, 1.0F);
   grid.clear_beam({0.05, 0.05, 0.5}, {50.0, 0.05, 0.5});
@@ -192,7 +192,7 @@ TEST(RollingGrid, BeamStopsAtTheEdgeOfTheWindow)
 
 TEST(RollingGrid, HitNeverExpiresWithoutABeam)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   grid.add_hit(1.05, 0.05, 0.3F);
   const std::vector<std::array<float, 4>> nothing;
@@ -205,7 +205,7 @@ TEST(RollingGrid, HitNeverExpiresWithoutABeam)
 
 TEST(RollingGrid, ClearsTheCellsUnderTheVehicleOnly)
 {
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(2.0, 1.0);
   // The vehicle at (2, 1) faces +y, so the box reaches 0.6 along +y and 0.4 along x.
   const Eigen::Isometry3d grid_from_base =
@@ -235,7 +235,7 @@ TEST(RollingGrid, InsertTransformsThePointsAndDropsTheGround)
   const Eigen::Isometry3d grid_from_base =
     Eigen::Translation3d(2.0, 1.0, 0.0) * Eigen::AngleAxisd(M_PI_2, Eigen::Vector3d::UnitZ());
 
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(2.0, 1.0);
   grid.insert(cloud_of(points), base_from_sensor, grid_from_base, filter(), 1);
 
@@ -252,7 +252,7 @@ TEST(RollingGrid, InsertClearsAnOldMarkAlongAGroundReturnAndKeepsTheNewHit)
   const Eigen::Isometry3f base_from_sensor(Eigen::Translation3f(0.0F, 0.0F, 0.9F));
   const Eigen::Isometry3d grid_from_base = Eigen::Isometry3d::Identity();
 
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   // At x = 3.05 the beam to the ground return is about 0.22 m high.
   grid.add_hit(3.05, 0.05, 0.3F);
@@ -266,7 +266,7 @@ TEST(RollingGrid, StrideReachesEveryBeamOverSuccessiveScans)
   // Five ground returns, and halfway along each beam a mark that only that beam passes under.
   const Eigen::Isometry3f base_from_sensor(Eigen::Translation3f(0.05F, 0.05F, 0.9F));
   std::vector<std::array<float, 4>> ground;
-  RollingGrid grid(kResolution, kSize);
+  RollingGrid grid(grid_resolution, grid_size);
   grid.center_on(0.0, 0.0);
   for (int i = -2; i <= 2; ++i) {
     ground.push_back({4.0F, static_cast<float>(i), -0.9F, 0.0F});

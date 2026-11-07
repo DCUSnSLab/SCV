@@ -12,7 +12,7 @@ namespace sensor_dummy
 {
 namespace
 {
-constexpr LidarConfig kConfig{600.0, 1812, 55.296e-6, 2.304e-6, 0.9, 200.0};
+constexpr LidarConfig lidar_config{600.0, 1812, 55.296e-6, 2.304e-6, 0.9, 200.0};
 
 float read_float(const std::uint8_t * data, std::size_t offset)
 {
@@ -30,7 +30,7 @@ Eigen::Isometry3d lidar_mount()
 
 TEST(LoadBeamsTest, ReadsThe32RealAngles)
 {
-  const auto beams = load_beams(VLP32C_CALIBRATION, kConfig.firing_step_s);
+  const auto beams = load_beams(VLP32C_CALIBRATION, lidar_config.firing_step_s);
   ASSERT_EQ(beams.size(), 32u);
   std::vector<double> vertical;
   for (const auto & beam : beams) {
@@ -41,7 +41,7 @@ TEST(LoadBeamsTest, ReadsThe32RealAngles)
   // laser 0 is the lowest beam, laser 25 is not the highest: ring ranks by angle, not by id.
   EXPECT_EQ(beams[0].ring, 0);
   EXPECT_EQ(beams[29].ring, 31);
-  EXPECT_DOUBLE_EQ(beams[2].firing_s, kConfig.firing_step_s);
+  EXPECT_DOUBLE_EQ(beams[2].firing_s, lidar_config.firing_step_s);
 }
 
 class RenderScanTest : public ::testing::Test
@@ -49,15 +49,15 @@ class RenderScanTest : public ::testing::Test
 protected:
   void render(const Pose2d & start, const Pose2d & end)
   {
-    render_scan(kConfig, beams, map, start, end, lidar_mount(), data);
+    render_scan(lidar_config, beams, map, start, end, lidar_mount(), data);
   }
 
   const std::uint8_t * point(int row, int ring) const
   {
-    return &data[(row * beams.size() + ring) * kPointStep];
+    return &data[(row * beams.size() + ring) * point_step];
   }
 
-  std::vector<LaserBeam> beams = load_beams(VLP32C_CALIBRATION, kConfig.firing_step_s);
+  std::vector<LaserBeam> beams = load_beams(VLP32C_CALIBRATION, lidar_config.firing_step_s);
   WorldMap map{
     0.0, 20.0f, {{Eigen::Vector2d(10.2, 0.0), Eigen::Vector2d(0.1, 50.0), 1.0, 0.0, 3.0f, 60.0f}}};
   std::vector<std::uint8_t> data;
@@ -91,27 +91,27 @@ TEST_F(RenderScanTest, SensorSpinsClockwise)
 {
   render({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0});
   // A quarter of a turn later a level beam looks at -y. There is no wall there: the ground ring.
-  const int quarter = static_cast<int>(0.025 / kConfig.block_period_s);
+  const int quarter = static_cast<int>(0.025 / lidar_config.block_period_s);
   EXPECT_LT(read_float(point(quarter, 0), 4), -1.0f);
 }
 
 TEST_F(RenderScanTest, RaysThatEscapeBecomeNanButKeepRingAndTime)
 {
   render({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0});
-  const int behind = static_cast<int>(0.05 / kConfig.block_period_s);
+  const int behind = static_cast<int>(0.05 / lidar_config.block_period_s);
   const auto * p = point(behind, 31);
   EXPECT_TRUE(std::isnan(read_float(p, 0)));
   std::uint16_t ring = 0;
-  std::memcpy(&ring, p + kRingOffset, sizeof(ring));
+  std::memcpy(&ring, p + ring_offset, sizeof(ring));
   EXPECT_EQ(ring, 31);
-  EXPECT_NEAR(read_float(p, kTimeOffset), 0.05, 1e-3);
+  EXPECT_NEAR(read_float(p, time_offset), 0.05, 1e-3);
 }
 
 TEST_F(RenderScanTest, TimeGrowsWithTheRow)
 {
   render({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0});
-  EXPECT_FLOAT_EQ(read_float(point(0, 0), kTimeOffset), 0.0f);
-  EXPECT_NEAR(read_float(point(1811, 0), kTimeOffset), 0.1002, 1e-4);
+  EXPECT_FLOAT_EQ(read_float(point(0, 0), time_offset), 0.0f);
+  EXPECT_NEAR(read_float(point(1811, 0), time_offset), 0.1002, 1e-4);
 }
 
 TEST_F(RenderScanTest, MotionShortensTheRangeToTheWall)

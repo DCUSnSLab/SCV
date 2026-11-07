@@ -9,9 +9,9 @@ namespace sensor_dummy
 {
 namespace
 {
-constexpr std::int64_t kGpsEpochUnix = 315964800;
-constexpr std::int64_t kGpsLeapSeconds = 18;
-constexpr std::int64_t kSecondsPerWeek = 604800;
+constexpr std::int64_t gps_epoch_unix = 315964800;
+constexpr std::int64_t gps_leap_seconds = 18;
+constexpr std::int64_t seconds_per_week = 604800;
 }  // namespace
 
 GnssModel::GnssModel(double latitude, double longitude, double altitude) : altitude_(altitude)
@@ -46,7 +46,7 @@ UtcTime utc_time(std::int64_t unix_ns)
   const std::time_t seconds = unix_ns / 1000000000;
   std::tm utc{};
   gmtime_r(&seconds, &utc);
-  const std::int64_t gps_seconds = (seconds - kGpsEpochUnix + kGpsLeapSeconds) % kSecondsPerWeek;
+  const std::int64_t gps_seconds = (seconds - gps_epoch_unix + gps_leap_seconds) % seconds_per_week;
   const auto nano = static_cast<std::int32_t>(unix_ns % 1000000000);
   return {
     static_cast<std::uint16_t>(utc.tm_year + 1900),

@@ -21,8 +21,8 @@ void write_point(
   std::memcpy(out + 4, &y, sizeof(y));
   std::memcpy(out + 8, &z, sizeof(z));
   std::memcpy(out + 12, &intensity, sizeof(intensity));
-  std::memcpy(out + kRingOffset, &ring, sizeof(ring));
-  std::memcpy(out + kTimeOffset, &time, sizeof(time));
+  std::memcpy(out + ring_offset, &ring, sizeof(ring));
+  std::memcpy(out + time_offset, &time, sizeof(time));
 }
 
 Eigen::Isometry3d row_pose(
@@ -71,7 +71,7 @@ void render_scan(
 {
   const float nan = std::numeric_limits<float>::quiet_NaN();
   const double rotation_rate = config.rpm / 60.0 * 2.0 * M_PI;
-  data.resize(config.blocks * beams.size() * kPointStep);
+  data.resize(config.blocks * beams.size() * point_step);
 
   for (int row = 0; row < config.blocks; ++row) {
     const double row_time = row * config.block_period_s;
@@ -86,7 +86,7 @@ void render_scan(
         beam.sin_vertical);
       const Eigen::Vector3d direction = pose.linear() * local;
 
-      std::uint8_t * out = &data[(row * beams.size() + beam.ring) * kPointStep];
+      std::uint8_t * out = &data[(row * beams.size() + beam.ring) * point_step];
       const auto time = static_cast<float>(row_time + beam.firing_s);
       RayHit hit{};
       if (

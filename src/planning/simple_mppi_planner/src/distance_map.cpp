@@ -10,7 +10,7 @@ namespace simple_mppi_planner
 namespace
 {
 
-constexpr double kFar = 1e12;
+constexpr double far_squared = 1e12;
 
 // Felzenszwalb and Huttenlocher, "Distance Transforms of Sampled Functions": lower envelope of
 // the parabolas rooted at each cell, in place over `stride`-spaced values.
@@ -80,7 +80,7 @@ void DistanceMap::build(const GridView & grid)
   const std::size_t count = std::size_t(width_) * height_;
   std::vector<double> squared(count);
   for (std::size_t i = 0; i < count; ++i) {
-    squared[i] = grid.cells[i] >= grid.occupied_threshold ? 0.0 : kFar;
+    squared[i] = grid.cells[i] >= grid.occupied_threshold ? 0.0 : far_squared;
   }
   Envelope envelope(std::max(width_, height_));
   for (int col = 0; col < width_; ++col) {

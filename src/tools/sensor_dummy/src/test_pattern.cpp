@@ -1,6 +1,5 @@
 #include "test_pattern.hpp"
 
-#include <algorithm>
 #include <cmath>
 #include <cstring>
 #include <stdexcept>
@@ -11,8 +10,8 @@ namespace sensor_dummy
 {
 namespace
 {
-constexpr std::size_t kBarWidth = 32;
-constexpr std::size_t kBarSpeed = 8;
+constexpr std::size_t bar_width = 32;
+constexpr std::size_t bar_speed = 8;
 
 std::size_t pixel_size_of(const std::string & encoding)
 {
@@ -80,10 +79,9 @@ void TestPattern::fill_pixel_row(
 void TestPattern::render(std::uint64_t seq, std::vector<std::uint8_t> & data) const
 {
   data.assign(background_.begin(), background_.end());
-  const std::size_t bar = std::min(kBarWidth, width_);
-  const std::size_t start = (seq * kBarSpeed) % (width_ - bar + 1);
+  const std::size_t start = (seq * bar_speed) % (width_ - bar_width + 1);
   for (std::size_t row = 0; row < height_; ++row) {
-    fill_pixel_row(bar, bar_pixel_.data(), &data[(row * width_ + start) * pixel_size_]);
+    fill_pixel_row(bar_width, bar_pixel_.data(), &data[(row * width_ + start) * pixel_size_]);
   }
 }
 

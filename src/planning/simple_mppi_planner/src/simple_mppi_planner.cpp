@@ -15,8 +15,8 @@ namespace simple_mppi_planner
 namespace
 {
 
-constexpr int kThrottleMs = 5000;
-constexpr std::chrono::seconds kDiagnosticsPeriod{1};
+constexpr int throttle_ms = 5000;
+constexpr std::chrono::seconds diagnostics_period{1};
 
 VehicleParams read_vehicle(rclcpp::Node & node)
 {
@@ -124,7 +124,7 @@ SimpleMppiPlanner::SimpleMppiPlanner(const rclcpp::NodeOptions & options)
   timer_ = create_wall_timer(
     std::chrono::duration<double>(1.0 / declare_parameter<double>("control_rate_hz")),
     [this]() { on_timer(); });
-  diagnostics_timer_ = create_wall_timer(kDiagnosticsPeriod, [this]() { publish_diagnostics(); });
+  diagnostics_timer_ = create_wall_timer(diagnostics_period, [this]() { publish_diagnostics(); });
 }
 
 void SimpleMppiPlanner::on_route(const nav_msgs::msg::Path & msg)
@@ -300,7 +300,7 @@ void SimpleMppiPlanner::publish(const Twist2d & twist)
 void SimpleMppiPlanner::stop(const char * reason)
 {
   solver_->reset();
-  RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), kThrottleMs, "stopping: %s", reason);
+  RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), throttle_ms, "stopping: %s", reason);
   publish({});
 }
 

@@ -11,6 +11,9 @@ repos:
         entry: bash -c '"$SCV_ROOT/scripts/check_no_emoji.sh" "$@"' --
         language: system
         types: [text]
+        # Test data: non-ASCII strings that check CDR string encoding. The first form is the path
+        # from SCV (scripts/lint.sh), the second from inside rosbag2_dataset.
+        exclude: (^src/tools/rosbag2_dataset/|^)test/(test_cdr|conftest)\.py$
 
       - id: hangul-md-only
         name: hangul only in .md files (SCV)

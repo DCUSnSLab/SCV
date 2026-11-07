@@ -4,15 +4,16 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 
+
 def generate_launch_description():
     realsense_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                FindPackageShare('realsense2_camera'),
-                'launch',
-                'rs_launch.py'
-            ])
-        ]),
+        PythonLaunchDescriptionSource(
+            [
+                PathJoinSubstitution(
+                    [FindPackageShare('realsense2_camera'), 'launch', 'rs_launch.py']
+                )
+            ]
+        ),
         launch_arguments={
             'camera_name': 'd435i',
             'camera_namespace': 'camera',
@@ -28,9 +29,7 @@ def generate_launch_description():
             'spatial_filter.enable': 'false',
             'temporal_filter.enable': 'false',
             'hole_filling_filter.enable': 'false',
-        }.items()
+        }.items(),
     )
 
-    return LaunchDescription([
-        realsense_launch
-    ])
+    return LaunchDescription([realsense_launch])

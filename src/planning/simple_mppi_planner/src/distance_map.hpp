@@ -19,7 +19,7 @@ struct GridView
 };
 
 // Distance to the nearest occupied cell center, built once per grid so that a footprint check is
-// one array read per circle. Replaces the inflated grid_map layer .
+// one array read per circle.
 class DistanceMap
 {
 public:

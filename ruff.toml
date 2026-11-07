@@ -1,4 +1,8 @@
 # Formatting only: flake8 (setup.cfg) stays the linter. Repositories from dependencies.repos are
 # in .gitignore, which ruff follows, so they are never formatted from here.
-line-length = 100
+# 99 columns and single quotes match ament_flake8, which colcon test runs in each package.
+line-length = 99
 force-exclude = true
+
+[format]
+quote-style = "single"
