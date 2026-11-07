@@ -1,0 +1,18 @@
+/**:
+  ros__parameters:
+    # Same as config/simple_mppi_planner.param.yaml of simple_mppi_planner (Hunter 2).
+    footprint:
+      circle_x: [-0.298, -0.069, 0.161, 0.39]
+      radius: 0.40
+    occupied_threshold: 50
+    # The planner's route.goal_tolerance and stuck.* values.
+    goal_tolerance: 0.3
+    stuck:
+      min_progress: 0.3
+      window_sec: 5.0
+    # Below this segment length the yaw change says nothing about curvature.
+    curvature_min_step: 0.01
+    # angular.z within this of zero counts as straight, not as a side.
+    turn_deadband: 0.05
+    publish_period_sec: 1.0
+    summary_path: /tmp/simple_planning_evaluator_summary.json
