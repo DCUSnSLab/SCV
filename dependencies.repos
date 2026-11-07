@@ -1,0 +1,89 @@
+repositories:
+  capa:
+    type: git
+    url: https://github.com/DCUSnSLab/capa
+    version: d7509b29288b67bc9a5eb3015b6727338e585c13
+  flux:
+    type: git
+    url: https://github.com/DCUSnSLab/flux
+    version: 6b526f554dacb4acae1ff4018772e45ab14a3f67
+  localization/FAST_LIO:
+    type: git
+    url: https://github.com/nevlife/FAST_LIO
+    version: 569f6a16407eac22e52f1ae7d079bf80c5d6a8a3
+  localization/MINS:
+    type: git
+    url: https://github.com/nevlife/MINS
+    version: 5a395b862621d7c3c525573fe3de6276ba4a8c49
+  localization/prior_map_localization:
+    type: git
+    url: https://github.com/nevlife/prior_map_localization.git
+    version: 03b1490ec26848b6ab37caddce9a6abbaab84b1a
+  localization/robot_localization:
+    type: git
+    url: https://github.com/nevlife/robot_localization
+    version: 7f8a5f088b4c9e68b26c06992281cbc8c95532e8
+  localization/small_gicp:
+    type: git
+    url: https://github.com/nevlife/small_gicp
+    version: fa0cfc983417c044b6036f71dfa448038bb9c820
+  sensor_pkg/ntrip_client_ros2:
+    type: git
+    url: https://github.com/DCUSnSLab/ntrip_client_ros2
+    version: fa4ca5206585e029ab687899aae8a397137fe319
+  sensor_pkg/realsense-ros:
+    type: git
+    url: https://github.com/DCUSnSLab/realsense-ros
+    version: 89c00a7290f926b729f7faac6e68fe4c969de921
+  sensor_pkg/ublox:
+    type: git
+    url: https://github.com/DCUSnSLab/ublox
+    version: 30c5acdd1336dc7a126a5e157531c2ae8b180db3
+  sensor_pkg/vectornav:
+    type: git
+    url: https://github.com/DCUSnSLab/vectornav
+    version: 33b87cee8bc1e3f0d2065c6be445f6eb79e8be47
+  sensor_pkg/velodyne:
+    type: git
+    url: https://github.com/nevlife/velodyne
+    version: cce3fcf053ee572f54913ece088d8d5f90cd5da4
+  sensor_pkg/zed-ros2-wrapper:
+    type: git
+    url: https://github.com/nevlife/zed-ros2-wrapper
+    version: 4c0c422dfbe360f30c777ff2d7c3c19a0b5e77f6
+  system/system_monitor:
+    type: git
+    url: https://github.com/nevlife/system_monitor
+    version: 6777e1a57db57142ea61948e6dfe4ed516dfa095
+  tools/orma:
+    type: git
+    url: https://github.com/DCUSnSLab/orma
+    version: aba213b7d2c622c7b455889458ed778011773776
+  tools/rosbag2_dataset:
+    type: git
+    url: https://github.com/DCUSnSLab/rosbag2_dataset
+    version: dec966e5e960fb5f5283ed1040f049ef949921a7
+  tools/rosbag_recorder:
+    type: git
+    url: https://github.com/DCUSnSLab/rosbag_recorder
+    version: 1f90f983a9098f27962fe434eda483e1d1ae37e5
+  vehicle/hunter2_description:
+    type: git
+    url: https://github.com/DCUSnSLab/hunter2_description.git
+    version: 7cad55de9af026afd5ed6f653450b708af41c485
+  vehicle/hunter_ros2:
+    type: git
+    url: https://github.com/DCUSnSLab/hunter_ros2.git
+    version: 946a49480ac273710881ea76bd67a73daccf3146
+  vehicle/teleop_rover:
+    type: git
+    url: https://github.com/nevlife/teleop_rover.git
+    version: 3fdfaac29e3dd42598f3f6dfb18a86cd2bd719d1
+  vehicle/ugv_sdk:
+    type: git
+    url: https://github.com/DCUSnSLab/ugv_sdk.git
+    version: 1d3e317fad98e3644cd53c267ec295a6be105f25
+  sensor_pkg/generic_cam_ros2:
+    type: git
+    url: https://github.com/nevlife/generic_cam_ros2
+    version: 7df2d88eb4a80861d4f8ac51368266b6c1ac5757
