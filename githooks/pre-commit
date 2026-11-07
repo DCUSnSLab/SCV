@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# The pre-commit hook of SCV and of each submodule whose core.hooksPath points here
+# (scripts/install_hooks.sh). It runs the repository's own .pre-commit-config.yaml, as
+# `pre-commit install` would, then SCV's writing rules (.pre-commit-workspace.yaml).
+set -u
+SCV_ROOT=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
+export SCV_ROOT
+# rustup's cargo ahead of a distribution's: rust-toolchain.toml, which pins a repository's
+# toolchain, is read by rustup only.
+export PATH="${CARGO_HOME:-$HOME/.cargo}/bin:$PATH"
+
+status=0
+if [ -f .pre-commit-config.yaml ]; then
+  pre-commit run --hook-stage pre-commit || status=1
+fi
+pre-commit run --hook-stage pre-commit -c "$SCV_ROOT/.pre-commit-workspace.yaml" || status=1
+exit "$status"

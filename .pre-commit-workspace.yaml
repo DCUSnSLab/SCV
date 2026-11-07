@@ -1,0 +1,34 @@
+# SCV's writing rules, for SCV and every submodule whose core.hooksPath points at
+# githooks/ (scripts/install_hooks.sh). These are rules of this workspace, not of the projects, so
+# they live here and not in the submodules; each repository keeps its own .pre-commit-config.yaml
+# for its formatters and linters, and githooks/pre-commit runs both.
+exclude: ^(thirdparty|repo)/
+repos:
+  - repo: local
+    hooks:
+      - id: no-emoji
+        name: no emoji (SCV)
+        entry: bash -c '"$SCV_ROOT/scripts/check_no_emoji.sh" "$@"' --
+        language: system
+        types: [text]
+
+      - id: hangul-md-only
+        name: hangul only in .md files (SCV)
+        entry: bash -c '"$SCV_ROOT/scripts/check_hangul_md_only.sh" "$@"' --
+        language: system
+        types: [text]
+
+      - id: docs-tracked
+        name: no untracked files under docs/ (SCV)
+        entry: bash -c '"$SCV_ROOT/scripts/check_docs_tracked.sh"'
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      # A repository without scripts/comment_budget/<name>.txt has no budget and passes.
+      - id: comment-density
+        name: comment budget (SCV scripts/comment_budget/)
+        entry: bash -c 'python3 "$SCV_ROOT/scripts/check_comment_density.py"'
+        language: system
+        pass_filenames: false
+        always_run: true

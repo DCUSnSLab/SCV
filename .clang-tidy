@@ -1,0 +1,43 @@
+# Defect classes, the C++ Core Guidelines and CERT with its
+# exclusions (each was checked there as a false positive or intended).
+# Only this repository's own headers; open-source packages under src/localization keep their own settings.
+HeaderFilterRegex: .*/src/(bring_up|map|planning)/.*
+Checks: >
+  -*,
+  bugprone-*,
+  cert-*,
+  concurrency-*,
+  cppcoreguidelines-*,
+  performance-*,
+  readability-identifier-naming,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-narrowing-conversions,
+  -bugprone-branch-clone,
+  -bugprone-switch-missing-default-case,
+  -bugprone-empty-catch,
+  -bugprone-unchecked-optional-access,
+  -bugprone-unchecked-string-to-number-conversion,
+  -bugprone-return-const-ref-from-parameter,
+  -concurrency-mt-unsafe,
+  -performance-no-int-to-ptr,
+  -performance-enum-size,
+  -performance-inefficient-string-concatenation,
+  -cert-err33-c,
+  -cppcoreguidelines-avoid-c-arrays,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -cppcoreguidelines-pro-bounds-avoid-unchecked-container-access,
+  -cppcoreguidelines-pro-bounds-constant-array-index,
+  -cppcoreguidelines-pro-type-vararg
+# Naming follows the Autoware C++ guideline: functions and constants lower_snake_case, enums
+# UpperCamelCase.
+CheckOptions:
+  readability-identifier-naming.FunctionCase: lower_case
+  readability-identifier-naming.MethodCase: lower_case
+  readability-identifier-naming.ConstantCase: lower_case
+  readability-identifier-naming.ConstexprVariableCase: lower_case
+  readability-identifier-naming.EnumCase: CamelCase
+  readability-identifier-naming.EnumConstantCase: aNy_CasE
+  cppcoreguidelines-special-member-functions.AllowMissingMoveFunctionsWhenCopyIsDeleted: true

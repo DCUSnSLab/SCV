@@ -1,0 +1,98 @@
+# SCV pre-commit: formatters and linters for SCV's own files. Repositories under src/ with their
+# own .pre-commit-config.yaml (listed in dependencies.repos) run theirs; githooks/pre-commit adds the
+# workspace writing rules (.pre-commit-workspace.yaml) to every repository.
+# The general and ROS hooks follow autoware_universe's .pre-commit-config.yaml.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-json
+        # GLIM reads JSON with // comments, as its upstream config files are.
+        exclude: ^$^
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+        args: [--unsafe]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.41.0
+    hooks:
+      - id: markdownlint
+        args: [-c, .markdownlint.yaml, --fix]
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        args: [--no-error-on-unmatched-pattern]
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.37.1
+    hooks:
+      - id: yamllint
+        args: [-c, .yamllint.yaml]
+
+  - repo: https://github.com/tier4/pre-commit-hooks-ros
+    rev: v0.10.3
+    hooks:
+      - id: prettier-xacro
+      - id: prettier-launch-xml
+      - id: prettier-package-xml
+      - id: ros-include-guard
+      - id: sort-package-xml
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+      - id: shellcheck
+
+  # 2-space indent: every shell script in SCV, SCV is written that way.
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.13.1-1
+    hooks:
+      - id: shfmt
+        args: [-w, -s, -i=2]
+
+  - repo: https://github.com/pycqa/isort
+    rev: 9.0.0a3
+    hooks:
+      - id: isort
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.9
+    hooks:
+      - id: ruff-format
+        types: [python]
+
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v18.1.6
+    hooks:
+      - id: clang-format
+        types_or: [c++, c]
+
+  - repo: https://github.com/cpplint/cpplint
+    rev: 2.0.2
+    hooks:
+      - id: cpplint
+        args: [--quiet]
+
+  - repo: local
+    hooks:
+      - id: repos-ignored
+        name: dependencies.repos paths are in .gitignore
+        entry: scripts/check_repos_ignored.sh
+        language: script
+        pass_filenames: false
+        files: ^(dependencies\.repos|\.gitignore)$
+
+      - id: flake8
+        name: python defect classes (setup.cfg [flake8])
+        entry: python3 -m flake8
+        language: system
+        types: [python]

@@ -1,0 +1,4 @@
+# Everything under src/ is off by default so that a formatter never touches a repository from
+# dependencies.repos, whose code keeps its own style. Packages of this repository opt in.
+DisableFormat: true
+SortIncludes: Never
