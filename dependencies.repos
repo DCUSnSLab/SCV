@@ -10,7 +10,7 @@ repositories:
   localization/FAST_LIO:
     type: git
     url: https://github.com/nevlife/FAST_LIO
-    version: 569f6a16407eac22e52f1ae7d079bf80c5d6a8a3
+    version: c573692e1af5a56537aec8af725462899aad490a
   localization/MINS:
     type: git
     url: https://github.com/nevlife/MINS
@@ -18,11 +18,11 @@ repositories:
   localization/prior_map_localization:
     type: git
     url: https://github.com/nevlife/prior_map_localization.git
-    version: 03b1490ec26848b6ab37caddce9a6abbaab84b1a
+    version: a8d799e15610501c93a69170dc01d5c59573d66b
   localization/robot_localization:
     type: git
     url: https://github.com/nevlife/robot_localization
-    version: 7f8a5f088b4c9e68b26c06992281cbc8c95532e8
+    version: 5c59e41c7d841fca5e3cdc7826b6b4fcd2b227db
   localization/small_gicp:
     type: git
     url: https://github.com/nevlife/small_gicp
@@ -54,7 +54,7 @@ repositories:
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
-    version: 6777e1a57db57142ea61948e6dfe4ed516dfa095
+    version: 455c17c6d6624efe004b4b1245aa5e44e96fd437
   tools/orma:
     type: git
     url: https://github.com/DCUSnSLab/orma
@@ -62,23 +62,23 @@ repositories:
   tools/rosbag2_dataset:
     type: git
     url: https://github.com/DCUSnSLab/rosbag2_dataset
-    version: dec966e5e960fb5f5283ed1040f049ef949921a7
+    version: 576d359180aefa18cde536118fef7e53471e8f84
   tools/rosbag_recorder:
     type: git
     url: https://github.com/DCUSnSLab/rosbag_recorder
-    version: 1f90f983a9098f27962fe434eda483e1d1ae37e5
+    version: 178c0423c9e2662edc50c6c902cd8601840f7468
   vehicle/hunter2_description:
     type: git
     url: https://github.com/DCUSnSLab/hunter2_description.git
-    version: 7cad55de9af026afd5ed6f653450b708af41c485
+    version: e4b10c6b8114f179e7b300d1cf93d9c7a9e418be
   vehicle/hunter_ros2:
     type: git
     url: https://github.com/DCUSnSLab/hunter_ros2.git
-    version: 946a49480ac273710881ea76bd67a73daccf3146
+    version: 63c9164f206fd4c1f7b5e19415a02399cff3a837
   vehicle/teleop_rover:
     type: git
     url: https://github.com/nevlife/teleop_rover.git
-    version: 3fdfaac29e3dd42598f3f6dfb18a86cd2bd719d1
+    version: 0fc9f2d83e127248cbc5f76a3830da59feb08117
   vehicle/ugv_sdk:
     type: git
     url: https://github.com/DCUSnSLab/ugv_sdk.git
@@ -86,4 +86,4 @@ repositories:
   sensor_pkg/generic_cam_ros2:
     type: git
     url: https://github.com/nevlife/generic_cam_ros2
-    version: 7df2d88eb4a80861d4f8ac51368266b6c1ac5757
+    version: cc722165d3d7e455cb9c50e76af68d28732b9c7f
