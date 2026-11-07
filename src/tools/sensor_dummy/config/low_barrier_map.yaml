@@ -1,0 +1,10 @@
+# The sidewalk of sidewalk_map.yaml closed by a barrier that every lidar beam overshoots once the
+# vehicle stands close to it: a stopped vehicle has only the grid's memory of it.
+ground: { z: 0.0, intensity: 20.0 }
+walls:
+  - { start: [-5.0, 4.0], end: [40.0, 4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+  - { start: [-5.0, -4.0], end: [40.0, -4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+  - { start: [40.0, -4.0], end: [40.0, 4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+  - { start: [-5.0, -4.0], end: [-5.0, 4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+  - { start: [12.0, -3.9], end: [12.0, 3.9], height: 0.3, thickness: 0.3, intensity: 60.0 }
+boxes: []

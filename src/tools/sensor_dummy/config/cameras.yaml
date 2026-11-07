@@ -1,0 +1,255 @@
+# Formats of the cameras. sensor_dummy.launch.py turns one instance into parameters and remaps.
+# {name} is the frame prefix of the instance. Intrinsics are placeholders of the right size.
+models:
+  d435i: # bring_up d435i.launch.py; device default profiles (librealsense, not in this repository)
+    streams:
+      color:
+        {
+          topic: color/image_raw,
+          info_topic: color/camera_info,
+          frame_id: "{name}_color_optical_frame",
+          width: 640,
+          height: 480,
+          encoding: rgb8,
+          rate_hz: 30.0,
+          fx: 615.0,
+          fy: 615.0,
+          cx: 320.0,
+          cy: 240.0,
+          distortion_model: plumb_bob,
+          distortion_size: 5,
+        }
+      depth:
+        {
+          topic: depth/image_rect_raw,
+          info_topic: depth/camera_info,
+          frame_id: "{name}_depth_optical_frame",
+          width: 848,
+          height: 480,
+          encoding: 16UC1,
+          rate_hz: 30.0,
+          fx: 425.0,
+          fy: 425.0,
+          cx: 424.0,
+          cy: 240.0,
+          distortion_model: plumb_bob,
+          distortion_size: 5,
+        }
+      aligned_depth:
+        {
+          topic: aligned_depth_to_color/image_raw,
+          info_topic: aligned_depth_to_color/camera_info,
+          frame_id: "{name}_color_optical_frame",
+          width: 640,
+          height: 480,
+          encoding: 16UC1,
+          rate_hz: 30.0,
+          fx: 615.0,
+          fy: 615.0,
+          cx: 320.0,
+          cy: 240.0,
+          distortion_model: plumb_bob,
+          distortion_size: 5,
+        }
+    imu: # unite_imu_method 2: published at the gyro rate
+      {
+        topic: imu,
+        frame_id: "{name}_imu_optical_frame",
+        rate_hz: 200.0,
+        linear_acceleration: [0.0, -9.80665, 0.0],
+      }
+    root_frame: "{name}_link"
+    frames:
+      - { parent: "{name}_link", child: "{name}_depth_frame" }
+      - { parent: "{name}_depth_frame", child: "{name}_depth_optical_frame", optical: true }
+      - { parent: "{name}_link", child: "{name}_color_frame", xyz: [0.0, 0.015, 0.0] }
+      - { parent: "{name}_color_frame", child: "{name}_color_optical_frame", optical: true }
+      - { parent: "{name}_link", child: "{name}_imu_frame" }
+      - { parent: "{name}_imu_frame", child: "{name}_imu_optical_frame", optical: true }
+
+  d435: # catalog.yaml: the sizes there are 1280x720 rgb8 and 848x480 16UC1 at 15 Hz
+    streams:
+      color:
+        {
+          topic: color/image_raw,
+          info_topic: color/camera_info,
+          frame_id: "{name}_color_optical_frame",
+          width: 1280,
+          height: 720,
+          encoding: rgb8,
+          rate_hz: 15.0,
+          fx: 920.0,
+          fy: 920.0,
+          cx: 640.0,
+          cy: 360.0,
+          distortion_model: plumb_bob,
+          distortion_size: 5,
+        }
+      depth:
+        {
+          topic: depth/image_rect_raw,
+          info_topic: depth/camera_info,
+          frame_id: "{name}_depth_optical_frame",
+          width: 848,
+          height: 480,
+          encoding: 16UC1,
+          rate_hz: 15.0,
+          fx: 425.0,
+          fy: 425.0,
+          cx: 424.0,
+          cy: 240.0,
+          distortion_model: plumb_bob,
+          distortion_size: 5,
+        }
+
+  zed2i: # zed_wrapper config/zed2i.yaml and common_stereo.yaml
+    streams:
+      color:
+        {
+          topic: rgb/color/rect/image,
+          info_topic: rgb/color/rect/camera_info,
+          frame_id: "{name}_left_camera_frame_optical",
+          width: 1280,
+          height: 720,
+          encoding: bgra8,
+          rate_hz: 60.0,
+          fx: 530.0,
+          fy: 530.0,
+          cx: 640.0,
+          cy: 360.0,
+          distortion_model: rational_polynomial,
+          distortion_size: 8,
+        }
+      depth:
+        {
+          topic: depth/depth_registered,
+          info_topic: depth/camera_info,
+          frame_id: "{name}_left_camera_frame_optical",
+          width: 1280,
+          height: 720,
+          encoding: 32FC1,
+          rate_hz: 60.0,
+          fx: 530.0,
+          fy: 530.0,
+          cx: 640.0,
+          cy: 360.0,
+          distortion_model: rational_polynomial,
+          distortion_size: 8,
+        }
+    imu:
+      {
+        topic: imu/data,
+        frame_id: "{name}_imu_link",
+        rate_hz: 100.0,
+        linear_acceleration: [0.0, 0.0, 9.80665],
+      }
+    root_frame: "{name}_camera_link"
+    frames:
+      - { parent: "{name}_camera_link", child: "{name}_left_camera_frame", xyz: [0.0, 0.06, 0.0] }
+      - parent: "{name}_left_camera_frame"
+        child: "{name}_left_camera_frame_optical"
+        optical: true
+      - { parent: "{name}_camera_link", child: "{name}_imu_link" }
+
+  zedxonegs: # zed_wrapper zedxonegs.yaml, VNR cameras_dds.param.yaml (NATIVE); 24 bit output off
+    streams:
+      color:
+        {
+          topic: rgb/color/rect/image,
+          info_topic: rgb/color/rect/camera_info,
+          frame_id: "{name}_camera_frame_optical",
+          width: 1920,
+          height: 1200,
+          encoding: bgra8,
+          rate_hz: 30.0,
+          fx: 730.0,
+          fy: 730.0,
+          cx: 960.0,
+          cy: 600.0,
+          distortion_model: rational_polynomial,
+          distortion_size: 8,
+        }
+    imu:
+      {
+        topic: imu/data,
+        frame_id: "{name}_imu_link",
+        rate_hz: 100.0,
+        linear_acceleration: [0.0, 0.0, 9.80665],
+      }
+    root_frame: "{name}_camera_frame"
+    frames:
+      - { parent: "{name}_camera_frame", child: "{name}_camera_frame_optical", optical: true }
+      - { parent: "{name}_camera_frame", child: "{name}_imu_link" }
+
+# Depth patterns: the plane and the bar in front of it, in meters.
+pattern: { plane_m: 3.0, bar_m: 1.5 }
+
+# root is the real node's namespace plus its name. mount places root_frame; models without
+# root_frame take their frames from tf_mounts.xacro.
+instances:
+  d435i:
+    model: d435i
+    root: /camera/d435i
+    # Placeholder: the camera_link mount of tf_mounts.xacro, written against base_link.
+    mount: { xyz: [0.4579865, 0.0378805, 0.628679], rpy: [0.0238832, 0.18758713, -0.03034896] }
+  d435_left: { model: d435, root: /d435_left/d435_left }
+  d435_center: { model: d435, root: /d435_center/d435_center }
+  d435_right: { model: d435, root: /d435_right/d435_right }
+  zed2i:
+    model: zed2i
+    root: /zed/zed_node # zed_camera.launch.py: camera_name '' becomes zed
+    frame_prefix: zed
+    mount: { xyz: [0.3, 0.0, 0.6], rpy: [0.0, 0.0, 0.0] } # Placeholder: no ZED 2i on the robot yet.
+  # VNR bring_up camera_mounts.yaml. Those values are placeholders there too.
+  cam0:
+    {
+      model: zedxonegs,
+      root: /cam0/zed_node,
+      mount: { xyz: [0.15, 0.0, 0.60], rpy: [0.0, 0.0, 0.0] },
+    }
+  cam1:
+    {
+      model: zedxonegs,
+      root: /cam1/zed_node,
+      mount: { xyz: [0.106066, 0.106066, 0.60], rpy: [0.0, 0.0, 0.785398] },
+    }
+  cam2:
+    {
+      model: zedxonegs,
+      root: /cam2/zed_node,
+      mount: { xyz: [0.0, 0.15, 0.60], rpy: [0.0, 0.0, 1.570796] },
+    }
+  cam3:
+    {
+      model: zedxonegs,
+      root: /cam3/zed_node,
+      mount: { xyz: [-0.106066, 0.106066, 0.60], rpy: [0.0, 0.0, 2.356194] },
+    }
+  cam4:
+    {
+      model: zedxonegs,
+      root: /cam4/zed_node,
+      mount: { xyz: [-0.15, 0.0, 0.60], rpy: [0.0, 0.0, 3.141593] },
+    }
+  cam5:
+    {
+      model: zedxonegs,
+      root: /cam5/zed_node,
+      mount: { xyz: [-0.106066, -0.106066, 0.60], rpy: [0.0, 0.0, -2.356194] },
+    }
+  cam6:
+    {
+      model: zedxonegs,
+      root: /cam6/zed_node,
+      mount: { xyz: [0.0, -0.15, 0.60], rpy: [0.0, 0.0, -1.570796] },
+    }
+  cam7:
+    {
+      model: zedxonegs,
+      root: /cam7/zed_node,
+      mount: { xyz: [0.106066, -0.106066, 0.60], rpy: [0.0, 0.0, -0.785398] },
+    }
+
+groups:
+  d435_tri: [d435_left, d435_center, d435_right]
+  zedxone: [cam0, cam1, cam2, cam3, cam4, cam5, cam6, cam7]

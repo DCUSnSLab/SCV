@@ -1,0 +1,84 @@
+/**:
+  ros__parameters:
+    physics_rate_hz: 200.0
+    initial_pose: [0.0, 0.0, 0.0] # x, y, yaw of base_link in map
+    frames:
+      map: map
+      odom: odom
+      base: base_link
+
+    vehicle:
+      motion_model: ackermann # ackermann or diff
+      # hunter_params.hpp HunterV2Params; test_sensor_dummy_launch.py compares them with the header.
+      track: 0.605
+      wheelbase: 0.650
+      wheel_radius: 0.165
+      transmission_reduction_rate: 30.0
+      max_steer_angle: 0.58
+      max_linear_speed: 1.5
+      rear_axle_x: -0.28 # prior_map_localization localization.launch.py rear_axle_tf
+      # Not measured: hunter_ros2 holds no delay figures. Replace with a step response of the robot.
+      cmd_delay_s: 0.1
+      speed_tau_s: 0.3
+      steer_tau_s: 0.2
+      # Placeholders, also not measured: zero leaves the vehicle as without them.
+      speed_dead_band_mps: 0.0
+      steer_dead_band_rad: 0.0
+      steer_bias_rad: 0.0
+
+    lidar:
+      frame_id: velodyne
+      rpm: 600.0 # lidar.param.yaml; a scan every 0.1 s
+      blocks: 1812 # velodyne_driver: ceil(1507 packets/s / 10 Hz) * 12 blocks
+      block_period_s: 0.000055296 # rawdata.cpp full_firing_cycle
+      firing_step_s: 0.000002304 # rawdata.cpp single_firing
+      min_range: 0.9
+      max_range: 200.0
+
+    imu:
+      frame_id: vectornav
+      pose_frame_id: earth # vn_sensor_msgs.cc
+      rate_hz: 20.0 # rosbag_recorder catalog.yaml; vectornav.yaml has 200, the composable config 20
+      gravity: 9.80665
+      orientation_covariance: 0.01 # vn_sensor_msgs_composable.yaml
+      angular_velocity_covariance: 0.01
+      linear_acceleration_covariance: 0.01
+
+    gnss:
+      frame_id: gnss_antenna # zed_f9p.yaml
+      rate_hz: 10.0 # zed_f9p.yaml rate
+      rtcm_rate_hz: 1.0 # Assumed: one RTCM message per second from the NTRIP caster.
+      origin: [35.9138453975, 128.8035838978, 0.0] # navsat_transform.param.yaml datum
+      service: 1 # zed_f9p.yaml enables GPS only
+      num_sv: 24 # Assumed, with the accuracies below: a good RTK fixed solution.
+      h_acc_mm: 14
+      v_acc_mm: 20
+      s_acc_mm: 50
+      rtcm_message_type: 1005
+      rtcm_station: 1
+
+    hunter:
+      rate_hz: 50.0 # hunter_base_ros.cpp timer
+      vehicle_state: 0
+      control_mode: 1 # agilex_types.h CONTROL_MODE_CAN
+      battery_voltage: 27.0
+
+    odom:
+      rate_hz: 50.0 # published in the same hunter_base_ros.cpp timer
+
+    tf:
+      rate_hz: 50.0
+
+    ground_truth:
+      enable: false
+      rate_hz: 30.0 # catalog.yaml /odometry/global
+
+    # none, dropout, latency, nan or freeze. Dynamic: ros2 param set /sensor_sim fault.imu.mode nan
+    fault:
+      lidar: {mode: none, latency_s: 0.0}
+      imu: {mode: none, latency_s: 0.0}
+      gnss: {mode: none, latency_s: 0.0}
+      hunter: {mode: none, latency_s: 0.0}
+      odom: {mode: none, latency_s: 0.0}
+      tf: {mode: none, latency_s: 0.0}
+      ground_truth: {mode: none, latency_s: 0.0}

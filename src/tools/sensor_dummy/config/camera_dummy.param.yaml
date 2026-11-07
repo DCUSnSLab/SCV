@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    flush_rate_hz: 200.0 # how often frames held back by the latency fault are checked
+    # none, dropout, latency, nan or freeze. Dynamic: ros2 param set /d435i_dummy fault.mode nan
+    fault:
+      mode: none
+      latency_s: 0.0

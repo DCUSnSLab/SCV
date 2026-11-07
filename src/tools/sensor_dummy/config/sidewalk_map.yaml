@@ -1,0 +1,12 @@
+# A straight sidewalk along +x in the map frame. base_link sits on the ground (hunter2_description:
+# wheel axles at z 0.1645, wheel radius 0.165), so the ground is z = 0.
+ground: { z: 0.0, intensity: 20.0 }
+walls:
+  - { start: [-5.0, 4.0], end: [40.0, 4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+  - { start: [-5.0, -4.0], end: [40.0, -4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+  - { start: [40.0, -4.0], end: [40.0, 4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+  - { start: [-5.0, -4.0], end: [-5.0, 4.0], height: 2.5, thickness: 0.2, intensity: 60.0 }
+boxes:
+  - { center: [12.0, 0.0], size: [1.0, 1.0], yaw: 0.0, height: 1.2, intensity: 90.0 }
+  - { center: [20.0, 2.0], size: [1.5, 0.8], yaw: 0.4, height: 1.0, intensity: 90.0 }
+  - { center: [28.0, -1.5], size: [0.8, 0.8], yaw: 0.0, height: 1.5, intensity: 90.0 }
