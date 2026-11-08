@@ -8,5 +8,11 @@ name = "simple_mission_planner_node"
 path = "src/main.rs"
 
 [dependencies]
-rclrs = "*"
+rclrs = "0.8"
 ros-env = "0.3"
+
+# unwrap is for nothing; an invariant is stated in an expect message, and an exception to a lint
+# carries its reason.
+[lints.clippy]
+unwrap_used = "warn"
+allow_attributes_without_reason = "warn"

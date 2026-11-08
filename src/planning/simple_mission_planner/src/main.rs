@@ -32,7 +32,9 @@ impl MissionPlanner {
 
     fn on_goal(&mut self, goal: PoseStamped) {
         if let Some(route) = self.plan(goal) {
-            self.route_pub.publish(route).unwrap();
+            if let Err(e) = self.route_pub.publish(route) {
+                log_error!(self.node.logger(), "route not published: {e}");
+            }
         }
     }
 
@@ -51,15 +53,25 @@ impl MissionPlanner {
             );
             return None;
         }
-        let start = graph.nearest(pose.position.x, pose.position.y);
-        let end = graph.nearest(goal.pose.position.x, goal.pose.position.y);
+        let (Some(start), Some(end)) = (
+            graph.nearest(pose.position.x, pose.position.y),
+            graph.nearest(goal.pose.position.x, goal.pose.position.y),
+        ) else {
+            log_warn!(logger, "goal ignored: sd_map has no nodes");
+            return None;
+        };
         let Some(ids) = graph.astar(start, end) else {
             log_warn!(logger, "no route from node {start} to node {end}");
             return None;
         };
         log_info!(logger, "route: {} nodes, {start} -> {end}", ids.len());
         let mut header = goal.header.clone();
-        header.stamp = self.node.get_clock().now().to_ros_msg().unwrap();
+        header.stamp = self
+            .node
+            .get_clock()
+            .now()
+            .to_ros_msg()
+            .expect("the node clock fits a ROS time stamp");
         Some(to_path(header, map, &ids, goal.pose))
     }
 }

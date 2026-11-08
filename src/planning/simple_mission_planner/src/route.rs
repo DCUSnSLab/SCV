@@ -44,17 +44,16 @@ impl Graph {
         Self { pos, neighbors }
     }
 
-    pub fn nearest(&self, x: f64, y: f64) -> i64 {
-        *self
-            .pos
+    /// The node closest to (x, y), or None for a map without nodes.
+    pub fn nearest(&self, x: f64, y: f64) -> Option<i64> {
+        self.pos
             .iter()
             .min_by(|a, b| {
                 (a.1 .0 - x)
                     .hypot(a.1 .1 - y)
                     .total_cmp(&(b.1 .0 - x).hypot(b.1 .1 - y))
             })
-            .unwrap()
-            .0
+            .map(|(&id, _)| id)
     }
 
     /// Node ids of the shortest route from start to goal, or None if goal is unreachable.
@@ -72,7 +71,7 @@ impl Graph {
         while let Some(Open { id, .. }) = open.pop() {
             if id == goal {
                 let mut route = vec![goal];
-                while let Some(&p) = parent.get(route.last().unwrap()) {
+                while let Some(&p) = parent.get(route.last().expect("route starts with the goal")) {
                     route.push(p);
                 }
                 route.reverse();
@@ -129,6 +128,11 @@ mod tests {
 
     #[test]
     fn snaps_to_the_nearest_node() {
-        assert_eq!(diamond().nearest(1.1, 1.8), 3);
+        assert_eq!(diamond().nearest(1.1, 1.8), Some(3));
+    }
+
+    #[test]
+    fn an_empty_map_has_no_nearest_node() {
+        assert_eq!(Graph::new([], []).nearest(0.0, 0.0), None);
     }
 }
