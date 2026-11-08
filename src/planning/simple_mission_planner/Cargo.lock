@@ -557,8 +557,7 @@ checksum = "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf"
 [[package]]
 name = "rclrs"
 version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "445cc875d7c153a96d865eadc0550d6d2aca6ba58ff9cc677b49b4dc0e08ec1f"
+source = "git+https://github.com/nevlife/ros2_rust.git?rev=f3d0adcb95af4303afeee210b150fab48cfb38f0#f3d0adcb95af4303afeee210b150fab48cfb38f0"
 dependencies = [
  "ament_rs",
  "async-std",

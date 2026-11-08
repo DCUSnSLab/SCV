@@ -11,6 +11,10 @@ path = "src/main.rs"
 rclrs = "0.8"
 ros-env = "0.3"
 
+# The fork carries executor and callback fixes that upstream has not released yet (jazzy branch).
+[patch.crates-io]
+rclrs = { git = "https://github.com/nevlife/ros2_rust.git", rev = "f3d0adcb95af4303afeee210b150fab48cfb38f0" }
+
 # unwrap is for nothing; an invariant is stated in an expect message, and an exception to a lint
 # carries its reason.
 [lints.clippy]
