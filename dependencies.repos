@@ -33,8 +33,8 @@ repositories:
     version: ae0e1cc88067559c4f912f575afabb66cbea6fa5
   sensor_pkg/realsense-ros:
     type: git
-    url: https://github.com/DCUSnSLab/realsense-ros
-    version: 89c00a7290f926b729f7faac6e68fe4c969de921
+    url: https://github.com/nevlife/realsense-ros
+    version: c2dcf08f3ed8d5495e20d7fa8c0c3bd16c02343f
   sensor_pkg/ublox:
     type: git
     url: https://github.com/DCUSnSLab/ublox
@@ -46,11 +46,11 @@ repositories:
   sensor_pkg/velodyne:
     type: git
     url: https://github.com/nevlife/velodyne
-    version: cce3fcf053ee572f54913ece088d8d5f90cd5da4
+    version: 036970e02743331ce008bce106bb45dcfbc8eb7a
   sensor_pkg/zed-ros2-wrapper:
     type: git
     url: https://github.com/nevlife/zed-ros2-wrapper
-    version: 4c0c422dfbe360f30c777ff2d7c3c19a0b5e77f6
+    version: d34fc0f962aa51310f7581174630c4e5b54e64fb
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
