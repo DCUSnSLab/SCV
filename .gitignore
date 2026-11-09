@@ -25,6 +25,7 @@ maps/
 /src/sensor_pkg/vectornav/
 /src/sensor_pkg/velodyne/
 /src/sensor_pkg/zed-ros2-wrapper/
+/src/sensor_pkg/zed-ros2-interfaces/
 /src/system/system_monitor/
 /src/tools/orma/
 /src/tools/rosbag2_dataset/

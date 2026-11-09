@@ -5,8 +5,8 @@ repositories:
     version: d7509b29288b67bc9a5eb3015b6727338e585c13
   flux:
     type: git
-    url: https://github.com/DCUSnSLab/flux
-    version: 6b526f554dacb4acae1ff4018772e45ab14a3f67
+    url: https://github.com/nevlife/flux
+    version: a02338858b412ffb43014ca471cce420e15a119b
   localization/FAST_LIO:
     type: git
     url: https://github.com/nevlife/FAST_LIO
@@ -51,6 +51,10 @@ repositories:
     type: git
     url: https://github.com/nevlife/zed-ros2-wrapper
     version: d34fc0f962aa51310f7581174630c4e5b54e64fb
+  sensor_pkg/zed-ros2-interfaces:
+    type: git
+    url: https://github.com/stereolabs/zed-ros2-interfaces
+    version: 8f86e35268881258cd3df98ab67afd2da5478e4d
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
@@ -74,7 +78,7 @@ repositories:
   vehicle/hunter_ros2:
     type: git
     url: https://github.com/DCUSnSLab/hunter_ros2.git
-    version: 63c9164f206fd4c1f7b5e19415a02399cff3a837
+    version: d644713b7a6c940299a74d7b2b2bd73c8bb192f9
   vehicle/ugv_sdk:
     type: git
     url: https://github.com/DCUSnSLab/ugv_sdk.git
