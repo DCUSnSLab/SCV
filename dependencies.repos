@@ -30,7 +30,7 @@ repositories:
   sensor_pkg/ntrip_client_ros2:
     type: git
     url: https://github.com/DCUSnSLab/ntrip_client_ros2
-    version: fa4ca5206585e029ab687899aae8a397137fe319
+    version: ae0e1cc88067559c4f912f575afabb66cbea6fa5
   sensor_pkg/realsense-ros:
     type: git
     url: https://github.com/DCUSnSLab/realsense-ros
@@ -54,7 +54,7 @@ repositories:
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
-    version: 455c17c6d6624efe004b4b1245aa5e44e96fd437
+    version: fe38149d338163a29222feda2fd9f42a27d5b85c
   tools/orma:
     type: git
     url: https://github.com/DCUSnSLab/orma
@@ -62,11 +62,11 @@ repositories:
   tools/rosbag2_dataset:
     type: git
     url: https://github.com/DCUSnSLab/rosbag2_dataset
-    version: 576d359180aefa18cde536118fef7e53471e8f84
+    version: 2beab96302a1ab46766c10e1c4e0dab364444dd1
   tools/rosbag_recorder:
     type: git
     url: https://github.com/DCUSnSLab/rosbag_recorder
-    version: 178c0423c9e2662edc50c6c902cd8601840f7468
+    version: f83a7c81178457a386b38c376b041e8dddc19a01
   vehicle/hunter2_description:
     type: git
     url: https://github.com/DCUSnSLab/hunter2_description.git
