@@ -31,7 +31,6 @@ maps/
 /src/tools/rosbag_recorder/
 /src/vehicle/hunter2_description/
 /src/vehicle/hunter_ros2/
-/src/vehicle/teleop_rover/
 /src/vehicle/ugv_sdk/
 /src/sensor_pkg/generic_cam_ros2/
 

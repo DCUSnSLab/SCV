@@ -75,10 +75,6 @@ repositories:
     type: git
     url: https://github.com/DCUSnSLab/hunter_ros2.git
     version: 63c9164f206fd4c1f7b5e19415a02399cff3a837
-  vehicle/teleop_rover:
-    type: git
-    url: https://github.com/nevlife/teleop_rover.git
-    version: 0fc9f2d83e127248cbc5f76a3830da59feb08117
   vehicle/ugv_sdk:
     type: git
     url: https://github.com/DCUSnSLab/ugv_sdk.git
