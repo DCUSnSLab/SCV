@@ -5,7 +5,10 @@ results/
 rosbag*
 .vscode/
 
-yolo*
+# YOLO weights
+yolo*.pt
+yolo*.onnx
+yolo*.engine
 __pycache__/
 *.pyc
 maps/
