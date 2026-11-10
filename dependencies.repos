@@ -50,7 +50,7 @@ repositories:
   sensor_pkg/zed-ros2-wrapper:
     type: git
     url: https://github.com/nevlife/zed-ros2-wrapper
-    version: 2e91e1465542fa2f70b209046196f96692cad081
+    version: 2f70727e8c56ba874ba12dd5105777c3cf83bc25
   sensor_pkg/zed-ros2-interfaces:
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces
