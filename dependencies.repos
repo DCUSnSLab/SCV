@@ -34,7 +34,7 @@ repositories:
   sensor_pkg/realsense-ros:
     type: git
     url: https://github.com/nevlife/realsense-ros
-    version: c2dcf08f3ed8d5495e20d7fa8c0c3bd16c02343f
+    version: 9098cbe132a26474bbe1c2d3fb384a2adcab93c7
   sensor_pkg/ublox:
     type: git
     url: https://github.com/DCUSnSLab/ublox
@@ -50,7 +50,7 @@ repositories:
   sensor_pkg/zed-ros2-wrapper:
     type: git
     url: https://github.com/nevlife/zed-ros2-wrapper
-    version: d34fc0f962aa51310f7581174630c4e5b54e64fb
+    version: 2e91e1465542fa2f70b209046196f96692cad081
   sensor_pkg/zed-ros2-interfaces:
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces
