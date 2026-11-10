@@ -6,7 +6,7 @@ repositories:
   flux:
     type: git
     url: https://github.com/nevlife/flux
-    version: a02338858b412ffb43014ca471cce420e15a119b
+    version: 3ed3964c19666192016469c04c8bb13d631f7dba
   localization/FAST_LIO:
     type: git
     url: https://github.com/nevlife/FAST_LIO
@@ -61,8 +61,8 @@ repositories:
     version: fe38149d338163a29222feda2fd9f42a27d5b85c
   tools/orma:
     type: git
-    url: https://github.com/DCUSnSLab/orma
-    version: aba213b7d2c622c7b455889458ed778011773776
+    url: https://github.com/nevlife/orma
+    version: 7a45c892f77c96647a2dac8f935307acf2177814
   tools/rosbag2_dataset:
     type: git
     url: https://github.com/DCUSnSLab/rosbag2_dataset
