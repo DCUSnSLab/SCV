@@ -7,13 +7,18 @@
   <maintainer email="nevlife000720@gmail.com">nevlife</maintainer>
   <license>Apache-2.0</license>
 
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
   <depend>geometry_msgs</depend>
   <depend>nav_msgs</depend>
-  <depend>rclrs</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
   <depend>simple_sd_map_msgs</depend>
   <depend>std_msgs</depend>
 
+  <test_depend>ament_cmake_gtest</test_depend>
+
   <export>
-    <build_type>ament_cargo</build_type>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
