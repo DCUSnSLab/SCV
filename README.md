@@ -12,13 +12,16 @@ realsense-ros는 librealsense 2.59 이상을 요구하는데, ROS apt의 `ros-ja
 git clone https://github.com/DCUSnSLab/SCV.git
 cd SCV
 vcs import --recursive src < dependencies.repos
+sudo apt install ros-jazzy-zed-msgs
 source /opt/ros/jazzy/setup.bash
 scripts/setup_librealsense.sh
 rosdep install --from-paths src --ignore-src -y --rosdistro jazzy
-colcon build --symlink-install
+ENABLE_FLUX=1 colcon build --symlink-install
 ```
 
-일부 저장소 안에는 submodule이 있어서 `--recursive`로 받아야 한다.
+- 일부 저장소 안에는 submodule이 있어서 `--recursive`로 받아야 한다.
+- `zed_msgs`는 소스로 받지 않고 apt 패키지를 쓴다.
+- 센서 드라이버와 영상 노드는 `flux_wrapper`로 발행하고 구독한다. `flux_wrapper`는 빌드할 때의 `ENABLE_FLUX`로 flux를 쓸지 정하므로, flux를 쓰려면 `ENABLE_FLUX=1`로 빌드한다. 실행할 때도 같은 값을 둔다.
 
 ## 지도
 

@@ -6,7 +6,7 @@ repositories:
   flux:
     type: git
     url: https://github.com/nevlife/flux
-    version: 3ed3964c19666192016469c04c8bb13d631f7dba
+    version: 289fc262c36ce4823593eb9bb608216d874df4a4
   localization/FAST_LIO:
     type: git
     url: https://github.com/nevlife/FAST_LIO
@@ -51,14 +51,22 @@ repositories:
     type: git
     url: https://github.com/nevlife/zed-ros2-wrapper
     version: 2f70727e8c56ba874ba12dd5105777c3cf83bc25
-  sensor_pkg/zed-ros2-interfaces:
+  system/SCV_Agent:
     type: git
-    url: https://github.com/stereolabs/zed-ros2-interfaces
-    version: 8f86e35268881258cd3df98ab67afd2da5478e4d
+    url: https://github.com/DCUSnSLab/SCV_Agent
+    version: f65551f88e6ca7f38efbe69e65d0977724715e66
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
     version: 865698acef0d4ac1626ddee3f53fab71eb0cb2f4
+  system/teleop_epoch:
+    type: git
+    url: https://github.com/nevlife/teleop_epoch
+    version: 62993e922df021f431e1143df5fef3b3306de613
+  system/tierlink:
+    type: git
+    url: https://github.com/nevlife/tierlink
+    version: a8cb4cab1295862e919c18dedf5deda956003c66
   tools/orma:
     type: git
     url: https://github.com/nevlife/orma

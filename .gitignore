@@ -28,8 +28,10 @@ maps/
 /src/sensor_pkg/vectornav/
 /src/sensor_pkg/velodyne/
 /src/sensor_pkg/zed-ros2-wrapper/
-/src/sensor_pkg/zed-ros2-interfaces/
+/src/system/SCV_Agent/
 /src/system/system_monitor/
+/src/system/teleop_epoch/
+/src/system/tierlink/
 /src/tools/orma/
 /src/tools/rosbag2_dataset/
 /src/tools/rosbag_recorder/
