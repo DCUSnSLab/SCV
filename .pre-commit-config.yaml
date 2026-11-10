@@ -91,6 +91,12 @@ repos:
         pass_filenames: false
         files: ^(dependencies\.repos|\.gitignore)$
 
+      - id: rosdep-keys
+        name: package.xml dependencies resolve with rosdep
+        entry: scripts/check_rosdep_keys.sh
+        language: script
+        files: (^|/)package\.xml$
+
       - id: flake8
         name: python defect classes (setup.cfg [flake8])
         entry: python3 -m flake8
