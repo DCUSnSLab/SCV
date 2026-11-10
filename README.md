@@ -4,13 +4,16 @@ ROS 2 Jazzy colcon 작업공간이다. `src/` 아래 외부 저장소는 이 저
 
 ## 받기와 빌드
 
-`vcs`는 `python3-vcstool` 패키지로 설치한다. `rosdep`은 처음 한 번 `sudo rosdep init`과 `rosdep update`를 해 둬야 한다.
+`vcs`는 `python3-vcstool` 패키지로 설치한다. `rosdep`은 처음 한 번 `sudo rosdep init`을 해 둬야 한다.
+
+realsense-ros는 librealsense 2.59 이상을 요구하는데, ROS apt의 `ros-jazzy-librealsense2`는 2.58이다. `scripts/setup_librealsense.sh`는 RealSense apt 저장소를 추가하고, rosdep 키 `librealsense2`가 그 저장소의 `librealsense2-dev`로 풀리게 한다(`scripts/rosdep.yaml`). `ros-jazzy-librealsense2`가 설치돼 있으면 지운다. 머신마다 한 번 실행한다.
 
 ```bash
 git clone https://github.com/DCUSnSLab/SCV.git
 cd SCV
 vcs import --recursive src < dependencies.repos
 source /opt/ros/jazzy/setup.bash
+scripts/setup_librealsense.sh
 rosdep install --from-paths src --ignore-src -y --rosdistro jazzy
 colcon build --symlink-install
 ```

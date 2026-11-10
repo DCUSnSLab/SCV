@@ -1,0 +1,3 @@
+# Read by rosdep through the source that setup_librealsense.sh writes.
+librealsense2:
+  ubuntu: [librealsense2-dev]
