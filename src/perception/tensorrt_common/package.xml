@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>tensorrt_common</name>
+  <version>0.1.0</version>
+  <description>TensorRT engine built from an ONNX file and cached, the image conversions, the YOLO26 output decoding and the in-place output loans that the perception nodes share</description>
+  <maintainer email="nevlife000720@gmail.com">nevlife</maintainer>
+  <license>Proprietary</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>flux_wrapper</depend>
+  <depend>libopencv-dev</depend>
+  <depend>rclcpp</depend>
+
+  <test_depend>ament_cmake_gtest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

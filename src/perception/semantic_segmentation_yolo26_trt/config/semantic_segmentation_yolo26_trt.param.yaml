@@ -1,0 +1,21 @@
+/**:
+  ros__parameters:
+    tensorrt:
+      # The precision is the one of the ONNX file: FP32, FP16 or INT8 (Q/DQ nodes).
+      onnx_path: ""
+      # Built from onnx_path on the first start when missing; build_engine builds it ahead.
+      engine_path: ""
+      workspace_mb: 1024
+      # TF32 moved a yolo26n-seg score by 0.012 against ONNX Runtime for 3 % speed (trtexec,
+      # RTX 3060): off, so that results match the reference.
+      tf32: false
+      # The TensorRT default.
+      optimization_level: 3
+      # Empty: no timing cache.
+      timing_cache_path: ""
+      # -1: GPU only. 0 or 1: a DLA core of Orin, the rest on the GPU.
+      dla_core: -1
+    # gpu: resize and normalize in a CUDA kernel. cpu: OpenCV, the reference of the kernel test.
+    preprocess: gpu
+    # A 2208x1242 mono8 class image is 2.6 MiB.
+    output_slot_mb: 4

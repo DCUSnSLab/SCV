@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.16)
+project(detection_yolo26_trt)
+
+# colcon passes no build type.
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "" FORCE)
+endif()
+
+find_package(ament_cmake REQUIRED)
+find_package(flux_wrapper REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclcpp_components REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(tensorrt_common REQUIRED)
+find_package(vision_msgs REQUIRED)
+
+add_library(detection_yolo26_trt_component SHARED src/detection_yolo26_trt.cpp)
+target_compile_features(detection_yolo26_trt_component PRIVATE cxx_std_17)
+target_compile_options(detection_yolo26_trt_component PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(detection_yolo26_trt_component
+  flux_wrapper::flux_wrapper tensorrt_common::tensorrt_common)
+ament_target_dependencies(detection_yolo26_trt_component rclcpp rclcpp_components sensor_msgs vision_msgs)
+rclcpp_components_register_node(detection_yolo26_trt_component
+  PLUGIN "detection_yolo26_trt::DetectionYolo26Trt" EXECUTABLE detection_yolo26_trt_node)
+
+install(TARGETS detection_yolo26_trt_component
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+install(DIRECTORY config launch DESTINATION share/${PROJECT_NAME})
+
+ament_package()

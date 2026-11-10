@@ -1,0 +1,103 @@
+/**:
+  ros__parameters:
+    tensorrt:
+      # The precision is the one of the ONNX file: FP32, FP16 or INT8 (Q/DQ nodes).
+      onnx_path: ""
+      # Built from onnx_path on the first start when missing; build_engine builds it ahead.
+      engine_path: ""
+      workspace_mb: 1024
+      # TF32 moved a yolo26n-seg score by 0.012 against ONNX Runtime for 3 % speed (trtexec,
+      # RTX 3060): off, so that results match the reference.
+      tf32: false
+      # The TensorRT default.
+      optimization_level: 3
+      # Empty: no timing cache.
+      timing_cache_path: ""
+      # -1: GPU only. 0 or 1: a DLA core of Orin, the rest on the GPU.
+      dla_core: -1
+    # gpu: resize and normalize in a CUDA kernel. cpu: OpenCV, the reference of the kernel test.
+    preprocess: gpu
+    # The Ultralytics predict default (conf=0.25).
+    score_threshold: 0.25
+    # COCO, the classes of the released yolo26 detect models. A class past the list goes out as its index.
+    class_names:
+      - "person"
+      - "bicycle"
+      - "car"
+      - "motorcycle"
+      - "airplane"
+      - "bus"
+      - "train"
+      - "truck"
+      - "boat"
+      - "traffic light"
+      - "fire hydrant"
+      - "stop sign"
+      - "parking meter"
+      - "bench"
+      - "bird"
+      - "cat"
+      - "dog"
+      - "horse"
+      - "sheep"
+      - "cow"
+      - "elephant"
+      - "bear"
+      - "zebra"
+      - "giraffe"
+      - "backpack"
+      - "umbrella"
+      - "handbag"
+      - "tie"
+      - "suitcase"
+      - "frisbee"
+      - "skis"
+      - "snowboard"
+      - "sports ball"
+      - "kite"
+      - "baseball bat"
+      - "baseball glove"
+      - "skateboard"
+      - "surfboard"
+      - "tennis racket"
+      - "bottle"
+      - "wine glass"
+      - "cup"
+      - "fork"
+      - "knife"
+      - "spoon"
+      - "bowl"
+      - "banana"
+      - "apple"
+      - "sandwich"
+      - "orange"
+      - "broccoli"
+      - "carrot"
+      - "hot dog"
+      - "pizza"
+      - "donut"
+      - "cake"
+      - "chair"
+      - "couch"
+      - "potted plant"
+      - "bed"
+      - "dining table"
+      - "toilet"
+      - "tv"
+      - "laptop"
+      - "mouse"
+      - "remote"
+      - "keyboard"
+      - "cell phone"
+      - "microwave"
+      - "oven"
+      - "toaster"
+      - "sink"
+      - "refrigerator"
+      - "book"
+      - "clock"
+      - "vase"
+      - "scissors"
+      - "teddy bear"
+      - "hair drier"
+      - "toothbrush"
