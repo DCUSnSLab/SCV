@@ -7,8 +7,6 @@
   <maintainer email="pcdpcd100@gmail.com">nev</maintainer>
   <license>MIT</license>
 
-  <buildtool_depend>ament_python</buildtool_depend>
-
   <exec_depend>rclpy</exec_depend>
   <exec_depend>rosbag2_py</exec_depend>
   <exec_depend>system_monitor_msgs</exec_depend>

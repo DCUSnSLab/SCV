@@ -58,18 +58,18 @@ repositories:
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
-    version: fe38149d338163a29222feda2fd9f42a27d5b85c
+    version: 865698acef0d4ac1626ddee3f53fab71eb0cb2f4
   tools/orma:
     type: git
     url: https://github.com/nevlife/orma
     version: 7a45c892f77c96647a2dac8f935307acf2177814
   tools/rosbag2_dataset:
     type: git
-    url: https://github.com/DCUSnSLab/rosbag2_dataset
-    version: 2beab96302a1ab46766c10e1c4e0dab364444dd1
+    url: https://github.com/nevlife/rosbag2_dataset
+    version: d27e2b4f845c16c5ebf2020bf87c98e1ea0538b1
   tools/rosbag_recorder:
     type: git
-    url: https://github.com/DCUSnSLab/rosbag_recorder
+    url: https://github.com/nevlife/rosbag_recorder
     version: f83a7c81178457a386b38c376b041e8dddc19a01
   vehicle/hunter2_description:
     type: git
