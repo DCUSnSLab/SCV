@@ -20,6 +20,8 @@ target_compile_options(detection_yolo26_trt_component PRIVATE -Wall -Wextra -Wpe
 target_link_libraries(detection_yolo26_trt_component
   flux_wrapper::flux_wrapper tensorrt_common::tensorrt_common)
 ament_target_dependencies(detection_yolo26_trt_component rclcpp rclcpp_components sensor_msgs vision_msgs)
+# Relative model paths of the param file: downloaded, exported and built there, untracked.
+target_compile_definitions(detection_yolo26_trt_component PRIVATE MODEL_DIR="${CMAKE_CURRENT_SOURCE_DIR}/models")
 rclcpp_components_register_node(detection_yolo26_trt_component
   PLUGIN "detection_yolo26_trt::DetectionYolo26Trt" EXECUTABLE detection_yolo26_trt_node)
 

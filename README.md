@@ -50,6 +50,15 @@ ros2 launch bring_up teleop_start.launch.py input_image:=<카메라 토픽> [tel
 
 묶음에 들어갈 토픽은 `src/bring_up/config/blackbox/catalog.yaml`에 적는다. 파일은 300초마다 나뉘고, 남은 디스크가 10 GB 아래로 내려가면 기록이 멈춘다. 오래된 파일은 저절로 지워지지 않는다.
 
+## YOLO26 모델
+
+YOLO26 노드(`detection_yolo26_trt`, `depth_yolo26_trt`, `instance_segmentation_yolo26_trt`, `semantic_segmentation_yolo26_trt`)는 처음 시작할 때 Ultralytics 모델을 받아 ONNX로 export하고, 그 ONNX로 TensorRT engine을 빌드한다. 파일은 각 패키지 소스의 `models/`에 두고 git에 넣지 않는다. 이미 있는 파일은 다시 만들지 않는다.
+
+- export는 Python 패키지 `ultralytics`로 한다. rosdep 키가 없으므로 머신마다 `pip install --user ultralytics`로 설치한다. CUDA를 쓰는 `torch`는 그 전에 설치해 둔다. 없으면 pip가 PyPI의 `torch`를 함께 받는다.
+- 노드는 export 중에 없는 패키지를 pip로 설치하지 않는다(`YOLO_AUTOINSTALL=false`). export가 실패하면 노드가 시작하지 않는다.
+- 여러 노드가 같은 모델로 동시에 시작해도 export와 빌드는 한 번만 한다.
+- 모델은 param 파일의 `tensorrt.model`로 바꾼다. `tensorrt.half: true`면 FP16 ONNX로 export한다. 둘 중 하나를 바꾸면 `onnx_path`와 `engine_path`의 이름도 바꾼다. 같은 이름의 파일이 있으면 그 파일을 그대로 쓰기 때문이다.
+
 ## 저장소 버전 올리기
 
 1. `dependencies.repos`에서 해당 저장소의 `version`을 새 커밋으로 바꾼다.

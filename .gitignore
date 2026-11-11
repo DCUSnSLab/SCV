@@ -9,6 +9,8 @@ rosbag*
 yolo*.pt
 yolo*.onnx
 yolo*.engine
+# Models that a perception node downloads, exports and builds on its first start
+src/perception/*/models/
 __pycache__/
 *.pyc
 maps/

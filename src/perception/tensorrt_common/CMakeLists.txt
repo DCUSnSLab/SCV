@@ -33,6 +33,8 @@ add_library(tensorrt_common SHARED
   src/yolo.cpp)
 target_compile_features(tensorrt_common PUBLIC cxx_std_17)
 target_compile_options(tensorrt_common PRIVATE $<$<COMPILE_LANGUAGE:CXX>:-Wall -Wextra -Wpedantic>)
+target_compile_definitions(tensorrt_common PRIVATE
+  TENSORRT_COMMON_EXPORT_SCRIPT="${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}/export_yolo26_onnx.py")
 target_include_directories(tensorrt_common
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -49,6 +51,7 @@ ament_target_dependencies(build_engine rclcpp)
 
 install(DIRECTORY include/ DESTINATION include/${PROJECT_NAME})
 install(TARGETS build_engine RUNTIME DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS scripts/export_yolo26_onnx.py DESTINATION lib/${PROJECT_NAME})
 install(TARGETS tensorrt_common EXPORT export_tensorrt_common
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib

@@ -26,7 +26,7 @@ DetectionYolo26Trt::DetectionYolo26Trt(const rclcpp::NodeOptions & options)
   score_threshold_(static_cast<float>(declare_parameter<double>("score_threshold"))),
   class_names_(declare_parameter<std::vector<std::string>>("class_names")),
   gpu_preprocess_(tensorrt_common::declare_gpu_preprocess(*this)),
-  engine_(tensorrt_common::declare_engine_options(*this)),
+  engine_(tensorrt_common::declare_engine_options(*this, MODEL_DIR)),
   input_(engine_.input_names().at(0)),
   output_(engine_.output_names().at(0))
 {

@@ -22,6 +22,8 @@ target_compile_options(instance_segmentation_yolo26_trt_component PRIVATE -Wall 
 target_link_libraries(instance_segmentation_yolo26_trt_component
   flux_wrapper::flux_wrapper tensorrt_common::tensorrt_common)
 ament_target_dependencies(instance_segmentation_yolo26_trt_component rclcpp rclcpp_components sensor_msgs vision_msgs)
+# Relative model paths of the param file: downloaded, exported and built there, untracked.
+target_compile_definitions(instance_segmentation_yolo26_trt_component PRIVATE MODEL_DIR="${CMAKE_CURRENT_SOURCE_DIR}/models")
 rclcpp_components_register_node(instance_segmentation_yolo26_trt_component
   PLUGIN "instance_segmentation_yolo26_trt::InstanceSegmentationYolo26Trt" EXECUTABLE instance_segmentation_yolo26_trt_node)
 

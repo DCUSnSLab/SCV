@@ -1,10 +1,16 @@
 /**:
   ros__parameters:
     tensorrt:
+      # Relative paths are in the models/ directory of this package. On the first start the node
+      # downloads the Ultralytics model, exports onnx_path and builds engine_path from it, each
+      # only when missing. Rename onnx_path and engine_path with model or half: files that exist
+      # are used as they are.
+      model: "yolo26n-seg.pt"
+      # Export in FP16: faster on Orin, and the results move against the FP32 reference.
+      half: false
       # The precision is the one of the ONNX file: FP32, FP16 or INT8 (Q/DQ nodes).
-      onnx_path: ""
-      # Built from onnx_path on the first start when missing; build_engine builds it ahead.
-      engine_path: ""
+      onnx_path: "yolo26n-seg.onnx"
+      engine_path: "yolo26n-seg.engine"
       workspace_mb: 1024
       # TF32 moved a yolo26n-seg score by 0.012 against ONNX Runtime for 3 % speed (trtexec,
       # RTX 3060): off, so that results match the reference.

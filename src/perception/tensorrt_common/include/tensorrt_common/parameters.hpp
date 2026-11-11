@@ -7,24 +7,38 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <filesystem>
 #include <stdexcept>
 #include <string>
 
 namespace tensorrt_common
 {
 
+inline auto in_dir(const std::string & dir, const std::string & path) -> std::string
+{
+  if (dir.empty() || path.empty() || std::filesystem::path(path).is_absolute()) {
+    return path;
+  }
+  return (std::filesystem::path(dir) / path).string();
+}
+
 // The tensorrt.* parameters of a node. Header only, so that this library does not link rclcpp.
-inline auto declare_engine_options(rclcpp::Node & node) -> EngineOptions
+// Relative paths are taken from model_dir, the models/ directory of the node's package.
+inline auto declare_engine_options(rclcpp::Node & node, const std::string & model_dir = {})
+  -> EngineOptions
 {
   EngineOptions o;
-  o.onnx_path = node.declare_parameter<std::string>("tensorrt.onnx_path");
-  o.engine_path = node.declare_parameter<std::string>("tensorrt.engine_path");
+  o.model = in_dir(model_dir, node.declare_parameter<std::string>("tensorrt.model", ""));
+  o.half = node.declare_parameter<bool>("tensorrt.half", false);
+  o.onnx_path = in_dir(model_dir, node.declare_parameter<std::string>("tensorrt.onnx_path"));
+  o.engine_path = in_dir(model_dir, node.declare_parameter<std::string>("tensorrt.engine_path"));
   o.workspace_bytes =
     static_cast<std::size_t>(node.declare_parameter<std::int64_t>("tensorrt.workspace_mb")) << 20;
   o.tf32 = node.declare_parameter<bool>("tensorrt.tf32");
   o.optimization_level =
     static_cast<int>(node.declare_parameter<std::int64_t>("tensorrt.optimization_level"));
-  o.timing_cache_path = node.declare_parameter<std::string>("tensorrt.timing_cache_path");
+  o.timing_cache_path =
+    in_dir(model_dir, node.declare_parameter<std::string>("tensorrt.timing_cache_path"));
   o.dla_core = static_cast<int>(node.declare_parameter<std::int64_t>("tensorrt.dla_core"));
   if (o.onnx_path.empty() || o.engine_path.empty()) {
     throw std::invalid_argument(

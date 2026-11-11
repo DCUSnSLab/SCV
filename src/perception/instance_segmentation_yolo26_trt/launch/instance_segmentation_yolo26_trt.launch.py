@@ -1,17 +1,21 @@
 """instance_segmentation_yolo26_trt on one camera.
 
 ros2 launch instance_segmentation_yolo26_trt instance_segmentation_yolo26_trt.launch.py \
-    param_file:=<model>.param.yaml input_image:=<topic> \
+    input_image:=<topic> [param_file:=<model>.param.yaml] \
     [container:=/<running container>]
 
-Copy config/instance_segmentation_yolo26_trt.param.yaml and set tensorrt.onnx_path. Without container it starts
-a capa_component_container, which flux needs.
+The default param file takes yolo26n-seg.pt: on the first start it is downloaded and exported into
+models/ of this package. Without container it starts a capa_component_container, which flux
+needs.
 """
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, OpaqueFunction
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
-from launch_ros.actions import ComposableNodeContainer, LoadComposableNodes
+from launch.actions import DeclareLaunchArgument
+from launch.actions import OpaqueFunction
+from launch.substitutions import LaunchConfiguration
+from launch.substitutions import PathJoinSubstitution
+from launch_ros.actions import ComposableNodeContainer
+from launch_ros.actions import LoadComposableNodes
 from launch_ros.descriptions import ComposableNode
 from launch_ros.substitutions import FindPackageShare
 

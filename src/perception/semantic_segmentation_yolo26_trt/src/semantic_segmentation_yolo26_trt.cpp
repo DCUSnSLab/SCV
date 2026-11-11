@@ -20,7 +20,7 @@ namespace semantic_segmentation_yolo26_trt
 SemanticSegmentationYolo26Trt::SemanticSegmentationYolo26Trt(const rclcpp::NodeOptions & options)
 : Node("semantic_segmentation_yolo26_trt", options),
   gpu_preprocess_(tensorrt_common::declare_gpu_preprocess(*this)),
-  engine_(tensorrt_common::declare_engine_options(*this)),
+  engine_(tensorrt_common::declare_engine_options(*this, MODEL_DIR)),
   input_(engine_.input_names().at(0)),
   output_(engine_.output_names().at(0))
 {

@@ -7,6 +7,11 @@
 #include <NvOnnxParser.h>
 #include <cuda_fp16.h>
 #include <cuda_runtime_api.h>
+#include <fcntl.h>
+#include <spawn.h>
+#include <sys/file.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
 #include <cstdio>
 #include <filesystem>
@@ -91,12 +96,83 @@ std::vector<char> read_file(const std::string & path)
   return {std::istreambuf_iterator<char>(in), std::istreambuf_iterator<char>()};
 }
 
+// Through a rename: a file cut short by a stop would be read back as complete on the next start.
 void write_file(const std::string & path, const void * data, std::size_t size)
 {
-  std::ofstream out(path, std::ios::binary);
-  out.write(static_cast<const char *>(data), static_cast<std::streamsize>(size));
-  if (!out) {
-    throw std::runtime_error("cannot write " + path);
+  const std::string tmp = path + ".tmp";
+  {
+    std::ofstream out(tmp, std::ios::binary);
+    out.write(static_cast<const char *>(data), static_cast<std::streamsize>(size));
+    if (!out) {
+      throw std::runtime_error("cannot write " + tmp);
+    }
+  }
+  std::filesystem::rename(tmp, path);
+}
+
+// Held while the files of one engine are made, so that nodes started together make them once.
+class FileLock
+{
+public:
+  explicit FileLock(const std::string & path)
+  : fd_(::open(path.c_str(), O_RDWR | O_CREAT | O_CLOEXEC, 0644))
+  {
+    if (fd_ < 0) {
+      throw std::runtime_error("cannot open " + path);
+    }
+    if (::flock(fd_, LOCK_EX) != 0) {
+      ::close(fd_);
+      throw std::runtime_error("cannot lock " + path);
+    }
+  }
+  ~FileLock() { ::close(fd_); }
+  FileLock(const FileLock &) = delete;
+  FileLock & operator=(const FileLock &) = delete;
+
+private:
+  int fd_;
+};
+
+auto lock_engine(const EngineOptions & options) -> FileLock
+{
+  const auto dir = std::filesystem::path(options.engine_path).parent_path();
+  if (!dir.empty()) {
+    std::filesystem::create_directories(dir);
+  }
+  return FileLock(options.engine_path + ".lock");
+}
+
+void export_onnx(const EngineOptions & options)
+{
+  if (options.model.empty()) {
+    throw std::runtime_error(options.onnx_path + " does not exist and tensorrt.model is not set");
+  }
+  std::fprintf(
+    stderr, "[tensorrt] exporting %s to %s\n", options.model.c_str(), options.onnx_path.c_str());
+  std::vector<std::string> args = {"python3",  TENSORRT_COMMON_EXPORT_SCRIPT,
+                                   "--model",  options.model,
+                                   "--output", options.onnx_path};
+  if (options.half) {
+    args.emplace_back("--half");
+  }
+  std::vector<char *> argv;
+  for (auto & a : args) {
+    argv.push_back(a.data());
+  }
+  argv.push_back(nullptr);
+  pid_t pid = 0;
+  int status = 0;
+  if (
+    ::posix_spawnp(&pid, argv[0], nullptr, nullptr, argv.data(), environ) != 0 ||
+    ::waitpid(pid, &status, 0) != pid || !WIFEXITED(status) || WEXITSTATUS(status) != 0) {
+    throw std::runtime_error("cannot export " + options.model + " to " + options.onnx_path);
+  }
+}
+
+void ensure_onnx(const EngineOptions & options)
+{
+  if (!std::filesystem::exists(options.onnx_path)) {
+    export_onnx(options);
   }
 }
 
@@ -157,6 +233,12 @@ std::vector<char> load_or_build(const EngineOptions & options)
   if (std::filesystem::exists(options.engine_path)) {
     return read_file(options.engine_path);
   }
+  const auto lock = lock_engine(options);
+  // Another node may have made it while this one waited for the lock.
+  if (std::filesystem::exists(options.engine_path)) {
+    return read_file(options.engine_path);
+  }
+  ensure_onnx(options);
   std::fprintf(
     stderr, "[tensorrt] building %s from %s; this takes minutes\n", options.engine_path.c_str(),
     options.onnx_path.c_str());
@@ -169,6 +251,8 @@ std::vector<char> load_or_build(const EngineOptions & options)
 
 void build_engine_file(const EngineOptions & options)
 {
+  const auto lock = lock_engine(options);
+  ensure_onnx(options);
   const auto plan = build_engine(options);
   write_file(options.engine_path, plan.data(), plan.size());
 }

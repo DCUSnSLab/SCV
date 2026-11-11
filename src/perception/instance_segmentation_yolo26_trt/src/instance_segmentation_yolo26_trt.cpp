@@ -66,7 +66,7 @@ InstanceSegmentationYolo26Trt::InstanceSegmentationYolo26Trt(const rclcpp::NodeO
   score_threshold_(static_cast<float>(declare_parameter<double>("score_threshold"))),
   class_names_(declare_parameter<std::vector<std::string>>("class_names")),
   gpu_preprocess_(tensorrt_common::declare_gpu_preprocess(*this)),
-  engine_(tensorrt_common::declare_engine_options(*this)),
+  engine_(tensorrt_common::declare_engine_options(*this, MODEL_DIR)),
   input_(engine_.input_names().at(0)),
   rows_output_(output_of_rank(engine_, 3)),
   protos_output_(output_of_rank(engine_, 4))

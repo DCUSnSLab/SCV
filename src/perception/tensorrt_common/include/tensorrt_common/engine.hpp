@@ -24,6 +24,9 @@ struct TensorInfo
 
 struct EngineOptions
 {
+  // An Ultralytics model (release name or .pt), exported when onnx_path is missing.
+  std::string model;
+  bool half = false;
   // The precision is the one of this file (FP32, FP16 or INT8 Q/DQ): the build is strongly typed.
   std::string onnx_path;
   // Built from onnx_path and written here when the file does not exist yet.
@@ -65,7 +68,7 @@ struct ImageView
 // `image` itself when it is in host memory; else a copy in `buffer`, waited for.
 auto host_copy(const ImageView & image, std::vector<std::uint8_t> & buffer) -> ImageView;
 
-// Builds onnx_path and writes engine_path, also when engine_path exists.
+// Exports onnx_path when missing, builds it and writes engine_path, also when engine_path exists.
 void build_engine_file(const EngineOptions & options);
 
 // Static shapes only.
