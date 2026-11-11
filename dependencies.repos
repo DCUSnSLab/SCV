@@ -82,7 +82,7 @@ repositories:
   vehicle/hunter2_description:
     type: git
     url: https://github.com/DCUSnSLab/hunter2_description.git
-    version: e4b10c6b8114f179e7b300d1cf93d9c7a9e418be
+    version: 06dc18273c3ceb7b8a752698c390e6f721cbc2d1
   vehicle/hunter_ros2:
     type: git
     url: https://github.com/DCUSnSLab/hunter_ros2.git
