@@ -8,6 +8,7 @@
   <license>TODO: License declaration</license>
 
   <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>fleet_telemetry</exec_depend>
   <exec_depend>hunter2_description</exec_depend>
   <exec_depend>hunter_base</exec_depend>
   <exec_depend>launch</exec_depend>
@@ -18,10 +19,12 @@
   <exec_depend>python3-yaml</exec_depend>
   <exec_depend>rclpy</exec_depend>
   <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>rosbag_recorder</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>sensor_msgs_py</exec_depend>
   <exec_depend>simple_mission_planner</exec_depend>
   <exec_depend>simple_sd_map</exec_depend>
+  <exec_depend>teleop_epoch</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>ublox_gps</exec_depend>
   <exec_depend>vectornav</exec_depend>

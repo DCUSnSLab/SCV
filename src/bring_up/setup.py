@@ -19,6 +19,14 @@ setup(
             + glob(os.path.join('launch', '*.launch.xml'))
             + glob(os.path.join('launch', '*.launch.yaml')),
         ),
+        (
+            os.path.join('share', package_name, 'config', 'blackbox'),
+            glob(os.path.join('config', 'blackbox', '*.yaml')),
+        ),
+        (
+            os.path.join('share', package_name, 'config', 'blackbox', 'profiles'),
+            glob(os.path.join('config', 'blackbox', 'profiles', '*.yaml')),
+        ),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

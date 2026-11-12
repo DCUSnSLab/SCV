@@ -1,0 +1,12 @@
+# What the blackbox records. Delete a group from the list to stop recording it; the groups are in
+# ../catalog.yaml.
+name: blackbox
+description: remote driving record
+groups:
+  - teleop
+  - video
+  - vehicle
+options:
+  # Start at once, even before every topic has a publisher.
+  start_mode: immediate
+  split_duration_sec: 300

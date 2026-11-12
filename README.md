@@ -32,6 +32,24 @@ ENABLE_FLUX=1 colcon build --symlink-install
 | `maps/d2_20260813_v2/ndt_map_0p4.pcd`, `full_corner.pcd` | `prior_map_localization`의 `config/map.param.yaml`  |
 | `maps/d2_20260813_v2/path.osm`                           | `simple_sd_map`의 `config/simple_sd_map.param.yaml` |
 
+## 원격조종
+
+헌터의 구동부와 hunter_mux, 원격조종(teleop_epoch), 모니터링 agent(fleet_telemetry), 블랙박스를 한 번에 띄운다.
+
+```bash
+ros2 launch bring_up teleop_start.launch.py input_image:=<카메라 토픽> [telemetry:=false] [blackbox:=false]
+```
+
+블랙박스는 rosbag_recorder로 `~/blackbox`(`blackbox_dir:=`)에 기록한다. 기록할 묶음은 `src/bring_up/config/blackbox/profiles/blackbox.yaml`의 `groups`에서 고른다. 묶음은 셋이다.
+
+| 묶음      | 내용                                                                                                               |
+| --------- | ------------------------------------------------------------------------------------------------------------------ |
+| `teleop`  | 조종 명령, hunter_mux가 고른 명령과 상태, 비상정지와 해제, teleop_control의 이벤트(무장, 해제, 거부된 명령과 이유) |
+| `video`   | 관제로 보낸 H.265 영상. 용량이 가장 크다                                                                           |
+| `vehicle` | 바퀴 odometry, 헌터 상태, IMU, GPS                                                                                 |
+
+묶음에 들어갈 토픽은 `src/bring_up/config/blackbox/catalog.yaml`에 적는다. 파일은 300초마다 나뉘고, 남은 디스크가 10 GB 아래로 내려가면 기록이 멈춘다. 오래된 파일은 저절로 지워지지 않는다.
+
 ## 저장소 버전 올리기
 
 1. `dependencies.repos`에서 해당 저장소의 `version`을 새 커밋으로 바꾼다.

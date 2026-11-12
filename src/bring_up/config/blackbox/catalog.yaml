@@ -1,0 +1,46 @@
+# The blackbox's topics in three groups. profiles/blackbox.yaml picks which groups are recorded.
+version: 1
+groups:
+  teleop:
+    description: remote driving commands, the mux's choice, the e-stop and teleop_control's events
+    topics:
+      /remote/teleop_cmd:
+        type: geometry_msgs/msg/Twist
+      /cmd_vel:
+        type: geometry_msgs/msg/Twist
+        description: navigation's command into hunter_mux
+      /final_cmd:
+        type: geometry_msgs/msg/Twist
+        description: what hunter_mux sends to the vehicle
+      /vehicle/mux_status:
+        type: hunter_mux_msgs/msg/MuxStatus
+      /vehicle/estop_status:
+        type: hunter_mux_msgs/msg/EStopStatus
+      /remote/estop:
+        type: std_msgs/msg/Empty
+      /remote/estop_reset:
+        type: std_msgs/msg/Empty
+      /remote/cmd_mode:
+        type: hunter_mux_msgs/msg/CmdMode
+      /teleop/stop:
+        type: std_msgs/msg/Empty
+      /teleop/events:
+        type: std_msgs/msg/String
+        description: arm, disarm, rejected commands and e-stop requests, with reasons
+  video:
+    description: the H.265 stream sent to the operator (about 0.2 to 2 Mbit/s)
+    topics:
+      /teleop_video/output/encoded:
+        type: sensor_msgs/msg/CompressedImage
+        heavy: true
+  vehicle:
+    description: speed, odometry, position and the base's own status
+    topics:
+      /odometry/wheel:
+        type: nav_msgs/msg/Odometry
+      /hunter_status:
+        type: hunter_msgs/msg/HunterStatus
+      /vectornav/imu:
+        type: sensor_msgs/msg/Imu
+      /ublox_gps_node/fix:
+        type: sensor_msgs/msg/NavSatFix
