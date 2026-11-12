@@ -54,7 +54,7 @@ repositories:
   system/SCV_Agent:
     type: git
     url: https://github.com/DCUSnSLab/SCV_Agent
-    version: e3c101730559a5ecb25c41a08ba856ee3bdb474a
+    version: 575179a4d9d1baf551e76f94ccc54f045c14fe8a
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
@@ -62,11 +62,11 @@ repositories:
   system/teleop_epoch:
     type: git
     url: https://github.com/nevlife/teleop_epoch
-    version: 8b44d4b8081c167d35e51eef323964104eea0fe4
+    version: 5d6ba949d2b25abd05dd8acca9f57b82c22b315c
   system/tierlink:
     type: git
     url: https://github.com/nevlife/tierlink
-    version: 641fcde2fd78565172762fde3ad6767f5cc065e5
+    version: 2b4537bb4f5542c0ceed6937dfbe35cc4dec38ac
   tools/orma:
     type: git
     url: https://github.com/nevlife/orma
@@ -86,7 +86,7 @@ repositories:
   vehicle/hunter_ros2:
     type: git
     url: https://github.com/DCUSnSLab/hunter_ros2.git
-    version: d644713b7a6c940299a74d7b2b2bd73c8bb192f9
+    version: 9698004624317321d94af1114eda33980b5e43ef
   vehicle/ugv_sdk:
     type: git
     url: https://github.com/DCUSnSLab/ugv_sdk.git
