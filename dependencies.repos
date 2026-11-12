@@ -54,7 +54,7 @@ repositories:
   system/SCV_Agent:
     type: git
     url: https://github.com/DCUSnSLab/SCV_Agent
-    version: 575179a4d9d1baf551e76f94ccc54f045c14fe8a
+    version: c165faa9dc48e89efec646438facd96f0d9161d6
   system/system_monitor:
     type: git
     url: https://github.com/nevlife/system_monitor
@@ -62,7 +62,7 @@ repositories:
   system/teleop_epoch:
     type: git
     url: https://github.com/nevlife/teleop_epoch
-    version: 5d6ba949d2b25abd05dd8acca9f57b82c22b315c
+    version: 80e88c39f7748032ba43e4214b73409d585012cc
   system/tierlink:
     type: git
     url: https://github.com/nevlife/tierlink
