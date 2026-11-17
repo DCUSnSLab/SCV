@@ -23,6 +23,15 @@ ENABLE_FLUX=1 colcon build --symlink-install
 - `zed_msgs`는 소스로 받지 않고 apt 패키지를 쓴다.
 - 센서 드라이버와 영상 노드는 `flux_wrapper`로 발행하고 구독한다. `flux_wrapper`는 빌드할 때의 `ENABLE_FLUX`로 flux를 쓸지 정하므로, flux를 쓰려면 `ENABLE_FLUX=1`로 빌드한다. 실행할 때도 같은 값을 둔다.
 
+## flux
+
+드라이버는 `flux_wrapper`로 발행한다. 환경 변수 `ENABLE_FLUX=1`이 빌드할 때와 실행할 때 모두 있어야 flux로 나간다. 없으면 로그 없이 ROS 토픽으로 발행한다.
+
+- `~/.bashrc`에는 `export ENABLE_FLUX=1`로 넣는다. `export`가 없으면 colcon과 `ros2 launch`에 전달되지 않는다.
+- `flux_wrapper`는 이 값을 CMake configure 단계에서 읽는다. 값을 바꾼 뒤에는 `colcon build --symlink-install --cmake-force-configure`로 한 번 빌드한다.
+- 빌드 결과는 `install/flux_wrapper/share/flux_wrapper/cmake/flux_wrapper-extras.cmake`의 `flux_wrapper_WITH_FLUX`(1이면 flux)로 확인한다.
+- 실행 중인 채널은 `flux topic list`로 본다. flux 채널은 `ros2 topic list`에 나오지 않는다.
+
 ## 지도
 
 지도 파일은 git에 넣지 않는다. 작업공간 루트의 `maps/`에 직접 복사한다. 설정 파일은 `maps/` 기준 상대 경로를 적고, launch가 앞에 작업공간의 `maps/` 경로를 붙인다.
