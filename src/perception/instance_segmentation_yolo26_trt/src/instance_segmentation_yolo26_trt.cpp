@@ -74,12 +74,9 @@ InstanceSegmentationYolo26Trt::InstanceSegmentationYolo26Trt(const rclcpp::NodeO
   rows_.resize(engine_.info(rows_output_).elements);
   protos_.resize(engine_.info(protos_output_).elements);
 
-  flux_wrapper::PublisherOptions mask_options;
-  mask_options.max_message_size =
-    static_cast<std::uint32_t>(declare_parameter<std::int64_t>("output_slot_mb")) << 20;
   objects_pub_ = create_publisher<vision_msgs::msg::Detection2DArray>("~/output/objects", 1);
   mask_pub_ = std::make_unique<flux_wrapper::Publisher<sensor_msgs::msg::Image>>(
-    *this, "~/output/instances", rclcpp::QoS(1), mask_options);
+    *this, "~/output/instances", rclcpp::QoS(1));
   image_sub_ = std::make_unique<flux_wrapper::Subscription<sensor_msgs::msg::Image>>(
     *this, "~/input/image", rclcpp::SensorDataQoS().keep_last(1),
     [this](const flux_wrapper::View<sensor_msgs::msg::Image> & image) { on_image(image); },
@@ -132,7 +129,8 @@ void InstanceSegmentationYolo26Trt::on_image(
   cv::Mat mask = tensorrt_common::loan_image(loan, header, {width, height}, CV_16UC1, "mono16");
   if (mask.empty()) {
     RCLCPP_WARN_THROTTLE(
-      get_logger(), *get_clock(), 5000, "instance mask not sent; is output_slot_mb too small?");
+      get_logger(), *get_clock(), 5000,
+      "instance mask not sent; no free slot or the flux arena is full");
     return;
   }
   // With no detection the mask is all background and the prototypes are not needed.

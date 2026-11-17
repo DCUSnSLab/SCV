@@ -69,13 +69,6 @@ Settings declare_settings(rclcpp::Node & node)
   return s;
 }
 
-flux_wrapper::PublisherOptions slot(rclcpp::Node & node, const std::string & name)
-{
-  flux_wrapper::PublisherOptions o;
-  o.max_message_size = static_cast<std::uint32_t>(node.declare_parameter<std::int64_t>(name)) << 20;
-  return o;
-}
-
 }  // namespace
 
 DepthAnything3MonoTrt::DepthAnything3MonoTrt(const rclcpp::NodeOptions & options)
@@ -94,9 +87,9 @@ DepthAnything3MonoTrt::DepthAnything3MonoTrt(const rclcpp::NodeOptions & options
   sky_.resize(engine_.info("sky").elements);
 
   depth_pub_ = std::make_unique<flux_wrapper::Publisher<sensor_msgs::msg::Image>>(
-    *this, "~/output/depth", rclcpp::QoS(1), slot(*this, "output_slot_mb"));
+    *this, "~/output/depth", rclcpp::QoS(1));
   cloud_pub_ = std::make_unique<flux_wrapper::Publisher<sensor_msgs::msg::PointCloud2>>(
-    *this, "~/output/points", rclcpp::QoS(1), slot(*this, "point_cloud.slot_mb"));
+    *this, "~/output/points", rclcpp::QoS(1));
   info_sub_ = create_subscription<sensor_msgs::msg::CameraInfo>(
     "~/input/camera_info", rclcpp::SensorDataQoS().keep_last(1),
     [this](const sensor_msgs::msg::CameraInfo & info) {
@@ -164,7 +157,7 @@ void DepthAnything3MonoTrt::on_image(const flux_wrapper::View<sensor_msgs::msg::
   cv::Mat depth = tensorrt_common::loan_image(loan, header, source, CV_32FC1, "32FC1");
   if (depth.empty()) {
     RCLCPP_WARN_THROTTLE(
-      get_logger(), *get_clock(), 5000, "depth not sent; is output_slot_mb too small?");
+      get_logger(), *get_clock(), 5000, "depth not sent; no free slot or the flux arena is full");
     if (!settings_.cloud) {
       return;
     }
@@ -223,7 +216,8 @@ void DepthAnything3MonoTrt::publish_cloud(
   auto * data = tensorrt_common::loan_cloud(loan, header, layout);
   if (data == nullptr) {
     RCLCPP_WARN_THROTTLE(
-      get_logger(), *get_clock(), 5000, "point cloud not sent; is point_cloud.slot_mb too small?");
+      get_logger(), *get_clock(), 5000,
+      "point cloud not sent; no free slot or the flux arena is full");
     return;
   }
   // A frame on the device is copied to the host for the colors only.

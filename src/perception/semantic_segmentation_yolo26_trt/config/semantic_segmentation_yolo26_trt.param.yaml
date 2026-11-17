@@ -23,5 +23,3 @@
       dla_core: -1
     # gpu: resize and normalize in a CUDA kernel. cpu: OpenCV, the reference of the kernel test.
     preprocess: gpu
-    # A 2208x1242 mono8 class image is 2.6 MiB.
-    output_slot_mb: 4

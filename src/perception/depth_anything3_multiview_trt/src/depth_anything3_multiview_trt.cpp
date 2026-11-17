@@ -93,19 +93,13 @@ DepthAnything3MultiviewTrt::DepthAnything3MultiviewTrt(const rclcpp::NodeOptions
   depth_(engine_.info("depth").elements),
   pose_(engine_.info("pose").elements)
 {
-  flux_wrapper::PublisherOptions out_options;
-  out_options.max_message_size =
-    static_cast<std::uint32_t>(declare_parameter<std::int64_t>("output_slot_mb")) << 20;
-  flux_wrapper::PublisherOptions cloud_options;
-  cloud_options.max_message_size =
-    static_cast<std::uint32_t>(declare_parameter<std::int64_t>("point_cloud.slot_mb")) << 20;
   poses_pub_ = create_publisher<geometry_msgs::msg::PoseArray>("~/output/poses", 1);
   for (std::size_t i = 0; i < views_; ++i) {
     const auto n = std::to_string(i);
     depth_pubs_.push_back(std::make_unique<flux_wrapper::Publisher<sensor_msgs::msg::Image>>(
-      *this, "~/output/depth_" + n, rclcpp::QoS(1), out_options));
+      *this, "~/output/depth_" + n, rclcpp::QoS(1)));
     cloud_pubs_.push_back(std::make_unique<flux_wrapper::Publisher<sensor_msgs::msg::PointCloud2>>(
-      *this, "~/output/points_" + n, rclcpp::QoS(1), cloud_options));
+      *this, "~/output/points_" + n, rclcpp::QoS(1)));
     image_subs_.push_back(std::make_unique<flux_wrapper::Subscription<sensor_msgs::msg::Image>>(
       *this, "~/input/image_" + n, rclcpp::SensorDataQoS().keep_last(1),
       [this, i](const flux_wrapper::View<sensor_msgs::msg::Image> & image) { on_image(i, image); },
@@ -192,7 +186,7 @@ void DepthAnything3MultiviewTrt::infer(const std_msgs::msg::Header & header)
     cv::Mat out = tensorrt_common::loan_image(loan, view_header, sizes_[i], CV_32FC1, "32FC1");
     if (out.empty()) {
       RCLCPP_WARN_THROTTLE(
-        get_logger(), *get_clock(), 5000, "depth not sent; is output_slot_mb too small?");
+        get_logger(), *get_clock(), 5000, "depth not sent; no free slot or the flux arena is full");
       if (!settings_.cloud) {
         continue;
       }
@@ -222,7 +216,8 @@ void DepthAnything3MultiviewTrt::publish_cloud(
   auto * data = tensorrt_common::loan_cloud(loan, header, layout);
   if (data == nullptr) {
     RCLCPP_WARN_THROTTLE(
-      get_logger(), *get_clock(), 5000, "point cloud not sent; is point_cloud.slot_mb too small?");
+      get_logger(), *get_clock(), 5000,
+      "point cloud not sent; no free slot or the flux arena is full");
     return;
   }
   tensorrt_common::depth_to_cloud(depth, k, settings_.cloud_downsample, nullptr, layout, data);

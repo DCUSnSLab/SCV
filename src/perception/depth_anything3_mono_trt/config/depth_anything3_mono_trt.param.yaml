@@ -18,8 +18,6 @@
     # gpu: resize (area when shrinking, cubic when enlarging) and normalize in a CUDA kernel.
     # cpu: OpenCV, the reference of the kernel test.
     preprocess: gpu
-    # A 2208x1242 32FC1 depth image is 10.5 MiB.
-    output_slot_mb: 12
     # true for DA3METRIC: meters from ~/input/camera_info. false for DA3MONO: relative depth.
     metric: true
     # The parameters below may change while the node runs (ros2 param set).
@@ -38,5 +36,3 @@
       # Every n-th pixel in both directions.
       downsample: 2
       colorize: true
-      # 1280x720 at downsample 2 with color is 3.5 MiB. Start only.
-      slot_mb: 8

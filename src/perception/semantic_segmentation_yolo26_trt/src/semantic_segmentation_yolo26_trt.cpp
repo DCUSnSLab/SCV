@@ -34,11 +34,8 @@ SemanticSegmentationYolo26Trt::SemanticSegmentationYolo26Trt(const rclcpp::NodeO
   }
   output_map_.resize(out.elements);
 
-  flux_wrapper::PublisherOptions out_options;
-  out_options.max_message_size =
-    static_cast<std::uint32_t>(declare_parameter<std::int64_t>("output_slot_mb")) << 20;
   classes_pub_ = std::make_unique<flux_wrapper::Publisher<sensor_msgs::msg::Image>>(
-    *this, "~/output/classes", rclcpp::QoS(1), out_options);
+    *this, "~/output/classes", rclcpp::QoS(1));
   image_sub_ = std::make_unique<flux_wrapper::Subscription<sensor_msgs::msg::Image>>(
     *this, "~/input/image", rclcpp::SensorDataQoS().keep_last(1),
     [this](const flux_wrapper::View<sensor_msgs::msg::Image> & image) { on_image(image); },
@@ -67,7 +64,7 @@ void SemanticSegmentationYolo26Trt::on_image(
   cv::Mat out = tensorrt_common::loan_image(loan, header, {width, height}, CV_8UC1, "mono8");
   if (out.empty()) {
     RCLCPP_WARN_THROTTLE(
-      get_logger(), *get_clock(), 5000, "classes not sent; is output_slot_mb too small?");
+      get_logger(), *get_clock(), 5000, "classes not sent; no free slot or the flux arena is full");
     return;
   }
   tensorrt_common::unletterbox(map, box, out, cv::INTER_NEAREST);

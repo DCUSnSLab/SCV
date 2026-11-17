@@ -44,12 +44,11 @@ inline auto image_subscription(bool gpu_preprocess) -> flux_wrapper::Subscriptio
   return options;
 }
 
-// The data is allocated before any string field. A flux frame appends its variable fields in
-// the order they are set, and the fixed part of an Image (48 bytes) or a PointCloud2 (56 bytes)
-// ends on an 8-byte boundary of the page-aligned frame: the data starts aligned for floats.
+// A flux frame puts the data field in the publisher's arena, in 16-byte units: the data starts
+// aligned for floats.
 
 // The image of `loan`, to be written in place before it is published. Empty when the loan has no
-// slot or the image does not fit the slot.
+// slot or the flux arena has no room for the image.
 inline auto loan_image(
   flux_wrapper::Loan<sensor_msgs::msg::Image> & loan, const std_msgs::msg::Header & header,
   cv::Size size, int type, const std::string & encoding) -> cv::Mat
@@ -72,7 +71,7 @@ inline auto loan_image(
 }
 
 // The point data of `loan` in `layout`, to be written by depth_to_cloud. Null when the loan has
-// no slot or the cloud does not fit the slot.
+// no slot or the flux arena has no room for the cloud.
 inline auto loan_cloud(
   flux_wrapper::Loan<sensor_msgs::msg::PointCloud2> & loan, const std_msgs::msg::Header & header,
   const CloudLayout & layout) -> std::uint8_t *
