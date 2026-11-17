@@ -87,3 +87,7 @@
 	path = src/SCV_MapManager
 	url = https://github.com/DCUSnSLab/SCV_MapManager.git
 	branch = main
+[submodule "src/utils"]
+	path = src/utils
+	url = https://github.com/DCUSnSLab/SCV_utils.git
+	branch = humble
