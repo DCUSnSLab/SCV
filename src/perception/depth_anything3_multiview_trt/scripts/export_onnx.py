@@ -11,9 +11,14 @@ camera-to-world transform.
 """
 
 import argparse
+import json
 
+from depth_anything_3.cfg import create_object
+from depth_anything_3.cfg import load_config
+from depth_anything_3.registry import MODEL_REGISTRY
+from huggingface_hub import hf_hub_download
+from safetensors.torch import load_file
 import torch
-from depth_anything_3.api import DepthAnything3
 
 PATCH = 14
 
@@ -26,6 +31,16 @@ def cartesian_prod(a, b):
 # The RoPE positions of the any-view models use torch.cartesian_prod, which ONNX does not have;
 # this is the same product of two 1-D tensors in operators that it has.
 torch.cartesian_prod = cartesian_prod
+
+
+def load_net(repo):
+    # depth_anything_3.api also imports its file exporters (pycolmap, trimesh, moviepy).
+    with open(hf_hub_download(repo, 'config.json')) as f:
+        name = json.load(f)['model_name']
+    net = create_object(load_config(MODEL_REGISTRY[name]))
+    state = load_file(hf_hub_download(repo, 'model.safetensors'))
+    net.load_state_dict({k.removeprefix('model.'): v for k, v in state.items()})
+    return net.eval()
 
 
 def nearest_multiple(x, p):
@@ -68,7 +83,7 @@ def main():
     parser.add_argument('--opset', type=int, default=17)
     args = parser.parse_args()
 
-    net = DepthAnything3.from_pretrained(args.model).model.eval()
+    net = load_net(args.model)
     module = MultiView(net)
     w, h = input_size(args.image_width, args.image_height, args.process_res)
     dtype = torch.float16 if args.half else torch.float32
