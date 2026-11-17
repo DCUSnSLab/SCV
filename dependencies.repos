@@ -6,7 +6,7 @@ repositories:
   flux:
     type: git
     url: https://github.com/nevlife/flux
-    version: 289fc262c36ce4823593eb9bb608216d874df4a4
+    version: dd2366dd81eda5b4ac69101ba975f44874c650f9
   localization/FAST_LIO:
     type: git
     url: https://github.com/nevlife/FAST_LIO
@@ -34,7 +34,7 @@ repositories:
   sensor_pkg/realsense-ros:
     type: git
     url: https://github.com/nevlife/realsense-ros
-    version: 9098cbe132a26474bbe1c2d3fb384a2adcab93c7
+    version: 17d7d214d87b42a097e90c50fe147fe280a23c3c
   sensor_pkg/ublox:
     type: git
     url: https://github.com/DCUSnSLab/ublox
@@ -46,11 +46,11 @@ repositories:
   sensor_pkg/velodyne:
     type: git
     url: https://github.com/nevlife/velodyne
-    version: 036970e02743331ce008bce106bb45dcfbc8eb7a
+    version: c248eff049678ea737942708ff4064255087d8d3
   sensor_pkg/zed-ros2-wrapper:
     type: git
     url: https://github.com/nevlife/zed-ros2-wrapper
-    version: 2f70727e8c56ba874ba12dd5105777c3cf83bc25
+    version: 22774fef16a7c8f9518b657fd5adc7f994996856
   system/SCV_Agent:
     type: git
     url: https://github.com/DCUSnSLab/SCV_Agent
@@ -70,7 +70,7 @@ repositories:
   tools/orma:
     type: git
     url: https://github.com/nevlife/orma
-    version: 7a45c892f77c96647a2dac8f935307acf2177814
+    version: a94d5e0e865c466a7a92b0ca86b8862ce271e2ab
   tools/rosbag2_dataset:
     type: git
     url: https://github.com/nevlife/rosbag2_dataset
@@ -94,4 +94,4 @@ repositories:
   sensor_pkg/generic_cam_ros2:
     type: git
     url: https://github.com/nevlife/generic_cam_ros2
-    version: cc722165d3d7e455cb9c50e76af68d28732b9c7f
+    version: 9182352fc3aadecd2e6befaa0838e4488dd52997
