@@ -87,6 +87,18 @@ def generate_launch_description():
                 'rotation_filter.rotation': 180.0,
                 # TF comes from tf_mounts.xacro (calibrated optical frames).
                 'publish_tf': False,
+                # ffmpeg (H.264) transport is unused; dropping it also silences
+                # the per-topic "gop_size not set" warning.
+                **{
+                    f'{name}.{topic}.enable_pub_plugins': [
+                        'image_transport/raw',
+                        'image_transport/compressed',
+                        'image_transport/compressedDepth',
+                        'image_transport/theora',
+                    ]
+                    for topic in ('color.image_raw', 'depth.image_rect_raw',
+                                  'aligned_depth_to_color.image_raw')
+                },
             }],
         )
         actions.append(TimerAction(period=3.0 * i, actions=[camera]))
