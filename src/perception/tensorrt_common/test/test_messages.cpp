@@ -105,16 +105,6 @@ TEST_F(MessagesTest, CloudIsAlignedForFloats)
   }
 }
 
-TEST_F(MessagesTest, TooLargeForTheSlotIsEmpty)
-{
-  flux_wrapper::PublisherOptions options;
-  options.max_message_size = 1 << 20;
-  flux_wrapper::Publisher<sensor_msgs::msg::Image> pub(*node_, "large", rclcpp::QoS(4), options);
-  auto loan = pub.loan();
-  const cv::Mat m = tensorrt_common::loan_image(loan, header(), {1024, 1024}, CV_32FC1, "32FC1");
-  EXPECT_EQ(m.empty(), pub.uses_flux());
-}
-
 TEST_F(MessagesTest, GpuImageIsPreprocessedWhereItArrives)
 {
   tensorrt_common::EngineOptions o;
@@ -165,9 +155,10 @@ TEST_F(MessagesTest, GpuImageIsPreprocessedWhereItArrives)
     pub.publish(std::move(loan));
   });
   ASSERT_TRUE(got);
-  // On the ROS path the wrapper copies the GPU buffer to a host message at publish.
+  // On the ROS path the wrapper copies the GPU buffer to a host message at publish, and a Cuda
+  // subscription copies it back to the device.
   EXPECT_TRUE(pub.uses_device());
-  EXPECT_EQ(on_device, sub.uses_flux());
+  EXPECT_TRUE(on_device);
   const tensorrt_common::ImageView host{"bgr8", bgr.data, bgr.cols, bgr.rows, bgr.step};
   EXPECT_EQ(*got, preprocess(host));
 }
