@@ -14,7 +14,7 @@ repositories:
   localization/MINS:
     type: git
     url: https://github.com/nevlife/MINS
-    version: 1a22233f8e626af510d1f722eee86ea818c8428d
+    version: cc276ad844292123665e46f47cb6ea4b14edb6d0
   localization/prior_map_localization:
     type: git
     url: https://github.com/nevlife/prior_map_localization.git
