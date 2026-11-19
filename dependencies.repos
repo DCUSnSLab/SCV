@@ -62,11 +62,11 @@ repositories:
   system/teleop_epoch:
     type: git
     url: https://github.com/nevlife/teleop_epoch
-    version: beebfdbe7b05548f22206e747bd4120104660ec8
+    version: f6c1c206047688800c5eaa124c33602db5837e2e
   system/tierlink:
     type: git
     url: https://github.com/nevlife/tierlink
-    version: b29894662c102cea751bc186272f692fe7e72ed6
+    version: 99956d164d79189ccb56c51fef158596af63df83
   tools/orma:
     type: git
     url: https://github.com/nevlife/orma
