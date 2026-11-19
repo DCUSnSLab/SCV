@@ -1,0 +1,62 @@
+# The e2e pipeline: the server as deploy/server runs it, one vehicle and one operator, on an
+# internal network so neither DDS nor Zenoh reaches the host or the internet. The vehicle and the
+# operator run the host's ROS 2 and builds read-only; run.sh starts it.
+x-host: &host
+  image: ubuntu:24.04
+  volumes:
+    - /usr:/usr:ro
+    - /opt/ros:/opt/ros:ro
+    - /etc/ld.so.cache:/etc/ld.so.cache:ro
+    # Shared libraries such as BLAS are reached through these links.
+    - /etc/alternatives:/etc/alternatives:ro
+    - ${SCV}:${SCV}:ro
+  environment: &env
+    E2E: ${SCV}/e2e
+    SERVER: 172.31.77.10
+    HOME: /tmp
+    ROS_DOMAIN_ID: "42"
+    ROS_AUTOMATIC_DISCOVERY_RANGE: LOCALHOST
+    RMW_IMPLEMENTATION: rmw_cyclonedds_cpp
+
+services:
+  zenohd:
+    image: eclipse/zenoh:1.10.1
+    volumes:
+      - ${TIERLINK}/deploy/server/zenohd.json5:/etc/zenohd.json5:ro
+    command:
+      - --config=/etc/zenohd.json5
+      - --listen=tcp/0.0.0.0:7447
+      - --listen=udp/0.0.0.0:7447
+      - --listen=tcp/127.0.0.1:7448
+    networks:
+      e2e: { ipv4_address: 172.31.77.10 }
+  fleetd:
+    build:
+      context: ${TIERLINK}
+      dockerfile: server/Dockerfile
+    network_mode: service:zenohd
+    depends_on: [zenohd]
+    volumes:
+      - ./fleetd.yaml:/etc/fleetd/fleetd.yaml:ro
+  vehicle:
+    <<: *host
+    command:
+      - bash
+      - ${SCV}/e2e/vehicle.sh
+    cap_add: [NET_ADMIN]
+    depends_on: [zenohd]
+    networks:
+      e2e: { ipv4_address: 172.31.77.20 }
+  operator:
+    <<: *host
+    command: [sleep, infinity]
+    depends_on: [zenohd]
+    networks:
+      e2e: { ipv4_address: 172.31.77.30 }
+
+networks:
+  e2e:
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.31.77.0/24

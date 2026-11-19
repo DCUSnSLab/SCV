@@ -66,7 +66,7 @@ repositories:
   system/tierlink:
     type: git
     url: https://github.com/nevlife/tierlink
-    version: 99956d164d79189ccb56c51fef158596af63df83
+    version: dff9cc1f1e3e5d45a7105c49d5d2f2b0c0bca37d
   tools/orma:
     type: git
     url: https://github.com/nevlife/orma

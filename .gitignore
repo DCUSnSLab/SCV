@@ -47,3 +47,6 @@ node_modules/
 .pytest_cache/
 # clangd index
 .cache/
+
+# The e2e pipeline's build and logs
+/e2e/.work/

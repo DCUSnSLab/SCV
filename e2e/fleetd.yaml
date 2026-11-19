@@ -1,0 +1,6 @@
+# fleetd in the e2e pipeline: the router's local port, as deploy/server's fleetd.example.yaml.
+connect: [tcp/127.0.0.1:7448]
+data_dir: /data
+history_seconds: 600
+vehicles:
+  - { id: r01, prefix: scv/r01, model: hunter }
